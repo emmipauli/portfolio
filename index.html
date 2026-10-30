@@ -1,0 +1,285 @@
+<!-- Dokumententyp HTML5 für modernen Standard deklarieren -->
+<!DOCTYPE html>
+<!-- HTML-Wurzelelement mit deutscher Sprachauszeichnung -->
+<html lang="de">
+<!-- Kopfbereich mit Metadaten und Einstellungen -->
+<head>
+    <!-- Zeichensatz UTF-8 für saubere Darstellung von Umlauten -->
+    <meta charset="UTF-8">
+    <!-- Viewport für optimale responsive Darstellung auf Desktop, Tablet und Handy -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titel der Webseite im Browser-Tab -->
+    <title>Emma Rabe — Portfolio | Medieninformatik &amp; Film</title>
+    <!-- Meta-Beschreibung für Suchmaschinen und Vorschauen -->
+    <meta name="description" content="Portfolio von Emma Rabe – Medieninformatik mit Schwerpunkt Film, Grafikdesign, Video und Web-Entwicklung.">
+    <!-- Verknüpfung mit der externen CSS-Stildatei style.css -->
+    <link rel="stylesheet" href="style.css">
+<!-- Ende des Kopfbereichs -->
+</head>
+<!-- Beginn des sichtbaren Webseiten-Inhalts -->
+<body>
+
+    <!-- KOPFZEILE & NAVIGATION (Minimalistisch & clean – ohne Blasen) -->
+    <header class="site-header">
+        <!-- Logo-Bereich mit Namen -->
+        <div class="logo">
+            <!-- Name als Hauptlink zur Startseite -->
+            <a href="index.html" class="logo-title">Emma Rabe</a>
+        <!-- Ende des Logo-Bereichs -->
+        </div>
+
+        <!-- Aktionen im Header: Hauptnavigation -->
+        <div class="header-actions">
+            <!-- Hauptnavigationsmenü -->
+            <nav>
+                <!-- Ungeordnete Liste für Navigationslinks -->
+                <ul>
+                    <!-- Link zur Projektübersicht -->
+                    <li><a href="#projekte">Projekte</a></li>
+                    <!-- Link zum Über-Mich-Bereich -->
+                    <li><a href="#about">Über mich</a></li>
+                    <!-- Link zum Kontakt-Bereich -->
+                    <li><a href="#kontakt">Kontakt</a></li>
+                <!-- Ende der Navigationsliste -->
+                </ul>
+            <!-- Ende der Navigation -->
+            </nav>
+        <!-- Ende der Header-Aktionen -->
+        </div>
+    <!-- Ende der Kopfzeile -->
+    </header>
+
+    <!-- HAUPTBEREICH DER SEITE -->
+    <main>
+
+        <!-- HERO-SEKTION: Klares, persönliches Intro (ohne & Direction und ohne Meta-Strip) -->
+        <section id="hero" class="hero">
+
+            <!-- Klare, menschliche Hauptüberschrift (ohne Nachnamen) -->
+            <h1>
+                Moin, ich bin Emma.<br>
+                <span class="highlight">Medieninformatik &amp; Film.</span>
+            <!-- Ende der Hauptüberschrift -->
+            </h1>
+
+            <!-- Natürlicher Einleitungstext über Studium und Interessen -->
+            <p class="hero-bio">
+                Ich studiere Medieninformatik mit dem Schwerpunkt Film. Hier zeige ich ausgewählte Arbeiten aus den Bereichen Videoschnitt, Grafikdesign, Webentwicklung und Interface-Gestaltung.
+            <!-- Ende des Einleitungstexts -->
+            </p>
+
+        <!-- Ende der Hero-Sektion -->
+        </section>
+
+        <!-- PORTFOLIO-SEKTION: Die 4 Haupt-Fachbereiche (Zwischenübersichtsseiten) -->
+        <section id="projekte" class="portfolio-section">
+
+            <!-- Kopfzeile des Portfolios -->
+            <div class="portfolio-header">
+                <!-- Titel der Bereichsübersicht -->
+                <h2>Ausgewählte Arbeiten</h2>
+            <!-- Ende des Portfolio-Kopfs -->
+            </div>
+
+            <!-- PROJEKT-GRID: Minimalistisches weißes Kachel-Raster der 4 Bereiche -->
+            <div class="portfolio-grid" id="projectGrid">
+
+                <!-- BEREICH 1: Grafikdesign (führt zur Zwischenübersicht grafikdesign.html) -->
+                <a href="grafikdesign.html" class="project-card">
+                    <!-- Bildbereich mit festem Seitenverhältnis -->
+                    <div class="project-thumbnail">
+                        <!-- Vorschau-Bild aus den Grafikdesign-Projekten -->
+                        <img src="GG/Zeichenfläche 1.png" alt="Grafikdesign & Print" loading="lazy">
+                    <!-- Ende des Bildbereichs -->
+                    </div>
+                    <!-- Informationsbereich unter dem Bild -->
+                    <div class="project-info">
+                        <!-- Meta-Zeile mit Disziplin und Projektanzahl -->
+                        <div class="project-meta-row">
+                            <!-- Kategorie als reiner Text -->
+                            <span class="category-tag">Print &amp; Editorial</span>
+                            <!-- Hinweis auf enthaltene Projekte (Plakate, Bildbearbeitung, Corporate Design) -->
+                            <span class="project-year">3 Projekte</span>
+                        <!-- Ende der Meta-Zeile -->
+                        </div>
+                        <!-- Bereichstitel -->
+                        <h3>Grafikdesign</h3>
+                        <!-- Kurze Beschreibung der enthaltenen Themen -->
+                        <p>Plakatgestaltung für den Hochschulrundgang, Typografie, digitale Bildbearbeitung und Corporate Design.</p>
+                    <!-- Ende des Info-Bereichs -->
+                    </div>
+                <!-- Ende von Bereich 1 -->
+                </a>
+
+                <!-- BEREICH 2: Video & Motion Design (führt zur Zwischenübersicht video.html) -->
+                <a href="video.html" class="project-card">
+                    <!-- Bildbereich -->
+                    <div class="project-thumbnail">
+                        <!-- Vorschaubild für Video & Motion -->
+                        <img src="DBB/Landschaft.png" alt="Film & Audiovisuelle Medien" loading="lazy">
+                    <!-- Ende des Bildbereichs -->
+                    </div>
+                    <!-- Informationsbereich -->
+                    <div class="project-info">
+                        <!-- Meta-Zeile -->
+                        <div class="project-meta-row">
+                            <!-- Kategorie als reiner Text -->
+                            <span class="category-tag">Film &amp; Schnitt</span>
+                            <!-- Hinweis auf enthaltene Projekte -->
+                            <span class="project-year">2 Projekte</span>
+                        <!-- Ende der Meta-Zeile -->
+                        </div>
+                        <!-- Bereichstitel -->
+                        <h3>Film & Audiovisuelle Medien</h3>
+                        <!-- Beschreibung -->
+                        <p>Videoschnitt, Kameraarbeit, Color Grading, filmische Erzählweisen und animierte Grafiken.</p>
+                    <!-- Ende des Info-Bereichs -->
+                    </div>
+                <!-- Ende von Bereich 2 -->
+                </a>
+
+                <!-- BEREICH 3: Websites & Apps (führt zur Zwischenübersicht web-app.html) -->
+                <a href="web-app.html" class="project-card">
+                    <!-- Bildbereich -->
+                    <div class="project-thumbnail">
+                        <!-- Bildvorschau aus den Interface- und App-Projekten -->
+                        <img src="Frontend/Hausarbeit/dokumentation/vorschau.png" alt="Websites & Apps" loading="lazy">
+                    <!-- Ende des Bildbereichs -->
+                    </div>
+                    <!-- Informationsbereich -->
+                    <div class="project-info">
+                        <!-- Meta-Zeile -->
+                        <div class="project-meta-row">
+                            <!-- Kategorie als reiner Text -->
+                            <span class="category-tag">UI/UX &amp; Code</span>
+                            <!-- Hinweis auf enthaltene Projekte (Interface Design, Emma's Chatroom, Frontend Design) -->
+                            <span class="project-year">3 Projekte</span>
+                        <!-- Ende der Meta-Zeile -->
+                        </div>
+                        <!-- Bereichstitel -->
+                        <h3>Websites &amp; Apps</h3>
+                        <!-- Beschreibung -->
+                        <p>Interface Design, Prototyping in Figma, mobile Android-Anwendungen und Frontend-Websites.</p>
+                    <!-- Ende des Info-Bereichs -->
+                    </div>
+                <!-- Ende von Bereich 3 -->
+                </a>
+
+                <!-- BEREICH 4: 3D & Game Design (führt zur Zwischenübersicht 3d-gamedesign.html) -->
+                <a href="3d-gamedesign.html" class="project-card">
+                    <!-- Bildbereich -->
+                    <div class="project-thumbnail">
+                        <!-- Echtes 3D-Rendering Vorschaubild -->
+                        <img src="3DRendering/rendering01.png" alt="3D & Game Design" loading="lazy">
+                    <!-- Ende des Bildbereichs -->
+                    </div>
+                    <!-- Informationsbereich -->
+                    <div class="project-info">
+                        <!-- Meta-Zeile -->
+                        <div class="project-meta-row">
+                            <!-- Kategorie als reiner Text -->
+                            <span class="category-tag">3D &amp; CGI</span>
+                            <!-- Hinweis auf enthaltene Projekte (3D-Handmodellierung, Lego Minifigur, Spieleprogrammierung) -->
+                            <span class="project-year">3 Projekte</span>
+                        <!-- Ende der Meta-Zeile -->
+                        </div>
+                        <!-- Bereichstitel -->
+                        <h3>3D &amp; Game Design</h3>
+                        <!-- Beschreibung -->
+                        <p>Dreidimensionale Modellierung, Beleuchtungskonzepte, Texturen und virtuelle Spiel-Umgebungen.</p>
+                    <!-- Ende des Info-Bereichs -->
+                    </div>
+                <!-- Ende von Bereich 4 -->
+                </a>
+
+            <!-- Ende des Projekt-Grids -->
+            </div>
+        <!-- Ende der Portfolio-Sektion -->
+        </section>
+
+        <!-- ÜBER-MICH & FÄHIGKEITEN SEKTION -->
+        <section id="about" class="about-section">
+            <!-- Kopfzeile über dem Über-Mich-Bereich wie bei Ausgewählte Arbeiten -->
+            <div class="portfolio-header">
+                <!-- Sektionstitel -->
+                <h2>Über mich</h2>
+            <!-- Ende der Kopfzeile -->
+            </div>
+
+            <!-- Fließtext und Fähigkeiten unter der Überschrift -->
+            <div class="about-content">
+                <!-- Erster Biografie-Absatz -->
+                <p>
+                    Moin! Ich bin Emma und studiere Medieninformatik mit dem Schwerpunkt Film. Mich begeistert die Verbindung aus visueller Gestaltung und technischer Umsetzung: Von der Kameraarbeit und dem Schnitt über Print-Layouts bis hin zu Frontend-Code für das Web.
+                <!-- Ende des ersten Absatzes -->
+                </p>
+
+                <!-- Zweiter Absatz -->
+                <p>
+                    Im Studium arbeite ich regelmäßig an praxisnahen Projekten, sowohl eigenständig als auch im Team.
+                <!-- Ende des zweiten Absatzes -->
+                </p>
+
+                <!-- Container für Tools & Skills -->
+                <div class="skills-container">
+                    <!-- Label über den Skills -->
+                    <span class="skills-title">Werkzeuge &amp; Software</span>
+                    <!-- Reiner Fließtext ohne Blasen oder Kapseln -->
+                    <p class="skills-text">
+                        Adobe Premiere Pro, DaVinci Resolve, Photoshop, InDesign, Illustrator, Figma, Blender, Unity, HTML, CSS, Java, Kotlin.
+                    <!-- Ende des Fließtexts -->
+                    </p>
+                <!-- Ende des Skill-Containers -->
+                </div>
+            <!-- Ende der rechten Spalte -->
+            </div>
+        <!-- Ende der Über-Mich-Sektion -->
+        </section>
+
+    <!-- Ende des Hauptbereichs -->
+    </main>
+
+    <!-- FUßZEILE & KONTAKT -->
+    <footer id="kontakt" class="site-footer">
+
+        <!-- Call-to-Action Bereich -->
+        <div class="footer-cta">
+            <!-- Kleines Label über dem Kontakt -->
+            <span class="cta-label">Kontakt</span>
+            <!-- Klare Überschrift -->
+            <h2>Schreib mir gerne.</h2>
+        <!-- Ende der Call-to-Action -->
+        </div>
+
+        <!-- Großer klickbarer E-Mail-Link (ohne Pfeil) -->
+        <a href="mailto:emmarabe@web.de" class="email-link">
+            <!-- Die E-Mail-Adresse -->
+            <span>emmarabe@web.de</span>
+        <!-- Ende des E-Mail-Links -->
+        </a>
+
+        <!-- Untere Zeile mit Copyright und LinkedIn Link -->
+        <div class="footer-bottom-row">
+            <!-- Copyright-Hinweis -->
+            <div class="copyright">
+                <!-- Urheberrechtstext -->
+                <span>&copy; 2026 Emma Rabe.</span>
+            <!-- Ende des Copyrights -->
+            </div>
+
+            <!-- Social-Media-Links -->
+            <div class="social-links">
+                <!-- LinkedIn Link -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <!-- Ende der Social Links -->
+            </div>
+        <!-- Ende der Abschlusszeile -->
+        </div>
+
+    <!-- Ende des Footers -->
+    </footer>
+
+<!-- Ende des HTML-Körpers -->
+</body>
+<!-- Ende des HTML-Dokuments -->
+</html>

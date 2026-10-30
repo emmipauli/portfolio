@@ -1,0 +1,817 @@
+/* ==========================================================================
+   SCHRIFTARTEN (Google Fonts: 'Syne' für markante Headlines & 'Plus Jakarta Sans' für Mengentext)
+   ========================================================================== */
+/* Wir laden beide Schriften direkt und kostenlos über das Google Fonts CDN ein */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
+/* ==========================================================================
+   CSS-VARIABLEN (Minimalistisches Farbsystem mit Emil Kowalski & Mobbin Craft)
+   ========================================================================== */
+:root {
+    /* Strahlend weißer Haupthintergrund */
+    --bg-primary: #ffffff;
+    /* Weißer Hintergrund für Karten */
+    --bg-card: #ffffff;
+    /* Tiefes Wald- und Piniengrün für Überschriften und Haupttexte (#0c3c30) */
+    --text-primary: #0c3c30;
+    /* Harmonisches, hochlesbares Waldgrün für Fließtexte */
+    --text-secondary: rgba(12, 60, 48, 0.85);
+    /* Warmes Moos- / Olivgrün für Tags, Labels und Semester (#555934) */
+    --text-muted: #555934;
+    /* Kräftiges Smaragd- / Waldgrün als lebendige Akzentfarbe (#084A24) */
+    --color-accent: #084A24;
+    /* Warmes Moos- / Olivgrün (#555934) */
+    --color-olive: #555934;
+    /* Sehr zarte Rasterlinie aus feinem Piniengrün */
+    --border-subtle: rgba(12, 60, 48, 0.12);
+    /* Akzentlinie in Waldgrün (#084A24) */
+    --border-dark: #084A24;
+    /* Markante, geometrische Studio-Schrift für Überschriften (Syne) */
+    --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Lesefreundliche Sans-Serif-Schrift für Mengentext (Plus Jakarta Sans) */
+    --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Emil Kowalskis primäre Ausfederung für UI-Interaktionen */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    /* Natürliche Bewegungskurve für Ein- und Ausblendungen */
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    /* Taktile Federungskurve für interaktive Klicks */
+    --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    /* Schnelle Reaktionszeit für unmittelbares Feedback unter 200ms */
+    --duration-fast: 160ms;
+    /* Ausgewogene Dauer für Bildzooms und Kartenanhebungen */
+    --duration-normal: 240ms;
+    /* Standard-Übergang mit explizit definierten Eigenschaften */
+    --transition-smooth: color var(--duration-fast) ease, opacity var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out);
+    /* Subtiler Tiefenschatten im Mobbin-Stil für Bildkarten */
+    --shadow-card: 0 4px 20px -2px rgba(12, 60, 48, 0.05);
+    /* Erhöhter Schwebeschatten beim Berühren */
+    --shadow-hover: 0 14px 34px -4px rgba(12, 60, 48, 0.12);
+    /* Zarte Konturlinie im Mobbin-Stil zur klaren Abgrenzung auf weißem Grund */
+    --border-card: 1px solid rgba(12, 60, 48, 0.08);
+    /* Maximale Seitenbreite für perfekten Weißraum und exakte Zentrierung auf allen Bildschirmen */
+    --max-width: 880px;
+}
+
+/* ==========================================================================
+   RESET & GRUNDLEGENDE EINSTELLUNGEN
+   ========================================================================== */
+/* Entfernt Standardränder aller Elemente und setzt einheitliches Box-Modell */
+*, *::before, *::after {
+    margin: 0; /* Entfernt Standard-Außenabstand */
+    padding: 0; /* Entfernt Standard-Innenabstand */
+    box-sizing: border-box; /* Polsterung und Rahmen zählen zur Gesamtbreite */
+}
+
+/* Weiches Scrollverhalten für seiteninterne Anker-Links */
+html {
+    scroll-behavior: smooth; /* Sanfte Scroll-Bewegung */
+    color-scheme: light; /* Teilt dem Browser mit, dass ein helles Design aktiv ist */
+}
+
+/* Body-Styling für das helle, minimalistische Portfolio */
+body {
+    background-color: var(--bg-primary); /* Weißer Hintergrund */
+    color: var(--text-primary); /* Dunkle Schrift */
+    font-family: var(--font-main); /* Schlichte Sans-Serif-Typografie */
+    line-height: 1.6; /* Angenehmer Zeilenabstand für beste Lesbarkeit */
+    -webkit-font-smoothing: antialiased; /* Optimierte Schriftglättung für Webkit */
+    -moz-osx-font-smoothing: grayscale; /* Schriftglättung für Firefox auf macOS */
+    text-rendering: optimizeLegibility; /* Hochwertiges Schrift-Rendering für exaktes Kerning */
+    overflow-x: hidden; /* Verhindert horizontales Ausbrechen */
+    min-height: 100vh; /* Mindestens volle Bildschirmhöhe */
+}
+
+/* Grundlegendes Link-Verhalten */
+a {
+    color: inherit; /* Textfarbe erben */
+    text-decoration: none; /* Keine standardmäßige Unterstreichung */
+    transition: var(--transition-smooth); /* Flüssiger Übergang */
+}
+
+/* Barrierefreier, edler Tastatur-Fokusring im Impeccable-Standard */
+:focus-visible {
+    outline: 2px solid var(--color-accent); /* Smaragdgrüner Tastatur-Fokusring */
+    outline-offset: 3px; /* 3px Abstand für angenehmes Luftholen */
+    border-radius: 3px; /* Zarte Abrundung der Fokusecken */
+}
+
+/* Schlanke, unaufdringliche Bildlaufleiste im Impeccable-System */
+::-webkit-scrollbar {
+    width: 8px; /* Schlanke Breite */
+    height: 8px; /* Schlanke Höhe */
+}
+
+/* Transparenter Hintergrund der Bildlaufleiste */
+::-webkit-scrollbar-track {
+    background: transparent; /* Versteckt die Spur */
+}
+
+/* Subtil abgetönter Piniengrün-Schieberegler */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(12, 60, 48, 0.18); /* Zarter Grünton */
+    border-radius: 9999px; /* Sanft abgerundete Ecken */
+}
+
+/* Lebendiger Schieberegler beim Überfahren mit der Maus */
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(12, 60, 48, 0.35); /* Kräftigerer Ton */
+}
+
+/* Globale Typografie-Regel für alle Überschriften im tiefen Waldgrün (#0c3c30) */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    font-family: var(--font-display); /* Markante Syne-Schriftart */
+}
+
+/* Edle Textauswahl in Smaragdgrün (#084A24) mit weißer Schrift */
+*::selection {
+    background-color: var(--color-accent); /* Smaragdgrüner Auswahl-Hintergrund #084A24 */
+    color: #ffffff; /* Strahlend weiße Schrift bei Markierung */
+}
+
+/* Bilder standardmäßig bündig und responsiv einbinden */
+img {
+    max-width: 100%; /* Passt sich der Containerbreite an */
+    height: auto; /* Erhält das Seitenverhältnis */
+    display: block; /* Verhindert Leerraum unterhalb von Bildern */
+}
+
+/* ==========================================================================
+   LAYOUT-CONTAINER
+   ========================================================================== */
+/* Zentrierter Seitenrahmen mit gleichmäßigen Rändern */
+.container, header, main, footer, .site-header, .site-footer {
+    max-width: var(--max-width); /* Maximale Breite auf 880px begrenzt für edlen Weißraum */
+    margin-left: auto; /* Automatische Zentrierung links */
+    margin-right: auto; /* Automatische Zentrierung rechts */
+    padding-left: clamp(1.25rem, 4vw, 2.5rem); /* Flexibler linker Innenabstand */
+    padding-right: clamp(1.25rem, 4vw, 2.5rem); /* Flexibler rechter Innenabstand */
+    width: 100%; /* Volle Breite */
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION (Clean, frosted glass im Mobbin-Stil)
+   ========================================================================== */
+/* Klebrige Kopfzeile im veredelten Frosted-Glass-Stil */
+.site-header {
+    position: sticky; /* Bleibt beim Scrollen oben sichtbar */
+    top: 0; /* Direkt an der oberen Kante */
+    z-index: 100; /* Liegt über dem Inhalt */
+    display: flex; /* Flexbox für links-rechts Aufteilung */
+    justify-content: space-between; /* Logo links, Navigation rechts */
+    align-items: center; /* Vertikal zentrieren */
+    padding-top: 1.25rem; /* Oberer Innenabstand */
+    padding-bottom: 1.25rem; /* Unterer Innenabstand */
+    background-color: rgba(255, 255, 255, 0.88); /* Hochwertige semi-transparente Oberfläche */
+    backdrop-filter: saturate(180%) blur(16px); /* Kristallklarer Unschärfe-Effekt */
+    -webkit-backdrop-filter: saturate(180%) blur(16px); /* Optimale Safari Unterstützung */
+    border-bottom: 1px solid rgba(12, 60, 48, 0.06); /* Haardünne, edle Kante */
+    transition: border-color var(--duration-fast) ease; /* Flüssiger Randwechsel */
+}
+
+/* Logo-Block */
+.logo {
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Name oben, Studiengang darunter */
+    gap: 0.1rem; /* Sehr dezenter Zeilenabstand */
+}
+
+/* Name im Logo */
+.logo a, .logo-title {
+    font-family: var(--font-display); /* Markante Syne-Schrift */
+    font-size: 1.15rem; /* Klare Schriftgröße */
+    font-weight: 700; /* Kräftige Schrift */
+    letter-spacing: -0.02em; /* Leicht engerer Buchstabenabstand */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Weicher Farbübergang */
+    display: inline-block; /* Für transform-Skalierung */
+}
+
+/* Unterzeile des Logos */
+.logo-subtitle {
+    font-size: 0.75rem; /* Zierliche Textgröße */
+    color: var(--color-olive); /* Moosgrün #555934 */
+    letter-spacing: 0.02em; /* Leicht geöffnet */
+}
+
+/* Navigations- und Kontaktbereich im Header */
+.header-actions {
+    display: flex; /* Horizontale Leiste */
+    align-items: center; /* Vertikal mittig */
+    gap: 2rem; /* Großzügiger Abstand zwischen Menü und Kontakt */
+}
+
+/* Liste der Navigationspunkte */
+nav ul {
+    display: flex; /* Horizontale Anordnung */
+    list-style: none; /* Keine Aufzählungspunkte */
+    gap: 1.5rem; /* Abstand zwischen den Links */
+    align-items: center; /* Mittig */
+}
+
+/* Einzelne Navigations-Links */
+nav a {
+    font-size: 0.875rem; /* Kompakte Lesegröße */
+    font-weight: 500; /* Mittlere Schriftstärke */
+    color: var(--text-secondary); /* Angenehmes Waldgrün */
+    transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Schneller Übergang */
+    display: inline-block; /* Für taktile Skalierung */
+}
+
+/* Schlichter Text-Link für Kontakt und Zurück-Links (OHNE Blasen-Rahmen / Pill) */
+.header-contact-link, .pill-btn, .back-link {
+    font-size: 0.875rem; /* Gleiche Schriftgröße */
+    font-weight: 600; /* Halb-Fett */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    display: inline-flex; /* Inline-Flex für Text und Pfeil */
+    align-items: center; /* Vertikal mittig */
+    gap: 0.3rem; /* Abstand zum Pfeil */
+    background: none; /* Kein Hintergrund / Keine Blase */
+    border: none; /* Kein Rand */
+    cursor: pointer; /* Zeiger */
+    transition: color var(--duration-fast) ease, opacity var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
+}
+
+/* Container für den Live-Projekt-Button */
+.live-link-container {
+    margin-top: 1.5rem; /* Abstand nach oben */
+    margin-bottom: 1rem; /* Abstand nach unten */
+}
+
+/* Eleganter Live-Website-Link (ohne Pfeil, puristisch unterstrichen) */
+.live-btn {
+    display: inline-flex; /* Inline-Flex */
+    align-items: center; /* Mittig */
+    font-size: 0.95rem; /* Klare Schriftgröße */
+    font-weight: 700; /* Kräftige Schrift */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    border-bottom: 2px solid var(--color-accent); /* Akzent-Unterstreichung in Smaragdgrün */
+    padding-bottom: 0.25rem; /* Innenabstand unten */
+    cursor: pointer; /* Zeiger */
+    transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
+}
+
+/* Taktiles Klick-Feedback nach Emil Kowalski für interaktive Links & Buttons */
+.logo a:active, .logo-title:active,
+.header-contact-link:active, .pill-btn:active, .back-link:active,
+.live-btn:active, .filter-btn:active, nav a:active {
+    transform: scale(0.97); /* Gibt sofortiges spürbares Feedback beim Klick */
+}
+
+/* ==========================================================================
+   HERO-SEKTION (Großzügiger Weißraum, ruhige Eleganz)
+   ========================================================================== */
+/* Container für das Intro */
+.hero {
+    padding-top: clamp(4rem, 8vw, 7rem); /* Viel edler Weißraum nach oben */
+    padding-bottom: clamp(3rem, 6vw, 5.5rem); /* Großzügiger Abstand nach unten */
+    border-bottom: none; /* Keine Trennlinie zwischen Hero und Projekten */
+    max-width: var(--max-width); /* Bündig mit dem zentrierten Raster */
+    margin-left: auto; /* Exakt zentriert links */
+    margin-right: auto; /* Exakt zentriert rechts */
+    width: 100%; /* Volle Breite */
+}
+
+/* Klare, schnörkellose Hauptüberschrift mit Syne */
+.hero h1 {
+    font-family: var(--font-display); /* Markante Syne-Schriftart */
+    font-size: clamp(2.3rem, 5.8vw, 4.2rem); /* Flüssig skalierende Überschrift */
+    font-weight: 700; /* Fetter Schnitt */
+    line-height: 1.12; /* Kompakter, schöner Durchschuss */
+    letter-spacing: -0.035em; /* Typografisch dicht gesperrt */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    max-width: 920px; /* Begrenzte Zeilenbreite */
+    margin-bottom: 1.5rem; /* Abstand zum Fließtext */
+}
+
+/* Subtiler zweiter Teil der Überschrift in lebendigem Waldgrün */
+.hero h1 span.highlight {
+    color: var(--color-accent); /* Sattes Waldgrün #084A24 */
+    font-weight: 500; /* Schöner Schnitt */
+}
+
+/* Natürlicher Einleitungstext */
+.hero-bio {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem); /* Angenehme Lesegröße */
+    color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
+    max-width: 680px; /* Lesbare Zeilenlänge */
+    line-height: 1.6; /* Durchlüfteter Zeilenabstand */
+}
+
+/* ==========================================================================
+   FILTER-LEISTE (Rein typografisch – OHNE Blasen, Kapseln oder Pill-Rahmen)
+   ========================================================================== */
+/* Kopfbereich der Projektsektion */
+.portfolio-header {
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Titel links, Filter rechts */
+    align-items: center; /* Vertikal zentriert */
+    flex-wrap: wrap; /* Bricht bei kleinen Displays um */
+    gap: 1.25rem; /* Abstand */
+    margin-top: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger Weißraum nach oben */
+    margin-bottom: 2.5rem; /* Abstand zum Raster */
+    max-width: var(--max-width); /* Bündig mit dem zentrierten Raster */
+    margin-left: auto; /* Exakt zentriert links */
+    margin-right: auto; /* Exakt zentriert rechts */
+    width: 100%; /* Volle Breite */
+}
+
+/* Sektionstitel "Ausgewählte Arbeiten" */
+.portfolio-header h2 {
+    font-family: var(--font-display); /* Syne-Schrift */
+    font-size: clamp(1.4rem, 2.4vw, 2rem); /* Typo-Größe */
+    font-weight: 700; /* Kräftig */
+    letter-spacing: -0.02em; /* Leicht eng */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+}
+
+/* Container für reine Text-Filter (jarcos.work Stil ohne Blasen) */
+.filter-bar {
+    display: flex; /* Horizontale Reihe */
+    flex-wrap: wrap; /* Zeilenumbruch */
+    gap: 1.5rem; /* Großzügiger Textabstand */
+    align-items: center; /* Mittig */
+}
+
+/* Einzelner Filter-Knopf als reiner Text-Link (KEINE Blase) */
+.filter-btn {
+    background: none; /* Kein Hintergrund */
+    border: none; /* Kein Rand / Keine Blase */
+    color: var(--color-olive); /* Moosgrün #555934 im Ruhezustand */
+    padding: 0.25rem 0; /* Kleiner Innenabstand oben/unten */
+    font-family: var(--font-main); /* Schriftart */
+    font-size: 0.875rem; /* Kompakte Schrift */
+    font-weight: 500; /* Mittlere Stärke */
+    cursor: pointer; /* Zeiger */
+    position: relative; /* Für die feine Unterstreichung */
+    transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
+}
+
+/* Aktiver Filter-Text: Tiefes Waldgrün mit Smaragdgrün-Linie */
+.filter-btn.active {
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    font-weight: 600; /* Etwas stärkere Schrift */
+    border-bottom: 2px solid var(--color-accent); /* Akzentlinie in #084A24 */
+}
+
+/* ==========================================================================
+   PROJEKT-RASTER / GRID (Weiß, puristisch, hohe Bildqualität im Mobbin-Stil)
+   ========================================================================== */
+/* CSS-Grid für die Arbeiten (Kompakter für reichlich Weißraum im Editorial-Stil) */
+.portfolio-grid {
+    display: grid; /* Grid-System */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Kompaktere Kacheln */
+    gap: clamp(2.5rem, 5vw, 4.5rem); /* Viel freier Weißraum zwischen den Arbeiten */
+    margin-bottom: clamp(5rem, 9vw, 8.5rem); /* Großzügiger Freiraum nach unten */
+    max-width: var(--max-width); /* Begrenzte Gesamtbreite für viel eleganten Weißraum an den Seiten */
+    margin-left: auto; /* Exakt zentriert links */
+    margin-right: auto; /* Exakt zentriert rechts */
+    width: 100%; /* Volle Breite */
+}
+
+/* Speziell für die Startseite: Harmonisches, kompaktes 2-Spalten-Raster */
+#projectGrid {
+    max-width: var(--max-width); /* Kompakt für maximalen Weißraum */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 wohlproportionierte Spalten */
+    gap: clamp(2.5rem, 5.5vw, 4.5rem); /* Großzügiger Zwischenraum */
+    margin-left: auto; /* Exakt zentriert links */
+    margin-right: auto; /* Exakt zentriert rechts */
+    width: 100%; /* Volle Breite */
+}
+
+/* Freistehendes Projekt-Element direkt auf weißem Grund (KEINE Box, KEIN Rand) */
+.project-card {
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Bild oben, Beschriftung unten */
+    background: transparent; /* Kein Kasten-Hintergrund, liegt frei auf Weiß */
+    border: none; /* Kein Rand */
+    border-radius: 0; /* Keine Kasten-Rundung */
+    text-decoration: none; /* Keine Unterstreichung */
+    color: inherit; /* Farbe erben */
+}
+
+/* Nur anklickbare Projektkarten (a-Tags) erhalten Zeiger und flüssige Bewegung */
+a.project-card {
+    transition: transform var(--duration-normal) var(--ease-out); /* Weiche, spürbare Bewegung nach Emil Kowalski */
+    cursor: pointer; /* Zeiger nur bei echten Links */
+}
+
+/* Taktiler Druckzustand für Projektkarten */
+a.project-card:active {
+    transform: scale(0.985) translateY(-2px); /* Unmittelbare physische Rückmeldung */
+}
+
+/* Nicht anklickbare Kacheln bleiben ruhig auf Position */
+div.project-card {
+    cursor: default; /* Normaler Pfeilzeiger, da nicht anklickbar */
+}
+
+/* Bild-Bereich im 16:10 Format mit Mobbin-Kantenkontur */
+.project-thumbnail {
+    position: relative; /* Für Positionierungen */
+    width: 100%; /* Volle Breite */
+    aspect-ratio: 16 / 10; /* Klares Seitenverhältnis */
+    background-color: #f6f6f7; /* Sehr heller, sauberer Ladehintergrund */
+    border-radius: 6px; /* Moderner, ruhiger Kantenradius */
+    overflow: hidden; /* Hält das Bild in den Ecken */
+    border: var(--border-card); /* Zarte Kantenkontur im Mobbin-Stil */
+    box-shadow: var(--shadow-card); /* Subtiler Tiefenschatten */
+    transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out), border-color var(--duration-normal) ease; /* Flüssiger Übergang */
+}
+
+/* Das eigentliche Projektbild */
+.project-thumbnail img {
+    width: 100%; /* Volle Breite */
+    height: 100%; /* Volle Höhe */
+    object-fit: cover; /* Proportional füllend */
+    transition: transform var(--duration-normal) var(--ease-out); /* Flüssiger Zoom nach Emil Kowalski */
+    will-change: transform; /* Hardwarebeschleunigung für ruckelfreie Animation */
+}
+
+/* Pfeil oben in der Ecke komplett ausblenden */
+.card-arrow {
+    display: none !important; /* Kein Pfeil mehr */
+}
+
+/* Textbereich bündig unter dem Bild (ohne Kasten-Innenabstand) */
+.project-info {
+    padding: 1rem 0 0 0; /* Bündig mit den Außenkanten des Bildes */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Vertikal */
+    gap: 0.3rem; /* Kleiner Zeilenabstand */
+}
+
+/* Zeile für Kategorie und Semester */
+.project-meta-row {
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Links und rechts */
+    align-items: center; /* Mittig */
+    margin-bottom: 0.2rem; /* Kleiner Abstand zum Titel */
+}
+
+/* Schlichte Text-Kategorie (Modul/Fach in Moosgrün) */
+.category-tag {
+    font-size: 0.75rem; /* Kompakte Schrift */
+    font-weight: 600; /* Halb-Fett */
+    color: var(--color-olive); /* Moosgrün #555934 */
+    text-transform: uppercase; /* Großbuchstaben */
+    letter-spacing: 0.05em; /* Feine Spationierung */
+}
+
+/* Semesterangabe rechts */
+.project-year {
+    font-size: 0.75rem; /* Gleiche Textgröße */
+    color: var(--color-olive); /* Moosgrün #555934 */
+    font-weight: 500; /* Mittlere Stärke */
+}
+
+/* Projekttitel */
+.project-info h3 {
+    font-family: var(--font-display); /* Syne-Schriftart */
+    font-size: 1.2rem; /* Titelgröße */
+    font-weight: 700; /* Kräftig */
+    letter-spacing: -0.015em; /* Leicht eng */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    transition: color var(--duration-fast) ease; /* Weicher Farbübergang */
+}
+
+/* Kurze Projektbeschreibung */
+.project-info p {
+    font-size: 0.875rem; /* Lesegröße */
+    color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
+    line-height: 1.5; /* Gute Zeilenhöhe */
+}
+
+/* ==========================================================================
+   ÜBER-MICH & FÄHIGKEITEN (Reine Typografie – OHNE Skill-Blasen)
+   ========================================================================== */
+/* Über-Mich Sektion mit Überschrift oben drüber */
+.about-section {
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Vertikale Anordnung: Überschrift oben, Inhalt darunter */
+    padding-top: clamp(4rem, 8vw, 7rem); /* Großzügiger oberer Abstand */
+    border-top: none; /* Keine Trennlinie zwischen Projekten und Über-Mich */
+    margin-bottom: clamp(5rem, 10vw, 9rem); /* Großzügiger Weißraum nach unten */
+    max-width: var(--max-width); /* Bündig mit dem zentrierten Layout */
+    margin-left: auto; /* Exakt zentriert links */
+    margin-right: auto; /* Exakt zentriert rechts */
+    width: 100%; /* Volle Breite */
+}
+
+/* Header im Über-Mich Bereich */
+.about-section .portfolio-header {
+    margin-top: 0; /* Verhindert doppelten oberen Abstand */
+    margin-bottom: 2rem; /* Sauberer Abstand zum Fließtext darunter */
+}
+
+/* Rechte Spalte: Fließtext */
+.about-content {
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Vertikal */
+    gap: 1.25rem; /* Absatz-Abstand */
+}
+
+/* Absätze */
+.about-content p {
+    font-size: clamp(1rem, 1.2vw, 1.1rem); /* Lesegröße */
+    color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
+    line-height: 1.65; /* Durchlüftet */
+}
+
+/* Skills-Block */
+.skills-container {
+    margin-top: 0.5rem; /* Abstand nach oben */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Vertikal */
+    gap: 0.4rem; /* Abstand */
+}
+
+/* Überschrift über den Werkzeugen */
+.skills-title {
+    font-size: 0.75rem; /* Klein */
+    text-transform: uppercase; /* Großbuchstaben */
+    letter-spacing: 0.06em; /* Gesperrt */
+    color: var(--color-olive); /* Moosgrün #555934 */
+    font-weight: 600; /* Kräftig */
+}
+
+/* Reiner Text für Werkzeuge & Programme (OHNE Blasen / Pills) */
+.skills-text {
+    font-size: 0.95rem; /* Angenehme Schriftgröße */
+    color: var(--text-secondary); /* Harmonische Fließtextfarbe */
+    line-height: 1.7; /* Gute Zeilenhöhe */
+}
+
+/* ==========================================================================
+   FOOTER (Klar, ruhig & minimalistisch)
+   ========================================================================== */
+/* Footer-Container */
+.site-footer {
+    border-top: none; /* Keine Trennlinie vor dem Footer */
+    padding-top: clamp(4rem, 8vw, 7rem); /* Großzügiger oberer Abstand */
+    padding-bottom: 4rem; /* Unterer Abstand */
+    max-width: var(--max-width); /* Bündig mit dem zentrierten Layout */
+    margin-left: auto; /* Exakt zentriert links */
+    margin-right: auto; /* Exakt zentriert rechts */
+    width: 100%; /* Volle Breite */
+}
+
+/* Kontakt-Bereich */
+.footer-cta {
+    margin-bottom: 1.75rem; /* Abstand zur Mail */
+}
+
+/* Moosgrünes Label über dem Kontakt */
+.footer-cta .cta-label {
+    font-size: 0.75rem; /* Klein */
+    text-transform: uppercase; /* Großbuchstaben */
+    letter-spacing: 0.08em; /* Gesperrt */
+    color: var(--color-olive); /* Moosgrün #555934 */
+    display: block; /* Eigene Zeile */
+    margin-bottom: 0.4rem; /* Abstand */
+}
+
+/* Große Einladung */
+.footer-cta h2 {
+    font-family: var(--font-display); /* Syne-Schriftart */
+    font-size: clamp(1.8rem, 4vw, 3rem); /* Skalierende Größe */
+    font-weight: 700; /* Kräftig */
+    letter-spacing: -0.025em; /* Eng */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+}
+
+/* Große klickbare E-Mail-Adresse */
+.email-link {
+    font-family: var(--font-display); /* Syne-Schriftart */
+    display: inline-flex; /* Inline-Flex */
+    align-items: center; /* Mittig */
+    gap: 0.5rem; /* Abstand */
+    font-size: clamp(1.3rem, 3vw, 2.2rem); /* Große Schriftgröße */
+    font-weight: 700; /* Kräftig */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    border-bottom: 2px solid var(--border-subtle); /* Feine Unterstreichung */
+    padding-bottom: 0.25rem; /* Abstand */
+    margin-bottom: clamp(2.5rem, 5vw, 4rem); /* Abstand nach unten */
+    cursor: pointer; /* Zeiger */
+    transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
+}
+
+/* Taktiler Klick auf die E-Mail-Adresse */
+.email-link:active {
+    transform: scale(0.98); /* Subtile Stauchung beim Anklicken */
+}
+
+/* Untere Zeile (Zeit, Copyright, Social) */
+.footer-bottom-row {
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Links, Mitte, Rechts verteilt */
+    align-items: center; /* Mittig */
+    flex-wrap: wrap; /* Umbruch */
+    gap: 1.25rem; /* Abstand */
+    padding-top: 1.5rem; /* Abstand nach oben */
+    border-top: none; /* Keine Trennlinie vor der Copyright-Zeile */
+    font-size: 0.8rem; /* Kompakte Schrift */
+    color: var(--text-muted); /* Moosgrün #555934 */
+}
+
+/* Lokale Uhrzeit */
+.live-clock {
+    display: flex; /* Flexbox */
+    align-items: center; /* Mittig */
+    gap: 0.4rem; /* Abstand */
+}
+
+/* Social Links */
+.social-links {
+    display: flex; /* Reihe */
+    gap: 1.25rem; /* Abstand */
+}
+
+/* Einzelner Social Link */
+.social-links a {
+    display: inline-block; /* Für taktile Skalierung */
+    transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Übergang */
+}
+
+/* Taktiler Klick auf Social Links */
+.social-links a:active {
+    transform: scale(0.95); /* Schnelle Klick-Stauchung */
+}
+
+/* ==========================================================================
+   DETAILSEITEN
+   ========================================================================== */
+/* Vor-Tag über Kategorieseiten und Projektdetails */
+.hero-tag {
+    font-size: 0.75rem; /* Kompakte Schrift */
+    font-weight: 600; /* Halb-Fett */
+    color: var(--color-olive); /* Moosgrün #555934 */
+    text-transform: uppercase; /* Großbuchstaben */
+    letter-spacing: 0.08em; /* Feine Spationierung */
+    margin-bottom: 0.75rem; /* Abstand zur großen Überschrift */
+    display: inline-block; /* Eigene Zeile */
+}
+
+/* Detailseiten-Hero */
+.project-detail-hero {
+    margin-top: 1rem; /* Abstand */
+    margin-bottom: 2.5rem; /* Abstand */
+}
+
+/* Detail-Galerie */
+.detail-gallery {
+    display: grid; /* Grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Spalten */
+    gap: clamp(2rem, 4vw, 3rem); /* Mehr Abstand */
+    margin-bottom: clamp(4rem, 8vw, 6rem); /* Mehr Abstand nach unten */
+    max-width: var(--max-width); /* Bündig und kompakt für viel Weißraum */
+    margin-left: auto; /* Exakt zentriert links */
+    margin-right: auto; /* Exakt zentriert rechts */
+    width: 100%; /* Volle Breite */
+}
+
+/* Bilder in der Detail-Galerie mit Mobbin-Kantenkontur */
+.detail-gallery img {
+    border-radius: 6px; /* Hochwertiger Radius */
+    border: var(--border-card); /* Zarter Rand verhindert Ausfransen auf weißem Grund */
+    box-shadow: var(--shadow-card); /* Subtile Dreidimensionalität */
+    background-color: #f7f7f8; /* Heller Grund */
+    cursor: default; /* Normaler Mauszeiger */
+}
+
+/* ==========================================================================
+   VIDEO-CONTAINER & STYLES (für Spieleprogrammierung & Video-Arbeiten)
+   ========================================================================== */
+/* Eleganter Video-Rahmen auf dem zentrierten Weißraum */
+.video-wrapper {
+    width: 100%; /* Volle Breite */
+    max-width: var(--max-width); /* Auf Zentrier-Breite begrenzt */
+    margin-top: 1rem; /* Abstand nach oben */
+    margin-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger Abstand nach unten vor dem Footer */
+    background-color: #0c3c30; /* Dunkler Hintergrund im Piniengrün */
+    border-radius: 6px; /* Zarte Abrundung */
+    border: var(--border-card); /* Zarte Außenkante */
+    box-shadow: var(--shadow-card); /* Subtiler Tiefenschatten */
+    overflow: hidden; /* Ecken sauber abschneiden */
+}
+
+/* Video-Element selbst */
+.video-wrapper video {
+    width: 100%; /* Volle Breite */
+    height: auto; /* Erhält das Seitenverhältnis */
+    display: block; /* Verhindert Leerzeilen darunter */
+    border-radius: 6px; /* Bündige Ecken */
+}
+
+/* ==========================================================================
+   HOVER-INTERAKTIONEN (Geschützt für echte Zeigergeräte nach Emil Kowalski)
+   ========================================================================== */
+@media (hover: hover) and (pointer: fine) {
+    /* Hover auf dem Logo */
+    .logo a:hover, .logo-title:hover {
+        color: var(--color-accent); /* Wechselt zu Waldgrün #084A24 */
+    }
+
+    /* Hover auf Navigations-Links */
+    nav a:hover {
+        color: var(--color-accent); /* Wird Waldgrün #084A24 */
+    }
+
+    /* Hover auf den Buttons */
+    .header-contact-link:hover, .pill-btn:hover, .back-link:hover {
+        color: var(--color-accent); /* Wechselt zu Waldgrün #084A24 */
+        opacity: 0.85; /* Leichtes Abblenden */
+    }
+
+    /* Hover auf dem Live-Link */
+    .live-btn:hover {
+        color: var(--color-accent); /* Wechselt zu Smaragdgrün #084A24 */
+        border-bottom-color: var(--text-primary); /* Unterstreichung verdunkelt sich */
+    }
+
+    /* Hover auf Filter-Text */
+    .filter-btn:hover {
+        color: var(--color-accent); /* Text wird Waldgrün #084A24 */
+    }
+
+    /* Sanfte Bewegung beim Überfahren nur für anklickbare Links */
+    a.project-card:hover {
+        transform: translateY(-6px); /* Bewegt sich flüssig um 6px nach oben */
+    }
+
+    /* Schwebeschatten und Rahmenakzent auf dem Thumbnail */
+    a.project-card:hover .project-thumbnail {
+        box-shadow: var(--shadow-hover); /* Tiefer Schwebeschatten */
+        border-color: rgba(12, 60, 48, 0.16); /* Feine Kantenbetonung */
+    }
+
+    /* Subtiler Bildzoom bei Mausberührung nur bei anklickbaren Links */
+    a.project-card:hover .project-thumbnail img {
+        transform: scale(1.02); /* Ruhiger 2% Zoom nach Emil Kowalski */
+    }
+
+    /* Hover auf Kachel: Projekttitel leuchtet nur bei anklickbaren Links auf */
+    a.project-card:hover .project-info h3 {
+        color: var(--color-accent); /* Sattes Waldgrün #084A24 */
+    }
+
+    /* Hover auf der E-Mail */
+    .email-link:hover {
+        color: var(--color-accent); /* Wechselt zu Waldgrün #084A24 */
+        border-bottom-color: var(--color-accent); /* Linie wird Waldgrün #084A24 */
+    }
+
+    /* Hover auf Social Links */
+    .social-links a:hover {
+        color: var(--color-accent); /* Waldgrün #084A24 */
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Mobile & Tablets)
+   ========================================================================== */
+/* Bildschirme unter 850px */
+@media (max-width: 850px) {
+    /* Portfolio Header stapelt Titel und Filter */
+    .portfolio-header {
+        flex-direction: column; /* Untereinander */
+        align-items: flex-start; /* Links */
+    }
+}
+
+/* Bildschirme unter 768px (Smartphones) */
+@media (max-width: 768px) {
+    /* Header bricht um */
+    .site-header {
+        flex-wrap: wrap; /* Mehrzeilig */
+        gap: 0.75rem; /* Abstand */
+    }
+    
+    /* Navigation und Kontakt verteilen */
+    .header-actions {
+        width: 100%; /* Volle Breite */
+        justify-content: space-between; /* Links/Rechts */
+        gap: 1rem; /* Abstand */
+    }
+    
+    /* Navigationslinks mit kleinerem Abstand */
+    nav ul {
+        gap: 1rem; /* Kompakt */
+    }
+    
+    /* Projekt-Grid wird mobil einspaltig und sauber zentriert */
+    .portfolio-grid, #projectGrid {
+        grid-template-columns: 1fr; /* Eine Spalte */
+        gap: 2.25rem; /* Ausgewogener Abstand */
+        width: 100%; /* Volle Breite */
+        margin-left: auto; /* Zentriert */
+        margin-right: auto; /* Zentriert */
+    }
+    
+    /* Footer-Abschlusszeile vertikal stapeln */
+    .footer-bottom-row {
+        flex-direction: column; /* Untereinander */
+        align-items: flex-start; /* Links */
+        gap: 0.75rem; /* Abstand */
+    }
+}

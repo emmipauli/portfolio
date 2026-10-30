@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über uns — Malzan MediaWorks</title>
+  <meta name="description" content="Kleines, spezialisiertes Team aus Schleswig-Holstein. Persönlich, durchdacht, verlässlich.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <script src="../js/site.js" defer></script>
+</head>
+<body class="syntax-flow-up">
+<nav class="nav" id="main-nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/logo-13.svg" alt="Malzan MediaWorks" class="logo-light">
+    <img src="../assets/logo-15.svg" alt="Malzan MediaWorks" class="logo-dark">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#portfolio">Portfolio</a></li>
+    <li><a href="../pages/leistungen.html">Leistungen</a></li>
+    <li><a href="../pages/ueber-uns.html"class="active">Über uns</a></li>
+    <li><a href="../pages/referenzen.html">Referenzen</a></li>
+    <li><a href="../pages/kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Theme wechseln">
+      <span class="t-icon">◑</span>
+    </button>
+    <a href="../pages/kontakt.html" class="btn btn-primary" style="padding:0.5rem 1.3rem">Projekt anfragen</a>
+  </div>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="../index.html#portfolio" onclick="toggleMob()">Portfolio</a>
+  <a href="../pages/leistungen.html" onclick="toggleMob()">Leistungen</a>
+  <a href="../pages/ueber-uns.html" onclick="toggleMob()">Über uns</a>
+  <a href="../pages/referenzen.html" onclick="toggleMob()">Referenzen</a>
+  <a href="../pages/kontakt.html" onclick="toggleMob()">Kontakt</a>
+  <a href="../pages/kontakt.html" onclick="toggleMob()">→ Projekt anfragen</a>
+</div>
+
+<div class="breadcrumb">
+  <a href="../index.html">Start</a> <span style="color:var(--gray-30)">/</span>
+  <span>Über uns</span>
+</div>
+
+<div class="page-hero">
+  <span class="label">Über uns</span>
+  <h1>Digitale Lösungen aus einer Hand.</h1>
+  <p>Wir sind ein kleines, spezialisiertes Team aus Schleswig-Holstein — mit direktem Draht zu jedem Kunden. Kein Agentur-Overhead, keine wechselnden Projektmanager.</p>
+</div>
+
+<!-- Split: Bild + Text -->
+<section class="about-split">
+  <!-- BILD: assets/images/about.jpg -->
+  <div class="about-img-col"></div>
+  <div class="about-text-col">
+    <span class="label">Unsere Geschichte</span>
+    <h2 style="margin-bottom:1.5rem">Wer wir sind</h2>
+    <p>Malzan MediaWorks entstand aus dem Wunsch heraus, digitale Projekte so umzusetzen, wie wir es uns selbst als Kunden wünschen würden: persönlich, transparent und mit echtem Mehrwert.</p>
+    <p>Von der ersten Idee bis zum laufenden System begleitet Sie ein fester Ansprechpartner. Kommunikation auf Augenhöhe — schnell, ehrlich, verbindlich.</p>
+    <p>Wir glauben, dass gute Softwareentwicklung mehr ist als sauberer Code. Es geht darum, die richtigen Probleme zu lösen — und das erfordert echtes Verständnis für das Unternehmen dahinter.</p>
+    <div class="pills">
+      <span class="pill">Next.js</span><span class="pill">React</span>
+      <span class="pill">Supabase</span><span class="pill">n8n</span>
+      <span class="pill">Claude API</span><span class="pill">Blender</span>
+      <span class="pill">Tailwind CSS</span><span class="pill">DSGVO-konform</span>
+      <span class="pill">EU-Infrastruktur</span><span class="pill">TypeScript</span>
+    </div>
+  </div>
+</section>
+<div class="wave-sep wave-bg-surf" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C200,0 320,40 480,40 C640,40 800,40 960,40 C1120,40 1240,80 1440,80 L1440,80 L0,80 Z"/>
+  </svg>
+</div>
+
+<!-- Werte -->
+<section class="section syntax-encapsulate" style="background:var(--surface);text-align:center">
+  <span class="label">Unsere Werte</span>
+  <div style="display:flex;justify-content:center;gap:5rem;flex-wrap:wrap;margin-bottom:2.5rem">
+    <div style="font-family:var(--font-h);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--green)">PERSÖNLICH</div>
+    <div style="font-family:var(--font-h);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--cyan)">DURCHDACHT</div>
+    <div style="font-family:var(--font-h);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--gold)">VERLÄSSLICH</div>
+  </div>
+  <p style="max-width:580px;margin:0 auto">Die Arbeitsweise und das Auftreten von Malzan Mediaworks basieren auf diesen Werten. Das Erscheinungsbild ist professionell und schlicht — der Inhalt soll immer im Fokus stehen.</p>
+</section>
+<div class="wave-sep wave-surf-bg" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C200,0 320,40 480,40 C640,40 800,40 960,40 C1120,40 1240,80 1440,80 L1440,80 L0,80 Z"/>
+  </svg>
+</div>
+
+<!-- Team -->
+<section class="section">
+  <span class="label">Das Team</span>
+  <h2 style="margin-bottom:3rem">Menschen hinter dem Code</h2>
+<div class="team-grid" style="grid-template-columns: 420px; justify-content: left; border: none;">
+  <div class="team-card">
+    <div class="team-img team-img-1" style="aspect-ratio: 3/2"></div>
+    <div class="team-body" style="padding: 2rem 2.5rem">
+      <h3>Patric Malzan</h3>
+      <div class="team-role">Gründer &amp; Geschäftsführer</div>
+      <p>Spezialisiert auf Web-Apps, Systemarchitektur und KI-Integration. Persönlicher Ansprechpartner für alle Projekte.</p>
+    </div>
+  </div>
+</div>
+</section>
+<div class="wave-sep wave-bg-black" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C200,0 320,40 480,40 C640,40 800,40 960,40 C1120,40 1240,80 1440,80 L1440,80 L0,80 Z"/>
+  </svg>
+</div>
+
+<!-- Zahlen -->
+<section class="section syntax-encapsulate syntax-dark" style="background:var(--black);padding:5rem 7vw">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;border:1px solid #2a2a2a">
+    <div style="padding:2.5rem 2rem;border-right:1px solid #2a2a2a">
+      <div style="font-family:var(--font-h);font-size:2.8rem;color:var(--green);font-weight:700;line-height:1">100%</div>
+      <div style="font-size:0.8rem;color:var(--gray-50);margin-top:0.5rem;letter-spacing:0.08em;text-transform:uppercase">Remote-fähig</div>
+    </div>
+    <div style="padding:2.5rem 2rem;border-right:1px solid #2a2a2a">
+      <div style="font-family:var(--font-h);font-size:2.8rem;color:var(--cyan);font-weight:700;line-height:1">&lt;24h</div>
+      <div style="font-size:0.8rem;color:var(--gray-50);margin-top:0.5rem;letter-spacing:0.08em;text-transform:uppercase">Antwortzeit</div>
+    </div>
+    <div style="padding:2.5rem 2rem;border-right:1px solid #2a2a2a">
+      <div style="font-family:var(--font-h);font-size:2.8rem;color:var(--gold);font-weight:700;line-height:1">1:1</div>
+      <div style="font-size:0.8rem;color:var(--gray-50);margin-top:0.5rem;letter-spacing:0.08em;text-transform:uppercase">Fester Ansprechpartner</div>
+    </div>
+    <div style="padding:2.5rem 2rem">
+      <div style="font-family:var(--font-h);font-size:2.8rem;color:var(--white);font-weight:700;line-height:1">EU</div>
+      <div style="font-size:0.8rem;color:var(--gray-50);margin-top:0.5rem;letter-spacing:0.08em;text-transform:uppercase">Infrastruktur &amp; DSGVO</div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="../assets/logo-15.svg" alt="Malzan MediaWorks"></div>
+    <nav class="footer-links">
+      <a href="../index.html#portfolio">Portfolio</a>
+      <a href="../pages/leistungen.html">Leistungen</a>
+      <a href="../pages/ueber-uns.html">Über uns</a>
+      <a href="../pages/referenzen.html">Referenzen</a>
+      <a href="../pages/kontakt.html">Kontakt</a>
+    </nav>
+    <span class="footer-copy">© Malzan MediaWorks — Alle Rechte vorbehalten</span>
+  </div>
+</footer>
+</body>
+</html>

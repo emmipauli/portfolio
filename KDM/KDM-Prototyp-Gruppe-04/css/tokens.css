@@ -1,0 +1,56 @@
+/* ═══════════════════════════════════════════════════════════════
+   MALZAN MEDIAWORKS — DESIGN TOKENS
+   Styleguide KdM05 — alle Werte zentral hier pflegen
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+:root {
+  /* ── PRIMÄRFARBEN ──────────────────────────────── */
+  --black:   #000000;
+  --white:   #ffffff;
+
+  /* ── SEKUNDÄRFARBEN (Akzente) ─────────────────── */
+  --green:   #63bdc7;
+  --green-lt:#32b8c7;
+  --cyan:    #57ad8b;
+  --cyan-lt: #2bad79;
+  --gold:    #c99f65;
+  --gold-lt: #c98a32;
+
+  /* ── TERTIÄRFARBEN (Grau) ─────────────────────── */
+  --gray-70: #8cc1c8;
+  --gray-50: #b3c6ca;
+  --gray-30: #9d9d9c;
+  --gray-bg: #f5f5f5;
+
+  /* ── LIGHT MODE (Standard) ────────────────────── */
+  --bg:       var(--white);
+  --surface:  var(--gray-bg);
+  --card-bg:  var(--white);
+  --border:   var(--gray-30);
+  --text:     var(--black);
+  --text-body:var(--gray-70);
+  --text-sub: var(--gray-50);
+  --nav-bg:   rgba(255,255,255,0.94);
+
+  /* ── TYPOGRAFIE ───────────────────────────────── */
+  --font-h:  'Kaisei Opti', Georgia, serif;
+  --font-b:  'Source Sans 3', 'Helvetica Neue', sans-serif;
+
+  /* ── SONSTIGES ────────────────────────────────── */
+  --t: 0.2s ease;
+  --nav-h: 72px;
+}
+
+/* ── DARK MODE ────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg:       #1d1d1b;
+  --surface:  #2a2a28;
+  --card-bg:  #333331;
+  --border:   #3d3d3b;
+  --text:     #ffffff;
+  --text-body:#c6c6c6;
+  --text-sub: #9d9d9c;
+  --nav-bg:   rgba(42,42,40,0.96);
+}

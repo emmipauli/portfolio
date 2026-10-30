@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Malzan MediaWorks</title>
+  <meta name="description" content="Projekt anfragen oder einfach Hallo sagen — wir melden uns persönlich.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <script src="../js/site.js" defer></script>
+</head>
+<body class="syntax-end-return">
+<nav class="nav" id="main-nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/logo-13.svg" alt="Malzan MediaWorks" class="logo-light">
+    <img src="../assets/logo-15.svg" alt="Malzan MediaWorks" class="logo-dark">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#portfolio">Portfolio</a></li>
+    <li><a href="../pages/leistungen.html">Leistungen</a></li>
+    <li><a href="../pages/ueber-uns.html">Über uns</a></li>
+    <li><a href="../pages/referenzen.html">Referenzen</a></li>
+    <li><a href="../pages/kontakt.html"class="active">Kontakt</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Theme wechseln">
+      <span class="t-icon">◑</span>
+    </button>
+    <a href="../pages/kontakt.html" class="btn btn-primary" style="padding:0.5rem 1.3rem">Projekt anfragen</a>
+  </div>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="../index.html#portfolio" onclick="toggleMob()">Portfolio</a>
+  <a href="../pages/leistungen.html" onclick="toggleMob()">Leistungen</a>
+  <a href="../pages/ueber-uns.html" onclick="toggleMob()">Über uns</a>
+  <a href="../pages/referenzen.html" onclick="toggleMob()">Referenzen</a>
+  <a href="../pages/kontakt.html" onclick="toggleMob()">Kontakt</a>
+  <a href="../pages/kontakt.html" onclick="toggleMob()">→ Projekt anfragen</a>
+</div>
+
+<div class="breadcrumb">
+  <a href="../index.html">Start</a> <span style="color:var(--gray-30)">/</span>
+  <span>Kontakt</span>
+</div>
+
+<div class="page-hero">
+  <span class="label">Kontakt</span>
+  <h1>Wir hören zu.</h1>
+  <p>Noch unsicher, wo der Hebel liegt? Kein Problem — schreiben Sie uns einfach, was Sie beschäftigt. Wir melden uns persönlich innerhalb von 24 Stunden.</p>
+</div>
+
+<section class="kontakt-split" style="border-bottom:1px solid var(--border)">
+
+  <div class="k-form-col">
+    <span class="label">Nachricht senden</span>
+    <h2 style="margin-bottom:2rem">Projekt anfragen</h2>
+    <form class="k-form" id="contact-form" onsubmit="submitForm(event)">
+      <div class="f-row">
+        <div class="f-field">
+          <label class="f-label">Vorname</label>
+          <input type="text" class="f-input" placeholder="Max" required>
+        </div>
+        <div class="f-field">
+          <label class="f-label">Nachname</label>
+          <input type="text" class="f-input" placeholder="Mustermann">
+        </div>
+      </div>
+      <div class="f-field">
+        <label class="f-label">E-Mail</label>
+        <input type="email" class="f-input" placeholder="max@beispiel.de" required>
+      </div>
+      <div class="f-field">
+        <label class="f-label">Firma (optional)</label>
+        <input type="text" class="f-input" placeholder="Muster GmbH">
+      </div>
+      <div class="f-field">
+        <label class="f-label">Art des Projekts</label>
+        <select class="f-select">
+          <option value="">Bitte wählen…</option>
+          <option>Web-App / Plattform</option>
+          <option>Automatisierung / KI</option>
+          <option>App-Entwicklung</option>
+          <option>3D / Visualisierung</option>
+          <option>Wartung / Support</option>
+          <option>Beratung / Konzept</option>
+          <option>Sonstiges</option>
+        </select>
+      </div>
+      <div class="f-field">
+        <label class="f-label">Ihre Nachricht</label>
+        <textarea class="f-input" rows="5" placeholder="Was beschäftigt Sie? Je mehr Details, desto besser können wir einschätzen wie wir helfen können." required></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="k-info-col">
+    <h3>Direkt erreichen</h3>
+    <p>Wir melden uns persönlich und finden gemeinsam heraus, wie wir Ihnen helfen können. Antwort garantiert innerhalb von 24 Stunden.</p>
+    <div class="c-items">
+      <div class="c-item">
+        <span class="c-icon">✉</span>
+        <div><div class="c-lbl">E-Mail</div><div class="c-val">hallo@malzan-mediaworks.com</div></div>
+      </div>
+      <div class="c-item">
+        <span class="c-icon" style="color:var(--gold)">◎</span>
+        <div><div class="c-lbl">Antwortzeit</div><div class="c-val">&lt; 24 Stunden</div></div>
+      </div>
+      <div class="c-item">
+        <span class="c-icon" style="color:var(--green)">⬡</span>
+        <div><div class="c-lbl">Standort</div><div class="c-val">Schleswig-Holstein — Remote bundesweit</div></div>
+      </div>
+      <div class="c-item">
+        <span class="c-icon" style="color:var(--cyan)">◈</span>
+        <div><div class="c-lbl">Erstes Gespräch</div><div class="c-val">Kostenlos &amp; unverbindlich</div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;padding:2rem;background:var(--bg);border:1px solid var(--border)">
+      <div class="label" style="margin-bottom:0.6rem">Gut zu wissen</div>
+      <p style="font-size:0.9rem">Für neue Projekte bitte kurz beschreiben: Was soll gebaut werden, wer sind die Nutzer, und in welchem Zeitrahmen? Das spart Zeit im ersten Gespräch.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wave-sep wave-bg-black" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C200,0 320,40 480,40 C640,40 800,40 960,40 C1120,40 1240,80 1440,80 L1440,80 L0,80 Z"/>
+  </svg>
+</div>
+<div class="toast" id="toast">✓ Nachricht gesendet — wir melden uns bald!</div>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  document.getElementById('contact-form').reset();
+  setTimeout(() => t.classList.remove('show'), 4000);
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="../assets/logo-15.svg" alt="Malzan MediaWorks"></div>
+    <nav class="footer-links">
+      <a href="../index.html#portfolio">Portfolio</a>
+      <a href="../pages/leistungen.html">Leistungen</a>
+      <a href="../pages/ueber-uns.html">Über uns</a>
+      <a href="../pages/referenzen.html">Referenzen</a>
+      <a href="../pages/kontakt.html">Kontakt</a>
+    </nav>
+    <span class="footer-copy">© Malzan MediaWorks — Alle Rechte vorbehalten</span>
+  </div>
+</footer>
+</body>
+</html>

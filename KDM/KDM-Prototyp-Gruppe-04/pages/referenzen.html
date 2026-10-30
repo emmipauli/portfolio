@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Referenzen — Malzan MediaWorks</title>
+  <meta name="description" content="Ausgewählte Projekte — echte Lösungen für echte Unternehmen.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <script src="../js/site.js" defer></script>
+</head>
+<body class="syntax-asymmetric">
+<nav class="nav" id="main-nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/logo-13.svg" alt="Malzan MediaWorks" class="logo-light">
+    <img src="../assets/logo-15.svg" alt="Malzan MediaWorks" class="logo-dark">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#portfolio">Portfolio</a></li>
+    <li><a href="../pages/leistungen.html">Leistungen</a></li>
+    <li><a href="../pages/ueber-uns.html">Über uns</a></li>
+    <li><a href="../pages/referenzen.html"class="active">Referenzen</a></li>
+    <li><a href="../pages/kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Theme wechseln">
+      <span class="t-icon">◑</span>
+    </button>
+    <a href="../pages/kontakt.html" class="btn btn-primary" style="padding:0.5rem 1.3rem">Projekt anfragen</a>
+  </div>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="../index.html#portfolio" onclick="toggleMob()">Portfolio</a>
+  <a href="../pages/leistungen.html" onclick="toggleMob()">Leistungen</a>
+  <a href="../pages/ueber-uns.html" onclick="toggleMob()">Über uns</a>
+  <a href="../pages/referenzen.html" onclick="toggleMob()">Referenzen</a>
+  <a href="../pages/kontakt.html" onclick="toggleMob()">Kontakt</a>
+  <a href="../pages/kontakt.html" onclick="toggleMob()">→ Projekt anfragen</a>
+</div>
+<style>
+.ref-filter-btn.active { border-color: var(--green); color: var(--green); }
+</style>
+
+<div class="breadcrumb">
+  <a href="../index.html">Start</a> <span style="color:var(--gray-30)">/</span>
+  <span>Referenzen</span>
+</div>
+
+<div class="page-hero">
+  <span class="label">Referenzen</span>
+  <h1>Ausgewählte Projekte</h1>
+  <p>Echte Projekte — von der Konzeption bis zum produktionsreifen System. Keine Mockups, keine Demos.</p>
+</div>
+
+<section class="section">
+  <div class="ref-filter">
+    <button class="ref-filter-btn active" onclick="filterRef(this,'all')">Alle</button>
+    <button class="ref-filter-btn" onclick="filterRef(this,'web-app')">Web App</button>
+    <button class="ref-filter-btn" onclick="filterRef(this,'web-design')">Web Design</button>
+    <button class="ref-filter-btn" onclick="filterRef(this,'automatisierung')">Automatisierung</button>
+    <button class="ref-filter-btn" onclick="filterRef(this,'3d')">3D</button>
+  </div>
+
+  <div class="ref-grid" id="ref-grid">
+
+    <div class="ref-card" data-cat="web-app">
+      <!-- BILD: assets/images/ref-1.jpg -->
+      <div class="ref-img ref-img-1"></div>
+      <div class="ref-body">
+        <div class="ref-tag">Web App</div>
+        <h3>Versotec — Digitale Plattform für SHK-Betrieb</h3>
+        <p>SaaS-Plattform mit Kundenportal, Admin-Dashboard, Abo-Verwaltung, automatisiertem E-Mail-System und 3D-Musterhaus. Stripe/PayPal-Integration, Row-Level Security.</p>
+        <div class="ref-tech">
+          <span>Next.js</span><span>Supabase</span><span>Stripe</span><span>Three.js</span>
+        </div>
+        <div class="ref-detail"><a href="#" class="ref-link">Projektdetails →</a></div>
+      </div>
+    </div>
+
+    <div class="ref-card" data-cat="web-design">
+      <!-- BILD: assets/images/ref-2.jpg -->
+      <div class="ref-img ref-img-2"></div>
+      <div class="ref-body">
+        <div class="ref-tag">Web Design</div>
+        <h3>Malzan MediaWorks — Corporate Website</h3>
+        <p>Minimalistisches Dark/Light-Mode Design mit responsivem Layout, Supabase-Backend für Kontaktanfragen und vollständiger Styleguide-Konformität.</p>
+        <div class="ref-tech">
+          <span>HTML/CSS</span><span>JavaScript</span><span>Supabase</span>
+        </div>
+        <div class="ref-detail"><a href="#" class="ref-link">Projektdetails →</a></div>
+      </div>
+    </div>
+
+    <div class="ref-card" data-cat="automatisierung">
+      <!-- BILD: assets/images/ref-3.jpg -->
+      <div class="ref-img ref-img-3"></div>
+      <div class="ref-body">
+        <div class="ref-tag">Automatisierung</div>
+        <h3>Workflow-Automatisierung — Handwerksbetrieb</h3>
+        <p>Vollständige Automatisierung von Angebotserstellung, Rechnungsversand und Kundenkommunikation. Zeitersparnis von ca. 12 Stunden pro Woche.</p>
+        <div class="ref-tech">
+          <span>n8n</span><span>Make</span><span>API</span>
+        </div>
+        <div class="ref-detail"><a href="#" class="ref-link">Projektdetails →</a></div>
+      </div>
+    </div>
+
+    <div class="ref-card" data-cat="3d">
+      <!-- BILD: assets/images/ref-4.jpg -->
+      <div class="ref-img ref-img-4"></div>
+      <div class="ref-body">
+        <div class="ref-tag" style="color:var(--gold)">Coming Soon</div>
+        <h3>3D-Konfigurator — Möbelhersteller</h3>
+        <p>Interaktiver 3D-Produktkonfigurator für Maßmöbel — aktuell in Entwicklung. Kunden konfigurieren Materialien, Maße und Ausführungen direkt im Browser.</p>
+        <div class="ref-tech">
+          <span>Three.js</span><span>WebGL</span><span>React</span>
+        </div>
+        <div class="ref-detail"><a href="kontakt.html" class="ref-link" style="color:var(--gold)">Anfragen →</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="wave-sep wave-bg-surf" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C200,0 320,40 480,40 C640,40 800,40 960,40 C1120,40 1240,80 1440,80 L1440,80 L0,80 Z"/>
+  </svg>
+</div>
+
+<!-- Zitate / Stimmen -->
+<section class="section" style="background:var(--surface)">
+  <span class="label">Stimmen</span>
+  <h2 style="margin-bottom:3rem">Was Kunden sagen</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border)">
+    <div style="padding:3rem;border-right:1px solid var(--border)">
+      <p style="font-size:1.05rem;font-style:italic;color:var(--text);margin-bottom:1.5rem">"Endlich jemand, der nicht einfach eine Template-Lösung hinstellt. Malzan hat wirklich verstanden, was wir brauchen."</p>
+      <div style="font-size:0.78rem;font-weight:600;color:var(--cyan);letter-spacing:0.08em;text-transform:uppercase">— Kunde, SHK-Branche</div>
+    </div>
+    <div style="padding:3rem">
+      <p style="font-size:1.05rem;font-style:italic;color:var(--text);margin-bottom:1.5rem">"Die Kommunikation war von Anfang bis Ende klar und verbindlich. Kein Overhead, kein Chaos — einfach sauber gemacht."</p>
+      <div style="font-size:0.78rem;font-weight:600;color:var(--cyan);letter-spacing:0.08em;text-transform:uppercase">— Kunde, Handwerk</div>
+    </div>
+  </div>
+</section>
+
+<script>
+function filterRef(btn, cat) {
+  document.querySelectorAll('.ref-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.ref-card').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'flex' : 'none';
+  });
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="../assets/logo-15.svg" alt="Malzan MediaWorks"></div>
+    <nav class="footer-links">
+      <a href="../index.html#portfolio">Portfolio</a>
+      <a href="../pages/leistungen.html">Leistungen</a>
+      <a href="../pages/ueber-uns.html">Über uns</a>
+      <a href="../pages/referenzen.html">Referenzen</a>
+      <a href="../pages/kontakt.html">Kontakt</a>
+    </nav>
+    <span class="footer-copy">© Malzan MediaWorks — Alle Rechte vorbehalten</span>
+  </div>
+</footer>
+</body>
+</html>

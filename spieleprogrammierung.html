@@ -1,0 +1,102 @@
+<!-- Dokumententyp HTML5 deklarieren -->
+<!DOCTYPE html>
+<!-- HTML-Wurzelelement mit Sprache Deutsch -->
+<html lang="de">
+<!-- Kopfbereich für Seiteneinstellungen und Metadaten -->
+<head>
+    <!-- UTF-8 Kodierung für Sonderzeichen und Umlaute -->
+    <meta charset="UTF-8">
+    <!-- Viewport-Einstellung für alle Bildschirmgrößen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titel der Detailseite im Browser-Tab -->
+    <title>Spieleprogrammierung (3D-Spiel) — Emma Rabe</title>
+    <!-- Einbindung des gemeinsamen CSS-Stylesheets style.css -->
+    <link rel="stylesheet" href="style.css">
+<!-- Ende des Kopfbereichs -->
+</head>
+<!-- Beginn des sichtbaren Webseiteninhalts -->
+<body>
+
+    <!-- KOPFZEILE MIT NAVIGATION -->
+    <header class="site-header">
+        <!-- Logo mit Namenszug -->
+        <div class="logo">
+            <!-- Link zurück zur Startseite -->
+            <a href="index.html" class="logo-title">Emma Rabe</a>
+        <!-- Ende des Logos -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="header-actions">
+            <!-- Pill-Button zurück zur Übersicht 3D & Game Design -->
+            <a href="3d-gamedesign.html" class="pill-btn">
+                <!-- Pfeil nach links -->
+                <span>←</span>
+                <!-- Textbeschriftung -->
+                <span>Zurück zu 3D &amp; Game Design</span>
+            <!-- Ende des Buttons -->
+            </a>
+        <!-- Ende der Aktionen -->
+        </div>
+    <!-- Ende des Headers -->
+    </header>
+
+    <!-- HAUPTBEREICH DER DETAILSEITE -->
+    <main>
+
+        <!-- PROJEKT-INTRO -->
+        <section class="hero project-detail-hero">
+            <!-- Vor-Tag mit Semester und Fachbereich -->
+            <div class="hero-tag">Projekt • Spieleprogrammierung (4. Semester)</div>
+            <!-- Hauptüberschrift des Projekts -->
+            <h1>3D-Spiel mit Unity &amp; Blender</h1>
+            <!-- Ausführliche Projektbeschreibung -->
+            <p class="hero-bio">
+                Im vierten Semester haben wir im Modul Spieleprogrammierung im Zweier-Team ein eigenständiges dreidimensionales Spiel entwickelt. Die 3D-Modelle, Assets und visuellen Elemente wurden in Blender modelliert und texturiert, während die Spiellogik, Steuerung, Kollisionsabfragen und das Level-Design in der Unity Engine umgesetzt wurden.
+            <!-- Ende der Beschreibung -->
+            </p>
+        <!-- Ende der Hero-Sektion -->
+        </section>
+
+        <!-- VIDEO-BEREICH MIT GAMEPLAY-WALKTHROUGH -->
+        <section class="portfolio-section">
+            <!-- Überschrift für den Videobereich -->
+            <div class="portfolio-header" style="margin-top: 0; margin-bottom: 1.25rem;">
+                <!-- Titel -->
+                <h2>Gameplay-Walkthrough</h2>
+            <!-- Ende des Headers -->
+            </div>
+
+            <!-- Video-Container -->
+            <div class="video-wrapper">
+                <!-- Video-Player mit Steuerelementen -->
+                <video id="gameplayVideo" controls playsinline preload="metadata">
+                    <!-- Videodatei aus dem Projektordner SP -->
+                    <source src="SP/Spieleprogrammierung.mp4" type="video/mp4">
+                    <!-- Hinweistext falls der Browser kein HTML5 Video unterstützt -->
+                    Dein Browser unterstützt das Videoformat leider nicht.
+                <!-- Ende des Videos -->
+                </video>
+            <!-- Ende des Video-Containers -->
+            </div>
+        <!-- Ende der Portfolio-Sektion -->
+        </section>
+
+    <!-- Ende des Hauptbereichs -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <!-- Abschlusszeile -->
+        <div class="footer-bottom-row">
+            <!-- Copyright-Angabe -->
+            <span>&copy; 2026 Emma Rabe.</span>
+        <!-- Ende der Abschlusszeile -->
+        </div>
+    <!-- Ende des Footers -->
+    </footer>
+
+<!-- Ende des sichtbaren Körpers -->
+</body>
+<!-- Ende des HTML-Dokuments -->
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+
+
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="../img/logo.png" alt="Pflanzlich kochen Logo" width= "20">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="dasSindWir.html">Das sind Wir</a></li>
+                <li><a href="formular.html">Rezept hinzufügen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <from action="https://mi.hs-flensburg.de/echo.php" method="post" accept-charset="utf-8">
+
+        <div>
+            <h2>Dein Rezept</h2>
+
+
+            <h3>Persönliche Daten</h3>
+
+            <div>
+                <div>
+                    <lable for="username">Username</lable><input name="username" type="text">
+                </div>
+                <div>
+                    <lable for="email">Email</lable><input name="email" type="text">
+                </div>
+            </div>
+            <h3>Rezept</h3>
+            <div class="formular-2m">
+                <lable for="text">Mein Rezept</lable>
+                <textarea name="text" rows="15" cols="80"></textarea>
+            </div>
+
+            <h3>Bilder</h3>
+            <div>
+                <div>
+                    <lable for="bild">hier Bilder hinzufügen</lable>
+                    <input name="bild" type="file" id="bild">
+                </div>
+                <div>
+                    <lable for="bu">Bildunterschrift</lable>
+                    <input name="bu" type="text" id="bu">
+                </div>
+            </div>
+        </div>
+
+    </from>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="dokumentation.html">Dokumentation</a></li>
+                <li><a href="kolophon.html">Kolophon</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+
+</html>

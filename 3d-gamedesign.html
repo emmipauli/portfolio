@@ -1,0 +1,167 @@
+<!-- Dokumententyp HTML5 deklarieren -->
+<!DOCTYPE html>
+<!-- HTML-Wurzelelement mit Sprache Deutsch -->
+<html lang="de">
+<!-- Kopfbereich für Metadaten -->
+<head>
+    <!-- UTF-8 Kodierung für deutsche Umlaute -->
+    <meta charset="UTF-8">
+    <!-- Viewport für alle Bildschirmgrößen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titel -->
+    <title>3D &amp; Game Design — Emma Rabe</title>
+    <!-- CSS-Styles einbinden -->
+    <link rel="stylesheet" href="style.css">
+<!-- Ende des Kopfbereichs -->
+</head>
+<!-- Beginn des Bodys -->
+<body>
+
+    <!-- KOPFZEILE -->
+    <header class="site-header">
+        <!-- Logo -->
+        <div class="logo">
+            <!-- Link zur Startseite -->
+            <a href="index.html" class="logo-title">Emma Rabe</a>
+        <!-- Ende des Logos -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="header-actions">
+            <!-- Zurück-Button -->
+            <a href="index.html#projekte" class="pill-btn">
+                <!-- Pfeil links -->
+                <span>←</span>
+                <!-- Text -->
+                <span>Zurück zur Übersicht</span>
+            <!-- Ende des Buttons -->
+            </a>
+        <!-- Ende der Aktionen -->
+        </div>
+    <!-- Ende des Headers -->
+    </header>
+
+    <!-- HAUPTBEREICH -->
+    <main>
+
+        <!-- HERO-BEREICH -->
+        <section class="hero project-detail-hero">
+            <!-- Vor-Tag -->
+            <div class="hero-tag">Disziplin • Dreidimensionales Gestalten</div>
+            <!-- Titel -->
+            <h1>3D &amp; Game Design</h1>
+            <!-- Einleitung -->
+            <p class="hero-bio">
+                Räumliche Welten, 3D-Modellierung, Beleuchtung, Shading und Asset-Erstellung für Spiele-Engines und visuelle Inszenierungen.
+            <!-- Ende des Textes -->
+            </p>
+        <!-- Ende der Hero-Sektion -->
+        </section>
+
+        <!-- PROJEKT-GRID DER 3D-ARBEITEN -->
+        <section class="portfolio-section">
+            <!-- Grid-Raster -->
+            <div class="portfolio-grid">
+
+                <!-- PROJEKT 1: 3D-Handmodellierung (führt zu hand-modellierung.html) -->
+                <a href="hand-modellierung.html" class="project-card">
+                    <!-- Bildvorschau -->
+                    <div class="project-thumbnail">
+                        <!-- Vorschaubild der Handmodellierung in Blender -->
+                        <img src="3dModellierung/hand-modellierung-poster.jpg" alt="3D-Handmodellierung in Blender" loading="lazy">
+                    <!-- Ende des Thumbnails -->
+                    </div>
+                    <!-- Informationsblock -->
+                    <div class="project-info">
+                        <!-- Metadaten -->
+                        <div class="project-meta-row">
+                            <!-- Modul/Fach in klein -->
+                            <span class="category-tag">3D-Modellierung</span>
+                            <!-- Semesterangabe rechts -->
+                            <span class="project-year">3. Semester</span>
+                        <!-- Ende der Meta-Zeile -->
+                        </div>
+                        <!-- Name des Projekts groß -->
+                        <h3>Eigene Hand als 3D-Objekt</h3>
+                        <!-- Text -->
+                        <p>Detaillierte Rekonstruktion der eigenen Hand in Blender mit Fokus auf Topologie, Gelenk-Loops und anatomische Proportionen.</p>
+                    <!-- Ende des Info-Blocks -->
+                    </div>
+                <!-- Ende von Karte 1 -->
+                </a>
+
+                <!-- PROJEKT 2: Lego Minifigur 3D-Rendering (führt zu lego-rendering.html) -->
+                <a href="lego-rendering.html" class="project-card">
+                    <!-- Bildvorschau -->
+                    <div class="project-thumbnail">
+                        <!-- Bilddatei des 3D-Renderings -->
+                        <img src="3DRendering/rendering01.png" alt="Lego Minifigur 3D Rendering" loading="lazy">
+                    <!-- Ende des Thumbnails -->
+                    </div>
+                    <!-- Informationsblock -->
+                    <div class="project-info">
+                        <!-- Metadaten -->
+                        <div class="project-meta-row">
+                            <!-- Modul/Fach in klein -->
+                            <span class="category-tag">3D-Rendering</span>
+                            <!-- Semesterangabe rechts -->
+                            <span class="project-year">4. Semester</span>
+                        <!-- Ende der Meta-Zeile -->
+                        </div>
+                        <!-- Name des Projekts groß -->
+                        <h3>Lego Minifigur — Shading &amp; Lighting</h3>
+                        <!-- Text -->
+                        <p>Materialvergabe, Shader-Entwicklung und fotorealistische Einbettung einer Lego-Figur mit Licht und Schatten in Blender.</p>
+                    <!-- Ende des Info-Blocks -->
+                    </div>
+                <!-- Ende von Karte 2 -->
+                </a>
+
+                <!-- PROJEKT 3: Spieleprogrammierung (führt zu spieleprogrammierung.html) -->
+                <a href="spieleprogrammierung.html" class="project-card">
+                    <!-- Bildvorschau (vorerst dezent leer gehalten) -->
+                    <div class="project-thumbnail" style="background-color: #f0f2f0;">
+                    <!-- Ende des Thumbnails -->
+                    </div>
+                    <!-- Informationsblock -->
+                    <div class="project-info">
+                        <!-- Metadaten -->
+                        <div class="project-meta-row">
+                            <!-- Modul/Fach in klein -->
+                            <span class="category-tag">Spieleprogrammierung</span>
+                            <!-- Semesterangabe rechts -->
+                            <span class="project-year">4. Semester</span>
+                        <!-- Ende der Meta-Zeile -->
+                        </div>
+                        <!-- Name des Projekts groß -->
+                        <h3>3D-Spiel mit Unity &amp; Blender</h3>
+                        <!-- Text -->
+                        <p>Im vierten Semester zu zweit entwickeltes 3D-Spiel mit Gameplay-Walkthrough, 3D-Assets und Spielmechanik.</p>
+                    <!-- Ende des Info-Blocks -->
+                    </div>
+                <!-- Ende von Karte 3 -->
+                </a>
+
+            <!-- Ende des Grids -->
+            </div>
+        <!-- Ende der Sektion -->
+        </section>
+
+    <!-- Ende des Hauptbereichs -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <!-- Zeile mit Copyright -->
+        <div class="footer-bottom-row">
+            <!-- Copyright -->
+            <span>&copy; 2026 Emma Rabe.</span>
+        <!-- Ende der Zeile -->
+        </div>
+    <!-- Ende des Footers -->
+    </footer>
+
+<!-- Ende des Bodys -->
+</body>
+<!-- Ende des HTML-Dokuments -->
+</html>

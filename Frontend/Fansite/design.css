@@ -1,0 +1,324 @@
+@font-face {
+    font-family: "Encode Sans Expanded";
+    src:
+        local("Encode Sans Expanded");
+}
+
+:root {
+    --title: #4a644c;
+    --headline: #4a644c;
+    --text: #444;
+    --green-box: #95b198;
+
+}
+
+
+/*mobile*/
+body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0;
+
+    font-family: "Encode Sans Expanded-ExtraLight", sans-serif;
+    font-weight: 200;
+
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: var(--text);
+    line-height: 1.5;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+
+}
+
+.main-title {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    color: var(--title);
+    font-size: 4rem;
+    font-weight: 200;
+    background-color: var(--green-box);
+}
+
+.logo {
+    grid-column: 1;
+    grid-row: 1;
+    height: 80px;
+    margin-right: 15px;
+    margin-left: 1rem;
+}
+
+.welle{
+    display: none;
+    
+}
+
+.welle2 {
+    display: none;
+}
+
+.intro {
+    grid-column: 1 / 3;
+    padding: 20px;
+}
+
+.Inhaltsverzeichnis {
+    grid-column: 1 / 3;
+    margin-left: 1rem;
+}
+
+.suche-box {
+    margin-left: 400px;
+    padding-left: 20px;
+    padding-right: 115px;
+    background-color: #dddfddac;
+}
+
+h2 {
+    color: var(--headline);
+}
+
+h3 {
+    background-color: var(--green-box);
+    color: var(--headline);
+    padding: 10px 20px;
+    font-weight: 400;
+}
+.rezept {
+    grid-column: 1 / 3;
+}
+.rezept-grid {
+    display: grid;
+    gap: 15px;
+    padding: 20px;
+}
+
+
+.zutaten {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.bild {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.zubereitung {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+a:link {
+    color: #4a644c;
+}
+
+a:visited {
+    color: #95b198;
+}
+
+
+
+/*mittel*/
+@media screen and (min-width: 640px) {
+
+    body {
+        display: grid;
+        grid-template-columns: 50px auto auto 1fr;
+        max-width: 1125px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        grid-column: 2;
+        grid-row: 2;
+        height: 180px;
+        margin-right: 1px;
+        margin-left: 0;
+    }
+
+    .main-title {
+        grid-column: 1/5;
+        grid-row: 1;
+        color: var(--title);
+        font-size: 6rem;
+        font-weight: 200;
+        background-color: var(--green-box);
+    }
+    h1 { 
+        padding-left: 50px;
+    }
+
+    .welle-container {
+        grid-column: 1;
+        grid-row: 2 / 100;
+        
+    }
+
+    .welle {
+        display: block;
+        width: 50px;
+        transform: scale(1, 4);
+        transform-origin: top;
+    }
+
+    .welle2 {
+    display: none;
+    }
+
+    .intro {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .intro-text {
+        padding-right: 40px;
+    }
+
+    .Inhaltsverzeichnis, 
+    .rezept {
+        grid-column: 2 / 5;
+    }
+
+    h3 {
+        padding-left: 20px;
+    }
+
+    .rezept-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 30px;
+    }
+
+    .zutaten {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .bild {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .bild img {
+        max-width: 90%;
+    }
+
+    .zubereitung {
+        grid-column: 1 / 3; 
+        grid-row: 2;
+    }
+
+}
+
+/*fullscreen*/
+@media screen and (min-width: 1125px) {
+
+    body {
+    display: grid;
+    grid-template-columns: 50px auto auto 1fr;
+    max-width: 1920px;
+    margin: 0 auto;
+    }
+
+    .logo {
+        grid-column: 2;
+        grid-row: 2;
+        height: 300px;
+        margin-right: 1px;
+    }
+
+    .main-title {
+        grid-column: 1/5;
+        grid-row: 1;
+        color: var(--title);
+        font-size: 9rem;
+        font-weight: 200;
+        background-color: var(--green-box);
+    }
+    h1 { 
+        text-align: center;
+    }
+
+    .welle-container {
+        grid-column: 1;
+        grid-row: 2 / 100;
+        
+    }
+
+    .welle {
+        display: block;
+        width: 50px;
+        transform: scale(1, 5);
+        transform-origin: top;
+    }
+
+    .intro {
+        grid-column: 3;
+        grid-row: 2;
+        display: grid;
+        grid-template-rows: auto auto;
+    }
+
+    .intro-text {
+        grid-column: 1;
+        grid-row: 1;
+        padding-right: 40px;
+    }
+
+      .welle2 {
+        display: block;
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: 30px;
+        max-width: 80%;
+        transform: scale(2.5, 1);
+    }
+
+    .Inhaltsverzeichnis, 
+    .rezept {
+        grid-column: 2 / 5;
+    }
+
+    h3 {
+        padding-left: 20px;
+    }
+
+    .rezept-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 30px;
+    }
+
+    .zutaten {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .bild {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .bild img {
+        max-width: 90%;
+    }
+
+    .zubereitung {
+        grid-column: 1 / 3; 
+        grid-row: 2;
+    }
+
+}

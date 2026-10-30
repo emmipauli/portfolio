@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website & Digital Solutions — Malzan MediaWorks</title>
+  <meta name="description" content="Wir entwickeln die digitalen Systeme, die Ihr Unternehmen braucht.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body class="syntax-classic">
+<style>
+/* ── INDEX-SPEZIFISCH ────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 9rem 7vw 5rem;
+  border-right: 1px solid var(--border);
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 0.9rem;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--cyan);
+  margin-bottom: 2rem;
+}
+.hero-eyebrow::before { content:''; width:24px; height:1px; background:var(--cyan); flex-shrink:0; }
+.hero-h1 { margin-bottom: 1.5rem; }
+.hero-sub { max-width: 480px; margin-bottom: 2.5rem; font-size: 1.05rem; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+.hero-stats {
+  border-top: 1px solid var(--border); padding-top: 2rem;
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
+}
+.hero-stat { padding: 0 1.5rem 0 0; }
+.hero-stat + .hero-stat { border-left: 1px solid var(--border); padding-left: 1.5rem; }
+.stat-val { font-family: var(--font-b); font-size: 0.82rem; font-weight: 600; color: var(--text); letter-spacing: 0.02em; }
+.stat-lbl { font-size: 0.72rem; color: var(--text-sub); margin-top: 2px; }
+.hero-right {
+  position: relative; overflow: hidden;
+  background: var(--surface);
+  min-height: 100vh;
+}
+/* ── HERO BILD — hier Pfad anpassen ───────────────
+   Datei ablegen: assets/images/hero.jpg  */
+.hero-img {
+  position: absolute; inset: 0;
+  background-image: url('../assets/images/hero.jpg');
+  background-size: cover; background-position: center;
+  background-color: var(--surface); /* Fallback wenn kein Bild */
+}
+
+/* ── PORTFOLIO ───────────────────────────────────── */
+.p-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border: 1px solid var(--border); border-bottom: none; }
+.p-card { display: flex; flex-direction: column; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background var(--t); background: var(--card-bg); }
+.p-card:last-child { border-right: none; }
+.p-card:hover { background: var(--surface); }
+/* Bild in Portfolio-Card:
+   assets/images/portfolio-1.jpg  /  portfolio-2.jpg  /  portfolio-3.jpg */
+.p-img {
+  height: 0px; flex-shrink: 0;
+  background: var(--surface);
+  background-size: cover; background-position: center;
+  border-bottom: 1px solid var(--border);
+}
+.p-img-1 { background-image: url('assets/images/portfolio-1.jpg'); }
+.p-img-2 { background-image: url('assets/images/portfolio-2.jpg'); }
+.p-img-3 { background-image: url('assets/images/portfolio-3.jpg'); }
+.p-body { padding: 1.8rem; flex: 1; display: flex; flex-direction: column; }
+.p-tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.6rem; }
+.p-card h3 { color: var(--text); font-size: 1.1rem; margin-bottom: 0.6rem; }
+.p-card p  { flex: 1; font-size: 0.9rem; margin-bottom: 1.5rem; }
+.p-link { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); align-self: flex-start; transition: letter-spacing var(--t); }
+.p-card:hover .p-link { letter-spacing: 0.14em; }
+
+/* ── LEISTUNGEN PREVIEW ──────────────────────────── */
+#leistungen-preview { background: var(--surface); }
+.l-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.l-card { background: var(--bg); padding: 2rem; transition: background var(--t); }
+.l-card:hover { background: var(--card-bg); }
+.l-icon { font-size: 1.4rem; margin-bottom: 1rem; }
+.l-card h3 { font-size: 1rem; color: var(--text); margin-bottom: 0.5rem; }
+.l-card p  { font-size: 0.88rem; }
+
+/* ── WERTE ───────────────────────────────────────── */
+#werte { background: var(--bg); }
+.werte-row { display: flex; justify-content: center; gap: 5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.wert { font-family: var(--font-h); font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 700; letter-spacing: 0.04em; }
+.wert-1 { color: var(--green); }
+.wert-2 { color: var(--cyan); }
+.wert-3 { color: var(--gold); }
+.werte-sub { text-align: center; max-width: 560px; margin: 0 auto; font-size: 1rem; }
+
+/* ── CTA BAND ────────────────────────────────────── */
+.cta-band { background: var(--black); padding: 6rem 7vw; display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
+.cta-band h2 { color: var(--white); margin-bottom: 0.5rem; }
+.cta-band p  { color: var(--gray-50); font-size: 1rem; max-width: 480px; }
+[data-theme="dark"] .cta-band { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+@media(max-width:900px){
+  #hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { border-right: none; }
+  .p-grid { grid-template-columns: 1fr; }
+  .l-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:600px){
+  .l-grid { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr; gap: 1rem; }
+  .hero-stat + .hero-stat { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 1rem; }
+  .cta-band { text-align: center; }
+}
+</style>
+
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo-13.svg" alt="Malzan MediaWorks" class="logo-light">
+    <img src="assets/logo-15.svg" alt="Malzan MediaWorks" class="logo-dark">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#portfolio" data-section="portfolio">Portfolio</a></li>
+    <li><a href="pages/leistungen.html" data-section="leistungen-preview">Leistungen</a></li>
+    <li><a href="pages/ueber-uns.html">Über uns</a></li>
+    <li><a href="pages/referenzen.html">Referenzen</a></li>
+    <li><a href="pages/kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Theme wechseln">
+      <span class="t-icon">◑</span>
+    </button>
+    <a href="pages/kontakt.html" class="btn btn-primary" style="padding:0.5rem 1.3rem">Projekt anfragen</a>
+  </div>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html#portfolio" onclick="toggleMob()">Portfolio</a>
+  <a href="pages/leistungen.html" onclick="toggleMob()">Leistungen</a>
+  <a href="pages/ueber-uns.html" onclick="toggleMob()">Über uns</a>
+  <a href="pages/referenzen.html" onclick="toggleMob()">Referenzen</a>
+  <a href="pages/kontakt.html" onclick="toggleMob()">Kontakt</a>
+  <a href="pages/kontakt.html" onclick="toggleMob()">→ Projekt anfragen</a>
+</div>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Beratung · Entwicklung · Automatisierung</div>
+    <h1 class="hero-h1">Wir entwickeln die digitalen&nbsp;Systeme, die Ihr&nbsp;Unternehmen&nbsp;braucht.</h1>
+    <p class="hero-sub">Sie wissen, dass Ihr Unternehmen digital mehr erreichen kann — aber nicht genau, wo der Hebel liegt? Genau dafür sind wir da.</p>
+    <div class="hero-actions">
+      <a href="#portfolio" class="btn btn-primary">Arbeiten ansehen</a>
+      <a href="pages/kontakt.html" class="btn btn-outline">Projekt anfragen</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-val">Persönlich</div>
+        <div class="stat-lbl">Fester Ansprechpartner</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-val">Durchdacht</div>
+        <div class="stat-lbl">Konzept &amp; Umsetzung</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-val">Verlässlich</div>
+        <div class="stat-lbl">Termingerecht &amp; klar</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- BILD: assets/images/hero.jpg ablegen -->
+    <div class="hero-img"></div>
+  </div>
+</section>
+
+<!-- ═══ PORTFOLIO ════════════════════════════════════════════ -->
+<section id="portfolio" class="section">
+  <span class="label">Portfolio</span>
+  <h2>Ausgewählte Arbeiten</h2>
+  <p style="max-width:560px;margin-bottom:3.5rem">Echte Projekte — von der Konzeption bis zum produktionsreifen System.</p>
+
+  <div class="p-grid">
+    <div class="p-card">
+      <!-- BILD: assets/images/portfolio-1.jpg -->
+      <img src="{assets/images,css,js,pages}/portfolio-1.jpg" alt="portfolio-1">
+      <div class="p-img p-img-1"></div>
+      <div class="p-body">
+        <div class="p-tag">Web App</div>
+        <h3>Versotec — Digitale Plattform</h3>
+        <p>SaaS-Plattform mit Kundenportal, Admin-Dashboard, Abo-Verwaltung und 3D-Musterhaus — Stripe/PayPal, Row-Level Security.</p>
+        <a href="pages/referenzen.html" class="p-link">Mehr erfahren →</a>
+      </div>
+    </div>
+    <div class="p-card">
+      <!-- BILD: assets/images/portfolio-2.jpg -->
+       <img src="{assets/images,css,js,pages}/portfolio-2.jpg" alt="portfolio-2">
+      <div class="p-img p-img-2"></div>
+      <div class="p-body">
+        <div class="p-tag">Web Design</div>
+        <h3>Malzan MediaWorks — Portfolio</h3>
+        <p>Minimalistisches Design mit responsivem Layout, Supabase-Backend und Dark Mode.</p>
+        <a href="pages/referenzen.html" class="p-link">Mehr erfahren →</a>
+      </div>
+    </div>
+    <div class="p-card" style="opacity:0.55">
+      <!-- BILD: assets/images/portfolio-3.jpg -->
+      <div class="p-img p-img-3" style="background-image:none"></div>
+      <div class="p-body">
+        <div class="p-tag" style="color:var(--gold)">Coming Soon</div>
+        <h3 style="color:var(--text-sub)">Weiteres Projekt</h3>
+        <p>Prozessautomatisierung &amp; KI-Integration — aktuell in Entwicklung.</p>
+        <a href="pages/kontakt.html" class="p-link" style="color:var(--gold)">Anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wave-sep wave-bg-surf" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C200,0 320,40 480,40 C640,40 800,40 960,40 C1120,40 1240,80 1440,80 L1440,80 L0,80 Z"/>
+  </svg>
+</div>
+
+<!-- ═══ LEISTUNGEN PREVIEW ════════════════════════════════════ -->
+<section id="leistungen-preview" class="section">
+  <span class="label">Leistungen</span>
+  <h2>Was wir für Sie tun</h2>
+  <p style="max-width:560px;margin-bottom:3.5rem">Keine Standardlösungen — Systeme, die exakt auf Ihre Anforderungen zugeschnitten sind.</p>
+
+  <div class="l-grid">
+    <div class="l-card">
+      <div class="l-icon" style="color:var(--green)">⬡</div>
+      <h3>Web-Apps &amp; Plattformen</h3>
+      <p>Kundenportale, Buchungssysteme, Verwaltungsplattformen mit skalierbarere Architektur.</p>
+    </div>
+    <div class="l-card">
+      <div class="l-icon" style="color:var(--cyan)">◈</div>
+      <h3>Automatisierung &amp; KI</h3>
+      <p>Systeme intelligent verknüpfen — Fokus auf das, was wirklich zählt.</p>
+    </div>
+    <div class="l-card">
+      <div class="l-icon" style="color:var(--gold)">◇</div>
+      <h3>App-Entwicklung</h3>
+      <p>Von der MVP-Idee zur vollständigen Anwendung mit klarer Architektur.</p>
+    </div>
+    <div class="l-card">
+      <div class="l-icon" style="color:var(--cyan-lt)">△</div>
+      <h3>3D &amp; Visualisierung</h3>
+      <p>Interaktive 3D-Darstellungen für Produkte, Räume und Konzepte.</p>
+    </div>
+    <div class="l-card">
+      <div class="l-icon" style="color:var(--green-lt)">⬢</div>
+      <h3>Wartung &amp; Support</h3>
+      <p>Laufende Betreuung, Updates und technischer Support.</p>
+    </div>
+    <div class="l-card">
+      <div class="l-icon" style="color:var(--gold-lt)">◎</div>
+      <h3>Beratung &amp; Konzept</h3>
+      <p>Strategische Begleitung vom ersten Gespräch bis zum Go-Live.</p>
+    </div>
+  </div>
+  <div style="margin-top:2.5rem">
+    <a href="pages/leistungen.html" class="btn btn-ghost">Alle Leistungen →</a>
+  </div>
+</section>
+<div class="wave-sep wave-surf-bg" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C200,0 320,40 480,40 C640,40 800,40 960,40 C1120,40 1240,80 1440,80 L1440,80 L0,80 Z"/>
+  </svg>
+</div>
+
+<!-- ═══ WERTE ════════════════════════════════════════════════ -->
+<section id="werte" class="section syntax-encapsulate" style="text-align:center">
+  <span class="label" style="text-align:center;display:block">Unsere Werte</span>
+  <div class="werte-row">
+    <div class="wert wert-1">PERSÖNLICH</div>
+    <div class="wert wert-2">DURCHDACHT</div>
+    <div class="wert wert-3">VERLÄSSLICH</div>
+  </div>
+  <p class="werte-sub">Die Arbeitsweise und das Auftreten von Malzan Mediaworks basieren auf diesen Werten. Das Erscheinungsbild ist professionell und schlicht — der Inhalt steht immer im Fokus.</p>
+</section>
+<div class="wave-sep wave-bg-black" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C200,0 320,40 480,40 C640,40 800,40 960,40 C1120,40 1240,80 1440,80 L1440,80 L0,80 Z"/>
+  </svg>
+</div>
+
+<!-- ═══ CTA BAND ══════════════════════════════════════════════ -->
+<div class="cta-band syntax-encapsulate syntax-dark">
+  <div>
+    <h2>Bereit für Ihr Projekt?</h2>
+    <p>Wir melden uns persönlich — Antwort garantiert innerhalb von 24 Stunden.</p>
+  </div>
+  <a href="pages/kontakt.html" class="btn btn-primary" style="flex-shrink:0">Jetzt anfragen →</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="assets/logo-15.svg" alt="Malzan MediaWorks"></div>
+    <nav class="footer-links">
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="pages/leistungen.html">Leistungen</a>
+      <a href="pages/ueber-uns.html">Über uns</a>
+      <a href="pages/referenzen.html">Referenzen</a>
+      <a href="pages/kontakt.html">Kontakt</a>
+    </nav>
+    <span class="footer-copy">© Malzan MediaWorks — Alle Rechte vorbehalten</span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leistungen — Malzan MediaWorks</title>
+  <meta name="description" content="Web-Apps, Automatisierung, KI und mehr — unsere Leistungen für Ihr Unternehmen.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <script src="../js/site.js" defer></script>
+</head>
+<body class="syntax-flow-down">
+<nav class="nav" id="main-nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/logo-13.svg" alt="Malzan MediaWorks" class="logo-light">
+    <img src="../assets/logo-15.svg" alt="Malzan MediaWorks" class="logo-dark">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#portfolio">Portfolio</a></li>
+    <li><a href="../pages/leistungen.html"class="active">Leistungen</a></li>
+    <li><a href="../pages/ueber-uns.html">Über uns</a></li>
+    <li><a href="../pages/referenzen.html">Referenzen</a></li>
+    <li><a href="../pages/kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Theme wechseln">
+      <span class="t-icon">◑</span>
+    </button>
+    <a href="../pages/kontakt.html" class="btn btn-primary" style="padding:0.5rem 1.3rem">Projekt anfragen</a>
+  </div>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="../index.html#portfolio" onclick="toggleMob()">Portfolio</a>
+  <a href="../pages/leistungen.html" onclick="toggleMob()">Leistungen</a>
+  <a href="../pages/ueber-uns.html" onclick="toggleMob()">Über uns</a>
+  <a href="../pages/referenzen.html" onclick="toggleMob()">Referenzen</a>
+  <a href="../pages/kontakt.html" onclick="toggleMob()">Kontakt</a>
+  <a href="../pages/kontakt.html" onclick="toggleMob()">→ Projekt anfragen</a>
+</div>
+
+<div class="breadcrumb">
+  <a href="../index.html">Start</a> <span style="color:var(--gray-30)">/</span>
+  <span>Leistungen</span>
+</div>
+
+<div class="page-hero">
+  <span class="label">Leistungen</span>
+  <h1>Was wir für Sie tun</h1>
+  <p>Keine Standardlösungen — wir entwickeln Systeme, die exakt auf Ihre Anforderungen, Ihr Budget und Ihre Ziele zugeschnitten sind.</p>
+</div>
+
+<!-- HERO-BILD: assets/images/leistungen-hero.jpg -->
+<div class="leistungen-hero-img"></div>
+
+<!-- Leistungen-Grid -->
+<section class="section" style="background:var(--surface)">
+  <span class="label">Unser Angebot</span>
+  <h2 style="margin-bottom:3rem">Alle Leistungen im Überblick</h2>
+  <div class="leistungen-grid">
+
+    <div class="l-item">
+      <div class="l-item-icon" style="color:var(--green)">⬡</div>
+      <h3>Web-Apps &amp; Plattformen</h3>
+      <p>Kundenportale, Buchungssysteme, Verwaltungsplattformen — Anwendungen, die Ihre Geschäftsprozesse digital abbilden.</p>
+      <ul>
+        <li>Kundenportale &amp; Self-Service-Plattformen</li>
+        <li>Admin-Dashboards &amp; Verwaltungssysteme</li>
+        <li>Buchungs- &amp; Reservierungssysteme</li>
+        <li>API-Integrationen &amp; Drittanbieter-Anbindung</li>
+        <li>Payment-Integration (Stripe, PayPal)</li>
+      </ul>
+    </div>
+
+    <div class="l-item">
+      <div class="l-item-icon" style="color:var(--cyan)">◈</div>
+      <h3>Automatisierung &amp; KI</h3>
+      <p>Wiederkehrende Aufgaben automatisieren, Systeme intelligent verknüpfen — damit Sie sich auf das Wesentliche konzentrieren können.</p>
+      <ul>
+        <li>Workflow-Automatisierung mit n8n</li>
+        <li>KI-gestützte Prozesse (Claude API, OpenAI)</li>
+        <li>E-Mail-Automatisierung &amp; CRM-Integration</li>
+        <li>Datenverarbeitung &amp; Reporting</li>
+        <li>Chatbots &amp; intelligente Assistenten</li>
+      </ul>
+    </div>
+
+    <div class="l-item">
+      <div class="l-item-icon" style="color:var(--gold)">◇</div>
+      <h3>App-Entwicklung</h3>
+      <p>Von der MVP-Idee zur vollständigen Anwendung — funktionale Apps mit klarer Architektur und skalierbarem Fundament.</p>
+      <ul>
+        <li>Progressive Web Apps (PWA)</li>
+        <li>MVP-Entwicklung &amp; Rapid Prototyping</li>
+        <li>Cross-Platform-Lösungen</li>
+        <li>Datenbank-Design &amp; Backend-Architektur</li>
+        <li>Performance-Optimierung &amp; Skalierung</li>
+      </ul>
+    </div>
+
+    <div class="l-item">
+      <div class="l-item-icon" style="color:var(--cyan-lt)">△</div>
+      <h3>3D &amp; Visualisierung</h3>
+      <p>Interaktive 3D-Darstellungen für Produkte, Räume und Konzepte — digital erlebbar gemacht.</p>
+      <ul>
+        <li>3D-Produktkonfiguratoren</li>
+        <li>Interaktive Musterhäuser &amp; Raumplanung</li>
+        <li>WebGL-basierte Visualisierungen</li>
+        <li>Architektur- &amp; Immobilien-Darstellungen</li>
+        <li>Animationen &amp; Bewegtbild</li>
+      </ul>
+    </div>
+
+    <div class="l-item">
+      <div class="l-item-icon" style="color:var(--green-lt)">⬢</div>
+      <h3>Wartung &amp; Support</h3>
+      <p>Laufende Betreuung, Updates und technischer Support — damit Ihr System langfristig performant und sicher bleibt.</p>
+      <ul>
+        <li>Monatliche Wartungspakete</li>
+        <li>Security-Updates &amp; Patches</li>
+        <li>Performance-Monitoring</li>
+        <li>Technischer Support (E-Mail, Telefon)</li>
+        <li>Backup &amp; Disaster Recovery</li>
+      </ul>
+    </div>
+
+    <div class="l-item">
+      <div class="l-item-icon" style="color:var(--gold-lt)">◎</div>
+      <h3>Beratung &amp; Konzept</h3>
+      <p>Anforderungen verstehen, Ist-Zustand bewerten, Ziele definieren — strategische Begleitung vom ersten Gespräch an.</p>
+      <ul>
+        <li>Technische Bedarfsanalyse</li>
+        <li>Systemarchitektur &amp; Technologie-Auswahl</li>
+        <li>Projektplanung &amp; Budgetierung</li>
+        <li>UX-Konzept &amp; Wireframing</li>
+        <li>Digital-Strategie &amp; Roadmap</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="wave-sep wave-surf-bg" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C200,0 320,40 480,40 C640,40 800,40 960,40 C1120,40 1240,80 1440,80 L1440,80 L0,80 Z"/>
+  </svg>
+</div>
+
+<!-- Prozess -->
+<section class="section">
+  <span class="label">Workflow</span>
+  <h2 style="margin-bottom:3rem">Unser Prozess</h2>
+  <div class="prozess-list" style="border:1px solid var(--border)">
+    <div class="prozess-step"><div class="prozess-num">01</div><div class="prozess-body"><h3>Analyse &amp; Beratung</h3><p>Anforderungen verstehen, Ist-Zustand bewerten, Ziele und Budget gemeinsam definieren. Kein Overhead — direkt zum Punkt.</p></div></div>
+    <div class="prozess-step"><div class="prozess-num">02</div><div class="prozess-body"><h3>Konzept &amp; Planung</h3><p>Technische Planung, Systemarchitektur, Wireframes und Meilensteine — alles schriftlich und nachvollziehbar.</p></div></div>
+    <div class="prozess-step"><div class="prozess-num">03</div><div class="prozess-body"><h3>Umsetzung</h3><p>Design, Entwicklung und Integration — iterativ, transparent und mit regelmäßigen Updates.</p></div></div>
+    <div class="prozess-step"><div class="prozess-num">04</div><div class="prozess-body"><h3>Review &amp; Feedback</h3><p>Gemeinsame Prüfung der Ergebnisse, Anpassungen und Feinschliff — bis es wirklich passt.</p></div></div>
+    <div class="prozess-step"><div class="prozess-num">05</div><div class="prozess-body"><h3>Testing &amp; Launch</h3><p>Qualitätssicherung, Performance-Tests, Go-Live und vollständige Übergabe aller Zugangsdaten.</p></div></div>
+    <div class="prozess-step"><div class="prozess-num">06</div><div class="prozess-body"><h3>Betrieb &amp; Betreuung</h3><p>Laufende Wartung, Updates, Monitoring und Support — damit Ihr System langfristig läuft.</p></div></div>
+  </div>
+</section>
+<div class="wave-sep wave-bg-surf" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C200,0 320,40 480,40 C640,40 800,40 960,40 C1120,40 1240,80 1440,80 L1440,80 L0,80 Z"/>
+  </svg>
+</div>
+
+<!-- Preise -->
+<section class="section" style="background:var(--surface)">
+  <span class="label">Pakete</span>
+  <h2 style="margin-bottom:0.8rem">Transparent &amp; fair</h2>
+  <p style="max-width:520px;margin-bottom:3rem">Alle Projekte werden individuell kalkuliert. Diese Pakete geben eine erste Orientierung.</p>
+  <div class="preise-grid">
+    <div class="preis-card">
+      <div class="preis-label">Start</div>
+      <div class="preis-name">Einstieg</div>
+      <div class="preis-desc">Für kleine Projekte und erste digitale Schritte.</div>
+      <ul class="preis-features">
+        <li>Landing Page oder Portfolio</li>
+        <li>Responsive Design</li>
+        <li>Kontaktformular</li>
+        <li>Basis-SEO &amp; Performance</li>
+        <li>1 Monat Support inklusive</li>
+      </ul>
+      <div class="preis-cta"><a href="kontakt.html" class="btn btn-ghost" style="width:100%;text-align:center">Anfragen →</a></div>
+    </div>
+    <div class="preis-card featured">
+      <div class="preis-label" style="color:var(--cyan)">Empfohlen</div>
+      <div class="preis-name" style="color:var(--white)">Professional</div>
+      <div class="preis-desc">Für Unternehmen mit konkreten digitalen Anforderungen.</div>
+      <ul class="preis-features">
+        <li>Web-App oder Plattform</li>
+        <li>Backend &amp; Datenbank</li>
+        <li>Auth &amp; Nutzerverwaltung</li>
+        <li>API-Integrationen</li>
+        <li>Admin-Dashboard</li>
+        <li>3 Monate Support inklusive</li>
+      </ul>
+      <div class="preis-cta"><a href="kontakt.html" class="btn btn-primary" style="width:100%;text-align:center">Anfragen →</a></div>
+    </div>
+    <div class="preis-card">
+      <div class="preis-label">Enterprise</div>
+      <div class="preis-name">Maßarbeit</div>
+      <div class="preis-desc">Für komplexe Systeme, Automatisierung und KI-Integration.</div>
+      <ul class="preis-features">
+        <li>Komplexe Systemarchitektur</li>
+        <li>KI &amp; Automatisierung</li>
+        <li>Individuelle Integrationen</li>
+        <li>3D &amp; Visualisierung</li>
+        <li>Langzeit-Wartungsvertrag</li>
+        <li>Dedizierter Ansprechpartner</li>
+      </ul>
+      <div class="preis-cta"><a href="kontakt.html" class="btn btn-ghost" style="width:100%;text-align:center">Anfragen →</a></div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="../assets/logo-15.svg" alt="Malzan MediaWorks"></div>
+    <nav class="footer-links">
+      <a href="../index.html#portfolio">Portfolio</a>
+      <a href="../pages/leistungen.html">Leistungen</a>
+      <a href="../pages/ueber-uns.html">Über uns</a>
+      <a href="../pages/referenzen.html">Referenzen</a>
+      <a href="../pages/kontakt.html">Kontakt</a>
+    </nav>
+    <span class="footer-copy">© Malzan MediaWorks — Alle Rechte vorbehalten</span>
+  </div>
+</footer>
+</body>
+</html>

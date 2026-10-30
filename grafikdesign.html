@@ -1,0 +1,169 @@
+<!-- Dokumententyp HTML5 deklarieren -->
+<!DOCTYPE html>
+<!-- HTML-Wurzelelement mit Sprache Deutsch -->
+<html lang="de">
+<!-- Kopfbereich für Metadaten -->
+<head>
+    <!-- UTF-8 Zeichensatz für alle Umlaute -->
+    <meta charset="UTF-8">
+    <!-- Viewport für optimale mobile Skalierung -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Seitentitel im Browser-Tab -->
+    <title>Grafikdesign &amp; Print — Emma Rabe</title>
+    <!-- Verknüpfung mit dem gemeinsamen Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+<!-- Ende des Kopfbereichs -->
+</head>
+<!-- Beginn des sichtbaren Seiteninhalts -->
+<body>
+
+    <!-- KOPFZEILE MIT ZURÜCK-NAVIGATION -->
+    <header class="site-header">
+        <!-- Logo mit Namenszug -->
+        <div class="logo">
+            <!-- Link zurück zur Startseite -->
+            <a href="index.html" class="logo-title">Emma Rabe</a>
+        <!-- Ende des Logos -->
+        </div>
+
+        <!-- Zurück-Button im Pill-Design (Awake / Jarcos Stil) -->
+        <div class="header-actions">
+            <!-- Pill-Link zurück zur Startseite -->
+            <a href="index.html#projekte" class="pill-btn">
+                <!-- Pfeil nach links -->
+                <span>←</span>
+                <!-- Textbeschriftung -->
+                <span>Zurück zur Übersicht</span>
+            <!-- Ende des Buttons -->
+            </a>
+        <!-- Ende der Header-Aktionen -->
+        </div>
+    <!-- Ende des Headers -->
+    </header>
+
+    <!-- HAUPTBEREICH -->
+    <main>
+
+        <!-- INTRO-BEREICH DER KATEGORIE -->
+        <section class="hero">
+            <!-- Vor-Tag -->
+            <div class="hero-tag">Disziplin • Editorial &amp; Branding</div>
+            <!-- Hauptüberschrift der Kategorieseite -->
+            <h1>Grafikdesign</h1>
+            <!-- Kurzbeschreibung der Kategorie -->
+            <p class="hero-bio">
+                Branding, Printmedien, typografische Konzepte und digitale Bildbearbeitung aus meinem Studium der Medieninformatik.
+            <!-- Ende der Beschreibung -->
+            </p>
+        <!-- Ende der Hero-Sektion -->
+        </section>
+
+        <!-- PROJEKT-GRID DER GRAFIKDESIGN-ARBEITEN -->
+        <section class="portfolio-section">
+            <!-- Grid-Raster für die beiden Hauptprojekte -->
+            <div class="portfolio-grid">
+
+                <!-- PROJEKT 1: Plakatgestaltung -->
+                <a href="projekt-plakate.html" class="project-card">
+                    <!-- Bildvorschau -->
+                    <div class="project-thumbnail">
+                        <!-- Bilddatei -->
+                        <img src="GG/Plakat-WS2425-HA-1.png" alt="Plakatgestaltung" loading="lazy">
+                    <!-- Ende des Thumbnails -->
+                    </div>
+                    <!-- Informationsblock -->
+                    <div class="project-info">
+                        <!-- Metadaten -->
+                        <div class="project-meta-row">
+                            <!-- Modul/Fach in klein -->
+                            <span class="category-tag">Grundlagen Gestaltung</span>
+                            <!-- Semesterangabe rechts -->
+                            <span class="project-year">1. Semester</span>
+                        <!-- Ende der Meta-Zeile -->
+                        </div>
+                        <!-- Name des Projekts groß -->
+                        <h3>Plakat Gestaltung Rundgang</h3>
+                        <!-- Text -->
+                        <p>Grundlagen Gestaltung – Plakatkonzepte und Typografie für den Hochschulrundgang 2025.</p>
+                    <!-- Ende des Info-Blocks -->
+                    </div>
+                <!-- Ende von Projekt 1 -->
+                </a>
+
+                <!-- PROJEKT 2: Digitale Bildbearbeitung -->
+                <a href="dbb.html" class="project-card">
+                    <!-- Bildvorschau -->
+                    <div class="project-thumbnail">
+                        <!-- Bilddatei -->
+                        <img src="DBB/DBB01.png" alt="Digitale Bildbearbeitung" loading="lazy">
+                    <!-- Ende des Thumbnails -->
+                    </div>
+                    <!-- Informationsblock -->
+                    <div class="project-info">
+                        <!-- Metadaten -->
+                        <div class="project-meta-row">
+                            <!-- Modul/Fach in klein -->
+                            <span class="category-tag">Digitale Bildbearbeitung</span>
+                            <!-- Semesterangabe rechts -->
+                            <span class="project-year">2. Semester</span>
+                        <!-- Ende der Meta-Zeile -->
+                        </div>
+                        <!-- Name des Projekts groß -->
+                        <h3>Digitale Bildbearbeitung</h3>
+                        <!-- Text -->
+                        <p>Kreative Retusche, Photoshop-Montagen und experimentelle Collagen.</p>
+                    <!-- Ende des Info-Blocks -->
+                    </div>
+                <!-- Ende von Projekt 2 -->
+                </a>
+
+                <!-- PROJEKT 3: Corporate Design Malzan MediaWorks (führt zu corporate-design.html) -->
+                <a href="corporate-design.html" class="project-card">
+                    <!-- Bildvorschau -->
+                    <div class="project-thumbnail">
+                        <!-- Bilddatei des Logos aus dem Styleguide als Titelbild -->
+                        <img src="KDM/styleguide-page-03.png" alt="Corporate Design Malzan MediaWorks Logo" loading="lazy">
+                    <!-- Ende des Thumbnails -->
+                    </div>
+                    <!-- Informationsblock -->
+                    <div class="project-info">
+                        <!-- Metadaten -->
+                        <div class="project-meta-row">
+                            <!-- Modul/Fach in klein -->
+                            <span class="category-tag">Konzeption digitaler Medien</span>
+                            <!-- Semesterangabe rechts -->
+                            <span class="project-year">4. Semester</span>
+                        <!-- Ende der Meta-Zeile -->
+                        </div>
+                        <!-- Name des Projekts groß -->
+                        <h3>Corporate Design — Malzan MediaWorks</h3>
+                        <!-- Text -->
+                        <p>Gruppenarbeit – Ganzheitlicher Markenauftritt, Logoentwicklung, Typografierichtlinien und digitaler Web-Prototyp.</p>
+                    <!-- Ende des Info-Blocks -->
+                    </div>
+                <!-- Ende von Projekt 3 -->
+                </a>
+
+            <!-- Ende des Grids -->
+            </div>
+        <!-- Ende der Sektion -->
+        </section>
+
+    <!-- Ende des Hauptbereichs -->
+    </main>
+
+    <!-- FOOTER MIT ZURÜCK-MÖGLICHKEIT -->
+    <footer class="site-footer">
+        <!-- Untere Zeile mit Copyright -->
+        <div class="footer-bottom-row">
+            <!-- Copyright -->
+            <span>&copy; 2026 Emma Rabe.</span>
+        <!-- Ende der Zeile -->
+        </div>
+    <!-- Ende des Footers -->
+    </footer>
+
+<!-- Ende des Bodys -->
+</body>
+<!-- Ende des HTML-Dokuments -->
+</html>

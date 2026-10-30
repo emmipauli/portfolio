@@ -1,0 +1,194 @@
+<!-- Dokumententyp HTML5 deklarieren -->
+<!DOCTYPE html>
+<!-- HTML-Wurzelelement mit Sprache Deutsch -->
+<html lang="de">
+<!-- Kopfbereich für Seiteneinstellungen und Metadaten -->
+<head>
+    <!-- UTF-8 Zeichensatz für deutsche Umlaute und Sonderzeichen -->
+    <meta charset="UTF-8">
+    <!-- Viewport für alle Display-Größen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titel der Detailseite im Browser -->
+    <title>Corporate Design (KDM) — Emma Rabe</title>
+    <!-- Einbindung des gemeinsamen CSS-Stylesheets style.css -->
+    <link rel="stylesheet" href="style.css">
+<!-- Ende des Kopfbereichs -->
+</head>
+<!-- Beginn des Seiteninhalts -->
+<body>
+
+    <!-- KOPFZEILE MIT NAVIGATION -->
+    <header class="site-header">
+        <!-- Logo mit Namenszug -->
+        <div class="logo">
+            <!-- Link zurück zur Startseite -->
+            <a href="index.html" class="logo-title">Emma Rabe</a>
+        <!-- Ende des Logos -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="header-actions">
+            <!-- Pill-Button zurück zur Übersicht Grafikdesign -->
+            <a href="grafikdesign.html" class="pill-btn">
+                <!-- Pfeil nach links -->
+                <span>←</span>
+                <!-- Textbeschriftung -->
+                <span>Zurück zu Grafikdesign</span>
+            <!-- Ende des Buttons -->
+            </a>
+        <!-- Ende der Aktionen -->
+        </div>
+    <!-- Ende des Headers -->
+    </header>
+
+    <!-- HAUPTBEREICH DER DETAILSEITE -->
+    <main>
+
+        <!-- PROJEKT-INTRO -->
+        <section class="hero project-detail-hero">
+            <!-- Vor-Tag mit Semester und Fachbereich -->
+            <div class="hero-tag">Projekt • Konzeption digitaler Medien (4. Semester)</div>
+            <!-- Haupttitel des Projekts -->
+            <h1>Corporate Design — Malzan MediaWorks</h1>
+            <!-- Ausführlicher Einleitungstext über die Gruppenarbeit -->
+            <p class="hero-bio">
+                Im vierten Semester haben wir im Kurs Konzeption digitaler Medien (KDM) in einer Gruppenarbeit ein ganzheitliches Corporate Design für das Unternehmen Malzan MediaWorks entwickelt. Die Arbeit umfasst die Konzeption des Markenauftritts, ein modulares Logo-System mit Schutzraum- und Anwendungsregeln, Farbwelten, Typografie sowie Printmedien und einen interaktiven Web-Prototyp.
+            <!-- Ende der Beschreibung -->
+            </p>
+
+            <!-- Container für den direkten Link zum Web-Prototyp (ohne Pfeil) -->
+            <div class="live-link-container">
+                <!-- Link zum interaktiven Prototyp -->
+                <a href="KDM/KDM-Prototyp-Gruppe-04/index.html" target="_blank" rel="noopener noreferrer" class="live-btn">
+                    <!-- Textbeschriftung ohne Pfeil -->
+                    <span>Web-Prototyp ansehen</span>
+                <!-- Ende des Prototyp-Links -->
+                </a>
+            <!-- Ende des Link-Containers -->
+            </div>
+        <!-- Ende der Hero-Sektion -->
+        </section>
+
+        <!-- PROJEKT-INHALT MIT STYLEGUIDE-BILDERN & LOGO-VARIATIONEN -->
+        <section class="portfolio-section">
+            <!-- Überschrift der Bildergalerie -->
+            <div class="portfolio-header" style="margin-top: 0; margin-bottom: 2rem;">
+                <!-- Titel -->
+                <h2>Styleguide &amp; Markenidentität</h2>
+            <!-- Ende des Headers -->
+            </div>
+
+            <!-- Raster für Styleguide-Seiten und Logobilder -->
+            <div class="detail-gallery">
+                <!-- Bild 1: Primärlogo -->
+                <div>
+                    <!-- Bilddatei aus dem Styleguide -->
+                    <img src="KDM/styleguide-page-03.png" alt="Primärlogo Malzan MediaWorks" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Primärlogo — Bildmarke {M} kombiniert mit Wortmarken-Block</p>
+                <!-- Ende Kachel 1 -->
+                </div>
+
+                <!-- Bild 2: Logovarianten -->
+                <div>
+                    <!-- Bilddatei aus dem Styleguide -->
+                    <img src="KDM/styleguide-page-16.png" alt="Sekundärlogo Varianten" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Sekundärlogo — Helle und dunkle Anwendungsvarianten im Vergleich</p>
+                <!-- Ende Kachel 2 -->
+                </div>
+
+                <!-- Bild 3: Grid und Schutzraum -->
+                <div>
+                    <!-- Bilddatei aus dem Styleguide -->
+                    <img src="KDM/styleguide-page-18.png" alt="Grid und Schutzraum des Logos" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Grid &amp; Schutzraum — Mathematische Konstruktion und Mindestabstände</p>
+                <!-- Ende Kachel 3 -->
+                </div>
+
+                <!-- Bild 4: Bildmarke einzeln -->
+                <div>
+                    <!-- Bilddatei aus dem Styleguide -->
+                    <img src="KDM/styleguide-page-22.png" alt="Bildmarken Einzelanwendung" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Bildmarke — Standalone-Icon {M} auf hellem und dunklem Grund</p>
+                <!-- Ende Kachel 4 -->
+                </div>
+
+                <!-- Bild 5: Farbsystem -->
+                <div>
+                    <!-- Bilddatei aus dem Styleguide -->
+                    <img src="KDM/styleguide-page-26.png" alt="Primärfarben des Corporate Designs" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Farbkonzept — Primär-, Sekundär- und Tertiärfarben mit Farbdefinitionen</p>
+                <!-- Ende Kachel 5 -->
+                </div>
+
+                <!-- Bild 6: Designelemente -->
+                <div>
+                    <!-- Bilddatei aus dem Styleguide -->
+                    <img src="KDM/styleguide-page-42.png" alt="Designelemente und Formen" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Designelemente — Die geschwungene Klammer als dynamische Formensprache</p>
+                <!-- Ende Kachel 6 -->
+                </div>
+
+                <!-- Bild 7: Plakat Anwendung -->
+                <div>
+                    <!-- Bilddatei aus dem Styleguide -->
+                    <img src="KDM/styleguide-page-46.png" alt="Anwendungsbeispiel Plakat" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Plakat-Anwendung — Markenbotschaft „Persönlich. Durchdacht. Verlässlich.“</p>
+                <!-- Ende Kachel 7 -->
+                </div>
+
+                <!-- Bild 8: Visitenkarte -->
+                <div>
+                    <!-- Bilddatei aus dem Styleguide -->
+                    <img src="KDM/styleguide-page-48.png" alt="Visitenkarten Design" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Geschäftsausstattung — Visitenkarten-Design mit Kontur-Schnitt</p>
+                <!-- Ende Kachel 8 -->
+                </div>
+
+                <!-- Bild 9: Stempel -->
+                <div>
+                    <!-- Bilddatei aus dem Styleguide -->
+                    <img src="KDM/styleguide-page-51.png" alt="Stempel Layout" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Stempel — Runder Siegel-Stempel in Schwarz und Akzent-Cyan</p>
+                <!-- Ende Kachel 9 -->
+                </div>
+
+                <!-- Bild 10: Web Prototyp Screens -->
+                <div>
+                    <!-- Bilddatei des digitalen Showcases -->
+                    <img src="KDM/portfolio-1.jpg" alt="Digitaler Web-Prototyp Showcase" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Digitaler Auftritt — Responsive Web-Komponenten und Bildsprache</p>
+                <!-- Ende Kachel 10 -->
+                </div>
+            <!-- Ende der Galerie -->
+            </div>
+        <!-- Ende der Sektion -->
+        </section>
+
+    <!-- Ende des Hauptbereichs -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <!-- Abschlusszeile -->
+        <div class="footer-bottom-row">
+            <!-- Copyright-Angabe -->
+            <span>&copy; 2026 Emma Rabe.</span>
+        <!-- Ende der Abschlusszeile -->
+        </div>
+    <!-- Ende des Footers -->
+    </footer>
+
+<!-- Ende des sichtbaren Körpers -->
+</body>
+<!-- Ende des HTML-Dokuments -->
+</html>

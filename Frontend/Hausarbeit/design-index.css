@@ -1,0 +1,1312 @@
+@font-face {
+    font-family: "Another Nothing";
+    src: url("fonts/Another Nothing.ttf")
+}
+
+/* Grundlage für die gesamte Website */
+:root {
+    --bg-dark: #080808;
+    --bg-grey: #dadada;
+    --bg-black: #000000;
+
+    --dark-blue: #21428a;
+    --light-blue: #b8c8e9;
+    --dark-purple: #4f3168;
+    --light-purple: #8d75b3;
+    --dark-red: #c4424e;
+    --light-red: #f39669;
+    --dark-green: #2e8f4d;
+    --light-green: #d8dc89;
+    --mint-green: #bed894;
+
+    --font-title: "Another Nothing", serif;
+    --font-headline: 'PT Sans Narrow', serif;
+    --font-text: 'PT Sans Narrow', sans-serif;
+}
+
+body {
+    background-color: var(--bg-black);
+    background-size: auto 100%;
+    background-image: url(img/Hintergrundbild-Disko3.png);
+    background-size: 100vw;
+    color: var(--dark-green);
+    font-family: var(--font-text);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: var(--font-title);
+    margin-bottom: 6rem;
+    color: var(--dark-green);
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 2rem;
+}
+
+h2 {
+    font-family: var(--font-title);
+    color: var(--dark-red);
+    padding-bottom: 5px;
+    margin-top: 40px;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+h3 {
+    font-family: var(--font-headline);
+    margin-bottom: 15px;
+    padding-left: 20px;
+    text-align: center;
+}
+
+
+p {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    text-align: left;
+    padding-left: 2rem;
+    padding-right: 1rem;
+}
+
+/* header */
+.main-header {
+    display: grid;
+    grid-template-columns: auto auto;
+
+    align-items: center;
+    background-color: #00000037;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.logo img {
+    height: 25px;
+    width: auto;
+    margin: 0.5rem;
+    padding: 0;
+    justify-content: left;
+}
+
+/* Navigation Links */
+.main-nav {
+    justify-content: center;
+}
+
+.main-nav ul {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav a {
+    font-family: var(--font-headline);
+    font-size: 1.3rem;
+    color: var(--light-purple);
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: var(--light-green);
+}
+
+.main-nav li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* hintergrundbild */
+.main-banner {
+    background-image: url(img/Buffet.png);
+    background-size: 100%;
+    background-position: center;
+    display: grid;
+    align-items: center;
+}
+
+.banner-text h1 {
+    color: var(--light-green);
+}
+
+.banner-text p {
+    color: var(--dark-purple);
+}
+
+/* footer */
+.main-footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.footer-nav ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 1rem;
+    gap: 3rem;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.footer-nav a {
+    font-family: var(--font-text);
+    color: var(--light-purple);
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    font-family: var(--font-text);
+    color: var(--light-green);
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.footer-nav li {
+    list-style: none;
+}
+
+.intro-text {
+    padding: 2rem;
+    margin: 2rem;
+    background-color: var(--light-green);
+    border-radius: 25px;
+}
+
+.main-banner.index {
+    height: auto;
+}
+
+.startscreen-list {
+    display: grid;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.startscreen-list a {
+    text-decoration: none;
+}
+
+.startscreen-list-header {
+    font-family: var(--font-title);
+    color: var(--dark-red);
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.main-page h2 {
+    margin-top: 5rem;
+    align-self: center;
+}
+
+.circle {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.circle h3 {
+    color: var(--dark-red);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    padding-left: 0;
+    text-align: center;
+}
+
+.circle ul {
+    display: none;
+}
+
+.circle img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 15px solid var(--dark-green);
+}
+
+.red img {
+    border-color: var(--dark-red);
+}
+
+.purple img {
+    border-color: var(--dark-purple);
+}
+
+.blue img {
+    border-color: var(--dark-blue);
+}
+
+.green img {
+    border-color: var(--dark-green);
+}
+
+.img-box {
+    display: grid;
+    place-items: center;
+}
+
+.img-box img {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.hover-text {
+    grid-column: 1;
+    grid-row: 1;
+    opacity: 0;
+    color: var(--light-green);
+}
+
+.img-box:hover img {
+    opacity: 0.25;
+}
+
+.img-box:hover .hover-text {
+    opacity: 1;
+}
+
+/* Detailseite ALLGEMEIN*/
+
+.rezept-header {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.zutaten-liste-blau li,
+.zutaten-liste-grün li,
+.zutaten-liste-rot li {
+    margin-bottom: 8px;
+}
+
+.rezept-kurzangaben-blau,
+.rezept-kurzangaben-grün,
+.rezept-kurzangaben-rot {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+/* Detailseite BLAU*/
+
+.erdnusscurryTitel {
+    margin-bottom: 10px;
+    color: var(--dark-blue);
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.rezept-titel-blau h3 {
+    color: var(--light-blue);
+
+}
+
+.zutaten-liste-blau {
+    color: var(--light-blue);
+    border-radius: 10%;
+    border: 15px solid var(--dark-blue);
+    background-color: var(--dark-blue);
+    margin-left: 30px;
+    margin-right: 30px;
+
+
+}
+
+
+
+.rezept-bild-blau {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 10px solid var(--dark-blue);
+    display: block;
+    margin: auto;
+}
+
+
+
+.rezept-kurzangaben-blau ul {
+    margin: auto;
+    text-align: center;
+    color: var(--light-blue);
+    padding-bottom: 10px;
+    gap: 20px;
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    color: var(--light-blue);
+
+}
+
+.zubereitung-blau {
+    color: var(--light-blue);
+    border-radius: 10%;
+    border: 15px solid var(--dark-blue);
+    background-color: var(--dark-blue);
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+.zubereitung-blau ul {
+    color: var(--light-blue);
+    list-style: none;
+    padding-right: 30px;
+    margin-bottom: 8px;
+}
+
+
+
+/* Detailseite GRÜN*/
+
+
+.nudelnMitPestoTitel {
+    margin-bottom: 10px;
+    color: var(--dark-green);
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.rezept-titel-grün h3 {
+    color: var(--light-green);
+
+}
+
+.zutaten-liste-grün {
+    color: var(--light-green);
+    border-radius: 10%;
+    border: 15px solid var(--dark-green);
+    background-color: var(--dark-green);
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+
+.rezept-bild-grün {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 10px solid var(--dark-green);
+    display: block;
+    margin: auto;
+}
+
+
+.rezept-kurzangaben-grün ul {
+    margin: auto;
+    text-align: center;
+    color: var(--light-green);
+    padding-bottom: 10px;
+    gap: 20px;
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+
+}
+
+.zubereitung-grün {
+    color: var(--light-green);
+    border-radius: 10%;
+    border: 15px solid var(--dark-green);
+    background-color: var(--dark-green);
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.zubereitung-grün ul {
+    color: var(--light-green);
+    list-style: none;
+    padding-right: 30px;
+    margin-bottom: 8px;
+}
+
+/* Detailseite ROT*/
+
+
+.pfannenkuchenTorteTitel {
+    margin-bottom: 10px;
+    color: var(--dark-red);
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.rezept-titel-rot h3 {
+    color: var(--light-red);
+
+}
+
+.zutaten-liste-rot {
+    color: var(--light-red);
+    border-radius: 10%;
+    border: 15px solid var(--dark-red);
+    background-color: var(--dark-red);
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+
+.rezept-bild-rot {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 10px solid var(--dark-red);
+    display: block;
+    margin: auto;
+}
+
+
+.rezept-kurzangaben-rot ul {
+    margin: auto;
+    text-align: center;
+    color: var(--light-red);
+    padding-bottom: 10px;
+    gap: 20px;
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+
+}
+
+.zubereitung-rot {
+    color: var(--light-red);
+    border-radius: 10%;
+    border: 15px solid var(--dark-red);
+    background-color: var(--dark-red);
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.zubereitung-rot ul {
+    color: var(--light-red);
+    list-style: none;
+    padding-right: 30px;
+    margin-bottom: 8px;
+}
+
+
+
+/*Rezept-hinzufügen-Formular*/
+
+body.formular-seite {
+    background-image: url(img/Hintergrundbild-Disko-F1.png);
+
+}
+
+
+.formular-header {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.formular {
+    margin: 30px;
+}
+
+.formular form,
+input,
+textarea,
+select {
+    width: 100%;
+    background-color: #202020;
+    color: var(--light-purple);
+
+}
+
+.formular lable {
+    color: var(--light-purple);
+
+}
+
+
+.formular h2 {
+    font-family: var(--font-title);
+    margin-bottom: 5px;
+    color: var(--dark-purple);
+    text-align: center;
+    font-size: 3em;
+
+
+}
+
+.formular h3 {
+    font-family: var(--font-headline);
+    margin-bottom: 5px;
+    color: var(--light-purple);
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.formular input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid initial;
+    outline: 2px solid var(--dark-purple);
+    outline-offset: 2px;
+}
+
+/* über uns */
+.about-img-container {
+    display: grid;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem
+}
+
+.img-text .about-list li {
+    color: var(--light-blue);
+}
+
+.about-img {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+    border: 20px solid var(--dark-purple);
+}
+
+.quellen-angabe {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--light-purple);
+    margin-top: -20px;
+}
+
+.quellen-angabe a {
+    color: var(--light-purple);
+    text-decoration: underline;
+}
+
+.quellen-angabe a:hover {
+    color: var(--light-red);
+}
+
+.about-banner {
+    min-height: 20rem;
+    background-image: url('img/martha-emma.jpg');
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+}
+
+.banner-text h1 {
+    color: var(--light-green);
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+.about-list {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.about-list li {
+    margin-bottom: 0;
+    color: var(--dark-green);
+}
+
+.person-extra .circle {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 4rem;
+}
+
+.intro-text {
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+}
+
+.banner-text h1 {
+    color: var(--light-blue);
+}
+
+
+.unsereGeschichte {
+    background-color: var(--dark-blue);
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.unsereGeschichte p {
+    color: var(--light-blue);
+}
+
+.veganeErnährung {
+    background-color: var(--dark-blue);
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.veganeErnährung p {
+    color: var(--light-blue);
+}
+
+/*DOKUMENTATION*/
+
+body.dokumentation {
+    grid-template-columns: auto;
+
+}
+
+.inhaltsverzeichnis {
+    margin: 3rem;
+
+}
+
+.inhaltsverzeichnis ul {
+    list-style: none;
+}
+
+.inhaltsverzeichnis h2 {
+    text-align: left;
+}
+
+.inhaltsverzeichnis a {
+    color: var(--light-green);
+}
+
+.inhaltsverzeichnis a:hover {
+    color: var(--light-purple);
+}
+
+.inhaltsverzeichnis a:link {
+    text-decoration: none;
+}
+
+
+
+.abschnitt {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 5rem;
+}
+
+.bild {
+    grid-column: 1;
+    justify-self: start;
+}
+
+.bild img {
+    width: 200px;
+    height: auto;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.abschnitt h2 {
+    text-align: left;
+}
+
+.abschnitt h3 {
+    grid-column: 1;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.abschnitt p {
+    grid-column: 1;
+    margin: 0;
+    padding: 0;
+    color: var(--light-green);
+    margin-bottom: 1rem;
+}
+
+.about-banner {
+    background-image: none;
+}
+
+.dokumentation {
+    background-image: none;
+}
+
+/* tablet - mittel */
+@media (min-width: 775px) {
+
+    body.formular-seite,
+    body.detail-seite2,
+    body.detail-seite3,
+    body.detail-seite1 {
+        display: grid;
+        grid-template-columns: auto auto;
+
+        background-image: url(img/Hintergrundbild-Disko-2-1.png);
+    }
+
+    body.formular-seite {
+        background-image: url(img/Hintergrundbild-Disko-2-2.png);
+
+    }
+
+    /*index Seite*/
+    .main-page {
+        background-image: url(img/Hintergrundbild-Disko-2-1.png);
+    }
+
+    .banner-text h1 {
+        font-size: 4rem;
+    }
+
+    .main-page h2 {
+        font-size: 2rem;
+    }
+
+    .main-banner.index {
+        min-height: 25rem;
+        background-size: cover;
+        grid-template-rows: auto 1fr;
+    }
+
+    .intro-text {
+        margin-top: 5rem;
+    }
+
+    .circle {
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+
+    .circle a {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .img-box {
+        grid-column: 1;
+        grid-row: 1/ span 2;
+
+    }
+
+    .circle h3 {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: end;
+        text-align: left;
+        padding-left: 2rem;
+        font-size: 2rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .circle ul {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: start;
+        text-align: left;
+        padding-left: 2rem;
+
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1rem;
+        list-style: none;
+        color: var(--light-red);
+    }
+
+    .circle p {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Rezeptseite*/
+    .detail-seite1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rezept-header {
+        grid-column: 1/3;
+        text-align: center;
+    }
+
+    .erdnusscurryTitel,
+    .pfannenkuchenTorteTitel,
+    .nudelnMitPestoTitel {
+        grid-column: 1/3;
+
+    }
+
+
+   
+
+    .rezept-titel-blau h3,
+    .rezept-titel-grün h3,
+    .rezept-titel-rot h3 {
+
+        grid-column: 1/2;
+
+    }
+
+    .zutaten-liste-blau,
+    .zutaten-liste-grün,
+    .zutaten-liste-rot {
+        border-radius: 10px;
+        border: none;
+        background-color: transparent;
+        max-width: 800px;
+        columns: 2;
+        column-gap: 30px;
+        list-style-position: inside;
+        grid-column: 2/3;
+
+
+    }
+
+    .rezept-bild-blau,
+    .rezept-bild-grün,
+    .rezept-bild-rot {
+        grid-column: 1/2;
+    }
+
+    .rezept-kurzangaben-blau,
+    .rezept-kurzangaben-grün,
+    .rezept-kurzangaben-rot {
+        grid-column: 2/3;
+        display: grid;
+        place-items: center;
+    }
+
+
+    .rezept-kurzangaben-blau ul,
+    .rezept-kurzangaben-grün ul,
+    .rezept-kurzangaben-rot ul {
+        margin: none;
+        text-align: none;
+        padding-bottom: 10px;
+        gap: none;
+        list-style: none;
+        gap: none;
+        padding: 0;
+        margin: 0;
+
+        border: none;
+        background-color: transparent;
+        border-radius: 0;
+        grid-column: 2/3;
+
+    }
+
+    .zubereitung-blau,
+    .zubereitung-grün,
+    .zubereitung-rot {
+
+        border: none;
+        background-color: transparent;
+        border-radius: 0;
+    }
+
+    .rezept-footer {
+        grid-column: 1/3;
+    }
+
+
+    /*Formular*/
+
+    .formular-header {
+        grid-column: 1/3;
+    }
+
+
+    .formular-2 {
+        margin: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1em;
+    }
+
+    .formular-2m {
+        margin: 30px;
+    }
+
+    .formular-2m form,
+    input,
+    textarea,
+    select {
+        width: 100%;
+        background-color: #202020;
+        color: var(--light-purple);
+
+    }
+
+    .formular-2m input:focus-visible,
+    textarea:focus-visible {
+        outline: 2px solid initial;
+        outline: 2px solid var(--dark-purple);
+        outline-offset: 2px;
+    }
+
+
+    .formular-2 form,
+    input,
+    textarea,
+    select {
+        width: 100%;
+        background-color: #202020;
+        color: var(--light-purple);
+
+    }
+
+    .formular-2 lable {
+        color: var(--light-purple);
+
+    }
+
+
+    .formular h2 {
+        grid-column: 1/3;
+
+
+    }
+
+    .formular h3 {
+        grid-column: 1/3;
+    }
+
+    .formular-zwUeberschrift {
+        font-family: var(--font-headline);
+        margin-bottom: 5px;
+        color: var(--light-purple);
+        text-align: center;
+        font-size: 1.5em;
+        grid-column: 1/3;
+
+    }
+
+    .formular-footer {
+        grid-column: 1/3;
+    }
+
+    /*Das sind Wir*/
+    .person {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row: auto auto;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .wir .banner-text h1 {
+        font-size: 4rem;
+    }
+
+    .wir h2 {
+        font-size: 2rem;
+    }
+
+    .wir .about-banner {
+        min-height: 25rem;
+        background-size: cover;
+        grid-template-rows: auto 1fr;
+    }
+
+    .about-img-container.martha {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .about-img-container.emma {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .person-extra.martha {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .person-extra.emma {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .img-text {
+        background-color: var(--light-blue);
+        border-radius: 25px;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+
+    .img-text .about-list li {
+        color: var(--dark-blue);
+    }
+
+    .person-extra .circle a {
+        grid-template-columns: 1fr;
+    }
+
+
+}
+
+/* fullscreen */
+@media (min-width: 1160px) {
+
+    body.formular-seite,
+    body.detail-seite2,
+    body.detail-seite3,
+    body.detail-seite1 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+
+        background-image: url(img/Hintergrundbild-Disko11.png);
+    }
+
+    .rezept-header {
+        grid-column: 1/4;
+    }
+
+    /*index Seite*/
+    .main-banner.index {
+        min-height: 30rem;
+        background-size: cover;
+        grid-template-rows: auto 1fr;
+    }
+
+    .startscreen-list {
+        grid-template-columns: auto auto auto;
+        justify-content: center;
+        gap: 4rem;
+    }
+
+    .circle a {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        justify-items: center;
+        gap: 10px;
+    }
+
+    .img-box {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .circle h3 {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: start;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .main-page h2 {
+        margin-bottom: 3rem;
+    }
+
+    .circle ul {
+        grid-column: 1;
+        grid-row: 3;
+        align-self: start;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .banner-text h1 {
+        font-size: 5rem;
+    }
+
+    /* Rezeptseite*/
+
+    .rezept-header {
+        grid-column: 1/4;
+    }
+
+    .erdnusscurryTitel,
+    .nudelnMitPestoTitel,
+    .pfannenkuchenTorteTitel {
+        text-align: center;
+        grid-column: 1/4;
+
+    }
+
+    .rezept-titel-blau h3,
+    .rezept-titel-grün h3,
+    .rezept-titel-rot h3 {
+        text-align: center;
+        grid-column: 1/2;
+
+    }
+
+    .zutaten-liste-blau,
+    .zutaten-liste-grün,
+    .zutaten-liste-rot {
+        grid-column: 2/4;
+
+    }
+
+    .rezept-bild-blau,
+    .rezept-bild-grün,
+    .rezept-bild-rot {
+        grid-column: 1/2;
+    }
+
+    .rezept-kurzangaben-blau,
+    .rezept-kurzangaben-grün,
+    .rezept-kurzangaben-rot {
+        grid-column: 2/3;
+    }
+
+    .rezept-kurzangaben-blau ul,
+    .rezept-kurzangaben-grüm ul,
+    .rezept-kurzangaben-rot ul {
+        grid-column: 2/3;
+    }
+
+    .zubereitung-blau,
+    .zubereitung-grün,
+    .zubereitung-rot {
+        max-width: 800px;
+        grid-column: 2/4;
+        align-content: center;
+    }
+
+    .rezept-footer {
+        grid-column: 1/4;
+    }
+
+    /*Formular*/
+
+    .formular-header {
+        grid-column: 1/4;
+    }
+
+    .formular {
+        padding-left: 4em;
+        padding-right: 4em;
+        grid-column: 2/3;
+    }
+
+    .formular-2m {
+        padding-left: 4em;
+        padding-right: 4em;
+        grid-column: 2/3;
+    }
+
+
+    .formular-2 {
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+
+    .formular-G2 {
+        padding: 5em;
+    }
+
+
+
+    .formular h2 {
+        grid-column: 1/4;
+
+
+    }
+
+    .formular h3 {
+        grid-column: 1/4;
+    }
+
+    .formular-zwUeberschrift {
+
+        grid-column: 1/4;
+
+    }
+
+    .formular-footer {
+        grid-column: 1/4;
+    }
+
+    /*Das sind Wir*/
+    .person {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: auto 1fr 1fr;
+        grid-template-rows: auto auto;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .about-img-container {
+        grid-template-columns: auto 1fr;
+        justify-items: center;
+    }
+
+    .about-img-container.martha {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        gap: 6rem;
+    }
+
+    .about-img-container.emma {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        gap: 6rem;
+    }
+
+    .person-extra.martha {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .person-extra.emma {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .img-text {
+        align-items: center;
+    }
+
+
+
+}

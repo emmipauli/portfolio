@@ -1,0 +1,21 @@
+# ==============================================================================
+# GITIGNORE - PORTFOLIO EMMA RABE
+# ==============================================================================
+
+# macOS Systemdateien
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Editor & Build-Artefakte
+node_modules/
+package-lock.json
+.taste-skill/
+.agents/
+
+# Große Roh-Videodateien (> 100 MB - GitHub blockiert Dateien über 100 MB)
+# Hinweis: Die Dateien bleiben lokal auf deinem Mac und im Backup-Ordner vollständig erhalten!
+mobileComputing/EmMasChatroom.mp4
+SP/Spieleprogrammierung.mp4
+3dModellierung/3dModellierung.mov

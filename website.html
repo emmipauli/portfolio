@@ -1,0 +1,244 @@
+<!-- Dokumententyp HTML5 deklarieren -->
+<!DOCTYPE html>
+<!-- HTML-Wurzelelement mit Sprache Deutsch -->
+<html lang="de">
+<!-- Kopfbereich für Seiteneinstellungen und Metadaten -->
+<head>
+    <!-- UTF-8 Kodierung für Sonderzeichen und Umlaute -->
+    <meta charset="UTF-8">
+    <!-- Viewport-Einstellung für alle Bildschirmgrößen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titel der Detailseite im Browser-Tab -->
+    <title>Frontend Design — Emma Rabe</title>
+    <!-- Einbindung des gemeinsamen CSS-Stylesheets style.css -->
+    <link rel="stylesheet" href="style.css">
+<!-- Ende des Kopfbereichs -->
+</head>
+<!-- Beginn des sichtbaren Webseiteninhalts -->
+<body>
+
+    <!-- KOPFZEILE MIT NAVIGATION -->
+    <header class="site-header">
+        <!-- Logo mit Namenszug -->
+        <div class="logo">
+            <!-- Link zurück zur Startseite -->
+            <a href="index.html" class="logo-title">Emma Rabe</a>
+        <!-- Ende des Logos -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="header-actions">
+            <!-- Pill-Button zurück zur Übersicht Websites & Apps -->
+            <a href="web-app.html" class="pill-btn">
+                <!-- Pfeil nach links -->
+                <span>←</span>
+                <!-- Textbeschriftung -->
+                <span>Zurück zu Web &amp; App</span>
+            <!-- Ende des Buttons -->
+            </a>
+        <!-- Ende der Aktionen -->
+        </div>
+    <!-- Ende des Headers -->
+    </header>
+
+    <!-- HAUPTBEREICH DER DETAILSEITE -->
+    <main>
+
+        <!-- INTRO DER KATEGORIE FRONTEND DESIGN -->
+        <section class="hero project-detail-hero">
+            <!-- Vor-Tag mit Semester und Fachbereich -->
+            <div class="hero-tag">Disziplin • Frontend Design (4. Semester)</div>
+            <!-- Hauptüberschrift der Detailseite -->
+            <h1>Frontend Design</h1>
+            <!-- Ausführlicher Einleitungstext über das Modul -->
+            <p class="hero-bio">
+                Im vierten Semester sind im Kurs Frontend Design zwei eigenständige Web-Projekte entstanden: Die Einzelarbeit „Plant Based Fansite“ sowie die gemeinsame Hausarbeit „Pflanzlich Kochen“. Beide Projekte wurden von Grund auf mit semantischem HTML, modularem CSS und Fokus auf Barrierefreiheit sowie responsivem Aufbau programmiert.
+            <!-- Ende des Einleitungstexts -->
+            </p>
+        <!-- Ende der Hero-Sektion -->
+        </section>
+
+        <!-- PROJEKT 1: PLANT BASED FANSITE (EINZELARBEIT) -->
+        <section class="portfolio-section" style="margin-top: 1rem;">
+            <!-- Kopfbereich für Projekt 1 -->
+            <div class="portfolio-header" style="margin-top: 0; margin-bottom: 1.25rem;">
+                <!-- Vertikaler Block für Tag und Projekttitel -->
+                <div>
+                    <!-- Meta-Tag für Projekt 1 -->
+                    <div class="hero-tag" style="margin-bottom: 0.35rem;">Einzelarbeit • 4. Semester</div>
+                    <!-- Titel des Projekts -->
+                    <h2>Plant Based Fansite</h2>
+                <!-- Ende des Titel-Blocks -->
+                </div>
+            <!-- Ende des Headers -->
+            </div>
+
+            <!-- Beschreibungstext für Projekt 1 -->
+            <p class="hero-bio" style="font-size: 1rem; margin-bottom: 1.5rem;">
+                Konzeption und Gestaltung einer eigenständigen Rezept-Fansite rund um pflanzliche Ernährung. Die Seite zeichnet sich durch handgezeichnete SVG-Vektorelemente, strukturierte Mengenangaben und eine klare Unterteilung in süße und herzhafte Gerichte aus.
+            <!-- Ende der Beschreibung -->
+            </p>
+
+            <!-- Container für den Live-Website-Link ohne Pfeil -->
+            <div class="live-link-container" style="margin-top: 0; margin-bottom: 2.25rem;">
+                <!-- Link zum direkten Öffnen der Fansite-HTML-Datei -->
+                <a href="Frontend/Fansite/plantBased.html#2" target="_blank" rel="noopener noreferrer" class="live-btn">
+                    <!-- Textbeschriftung ohne Pfeil -->
+                    <span>Website öffnen</span>
+                <!-- Ende des Links -->
+                </a>
+            <!-- Ende des Link-Containers -->
+            </div>
+
+            <!-- Bildergalerie für Projekt 1 -->
+            <div class="detail-gallery">
+                <!-- Bild 1: Pancakes -->
+                <div>
+                    <!-- Bilddatei -->
+                    <img src="Frontend/Fansite/Pancakes.jpeg" alt="Vegane Pancakes Rezept" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Vegane Pancakes — Rezeptaufbau &amp; Mengenangaben</p>
+                <!-- Ende Kachel 1 -->
+                </div>
+
+                <!-- Bild 2: Waffeln -->
+                <div>
+                    <!-- Bilddatei -->
+                    <img src="Frontend/Fansite/Waffeln.jpeg" alt="Vegane Waffeln Rezept" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Süße Rezepte — Typografie &amp; Food-Fotografie</p>
+                <!-- Ende Kachel 2 -->
+                </div>
+
+                <!-- Bild 3: Erdnusscurry -->
+                <div>
+                    <!-- Bilddatei -->
+                    <img src="Frontend/Fansite/Erdnusscurry.jpeg" alt="Erdnusscurry Rezept" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Herzhafte Rezepte — Erdnusscurry mit Gemüse</p>
+                <!-- Ende Kachel 3 -->
+                </div>
+
+                <!-- Bild 4: Linsenbolognese -->
+                <div>
+                    <!-- Bilddatei -->
+                    <img src="Frontend/Fansite/Linsenbolognese.jpeg" alt="Linsenbolognese Rezept" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Rezeptkarte Linsenbolognese &amp; Zutatenliste</p>
+                <!-- Ende Kachel 4 -->
+                </div>
+            <!-- Ende der Galerie von Projekt 1 -->
+            </div>
+        <!-- Ende der Sektion von Projekt 1 -->
+        </section>
+
+        <!-- PROJEKT 2: PFLANZLICH KOCHEN (PARTNERARBEIT / HAUSARBEIT) -->
+        <section class="portfolio-section" style="margin-top: clamp(4rem, 8vw, 6.5rem);">
+            <!-- Kopfbereich für Projekt 2 -->
+            <div class="portfolio-header" style="margin-top: 0; margin-bottom: 1.25rem;">
+                <!-- Vertikaler Block für Tag und Projekttitel -->
+                <div>
+                    <!-- Meta-Tag für Projekt 2 -->
+                    <div class="hero-tag" style="margin-bottom: 0.35rem;">Partnerarbeit • 4. Semester</div>
+                    <!-- Titel des Projekts -->
+                    <h2>Pflanzlich Kochen (Hausarbeit)</h2>
+                <!-- Ende des Titel-Blocks -->
+                </div>
+            <!-- Ende des Headers -->
+            </div>
+
+            <!-- Beschreibungstext für Projekt 2 -->
+            <p class="hero-bio" style="font-size: 1rem; margin-bottom: 1.5rem;">
+                Als Semester-Hausarbeit im Zweier-Team entwickelte Plattform für vegane Rezepte und Wissenswertes. Das Projekt umfasst ein responsives Banner-Design, modulare Rezeptseiten, ein Formular zum Einsenden eigener Kreationen und eine umfassende Code-Dokumentation.
+            <!-- Ende der Beschreibung -->
+            </p>
+
+            <!-- Container für den Live-Website-Link ohne Pfeil -->
+            <div class="live-link-container" style="margin-top: 0; margin-bottom: 2.25rem;">
+                <!-- Link zum direkten Öffnen der Hausarbeits-Startseite -->
+                <a href="Frontend/Hausarbeit/index.html" target="_blank" rel="noopener noreferrer" class="live-btn">
+                    <!-- Textbeschriftung ohne Pfeil -->
+                    <span>Website öffnen</span>
+                <!-- Ende des Links -->
+                </a>
+            <!-- Ende des Link-Containers -->
+            </div>
+
+            <!-- Bildergalerie für Projekt 2 -->
+            <div class="detail-gallery">
+                <!-- Bild 1: Buffet Themenwelt -->
+                <div>
+                    <!-- Bilddatei -->
+                    <img src="Frontend/Hausarbeit/img/Buffet.png" alt="Rezept-Übersicht und Themenwelt" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Pflanzliche Rezeptvielfalt — Themenwelt &amp; Übersicht</p>
+                <!-- Ende Kachel 1 -->
+                </div>
+
+                <!-- Bild 2: Banner Dokumentation -->
+                <div>
+                    <!-- Bilddatei -->
+                    <img src="Frontend/Hausarbeit/dokumentation/banner.png" alt="Header-Banner und Typografie" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Header-Banner &amp; typografischer Einstieg</p>
+                <!-- Ende Kachel 2 -->
+                </div>
+
+                <!-- Bild 3: Erdnusscurry -->
+                <div>
+                    <!-- Bilddatei -->
+                    <img src="Frontend/Hausarbeit/img/Erdnusscurry.png" alt="Erdnusscurry Rezeptseite" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Rezeptkarte Erdnusscurry mit Portions- &amp; Zeitangaben</p>
+                <!-- Ende Kachel 3 -->
+                </div>
+
+                <!-- Bild 4: Nudeln mit Pesto -->
+                <div>
+                    <!-- Bilddatei -->
+                    <img src="Frontend/Hausarbeit/img/Bild-nudelnMitPesto.jpeg" alt="Nudeln mit Pesto" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Rezeptansicht: Schnelle Nudeln mit Pesto</p>
+                <!-- Ende Kachel 4 -->
+                </div>
+
+                <!-- Bild 5: Rezept-Dokumentation -->
+                <div>
+                    <!-- Bilddatei -->
+                    <img src="Frontend/Hausarbeit/dokumentation/Rezept-1.png" alt="Rezeptaufbau Dokumentation" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Dokumentation des modularen HTML-Rezeptrasters</p>
+                <!-- Ende Kachel 5 -->
+                </div>
+
+                <!-- Bild 6: Hover-Kreise -->
+                <div>
+                    <!-- Bilddatei -->
+                    <img src="Frontend/Hausarbeit/dokumentation/kreisBild.png" alt="Interaktive Kreiselemente" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Interaktive Kacheln mit animierten CSS-Hover-Zuständen</p>
+                <!-- Ende Kachel 6 -->
+                </div>
+            <!-- Ende der Galerie von Projekt 2 -->
+            </div>
+        <!-- Ende der Sektion von Projekt 2 -->
+        </section>
+
+    <!-- Ende des Hauptbereichs -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <!-- Abschlusszeile -->
+        <div class="footer-bottom-row">
+            <!-- Copyright-Angabe -->
+            <span>&copy; 2026 Emma Rabe.</span>
+        <!-- Ende der Abschlusszeile -->
+        </div>
+    <!-- Ende des Footers -->
+    </footer>
+
+<!-- Ende des sichtbaren Körpers -->
+</body>
+<!-- Ende des HTML-Dokuments -->
+</html>

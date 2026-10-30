@@ -1,0 +1,146 @@
+<!-- Dokumententyp HTML5 deklarieren -->
+<!DOCTYPE html>
+<!-- HTML-Wurzelelement mit Sprache Deutsch -->
+<html lang="de">
+<!-- Kopfbereich für Seiteneinstellungen und Metadaten -->
+<head>
+    <!-- UTF-8 Kodierung für deutsche Umlaute -->
+    <meta charset="UTF-8">
+    <!-- Viewport-Einstellung für alle Bildschirmgrößen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titel der Detailseite im Browser-Tab -->
+    <title>3D-Handmodellierung in Blender — Emma Rabe</title>
+    <!-- Einbindung des gemeinsamen CSS-Stylesheets style.css -->
+    <link rel="stylesheet" href="style.css">
+<!-- Ende des Kopfbereichs -->
+</head>
+<!-- Beginn des sichtbaren Webseiteninhalts -->
+<body>
+
+    <!-- KOPFZEILE MIT NAVIGATION -->
+    <header class="site-header">
+        <!-- Logo mit Namenszug -->
+        <div class="logo">
+            <!-- Link zurück zur Startseite -->
+            <a href="index.html" class="logo-title">Emma Rabe</a>
+        <!-- Ende des Logos -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="header-actions">
+            <!-- Pill-Button zurück zur Übersicht 3D & Game Design -->
+            <a href="3d-gamedesign.html" class="pill-btn">
+                <!-- Pfeil nach links -->
+                <span>←</span>
+                <!-- Textbeschriftung -->
+                <span>Zurück zu 3D &amp; Game Design</span>
+            <!-- Ende des Buttons -->
+            </a>
+        <!-- Ende der Aktionen -->
+        </div>
+    <!-- Ende des Headers -->
+    </header>
+
+    <!-- HAUPTBEREICH DER DETAILSEITE -->
+    <main>
+
+        <!-- PROJEKT-INTRO -->
+        <section class="hero project-detail-hero">
+            <!-- Vor-Tag mit Semester und Fachbereich -->
+            <div class="hero-tag">Projekt • 3D-Modellierung (3. Semester)</div>
+            <!-- Hauptüberschrift des Projekts -->
+            <h1>3D-Handmodellierung in Blender</h1>
+            <!-- Ausführliche Projektbeschreibung -->
+            <p class="hero-bio">
+                Im dritten Semester bestand im Modul 3D-Modellierung die gestalterische Aufgabe darin, die eigene Hand als dreidimensionales Objekt in Blender detailgetreu nachzubauen. Der Schwerpunkt lag auf sauberer Mesh-Topologie, anatomischen Proportionen, fließenden Edge-Loops an Gelenken und Fingerknöcheln sowie präzise ausgearbeiteten Fingernägeln und Daumenansätzen.
+            <!-- Ende der Beschreibung -->
+            </p>
+        <!-- Ende der Hero-Sektion -->
+        </section>
+
+        <!-- VIDEO-BEREICH MIT 360°-VIEWPORT-DREHUNG -->
+        <section class="portfolio-section">
+            <!-- Überschrift für den Videobereich -->
+            <div class="portfolio-header" style="margin-top: 0; margin-bottom: 1.25rem;">
+                <!-- Titel -->
+                <h2>360°-Viewport &amp; Modellansicht</h2>
+            <!-- Ende des Headers -->
+            </div>
+
+            <!-- Video-Container -->
+            <div class="video-wrapper">
+                <!-- Video-Player mit nativen Steuerelementen, ohne Ton und ohne JavaScript -->
+                <video controls playsinline preload="metadata" poster="3dModellierung/hand-modellierung-poster.jpg">
+                    <!-- Bereinigte, stumme MP4-Videodatei aus dem Projektordner 3dModellierung -->
+                    <source src="3dModellierung/3dModellierung_hand.mp4" type="video/mp4">
+                    <!-- Hinweistext falls der Browser kein HTML5 Video unterstützt -->
+                    Dein Browser unterstützt das Videoformat leider nicht.
+                <!-- Ende des Videos -->
+                </video>
+            <!-- Ende des Video-Containers -->
+            </div>
+        <!-- Ende der Portfolio-Sektion -->
+        </section>
+
+        <!-- DETAILGALERIE MIT PERSPEKTIVEN UND ANSICHTEN -->
+        <section class="portfolio-section">
+            <!-- Zwischenüberschrift -->
+            <div class="portfolio-header" style="margin-top: 0; margin-bottom: 2rem;">
+                <!-- Titel -->
+                <h2>Perspektiven &amp; Modellierungsdetails</h2>
+            <!-- Ende des Headers -->
+            </div>
+
+            <!-- Raster für 3D-Screenshots -->
+            <div class="detail-gallery">
+
+                <!-- Kachel 1: Oberhand und Fingernägel -->
+                <div>
+                    <!-- Bilddatei aus der Modellierung -->
+                    <img src="3dModellierung/hand-perspektive-02.jpg" alt="Oberhand mit Fingernägeln und Knöcheln in Blender" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Oberhand &amp; Knöchelstruktur — Ausarbeitung der Fingernägel, Nagelfalze und Knöchelübergänge</p>
+                <!-- Ende Kachel 1 -->
+                </div>
+
+                <!-- Kachel 2: Handinnenfläche -->
+                <div>
+                    <!-- Bilddatei aus der Modellierung -->
+                    <img src="3dModellierung/hand-perspektive-01.jpg" alt="Handinnenfläche und Daumenballen in Blender" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Handinnenfläche — Anatomische Wölbung von Handteller, Daumenballen und Handgelenkansatz</p>
+                <!-- Ende Kachel 2 -->
+                </div>
+
+                <!-- Kachel 3: Frontalperspektive Fingerkuppen -->
+                <div>
+                    <!-- Bilddatei aus der Modellierung -->
+                    <img src="3dModellierung/hand-perspektive-03.jpg" alt="Frontalansicht der Fingerglieder und Krümmungen" loading="lazy">
+                    <!-- Bildunterschrift -->
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Frontalansicht — Natürliche Krümmung der Fingerglieder und räumliche Tiefenstaffelung</p>
+                <!-- Ende Kachel 3 -->
+                </div>
+
+            <!-- Ende der Galerie -->
+            </div>
+        <!-- Ende der Sektion -->
+        </section>
+
+    <!-- Ende des Hauptbereichs -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <!-- Abschlusszeile -->
+        <div class="footer-bottom-row">
+            <!-- Copyright-Angabe -->
+            <span>&copy; 2026 Emma Rabe.</span>
+        <!-- Ende der Abschlusszeile -->
+        </div>
+    <!-- Ende des Footers -->
+    </footer>
+
+<!-- Ende des sichtbaren Körpers -->
+</body>
+<!-- Ende des HTML-Dokuments -->
+</html>
