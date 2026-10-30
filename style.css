@@ -287,15 +287,26 @@ nav a {
 /* Große, markante Hauptüberschrift RECHTSBÜNDIG (als spannungsvoller Kontrast) */
 .hero h1 {
     font-family: var(--font-display); /* Markante Syne-Schriftart */
-    font-size: clamp(2.6rem, 6.8vw, 4.8rem); /* Großzügig skalierende Display-Schrift */
+    font-size: clamp(3rem, 7.5vw, 5.4rem); /* Monumentale Namens-Headline wie im Screenshot */
     font-weight: 700; /* Fetter, satter Schnitt */
-    line-height: 1.08; /* Kompakter, eleganter Durchschuss */
+    line-height: 1.05; /* Kompakter, eleganter Durchschuss */
     letter-spacing: -0.035em; /* Typografisch dicht gesperrt */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
     width: 100%; /* Volle Breite für sauberen Rechtsanschlag */
-    margin-bottom: 2rem; /* Abstand zum Fließtext */
+    margin-bottom: 2.25rem; /* Abstand zum Fließtext */
     text-align: right; /* RECHTSBÜNDIGE Hauptüberschrift nach Nutzerwunsch */
     align-self: flex-end; /* Schiebt die Headline ganz nach rechts */
+}
+
+/* Kleine Unterzeile direkt unter dem Namen nach Nutzerwunsch */
+.hero-subtitle {
+    display: block; /* Eigene Zeile unter dem Namen */
+    font-family: var(--font-main); /* Ruhige, lesbare Sans-Serif-Schrift */
+    font-size: clamp(1rem, 1.8vw, 1.3rem); /* Deutlich kleinere, feine Schriftgröße */
+    font-weight: 500; /* Angenehm leichter Schnitt */
+    letter-spacing: -0.01em; /* Feine Spationierung */
+    color: var(--color-accent); /* Lebendiges Waldgrün #084A24 */
+    margin-top: 0.6rem; /* Abstand zum Namen */
 }
 
 /* Subtiler zweiter Teil der Überschrift in lebendigem Waldgrün */
