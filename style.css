@@ -267,9 +267,9 @@ nav a {
 }
 
 /* ==========================================================================
-   HERO-SEKTION (Zentriert, groß & selbstbewusst – exakt wie auf dem Screenshot)
+   HERO-SEKTION (h1 rechtsbündig als markanter Eyecatcher, Fließtext linksbündig)
    ========================================================================== */
-/* Container für das Intro mit zentrierter Ausrichtung wie 'emily draper' */
+/* Container für das Intro mit linksbündigem Grundlayout */
 .hero {
     padding-top: clamp(4.5rem, 9vw, 8rem); /* Viel edler Weißraum nach oben */
     padding-bottom: clamp(3rem, 6vw, 5.5rem); /* Großzügiger Abstand nach unten */
@@ -278,13 +278,13 @@ nav a {
     margin-left: auto; /* Exakt zentriert links */
     margin-right: auto; /* Exakt zentriert rechts */
     width: 100%; /* Volle Breite */
-    text-align: center; /* Zentrierte Typografie wie im Screenshot */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikale Anordnung */
-    align-items: center; /* Mittig zentriert */
+    align-items: flex-start; /* Grundausrichtung linksbündig */
+    text-align: left; /* Fließtext standardmäßig linksbündig */
 }
 
-/* Große, selbstbewusste Hauptüberschrift nach Emily-Draper-Vorbild */
+/* Große, markante Hauptüberschrift RECHTSBÜNDIG (als spannungsvoller Kontrast) */
 .hero h1 {
     font-family: var(--font-display); /* Markante Syne-Schriftart */
     font-size: clamp(2.6rem, 6.8vw, 4.8rem); /* Großzügig skalierende Display-Schrift */
@@ -292,9 +292,10 @@ nav a {
     line-height: 1.08; /* Kompakter, eleganter Durchschuss */
     letter-spacing: -0.035em; /* Typografisch dicht gesperrt */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    max-width: 820px; /* Begrenzte Zeilenbreite für ideale Lesbarkeit */
-    margin-bottom: 1.75rem; /* Abstand zum Fließtext */
-    text-align: center; /* Exakt mittig */
+    width: 100%; /* Volle Breite für sauberen Rechtsanschlag */
+    margin-bottom: 2rem; /* Abstand zum Fließtext */
+    text-align: right; /* RECHTSBÜNDIGE Hauptüberschrift nach Nutzerwunsch */
+    align-self: flex-end; /* Schiebt die Headline ganz nach rechts */
 }
 
 /* Subtiler zweiter Teil der Überschrift in lebendigem Waldgrün */
@@ -303,52 +304,52 @@ nav a {
     font-weight: 500; /* Schöner Kontrastschnitt */
 }
 
-/* Natürlicher Einleitungstext mittig zentriert */
+/* Natürlicher Einleitungstext wieder sauber LINKSBÜNDIG */
 .hero-bio {
     font-size: clamp(1.05rem, 1.6vw, 1.25rem); /* Angenehme Lesegröße */
     color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
-    max-width: 640px; /* Lesbare Zeilenlänge */
+    max-width: 680px; /* Lesbare Zeilenlänge */
     line-height: 1.65; /* Durchlüfteter Zeilenabstand */
-    text-align: center; /* Zentriert wie im Referenzdesign */
-    margin-left: auto; /* Zentriert links */
-    margin-right: auto; /* Zentriert rechts */
+    text-align: left; /* LINKSBÜNDIG nach Nutzerwunsch */
+    margin-left: 0; /* Bündig links */
+    margin-right: auto; /* Freiraum rechts */
 }
 
 /* ==========================================================================
-   FILTER-LEISTE (Zentriert über dem Raster nach Emily-Draper-Vorbild)
+   FILTER-LEISTE (Linksbündig über dem Raster)
    ========================================================================== */
-/* Kopfbereich der Projektsektion mittig zentriert */
+/* Kopfbereich der Projektsektion linksbündig */
 .portfolio-header {
     display: flex; /* Flexbox */
-    justify-content: center; /* Exakt zentriert über dem Raster */
+    justify-content: space-between; /* Titel links, Filter rechts */
     align-items: center; /* Vertikal zentriert */
-    flex-direction: column; /* Titel oben, Filter darunter */
-    gap: 1.5rem; /* Abstand */
+    flex-wrap: wrap; /* Bricht bei Bedarf um */
+    gap: 1.25rem; /* Abstand */
     margin-top: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger Weißraum nach oben */
-    margin-bottom: 3rem; /* Abstand zum Raster */
+    margin-bottom: 2.5rem; /* Abstand zum Raster */
     max-width: var(--max-width); /* Bündig mit dem zentrierten Raster */
     margin-left: auto; /* Exakt zentriert links */
     margin-right: auto; /* Exakt zentriert rechts */
     width: 100%; /* Volle Breite */
-    text-align: center; /* Zentriert */
+    text-align: left; /* Linksbündig */
 }
 
-/* Sektionstitel "Ausgewählte Arbeiten" */
+/* Sektionstitel "Ausgewählte Arbeiten" linksbündig */
 .portfolio-header h2 {
     font-family: var(--font-display); /* Syne-Schrift */
     font-size: clamp(1.5rem, 2.5vw, 2.1rem); /* Typo-Größe */
     font-weight: 700; /* Kräftig */
     letter-spacing: -0.02em; /* Leicht eng */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    text-align: center; /* Mittig */
+    text-align: left; /* Bündig links */
 }
 
-/* Container für die Pill-Filter zentriert wie auf dem Screenshot */
+/* Container für die Pill-Filter linksbündig */
 .filter-bar {
     display: flex; /* Horizontale Reihe */
     flex-wrap: wrap; /* Zeilenumbruch */
     gap: 0.75rem; /* Harmonischer Kapselabstand */
-    justify-content: center; /* Exakt mittig zentriert */
+    justify-content: flex-start; /* Linksbündig */
     align-items: center; /* Mittig */
 }
 
@@ -375,7 +376,7 @@ nav a {
 }
 
 /* ==========================================================================
-   PROJEKT-RASTER / GRID (Ohne Rundungen, ohne Boxen – exakt wie auf dem Screenshot)
+   PROJEKT-RASTER / GRID (Linksbündige Texte, scharfe Bilder ohne Boxen)
    ========================================================================== */
 /* CSS-Grid für die Arbeiten: 2 Spalten, freistehend auf dem Hintergrund */
 .portfolio-grid {
@@ -392,7 +393,7 @@ nav a {
 /* Speziell für die Startseite: Harmonisches, kompaktes 2-Spalten-Raster */
 #projectGrid {
     max-width: var(--max-width); /* Kompakt für maximalen Weißraum */
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 wohlproportionierte Spalten wie im Screenshot */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 wohlproportionierte Spalten */
     gap: clamp(2.5rem, 5.5vw, 4.5rem); /* Großzügiger Zwischenraum */
     margin-left: auto; /* Exakt zentriert links */
     margin-right: auto; /* Exakt zentriert rechts */
@@ -409,8 +410,8 @@ nav a {
     box-shadow: none; /* Kein Schatten */
     text-decoration: none; /* Keine Unterstreichung */
     color: inherit; /* Farbe erben */
-    align-items: center; /* Zentrierte Ausrichtung wie im Screenshot */
-    text-align: center; /* Zentrierte Typografie */
+    align-items: flex-start; /* Wieder sauber linksbündig */
+    text-align: left; /* Linksbündiger Text */
 }
 
 /* Nur anklickbare Projektkarten (a-Tags) erhalten Zeiger und flüssige Bewegung */
@@ -435,13 +436,13 @@ div.project-card {
     width: 100%; /* Volle Breite */
     aspect-ratio: 16 / 10; /* Klares Seitenverhältnis */
     background-color: transparent; /* Transparenter Grund */
-    border-radius: 0; /* SCHAFFE KANTEN - KEINE RUNDUNG */
+    border-radius: 0; /* SCHARFE KANTEN - KEINE RUNDUNG */
     overflow: hidden; /* Hält das Bild bündig */
     border: none; /* KEIN RAND - KEINE BOX */
     box-shadow: none; /* KEIN SCHATTEN */
 }
 
-/* Das eigentliche Projektbild mit scharfen Kanten wie Harry's und Lume im Screenshot */
+/* Das eigentliche Projektbild mit scharfen Kanten */
 .project-thumbnail img {
     width: 100%; /* Volle Breite */
     height: 100%; /* Volle Höhe */
@@ -456,23 +457,23 @@ div.project-card {
     display: none !important; /* Kein Pfeil mehr */
 }
 
-/* Textbereich direkt und zentriert unter dem Bild (wie Harry's & Lume im Screenshot) */
+/* Textbereich direkt und linksbündig unter dem Bild */
 .project-info {
     padding: 1.1rem 0 0 0; /* Abstand nach oben */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
-    align-items: center; /* Mittig zentriert */
-    text-align: center; /* Text zentriert wie im Screenshot */
+    align-items: flex-start; /* Bündig links */
+    text-align: left; /* Linksbündiger Text */
     gap: 0.35rem; /* Kleiner Zeilenabstand */
     width: 100%; /* Volle Breite */
 }
 
-/* Zeile für Kategorie und Semester mittig zentriert */
+/* Zeile für Kategorie und Semester links und rechts aufgeteilt */
 .project-meta-row {
     display: flex; /* Flexbox */
-    justify-content: center; /* Exakt mittig */
+    justify-content: space-between; /* Links Kategorie, rechts Semester */
     align-items: center; /* Mittig */
-    gap: 0.75rem; /* Abstand zwischen Kategorie und Semester */
+    width: 100%; /* Volle Breite */
     margin-bottom: 0.2rem; /* Kleiner Abstand zum Titel */
 }
 
@@ -492,30 +493,28 @@ div.project-card {
     font-weight: 500; /* Mittlere Stärke */
 }
 
-/* Projekttitel mit markanter Syne-Schrift zentriert unter dem Bild */
+/* Projekttitel linksbündig unter dem Bild */
 .project-info h3 {
     font-family: var(--font-display); /* Syne-Schriftart */
-    font-size: 1.35rem; /* Ausprägte Titelgröße wie Harry's / Lume */
+    font-size: 1.35rem; /* Ausprägte Titelgröße */
     font-weight: 700; /* Kräftig */
     letter-spacing: -0.02em; /* Leicht eng */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    text-align: center; /* Mittig */
+    text-align: left; /* Linksbündig */
     transition: color var(--duration-fast) ease; /* Weicher Farbübergang */
 }
 
-/* Kurze Projektbeschreibung */
+/* Kurze Projektbeschreibung linksbündig */
 .project-info p {
     font-size: 0.875rem; /* Lesegröße */
     color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
     line-height: 1.55; /* Gute Zeilenhöhe */
-    text-align: center; /* Mittig */
-    max-width: 380px; /* Begrenzte Breite für schönes zentriertes Schriftbild */
-    margin-left: auto; /* Zentriert links */
-    margin-right: auto; /* Zentriert rechts */
+    text-align: left; /* Linksbündig */
+    max-width: 100%; /* Bündig mit dem Bild */
 }
 
 /* ==========================================================================
-   ÜBER-MICH & FÄHIGKEITEN (Rein typografisch – OHNE Boxen, OHNE Rundungen)
+   ÜBER-MICH & FÄHIGKEITEN (Wieder sauber linksbündig – OHNE Boxen)
    ========================================================================== */
 /* Über-Mich Sektion mit Überschrift oben drüber */
 .about-section {
@@ -528,25 +527,25 @@ div.project-card {
     margin-left: auto; /* Exakt zentriert links */
     margin-right: auto; /* Exakt zentriert rechts */
     width: 100%; /* Volle Breite */
-    text-align: center; /* Zentriert */
-    align-items: center; /* Mittig */
+    text-align: left; /* Linksbündig */
+    align-items: flex-start; /* Bündig links */
 }
 
 /* Header im Über-Mich Bereich */
 .about-section .portfolio-header {
     margin-top: 0; /* Verhindert doppelten oberen Abstand */
     margin-bottom: 2rem; /* Sauberer Abstand zum Fließtext darunter */
+    justify-content: flex-start; /* Linksbündig */
 }
 
-/* Fließtext zentriert */
+/* Fließtext linksbündig */
 .about-content {
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
-    align-items: center; /* Mittig */
+    align-items: flex-start; /* Bündig links */
     gap: 1.25rem; /* Absatz-Abstand */
-    max-width: 680px; /* Lesbare Breite */
-    margin-left: auto; /* Zentriert links */
-    margin-right: auto; /* Zentriert rechts */
+    max-width: 680px; /* Lesbare Zeilenlänge */
+    margin-left: 0; /* Bündig links */
 }
 
 /* Absätze */
@@ -554,15 +553,15 @@ div.project-card {
     font-size: clamp(1rem, 1.2vw, 1.1rem); /* Lesegröße */
     color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
     line-height: 1.65; /* Durchlüftet */
-    text-align: center; /* Mittig */
+    text-align: left; /* Linksbündig */
 }
 
-/* Werkzeuge- und Skills-Bereich: Absolut KEINE Box, KEIN Rand, KEIN Kasten */
+/* Werkzeuge- und Skills-Bereich: Absolut KEINE Box, KEIN Rand, linksbündig */
 .skills-container {
     margin-top: 1.5rem; /* Abstand nach oben */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
-    align-items: center; /* Mittig */
+    align-items: flex-start; /* Bündig links */
     gap: 0.5rem; /* Abstand */
     padding: 0; /* Absolut KEIN Box-Innenabstand */
     background: transparent; /* KEINE Box */
@@ -578,7 +577,7 @@ div.project-card {
     letter-spacing: 0.08em; /* Gesperrt */
     color: var(--color-olive); /* Moosgrün #555934 */
     font-weight: 700; /* Kräftig */
-    text-align: center; /* Mittig */
+    text-align: left; /* Linksbündig */
 }
 
 /* Reiner Fließtext für Werkzeuge & Programme (OHNE Blasen, OHNE Box) */
@@ -586,12 +585,12 @@ div.project-card {
     font-size: 0.95rem; /* Angenehme Schriftgröße */
     color: var(--text-secondary); /* Harmonische Fließtextfarbe */
     line-height: 1.7; /* Gute Zeilenhöhe */
-    text-align: center; /* Mittig */
-    max-width: 620px; /* Schöne Breite */
+    text-align: left; /* Linksbündig */
+    max-width: 680px; /* Lesbare Breite */
 }
 
 /* ==========================================================================
-   FOOTER / KONTAKT (Vollflächig dunkelgrün, scharfe Kanten – exakt wie mittlerer Screenshot)
+   FOOTER / KONTAKT (Vollflächig dunkelgrün, scharfe Kanten, linksbündig ausgerichtet)
    ========================================================================== */
 /* Vollflächiger dunkelgrüner Kontakt-Bereich von Bildschirmrand zu Bildschirmrand OHNE Box-Rundungen */
 footer.site-footer, .site-footer {
@@ -607,19 +606,20 @@ footer.site-footer, .site-footer {
     padding-left: clamp(1.25rem, 4vw, 2.5rem); /* Innenabstand links */
     padding-right: clamp(1.25rem, 4vw, 2.5rem); /* Innenabstand rechts */
     color: #ffffff; /* Strahlend weiße Schrift */
-    text-align: center; /* Zentrierte Typografie wie im Screenshot */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
-    align-items: center; /* Zentriert */
+    align-items: center; /* Zentriert die Inhaltsbox im Fullwidth-Footer */
 }
 
-/* Kontakt-Bereich */
+/* Kontakt-Bereich linksbündig */
 .footer-cta {
     margin-bottom: 2rem; /* Abstand zur Mail */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
-    align-items: center; /* Mittig */
-    text-align: center; /* Mittig */
+    align-items: flex-start; /* Bündig links */
+    text-align: left; /* Linksbündig */
+    width: 100%; /* Volle Breite */
+    max-width: var(--max-width); /* Bündig mit dem zentrierten Raster */
 }
 
 /* Zartes Akzent-Label über dem Kontakt */
@@ -631,10 +631,10 @@ footer.site-footer, .site-footer {
     display: block; /* Eigene Zeile */
     margin-bottom: 0.75rem; /* Abstand */
     font-weight: 600; /* Halb-Fett */
-    text-align: center; /* Mittig */
+    text-align: left; /* Linksbündig */
 }
 
-/* Große Einladung in strahlendem Weiß (wie 'contact' im Screenshot) */
+/* Große Einladung in strahlendem Weiß */
 .footer-cta h2 {
     font-family: var(--font-display); /* Syne-Schriftart */
     font-size: clamp(2.4rem, 5.5vw, 4.2rem); /* Monumentale Display-Größe wie im Screenshot */
@@ -642,15 +642,15 @@ footer.site-footer, .site-footer {
     letter-spacing: -0.03em; /* Eng */
     color: #ffffff; /* Strahlendes Weiß auf dunklem Waldgrün */
     line-height: 1.1; /* Kompakter Durchschuss */
-    text-align: center; /* Mittig */
+    text-align: left; /* Linksbündig */
 }
 
-/* Große klickbare E-Mail-Adresse im Emily-Draper-Stil */
+/* Große klickbare E-Mail-Adresse linksbündig */
 .email-link {
     font-family: var(--font-display); /* Syne-Schriftart */
     display: inline-flex; /* Inline-Flex */
     align-items: center; /* Mittig */
-    justify-content: center; /* Mittig */
+    justify-content: flex-start; /* Bündig links */
     font-size: clamp(1.5rem, 3.8vw, 2.7rem); /* Große Schriftgröße */
     font-weight: 700; /* Kräftig */
     color: #ffffff; /* Strahlendes Weiß */
@@ -658,6 +658,8 @@ footer.site-footer, .site-footer {
     padding-bottom: 0.35rem; /* Abstand */
     margin-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Abstand nach unten */
     cursor: pointer; /* Zeiger */
+    width: 100%; /* Volle Breite */
+    max-width: var(--max-width); /* Bündig mit dem Layout */
     transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
 }
 
@@ -679,8 +681,6 @@ footer.site-footer, .site-footer {
     color: rgba(255, 255, 255, 0.65); /* Sanft abgetöntes Weiß */
     max-width: var(--max-width); /* Auf Layout-Breite begrenzt */
     width: 100%; /* Volle Breite im Inneren */
-    margin-left: auto; /* Zentriert links */
-    margin-right: auto; /* Zentriert rechts */
 }
 
 /* Copyright-Text */
@@ -721,11 +721,11 @@ footer.site-footer, .site-footer {
     display: inline-block; /* Eigene Zeile */
 }
 
-/* Detailseiten-Hero */
+/* Detailseiten-Hero linksbündig */
 .project-detail-hero {
     margin-top: 1rem; /* Abstand */
     margin-bottom: 2.5rem; /* Abstand */
-    text-align: center; /* Mittig */
+    text-align: left; /* Linksbündig */
 }
 
 /* Detail-Galerie mit flexibler Mindestbreite gegen mobilen Überlauf */
@@ -856,6 +856,11 @@ footer.site-footer, .site-footer {
         gap: 1.15rem; /* Kompakt */
     }
     
+    /* Headline mobil: rechtsbündig oder natürlich ausgerichtet */
+    .hero h1 {
+        text-align: right; /* Bleibt markant rechtsbündig */
+    }
+    
     /* Projekt-Grid wird mobil einspaltig und sauber zentriert */
     .portfolio-grid, #projectGrid {
         grid-template-columns: 1fr; /* Eine Spalte */
@@ -868,8 +873,8 @@ footer.site-footer, .site-footer {
     /* Footer-Abschlusszeile vertikal stapeln */
     .footer-bottom-row {
         flex-direction: column; /* Untereinander */
-        align-items: center; /* Mittig auf Mobilgeräten */
+        align-items: flex-start; /* Links */
         gap: 0.75rem; /* Abstand */
-        text-align: center; /* Mittig */
+        text-align: left; /* Links */
     }
 }
