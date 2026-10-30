@@ -1,838 +1,729 @@
-/* ==========================================================================
-   LOKALE SCHRIFTARTEN (Super Frog & Acumin Variable Concept)
-   ========================================================================== */
-/* Super Frog: Expressive, verspielte Display-Schrift aus den Illustrator-Entwürfen */
-@font-face {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); /* Google Font Roboto mit Schnitt Light 300 importieren */
+/* Leerzeile */
+/* ========================================================================== */
+/* LOKALE SCHRIFTARTEN: SUPER FROG & ACUMIN */
+/* ========================================================================== */
+@font-face { /* Schriftart-Definition für Super Frog */
     font-family: 'Super Frog'; /* Name der Display-Schriftart */
-    src: url('fonts/SuperFrog.ttf') format('truetype'); /* Lokaler Pfad zur TTF-Schriftdatei */
-    font-weight: 400; /* Normaler Schriftschnitt */
-    font-style: normal; /* Normale Schriftlage */
-    font-display: swap; /* Verhindert unsichtbaren Text beim Laden */
-}
-
-/* Acumin Variable Concept: Zeitlose, elegante Sans-Serif-Schrift für Mengentexte */
-@font-face {
-    font-family: 'Acumin Variable Concept'; /* Name der Hauptschriftart */
-    src: url('fonts/AcuminVariableConcept.otf') format('opentype'); /* Lokaler Pfad zur variablen OpenType-Datei */
-    font-weight: 100 900; /* Variable Schriftstärke von Thin (100) bis Heavy (900) */
-    font-style: normal; /* Normale Schriftlage */
-    font-display: swap; /* Schnelle und zuverlässige Textdarstellung */
-}
-
-/* ==========================================================================
-   CSS-VARIABLEN (Farbsystem im Einklang mit Emma Rabes Farbpalette)
-   ========================================================================== */
-:root {
-    /* Strahlend weißer Haupthintergrund */
-    --bg-primary: #ffffff;
-    /* Sanfter mineralischer Salbeiton */
-    --bg-surface: #f7f9f6;
-    /* Tiefes Mitternacht-Piniengrün für den Footer */
-    --bg-section-contact: #0c2a22;
-    /* Tiefes Wald- und Piniengrün für Überschriften und Fließtexte (#0c3c30) */
-    --text-primary: #0c3c30;
-    /* Hochlesbares Waldgrün für Mengentext */
-    --text-secondary: rgba(12, 60, 48, 0.85);
-    /* Warmes Moos- und Olivgrün für Tags und Semester (#555934) */
-    --text-muted: #555934;
-    /* Kräftiges Smaragdgrün als lebendige Akzentfarbe (#084A24) */
-    --color-accent: #084A24;
-    /* Warmes Moos- und Olivgrün (#555934) */
-    --color-olive: #555934;
-    /* Sanfte Salbei-/Moosgrün-Farbe für das riesige Hintergrund-e (#6a826c) */
-    --color-giant-e: #6a826c;
-    /* Feine Begrenzungslinie in Waldgrün */
-    --border-subtle: rgba(12, 60, 48, 0.2);
-    /* Solide Begrenzungslinie für die Bento-Karten */
-    --border-dark: #0c3c30;
-    /* Super Frog Display-Schriftart für markante Headlines und Kacheltitel */
-    --font-display: 'Super Frog', cursive, sans-serif;
-    /* Acumin Variable Concept für hochlesbare Fließtexte und Navigation */
-    --font-main: 'Acumin Variable Concept', -apple-system, BlinkMacSystemFont, sans-serif;
-    /* Emil Kowalskis primäre Ausfederung für UI-Interaktionen */
-    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-    /* Schnelle Reaktionszeit für unmittelbares Feedback unter 200ms */
-    --duration-fast: 160ms;
-    /* Ausgewogene Dauer für Bildzooms und Kartenübergänge */
-    --duration-normal: 240ms;
-    /* Standard-Übergang mit explizit definierten Eigenschaften */
-    --transition-smooth: color var(--duration-fast) ease, opacity var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out);
-    /* Keine Rundungen */
-    --border-radius: 0;
-    /* Großzügige bildschirmfüllende Maximalbreite für volle Bildschirm-Nutzung */
-    --max-width: 1400px;
-}
-
-/* ==========================================================================
-   RESET & GRUNDLEGENDE EINSTELLUNGEN
-   ========================================================================== */
-/* Entfernt Standardränder aller Elemente und setzt einheitliches Box-Modell */
-*, *::before, *::after {
-    margin: 0; /* Entfernt Standard-Außenabstand */
-    padding: 0; /* Entfernt Standard-Innenabstand */
-    box-sizing: border-box; /* Polsterung und Rahmen zählen zur Gesamtbreite */
-}
-
-/* Weiches Scrollverhalten für seiteninterne Anker-Links */
-html {
-    scroll-behavior: smooth; /* Sanfte Scroll-Bewegung */
-    color-scheme: light; /* Teilt dem Browser mit, dass ein helles Design aktiv ist */
-}
-
-/* Body-Styling: Sauberer Grundton ohne Beschränkung */
-body {
-    background-color: var(--bg-primary); /* Weißer Grundton */
-    color: var(--text-primary); /* Dunkles Waldgrün als Textfarbe */
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    line-height: 1.6; /* Angenehmer Zeilenabstand */
-    -webkit-font-smoothing: antialiased; /* Optimierte Schriftglättung für Webkit */
-    -moz-osx-font-smoothing: grayscale; /* Schriftglättung für Firefox auf macOS */
-    text-rendering: optimizeLegibility; /* Hochwertiges Schrift-Rendering */
-    overflow-x: hidden; /* Verhindert horizontales Ausbrechen */
-    min-height: 100vh; /* Mindestens volle Bildschirmhöhe */
-    width: 100%; /* Volle Breite */
-}
-
-/* Grundlegendes Link-Verhalten */
-a {
-    color: inherit; /* Textfarbe erben */
-    text-decoration: none; /* Keine standardmäßige Unterstreichung */
-    transition: var(--transition-smooth); /* Flüssiger Übergang */
-}
-
-/* Barrierefreier, edler Tastatur-Fokusring */
-:focus-visible {
-    outline: 2px solid var(--color-accent); /* Smaragdgrüner Tastatur-Fokusring */
-    outline-offset: 3px; /* 3px Abstand */
-}
-
-/* Unsichtbares Anker-Ziel für Sprungmarken */
-.anchor-target {
-    display: block; /* Block-Element */
-    position: relative; /* Relative Position */
-    top: -80px; /* Offset für den Header */
-    visibility: hidden; /* Unsichtbar */
-}
-
-/* Globale Typografie-Regel für alle Überschriften */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    font-family: var(--font-main); /* Standardmäßig Acumin Variable Concept */
-    font-weight: 500; /* Ausgewogener Schnitt */
-}
-
-/* Edle Textauswahl in Smaragdgrün mit weißer Schrift */
-*::selection {
-    background-color: var(--color-accent); /* Smaragdgrüner Auswahl-Hintergrund */
-    color: #ffffff; /* Strahlend weiße Schrift */
-}
-
-/* Bilder standardmäßig bündig und ohne Rundungen einbinden */
-img {
-    max-width: 100%; /* Passt sich der Containerbreite an */
-    height: auto; /* Erhält das Seitenverhältnis */
-    display: block; /* Verhindert Leerraum unterhalb von Bildern */
-    border-radius: 0; /* Scharfe Kanten ohne jede Rundung */
-}
-
-/* ==========================================================================
-   LAYOUT-CONTAINER (Volle Bildschirmbreite für maximale Screen-Nutzung)
-   ========================================================================== */
-/* Hauptbereich der Seite spannt über 100% der Bildschirmbreite */
-main {
-    width: 100%; /* Volle Bildschirmbreite */
-    max-width: 100%; /* Keine künstliche Begrenzung */
-    padding: 0; /* Kein pauschaler Außeninnenabstand */
+    src: url('fonts/SuperFrog.ttf') format('truetype'); /* Lokaler Dateipfad zur TTF-Schriftdatei */
+    font-weight: 400; /* Standard-Schriftschnitt */
+    font-style: normal; /* Aufrechte Schriftlage */
+    font-display: swap; /* Schnelle Textdarstellung */
+} /* Super Frog Definition schließen */
+/* Leerzeile */
+@font-face { /* Schriftart-Definition für Acumin */
+    font-family: 'Acumin Variable Concept'; /* Name der variablen Schriftart */
+    src: url('fonts/AcuminVariableConcept.otf') format('opentype'); /* Lokaler Pfad zur OpenType-Datei */
+    font-weight: 100 900; /* Alle variablen Schnitte */
+    font-style: normal; /* Aufrechte Schriftlage */
+    font-display: swap; /* Schnelle Anzeige */
+} /* Acumin Definition schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* CSS-VARIABLEN (FARBEN & TYPOGRAFIE) */
+/* ========================================================================== */
+:root { /* Pseudoklasse root für globale Variablen */
+    --bg-primary: #ffffff; /* Primärer Hintergrundton in reinem Weiß */
+    --bg-surface: #f7f9f6; /* Sanfte Salbeitönung für sekundäre Flächen */
+    --text-primary: #0c3c30; /* Dunkelgrüner Farbton für Schriften und Rahmen */
+    --text-secondary: rgba(12, 60, 48, 0.85); /* Leicht abgetöntes Waldgrün für Fließtexte */
+    --color-olive: #555934; /* Moos- und Olivgrün nach Illustrator-Vorgabe */
+    --color-accent: #084A24; /* Kräftiges Smaragdgrün für aktive Zustände */
+    --color-giant-e: #6a826c; /* Sanftes Salbeigrün für das große Hintergrund-E */
+    --color-cream: #EDE7BF; /* Hellbeiger Cremeton nach Nutzerwunsch */
+    --border-dark: #0c3c30; /* Dunkelgrüner Rand für Sektionen und Bento-Karten */
+    --font-display: 'Super Frog', cursive, sans-serif; /* Display-Schriftart Super Frog */
+    --font-main: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; /* Hauptschriftart Roboto nach Nutzerwunsch */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1); /* Geschmeidige Ausfederung für UI-Elemente */
+    --duration-fast: 160ms; /* Kurze Übergangsdauer für spürbares Feedback */
+} /* Root-Regel schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* GRUNDFORMATIERUNG & RESET */
+/* ========================================================================== */
+*, *::before, *::after { /* Universeller Selektor */
+    margin: 0; /* Standard-Außenabstände entfernen */
+    padding: 0; /* Standard-Innenabstände entfernen */
+    box-sizing: border-box; /* Rahmen und Polsterung in Gesamtbreite einrechnen */
+} /* Universellen Selektor schließen */
+/* Leerzeile */
+html { /* HTML-Wurzelelement formatieren */
+    scroll-behavior: smooth; /* Weiches Scrollen für interne Ankerlinks */
+    color-scheme: light; /* Helles Farbschema deklarieren */
+} /* HTML-Regel schließen */
+/* Leerzeile */
+body { /* Body-Element formatieren */
+    margin: 0; /* Standard-Margin des Browsers auf 0 setzen */
+    padding: 0; /* Standard-Padding des Browsers auf 0 setzen */
+    background-color: var(--bg-primary); /* Weißer Grundton als Standard-Hintergrund */
+    color: var(--text-primary); /* Dunkles Piniengrün für Standardtext */
+    font-family: var(--font-main); /* Roboto als Standardschriftart setzen */
+    font-weight: 300; /* Roboto Light als Standard-Schriftschnitt nach Nutzerwunsch */
+    line-height: 1.6; /* Harmonischer und gut lesbarer Zeilenabstand */
+    -webkit-font-smoothing: antialiased; /* Optimierte Schriftglättung für WebKit-Browser */
+    -moz-osx-font-smoothing: grayscale; /* Optimierte Schriftglättung für Firefox auf macOS */
+    text-rendering: optimizeLegibility; /* Optimiertes Rendering für hochwertige Typografie */
+    overflow-x: hidden; /* Horizontales Scrollen auf Seitenebene zuverlässig verhindern */
+    min-height: 100vh; /* Mindestens volle Fensterhöhe ausfüllen */
+    width: 100%; /* Volle Bildschirmbreite nutzen */
+} /* Body-Regel schließen */
+/* Leerzeile */
+main { /* Hauptinhaltsbereich formatieren */
+    width: 100%; /* Volle Breite für den Hauptbereich */
     margin: 0; /* Kein Außenabstand */
-}
-
-/* Gemeinsame innere Ausrichtung für zentrierte Inhalte */
-.hero > *, .intro-section > *, .portfolio-header, .portfolio-bento-grid, .about-content, .footer-cta, .email-link, .footer-bottom-row, .project-detail-hero, .detail-gallery, .video-wrapper {
-    max-width: var(--max-width); /* Nutzt bis zu 1400px auf großen Monitoren */
-    margin-left: auto; /* Zentriert im Band */
-    margin-right: auto; /* Zentriert im Band */
-    width: 100%; /* Volle Breite */
-}
-
-/* ==========================================================================
-   HEADER & NAVIGATION (Vollständig durchsichtig nach Nutzerwunsch)
-   ========================================================================== */
-/* Transparente, schwebende Kopfzeile ohne Balken-Hintergrund */
-.site-header {
-    position: absolute; /* Sitzt transparent direkt über der ersten Sektion */
-    top: 0; /* Ganz oben */
-    left: 0; /* Ganz links */
+    padding: 0; /* Kein Innenabstand */
+} /* Main-Regel schließen */
+/* Leerzeile */
+a { /* Hyperlinks formatieren */
+    color: inherit; /* Schriftfarbe vom Elternelement erben */
+    text-decoration: none; /* Keine standardmäßige Textunterstreichung */
+    transition: color var(--duration-fast) ease; /* Sanfter Farbübergang beim Überfahren */
+} /* Link-Regel schließen */
+/* Leerzeile */
+img { /* Bilder formatieren */
+    max-width: 100%; /* Bildbreite an Elterncontainer anpassen */
+    height: auto; /* Natürliches Seitenverhältnis erhalten */
+    display: block; /* Blockdarstellung zur Vermeidung von Leerraum */
+    border-radius: 0; /* Scharfe Kanten ohne Eckenrundung nach Vorlage */
+} /* Bilder-Regel schließen */
+/* Leerzeile */
+:focus-visible { /* Tastaturfokus hervorheben */
+    outline: 2px solid var(--color-accent); /* Smaragdgrüner Fokusrahmen für Barrierefreiheit */
+    outline-offset: 3px; /* Deutlicher Abstand zum fokussierten Element */
+} /* Fokus-Regel schließen */
+/* Leerzeile */
+.anchor-target { /* Sprungmarken-Element formatieren */
+    display: block; /* Als Blockelement darstellen */
+    position: relative; /* Relative Positionierung für Versatz */
+    top: -40px; /* Leichter oberer Versatz für Ankerziele */
+    visibility: hidden; /* Unsichtbar im visuellen Fluss halten */
+} /* Anker-Regel schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* VOLLBILDSCHIRM-SEKTIONEN (JEDES RECHTECK = 100vh) */
+/* ========================================================================== */
+.full-screen-section { /* Vollbildschirm-Sektionen definieren */
+    min-height: 100vh; /* Exakt volle Bildschirmhöhe als Mindesthöhe */
     width: 100%; /* Volle Bildschirmbreite */
-    z-index: 100; /* Liegt über dem Inhalt */
-    display: flex; /* Flexbox für links-rechts Aufteilung */
-    justify-content: space-between; /* Logo links, Navigation rechts */
-    align-items: center; /* Vertikal zentrieren */
-    padding-top: clamp(1.5rem, 3vw, 2.5rem); /* Großzügiger oberer Innenabstand */
-    padding-bottom: clamp(1.5rem, 3vw, 2.5rem); /* Unterer Innenabstand */
-    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
-    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
-    background: transparent; /* Vollständig durchsichtig */
-    background-color: transparent; /* Keine Hintergrundfarbe */
-    backdrop-filter: none; /* Kein Unschärfe-Balken */
-    -webkit-backdrop-filter: none; /* Kein Safari-Filter */
-    border-bottom: none; /* Keine Randlinie */
-}
-
-/* Logo-Block */
-.logo {
-    display: flex; /* Flexbox */
-    align-items: center; /* Mittig */
-}
-
-/* Name im Logo in Acumin Variable Concept */
-.logo a, .logo-title {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-size: 1.15rem; /* Ausdrucksstarke Schriftgröße */
-    font-weight: 500; /* Ausgewogener Schnitt */
-    letter-spacing: -0.01em; /* Feiner Schnitt */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Weicher Farbübergang */
-    display: inline-block; /* Für transform-Skalierung */
-}
-
-/* Navigations- und Kontaktbereich im Header */
-.header-actions {
-    display: flex; /* Horizontale Leiste */
-    align-items: center; /* Vertikal mittig */
-    gap: 2.5rem; /* Großzügiger Abstand */
-}
-
-/* Liste der Navigationspunkte */
-nav ul {
-    display: flex; /* Horizontale Anordnung */
+    box-sizing: border-box; /* Rahmen und Innenabstände vollständig einrechnen */
+    position: relative; /* Relativer Bezugspunkt für innere Elemente */
+    border-bottom: 1.5px solid var(--border-dark); /* Dunkelgrüne Begrenzungslinie nach Vorlage */
+    display: flex; /* Flexbox-Layout */
+    flex-direction: column; /* Vertikale Stapelung */
+    justify-content: space-between; /* Gleichmäßige Verteilung von Kopf, Mitte und Fuß */
+} /* Vollbild-Sektions-Regel schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* SEKTION 1: HERO / HOME (HEADER, GROSSER NAME & STUDIENGANG) */
+/* ========================================================================== */
+.hero-section { /* Hero-Sektion formatieren */
+    background-color: var(--bg-primary); /* Weißer Hintergrund nach Illustrator-Vorlage */
+    padding-top: clamp(1.5rem, 3.5vh, 2.75rem); /* Oberer Abstand für zentrierten Header */
+    padding-bottom: clamp(1.5rem, 3.5vh, 2.75rem); /* Unterer Abstand zur Begrenzungslinie */
+    padding-left: clamp(2rem, 6vw, 6rem); /* Flexibler linker Randabstand */
+    padding-right: clamp(2rem, 6vw, 6rem); /* Flexibler rechter Randabstand */
+} /* Hero-Sektions-Regel schließen */
+/* Leerzeile */
+.hero-header-bar { /* Header-Balken der ersten Sektion formatieren */
+    width: 100%; /* Volle Breite für die Kopfzeile */
+    display: flex; /* Flexbox für zentrierte Positionierung */
+    justify-content: center; /* Navigation horizontal exakt in der Mitte ausrichten */
+    align-items: center; /* Vertikal mittig anordnen */
+} /* Header-Balken-Regel schließen */
+/* Leerzeile */
+.centered-nav { /* Zentrierte Navigation formatieren */
+    display: flex; /* Flexbox für Navigationscontainer */
+    justify-content: center; /* Mittige Ausrichtung */
+} /* Navigations-Regel schließen */
+/* Leerzeile */
+.centered-nav ul { /* Horizontale Liste der Navigationspunkte */
+    display: flex; /* Horizontale Leiste aus Menüpunkten */
     list-style: none; /* Keine Aufzählungspunkte */
-    gap: clamp(1.5rem, 3vw, 2.5rem); /* Abstand zwischen den Links */
-    align-items: center; /* Mittig */
-}
-
-/* Einzelne Navigations-Links in Acumin Variable Concept */
-nav a {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-size: 0.95rem; /* Souveräne Lesegröße */
-    font-weight: 400; /* Regular Schnitt */
-    color: var(--text-primary); /* Klares Waldgrün */
+    gap: clamp(1.5rem, 3.5vw, 3.5rem); /* Großzügiger Abstand zwischen Menüpunkten */
+    align-items: center; /* Vertikal zentrieren */
+} /* Navigations-Listen-Regel schließen */
+/* Leerzeile */
+.centered-nav a { /* Navigationslinks formatieren */
+    font-family: var(--font-main); /* Roboto Schriftart nach Vorgabe */
+    font-weight: 300; /* Roboto Light für zarte Eleganz */
+    font-size: clamp(0.95rem, 1.25vw, 1.15rem); /* Ausgewogene Schriftgröße nach Vorlage */
+    color: var(--text-primary); /* Dunkles Waldgrün als Textfarbe */
+    letter-spacing: 0.02em; /* Feine und edle Spationierung */
+    transition: color var(--duration-fast) ease; /* Farbübergang beim Hovern */
+} /* Navigationslink-Regel schließen */
+/* Leerzeile */
+.centered-nav a:hover { /* Hover-Zustand für Navigationslinks */
+    color: var(--color-accent); /* Smaragdgrüner Akzent beim Überfahren */
+} /* Hover-Regel schließen */
+/* Leerzeile */
+.hero-center-content { /* Mittlerer Inhaltsbereich des Hero-Bildschirms */
+    display: flex; /* Flexbox für vollständige Zentrierung */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal exakt in der Mitte ausrichten */
+    flex: 1; /* Füllt den verfügbaren vertikalen Raum aus */
+    width: 100%; /* Volle Bildschirmbreite */
+    padding: 1rem 0; /* Leichter Innenabstand */
+} /* Mittlerer Inhaltsbereich schließen */
+/* Leerzeile */
+.hero-name { /* Monumentaler Namenszug in Super Frog */
+    font-family: var(--font-display); /* Super Frog Schriftart nach Vorlage */
+    font-size: clamp(2.8rem, 7.5vw, 6.2rem); /* Monumentale Display-Schriftgröße nach Vorlage */
+    font-weight: 400; /* Normaler Schnitt */
+    line-height: 1.1; /* Kompakter Durchschuss */
+    color: var(--text-primary); /* Dunkelgrüner Farbton */
+    display: flex; /* Flexbox für Vor- und Nachname */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+    flex-wrap: wrap; /* Sauberer Umbruch auf schmalen Displays */
+    gap: clamp(1.2rem, 3.5vw, 3.5rem); /* Abstand zwischen Vor- und Nachname */
+    text-align: center; /* Zentrierter Textfluss */
+} /* Hero-Name-Regel schließen */
+/* Leerzeile */
+.name-word { /* Einzelnes Wort des Namenszuges formatieren */
+    display: inline-block; /* Als Inline-Block darstellen */
+    white-space: nowrap; /* Verhindert Zeilenumbruch im Wort */
+    letter-spacing: clamp(0.35rem, 1.2vw, 1.1rem); /* Weite Spationierung der Buchstaben nach Vorlage */
+} /* Wort-Regel schließen */
+/* Leerzeile */
+.hero-bottom-bar { /* Untere Abschlusszeile des ersten Bildschirms */
+    width: 100%; /* Volle Breite */
+    text-align: right; /* Rechtsbündig nach Illustrator-Vorlage */
+    padding-top: 0.5rem; /* Leichter Abstand nach oben */
+} /* Untere Abschlusszeile schließen */
+/* Leerzeile */
+.hero-subtitle { /* Studiengangs-Beschriftung in Roboto Light */
+    font-family: var(--font-main); /* Roboto Schriftart */
+    font-weight: 300; /* Roboto Light nach Vorgabe */
+    font-size: clamp(1rem, 1.5vw, 1.35rem); /* Elegante Lesegröße */
+    color: var(--color-olive); /* Warmes Moos- und Olivgrün (#555934) */
+    letter-spacing: 0.01em; /* Feine Spationierung */
+} /* Untertitel-Regel schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* FLUSS-CONTAINER MIT DEM GROSSEN HINTERGRUND-E ÜBER 3 SEKTIONEN (300vh) */
+/* ========================================================================== */
+.main-flow-container { /* Umschließender Container für Intro, Arbeiten und Über Mich */
+    position: relative; /* Bezugspunkt für das absolut positionierte Hintergrund-E */
+    width: 100%; /* Volle Bildschirmbreite */
+    min-height: 300vh; /* Exakt 3 Bildschirmhöhen für die 3 Sektionen */
+    overflow: hidden; /* Verhindert Ausbrechen der Glyphe */
+} /* Fluss-Container schließen */
+/* Leerzeile */
+.giant-e-bg { /* Container für die riesige E-Glyphe im Hintergrund */
+    position: absolute; /* Absolut über die 300vh Höhe positioniert */
+    top: 0; /* Beginnt oben bei Sektion 2 */
+    left: clamp(10px, 4vw, 80px); /* Leicht links positioniert nach Vorlage */
+    width: clamp(700px, 72vw, 1200px); /* Gewaltige Breite der Glyphe */
+    height: 300vh; /* Erstreckt sich präzise über die 3 Bildschirmabschnitte */
+    pointer-events: none; /* Mausklicks gehen ungehindert durch */
+    z-index: 0; /* Liegt hinter allen Texten und Karten */
+    color: var(--color-giant-e); /* Sanftes Salbeigrün (#6a826c) */
+    opacity: 0.38; /* Dezente Deckkraft für harmonische Lesbarkeit */
+} /* Hintergrund-E-Container schließen */
+/* Leerzeile */
+.giant-e-bg svg { /* SVG-Grafik der Glyphe formatieren */
+    width: 100%; /* Volle Containerbreite nutzen */
+    height: 100%; /* Volle Containerhöhe von 300vh ausfüllen */
+    display: block; /* Als Blockelement darstellen */
+} /* SVG-Regel schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* SEKTION 2: INTRO (OBERER BOGEN DES HINTERGRUND-E) */
+/* ========================================================================== */
+.intro-section { /* Intro-Sektion formatieren */
+    position: relative; /* Relative Ebene über dem Hintergrund-E */
+    z-index: 1; /* Sichtbare Ebene */
+    min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
+    display: flex; /* Flexbox für Ausrichtung */
+    flex-direction: column; /* Vertikale Ausrichtung */
+    justify-content: center; /* Vertikal in der Mitte zentrieren */
+    padding-left: clamp(2rem, 8vw, 8rem); /* Großzügiger linker Seitenabstand */
+    padding-right: clamp(2rem, 8vw, 8rem); /* Rechter Seitenabstand */
+    padding-top: clamp(3rem, 6vh, 6rem); /* Oberer Innenabstand */
+    padding-bottom: clamp(3rem, 6vh, 6rem); /* Unterer Innenabstand */
+} /* Intro-Sektions-Regel schließen */
+/* Leerzeile */
+.intro-content-wrapper { /* Inhaltsbereich des Intro-Textes */
+    max-width: 720px; /* Wohlproportionierte Zeilenbreite für Lesbarkeit */
+    text-align: left; /* Linksbündige Textausrichtung nach Vorlage */
+} /* Intro-Wrapper schließen */
+/* Leerzeile */
+.hero-bio { /* Einleitungstext in Roboto Light formatieren */
+    font-family: var(--font-main); /* Roboto Schriftart */
+    font-weight: 300; /* Roboto Light nach Vorgabe */
+    font-size: clamp(1.2rem, 1.85vw, 1.6rem); /* Große und gut lesbare Schriftgröße */
+    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
+    line-height: 1.8; /* Luftiger Zeilenabstand für angenehmen Lesekomfort */
+    letter-spacing: -0.01em; /* Feiner Schriftschnitt */
+} /* Einleitungstext-Regel schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* SEKTION 3: ARBEITEN (BENTO-GRID MIT 4 UNIKAT-RECHTECKEN & ROTATION) */
+/* ========================================================================== */
+.portfolio-section { /* Arbeiten-Sektion formatieren */
+    position: relative; /* Über dem Hintergrund-E */
+    z-index: 1; /* Sichtbare Ebene */
+    min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
+    display: flex; /* Flexbox für Sektionsaufbau */
+    flex-direction: column; /* Vertikale Stapelung */
+    justify-content: center; /* Vertikal mittig im Bildschirm platzieren */
+    padding-left: clamp(2rem, 6vw, 6rem); /* Großzügiger linker Randabstand */
+    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Randabstand */
+    padding-top: clamp(2rem, 4vh, 4rem); /* Oberer Innenabstand */
+    padding-bottom: clamp(2rem, 4vh, 4rem); /* Unterer Innenabstand */
+} /* Portfolio-Sektions-Regel schließen */
+/* Leerzeile */
+.section-title-bar { /* Kopfzeile für Sektionstitel */
+    width: 100%; /* Volle Breite */
+    margin-bottom: clamp(1.2rem, 2.5vh, 2rem); /* Abstand zum Bento-Raster */
+    text-align: left; /* Linksbündig nach Vorlage */
+} /* Titelzeilen-Regel schließen */
+/* Leerzeile */
+.section-title-bar h2 { /* Sektionstitel in Roboto Light */
+    font-family: var(--font-main); /* Roboto Schriftart */
+    font-weight: 300; /* Roboto Light nach Vorgabe */
+    font-size: clamp(1.4rem, 2.2vw, 1.95rem); /* Souveräne Überschriftengröße */
+    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
     letter-spacing: -0.01em; /* Feiner Schnitt */
-    transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Schneller Übergang */
-    display: inline-block; /* Für taktile Skalierung */
-}
-
-/* Zurück-Links und Header-Aktionen */
-.pill-btn, .header-contact-link, .back-link {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-size: 0.9rem; /* Lesegröße */
-    font-weight: 500; /* Halb-Fett */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    display: inline-flex; /* Inline-Flex für Text und Pfeil */
-    align-items: center; /* Vertikal mittig */
-    gap: 0.45rem; /* Angenehmer Abstand zum Pfeil */
-    background: transparent; /* Kein Hintergrund */
-    border: none; /* Kein Rand */
-    border-radius: 0; /* Keine Rundung */
-    padding: 0; /* Kein Box-Padding */
-    cursor: pointer; /* Zeiger */
-    transition: color var(--duration-fast) ease, opacity var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
-}
-
-/* Taktiles Klick-Feedback nach Emil Kowalski für interaktive Links & Buttons */
-.logo a:active, .logo-title:active,
-.header-contact-link:active, .pill-btn:active, .back-link:active,
-.live-btn:active, .filter-btn:active, nav a:active, .bento-card:active {
-    transform: scale(0.98); /* Gibt sofortiges spürbares Feedback beim Klick */
-}
-
-/* ==========================================================================
-   SEKTION 1: HERO (Emma Rabe in Super Frog Schriftart)
-   ========================================================================== */
-/* Hero-Bereich nutzt die volle Bildschirmbreite */
-.hero {
-    width: 100%; /* Volle Breite von Rand zu Rand */
-    background-color: var(--bg-primary); /* Weißer Grundton */
-    padding-top: clamp(6.5rem, 11vw, 9.5rem); /* Großzügiger Platz nach oben für den transparenten Header */
-    padding-bottom: clamp(2rem, 4vw, 3.5rem); /* Ausgewogener Abstand zum Intro */
-    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
-    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
-    display: flex; /* Flexbox */
-    flex-direction: column; /* Vertikale Anordnung */
-    align-items: center; /* Mittig ausgerichtet */
-}
-
-/* Monumentale Hauptüberschrift: Emma Rabe in Super Frog nach Vorlage */
-.hero-name {
-    font-family: var(--font-display); /* Super Frog Schriftart */
-    font-size: clamp(2.4rem, 6.2vw, 5.2rem); /* Monumentale Display-Größe nach Vorlage */
-    font-weight: 400; /* Reiner Schriftschnitt */
-    line-height: 1.1; /* Kompakter, ausdrucksstarker Durchschuss */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+} /* Titel-Regel schließen */
+/* Leerzeile */
+.bento-mosaic-container { /* Raster-Container für die 4 Bento-Karten */
+    display: grid; /* CSS Grid Layout für präzise Kachelanordnung */
+    grid-template-columns: 1.15fr 0.62fr 0.38fr; /* 3 ungleich breite Spalten */
+    grid-template-rows: minmax(190px, 1fr) minmax(260px, 1.3fr); /* 2 unterschiedlich hohe Zeilen */
+    gap: clamp(1rem, 1.8vw, 1.75rem); /* Gleichmäßiger Abstand zwischen Karten */
+    width: 100%; /* Volle Breite des Inhaltsbereichs */
+    max-width: 1400px; /* Maximale Arbeitsbreite */
+    margin-left: auto; /* Horizontal zentrieren */
+    margin-right: auto; /* Horizontal zentrieren */
+} /* Bento-Raster-Container schließen */
+/* Leerzeile */
+.bento-box { /* Grundformatierung für jedes der 4 Rechtecke */
+    position: relative; /* Bezugspunkt für rotierende Inhaltsebenen */
+    overflow: hidden; /* Schneidet überstehende Medien bündig ab */
+    border: 1.5px solid var(--border-dark); /* Scharfer dunkelgrüner Rand nach Vorlage */
+    border-radius: 0; /* Keine Rundungen nach Nutzerwunsch */
+    background-color: #ffffff; /* Weißer Grundton */
+    box-sizing: border-box; /* Rahmen vollständig einrechnen */
+    width: 100%; /* Volle Breite der Rasterzelle */
+    height: 100%; /* Volle Höhe der Rasterzelle */
+} /* Bento-Box schließen */
+/* Leerzeile */
+.box-1 { /* Erstes Rechteck positionieren */
+    grid-column: 1 / 2; /* Erste Spalte belegen */
+    grid-row: 1 / 3; /* Erstreckt sich über beide Zeilen */
+    min-height: 460px; /* Große vertikale Mindesthöhe */
+} /* Box 1 schließen */
+/* Leerzeile */
+.box-2 { /* Zweites Rechteck positionieren */
+    grid-column: 2 / 4; /* Erstreckt sich über Spalte 2 und 3 */
+    grid-row: 1 / 2; /* Erste Zeile belegen */
+    min-height: 190px; /* Kompakte Zeilenhöhe */
+} /* Box 2 schließen */
+/* Leerzeile */
+.box-3 { /* Drittes Rechteck positionieren */
+    grid-column: 2 / 3; /* Mittlere Spalte belegen */
+    grid-row: 2 / 3; /* Zweite Zeile belegen */
+    min-height: 260px; /* Mittlere Kachelhöhe */
+} /* Box 3 schließen */
+/* Leerzeile */
+.box-4 { /* Viertes Rechteck positionieren */
+    grid-column: 3 / 4; /* Rechte Spalte belegen */
+    grid-row: 2 / 3; /* Zweite Zeile belegen */
+    min-height: 260px; /* Schmale vertikale Kachel */
+} /* Box 4 schließen */
+/* Leerzeile */
+.rot-layer { /* Einzelne rotierende Inhaltsebene formatieren */
+    position: absolute; /* Vollflächig absolut im Kachelrahmen aufgespannt */
+    inset: 0; /* Vollständige Überdeckung von allen Seiten */
     width: 100%; /* Volle Breite */
-    display: flex; /* Flexbox */
-    justify-content: center; /* Mittig verteilt */
-    flex-wrap: wrap; /* Bricht sauber um auf mobilen Geräten */
-    gap: clamp(1rem, 3.5vw, 3.5rem); /* Abstand zwischen Vor- und Nachname */
-    margin-bottom: 0.5rem; /* Abstand zur Unterzeile */
-}
-
-/* Einzelnes Wort im Namen mit geschützter Spationierung */
-.name-word {
-    display: inline-block; /* Inline-Block */
-    white-space: nowrap; /* Verhindert unschönen Umbruch einzelner Buchstaben */
-    letter-spacing: clamp(0.35rem, 1.4vw, 1.1rem); /* Breite Spationierung nach Vorlage */
-}
-
-/* Unterzeile rechtsbündig unter dem Namen in Acumin Variable Concept Thin */
-.hero-subtitle {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-weight: 300; /* Thin Schnitt nach Vorlage */
-    font-size: clamp(0.95rem, 1.4vw, 1.2rem); /* Feine Lesegröße */
-    letter-spacing: -0.01em; /* Feine Spationierung */
-    color: var(--color-olive); /* Moosgrün #555934 */
-    width: 100%; /* Volle Breite für sauberen Rechtsanschlag */
-    text-align: right; /* Rechtsbündig unter der Überschrift nach Vorlage */
-}
-
-/* ==========================================================================
-   FLUSS-CONTAINER MIT DEM GROSSEN HINTERGRUND-E
-   ========================================================================== */
-/* Umschließender Container für Intro, Arbeiten und Über Mich */
-.main-flow-container {
-    position: relative; /* Bezugspunkt für das absolut positionierte Hintergrund-e */
-    width: 100%; /* Volle Bildschirmbreite */
-    overflow: hidden; /* Verhindert horizontales Ausbrechen des riesigen e */
-}
-
-/* Riesiges Hintergrund-e aus Super Frog nach Illustrator-Vorlage */
-.giant-e-bg {
-    position: absolute; /* Absolut im Hintergrund platziert */
-    top: 0; /* Beginnt direkt oben beim Intro */
-    left: clamp(-40px, 2vw, 30px); /* Leicht links versetzt wie im Screenshot */
-    width: clamp(620px, 72vw, 1080px); /* Gewaltige Dimension nach Vorlage */
-    height: auto; /* Erhält das natürliche Vektor-Seitenverhältnis */
-    pointer-events: none; /* Klicks gehen ungehindert durch zu den Karten */
-    z-index: 0; /* Hinter allen Texten und Karten */
-    color: var(--color-giant-e); /* Sanfter Salbei-/Waldmooston #6a826c */
-    opacity: 0.42; /* Exakt ausbalancierte Transparenz nach Illustrator-Vorlage */
-}
-
-/* SVG im Hintergrund-Container */
-.giant-e-bg svg {
-    width: 100%; /* Volle Breite */
-    height: auto; /* Automatische proportionale Höhe */
-    display: block; /* Block-Element */
-}
-
-/* ==========================================================================
-   INTRO-SEKTION (Auf dem oberen Bogen des Hintergrund-e)
-   ========================================================================== */
-/* Intro-Bereich linksbündig */
-.intro-section {
-    position: relative; /* Über dem Hintergrund-e */
-    z-index: 1; /* Sichtbare Ebene */
-    width: 100%; /* Volle Bildschirmbreite */
-    padding-top: clamp(2rem, 4vw, 3.5rem); /* Oberer Innenabstand */
-    padding-bottom: clamp(3rem, 6vw, 5rem); /* Abstand zum Arbeiten-Raster */
-    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
-    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
-}
-
-/* Einleitungstext in Acumin Variable Concept Regular/Thin */
-.hero-bio {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-weight: 300; /* Thin Schnitt für elegante Leichtigkeit */
-    font-size: clamp(1.1rem, 1.65vw, 1.35rem); /* Angenehm große Lesegröße */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    max-width: 660px; /* Wohlproportionierte Zeilenlänge */
-    line-height: 1.75; /* Großzügiger Zeilenabstand */
-    text-align: left; /* Linksbündig nach Vorlage */
-    margin-left: 0; /* Links verankert */
-    margin-right: auto; /* Freiraum nach rechts */
-}
-
-/* ==========================================================================
-   ARBEITEN-SEKTION (Bento-Grid mit Titel auf dem Bild & kein Text darunter)
-   ========================================================================== */
-/* Portfolio-Bereich */
-.portfolio-section {
-    position: relative; /* Über dem Hintergrund-e */
-    z-index: 1; /* Sichtbare Ebene */
-    width: 100%; /* Volle Bildschirmbreite */
-    padding-top: clamp(2rem, 5vw, 4rem); /* Oberer Innenabstand */
-    padding-bottom: clamp(4rem, 8vw, 7rem); /* Abstand zu Über Mich */
-    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
-    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
-}
-
-/* Kopfbereich der Projektsektion */
-.portfolio-header {
-    margin-bottom: clamp(1.5rem, 3vw, 2.5rem); /* Abstand zum Raster */
-    text-align: left; /* Linksbündig */
-}
-
-/* Sektionstitel "Ausgewählte Arbeiten" in Acumin Variable Concept */
-.portfolio-header h2 {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-size: clamp(1.4rem, 2.3vw, 1.95rem); /* Kraftvolle, sachliche Größe */
-    font-weight: 500; /* Regular bis Medium */
-    letter-spacing: -0.02em; /* Feiner Schnitt */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    text-align: left; /* Linksbündig nach Vorlage */
-}
-
-/* Bento-Grid der Arbeiten nach Vorlage (Linke Spalte hoch, rechte Spalte 1 oben + 2 unten) */
-.portfolio-bento-grid {
-    display: grid; /* CSS Grid Layout */
-    grid-template-columns: 1.15fr 1fr 1fr; /* 3-Spalten-Raster für die bento-förmige Anordnung */
-    grid-template-rows: minmax(190px, 1fr) minmax(190px, 1fr); /* 2 gleichmäßige Zeilen */
-    gap: clamp(1rem, 1.8vw, 1.75rem); /* Sauberer Kachelabstand */
-    width: 100%; /* Volle Breite */
-}
-
-/* Einzelne Bento-Kachel: Scharfe Kanten, 1.5px Waldgrün-Rand nach Vorlage */
-.bento-card {
-    position: relative; /* Für absolute Medien und Overlays */
-    display: flex; /* Flexbox */
+    height: 100%; /* Volle Höhe */
+    display: flex; /* Flexbox für zentrierten Kacheltitel */
     align-items: center; /* Vertikal mittig */
     justify-content: center; /* Horizontal mittig */
-    overflow: hidden; /* Schneidet überstehende Bildränder bündig ab */
-    border: 1.5px solid var(--border-dark); /* Solider Rand nach Vorlage */
-    border-radius: 0; /* Keine Rundung nach Vorlage */
-    box-shadow: none; /* Kein Schatten */
-    background-color: #ffffff; /* Weißer Grund */
     text-decoration: none; /* Keine Unterstreichung */
-    cursor: pointer; /* Zeiger für Klickbarkeit */
-    transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) ease; /* Flüssiger Übergang */
-}
-
-/* Taktiler Schwebezustand für Bento-Karten */
-.bento-card:hover {
-    transform: translateY(-2px); /* Zarte Anhebung */
-    border-color: var(--color-accent); /* Smaragdgrüner Akzentrand */
-}
-
-/* Bildcontainer füllt die gesamte Karte aus */
-.bento-card-media {
-    position: absolute; /* Absolut über die ganze Karte gespannt */
-    top: 0; /* Oben */
-    left: 0; /* Links */
-    width: 100%; /* Volle Breite */
-    height: 100%; /* Volle Höhe */
-    z-index: 1; /* Unter dem Titel */
-}
-
-/* Vorschaubild in der Karte */
-.bento-card-media img {
-    width: 100%; /* Volle Breite */
-    height: 100%; /* Volle Höhe */
-    object-fit: cover; /* Proportional füllend */
-    border-radius: 0; /* Scharfe Kanten */
-    transition: transform 0.4s var(--ease-out); /* Flüssiger Zoom */
-}
-
-/* Zoom beim Überfahren der Karte */
-.bento-card:hover .bento-card-media img {
-    transform: scale(1.04); /* Subtiler Bildzoom */
-}
-
-/* Transparente Filterschicht für perfekte Lesbarkeit des Titels auf jedem Bild */
-.bento-card-overlay {
-    position: absolute; /* Absolut über dem Bild */
-    top: 0; /* Oben */
-    left: 0; /* Links */
-    width: 100%; /* Volle Breite */
-    height: 100%; /* Volle Höhe */
-    background: rgba(255, 255, 255, 0.62); /* Heller, schützender Schleier */
-    backdrop-filter: blur(2.5px); /* Zarter Weichzeichner */
-    -webkit-backdrop-filter: blur(2.5px); /* Safari-Unterstützung */
-    transition: background 0.3s ease; /* Weicher Übergang */
-}
-
-/* Beim Hovern wird das Bild noch klarer sichtbar */
-.bento-card:hover .bento-card-overlay {
-    background: rgba(255, 255, 255, 0.35); /* Höhere Bildtransparenz */
-}
-
-/* Inhaltsbereich zentriert direkt auf dem Bild (kein Text darunter) */
-.bento-card-content {
-    position: relative; /* Über dem Bild und Filter */
-    z-index: 2; /* Oberste Ebene */
-    padding: clamp(1rem, 2vw, 2rem); /* Innenabstand */
-    text-align: center; /* Zentriert nach Vorlage */
-}
-
-/* Kacheltitel in Super Frog Schriftart direkt auf dem Bild */
-.bento-card-title {
+    opacity: 0; /* Standardmäßig unsichtbar */
+    pointer-events: none; /* Standardmäßig nicht klickbar */
+    animation: bentoRotate 16s infinite ease-in-out; /* 16 Sekunden Rotationszyklus für 4 Phasen */
+} /* Rotations-Ebene schließen */
+/* Leerzeile */
+.bento-box:hover .rot-layer { /* Pausieren der Animation beim Überfahren einer Kachel */
+    animation-play-state: paused; /* Hält die aktuelle Folie an */
+} /* Pausen-Regel schließen */
+/* Leerzeile */
+.bento-box .rot-layer:nth-child(1) { /* Erste Inhaltsebene jeder Kachel */
+    animation-delay: 0s; /* Startet sofort in Phase 1 */
+} /* Child 1 schließen */
+/* Leerzeile */
+.bento-box .rot-layer:nth-child(2) { /* Zweite Inhaltsebene jeder Kachel */
+    animation-delay: -4s; /* Startet phasenverschoben um 4 Sekunden */
+} /* Child 2 schließen */
+/* Leerzeile */
+.bento-box .rot-layer:nth-child(3) { /* Dritte Inhaltsebene jeder Kachel */
+    animation-delay: -8s; /* Startet phasenverschoben um 8 Sekunden */
+} /* Child 3 schließen */
+/* Leerzeile */
+.bento-box .rot-layer:nth-child(4) { /* Vierte Inhaltsebene jeder Kachel */
+    animation-delay: -12s; /* Startet phasenverschoben um 12 Sekunden */
+} /* Child 4 schließen */
+/* Leerzeile */
+@keyframes bentoRotate { /* Keyframes für den Rotationsablauf definieren */
+    0% { /* Beginn der aktiven Phase */
+        opacity: 1; /* Vollständig sichtbar */
+        pointer-events: auto; /* Klickbar und interaktiv */
+        z-index: 2; /* Im Vordergrund */
+    } /* 0% schließen */
+    21% { /* Ende der stabilen Anzeigephase */
+        opacity: 1; /* Bleibt voll sichtbar */
+        pointer-events: auto; /* Bleibt klickbar */
+        z-index: 2; /* Im Vordergrund */
+    } /* 21% schließen */
+    25% { /* Abschluss des Ausblendens */
+        opacity: 0; /* Unsichtbar */
+        pointer-events: none; /* Nicht klickbar */
+        z-index: 1; /* Hintergrund */
+    } /* 25% schließen */
+    96% { /* Warten im Hintergrund */
+        opacity: 0; /* Unsichtbar */
+        pointer-events: none; /* Nicht klickbar */
+        z-index: 1; /* Hintergrund */
+    } /* 96% schließen */
+    100% { /* Rückkehr zur aktiven Phase */
+        opacity: 1; /* Wieder vollständig sichtbar */
+        pointer-events: auto; /* Wieder klickbar */
+        z-index: 2; /* Im Vordergrund */
+    } /* 100% schließen */
+} /* Keyframes schließen */
+/* Leerzeile */
+.rot-img { /* Vorschaubild in der rotierenden Kachel formatieren */
+    position: absolute; /* Absolut über den Kachelraum aufspannen */
+    inset: 0; /* Vollständige Randausrichtung */
+    width: 100%; /* Volle Kachelbreite */
+    height: 100%; /* Volle Kachelhöhe */
+    object-fit: cover; /* Proportionale Füllung der Kachel */
+    display: block; /* Als Blockelement darstellen */
+    z-index: 1; /* Hinter dem Titel */
+    border-radius: 0; /* Scharfe Ecken ohne Rundung */
+} /* Vorschaubild schließen */
+/* Leerzeile */
+.rot-title-normal { /* Normaler Kacheltitel direkt auf dem Bild */
+    position: relative; /* Über dem Bild liegend */
+    z-index: 2; /* Sichtbare Ebene über dem Bild */
     font-family: var(--font-display); /* Super Frog Schriftart */
-    font-size: clamp(1.35rem, 2.3vw, 2.2rem); /* Ausdrucksstarke Kachelgröße */
-    font-weight: 400; /* Normaler Schnitt */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    text-transform: lowercase; /* Kleinschreibung exakt wie in den Illustrator-Bildern */
-    line-height: 1.15; /* Kompakter Durchschuss */
-    letter-spacing: -0.01em; /* Feine Spationierung */
-    display: inline-block; /* Inline-Block */
-    transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
-}
-
-/* Bento-Positionierung: Karte 1 (Grafikdesign) links hoch über 2 Zeilen */
-.bento-grafik {
-    grid-column: 1 / 2; /* Spalte 1 */
-    grid-row: 1 / 3; /* Zeile 1 bis 3 */
-    min-height: 420px; /* Hohe Kachelhöhe */
-}
-
-/* Bento-Positionierung: Karte 2 (Websites & Apps) oben rechts breit über Spalte 2 und 3 */
-.bento-web {
-    grid-column: 2 / 4; /* Spalte 2 bis 4 */
-    grid-row: 1 / 2; /* Zeile 1 */
-    min-height: 200px; /* Ausgewogene Höhe */
-}
-
-/* Bento-Positionierung: Karte 3 (Film & Audiovisuelle Medien) unten Mitte */
-.bento-film {
-    grid-column: 2 / 3; /* Spalte 2 */
-    grid-row: 2 / 3; /* Zeile 2 */
-    min-height: 200px; /* Ausgewogene Höhe */
-}
-
-/* Bento-Positionierung: Karte 4 (3D & Game Design) unten rechts */
-.bento-3d {
-    grid-column: 3 / 4; /* Spalte 3 */
-    grid-row: 2 / 3; /* Zeile 2 */
-    min-height: 200px; /* Ausgewogene Höhe */
-}
-
-/* ==========================================================================
-   ÜBER-MICH SEKTION (Unten am Bogen des Hintergrund-e)
-   ========================================================================== */
-/* Über-Mich Bereich */
-.about-section {
-    position: relative; /* Über dem Hintergrund-e */
+    color: var(--color-cream); /* Heller Cremeton (#EDE7BF) für Lesbarkeit */
+    text-transform: lowercase; /* Kleinschreibung exakt nach Illustrator-Vorlage */
+    text-align: center; /* Zentrierte Ausrichtung */
+    padding: 1rem; /* Innenabstand zum Kachelrand */
+    pointer-events: none; /* Klicks gehen ungehindert an Link weiter */
+    text-shadow: 0 2px 10px rgba(12, 60, 48, 0.95), 0 1px 3px rgba(0, 0, 0, 0.9); /* Kräftiger Kontrastschatten gegen helle Bildbereiche */
+} /* Normaler Kacheltitel schließen */
+/* Leerzeile */
+.box-1 .rot-title-normal, .box-1 .rot-cutout-title { /* Große Schrift für linkes Rechteck */
+    font-size: clamp(1.8rem, 3.2vw, 2.8rem); /* Große Schriftgröße */
+} /* Box 1 Schriftgröße schließen */
+/* Leerzeile */
+.box-2 .rot-title-normal, .box-2 .rot-cutout-title { /* Schriftgröße für oberes Rechteck */
+    font-size: clamp(1.4rem, 2.2vw, 2.2rem); /* Ausgewogene Schriftgröße */
+} /* Box 2 Schriftgröße schließen */
+/* Leerzeile */
+.box-3 .rot-title-normal, .box-3 .rot-cutout-title { /* Schriftgröße für unteres mittleres Rechteck */
+    font-size: clamp(1.15rem, 1.8vw, 1.7rem); /* Gute Lesegröße */
+} /* Box 3 Schriftgröße schließen */
+/* Leerzeile */
+.box-4 .rot-title-normal, .box-4 .rot-cutout-title { /* Schriftgröße für schmales rechtes Rechteck */
+    font-size: clamp(0.95rem, 1.35vw, 1.35rem); /* Kompakte Schriftgröße */
+} /* Box 4 Schriftgröße schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* HOVER-EFFEKT: DUNKELGRÜNER HINTERGRUND MIT BILD-SCHRIFT */
+/* ========================================================================== */
+.rot-cutout-layer { /* Dunkelgrüne Cutout-Schicht beim Klick oder Hover */
+    position: absolute; /* Vollflächig absolut über der Kachel */
+    inset: 0; /* Vollständige Randüberdeckung */
+    width: 100%; /* Volle Breite */
+    height: 100%; /* Volle Höhe */
+    background-color: var(--text-primary); /* Dunkles Piniengrün (#0c3c30) als Vollfläche */
+    z-index: 5; /* Liegt über dem Bild */
+    opacity: 0; /* Im Ruhezustand unsichtbar */
+    display: flex; /* Flexbox für Zentrierung */
+    align-items: center; /* Vertikal zentrieren */
+    justify-content: center; /* Horizontal zentrieren */
+    padding: 1rem; /* Innenabstand */
+    pointer-events: none; /* Klicks gehen an Link */
+    transition: opacity 0.22s ease; /* Schnelles Einblenden */
+} /* Cutout-Schicht schließen */
+/* Leerzeile */
+.rot-layer:hover .rot-cutout-layer, /* Selektor für Hover-Zustand */
+.rot-layer:active .rot-cutout-layer, /* Selektor für aktiven Klickzustand */
+.rot-layer:focus .rot-cutout-layer { /* Selektor für Fokus-Zustand */
+    opacity: 1; /* Vollständige Deckkraft der dunkelgrünen Schicht */
+} /* Hover-Selektor schließen */
+/* Leerzeile */
+.rot-cutout-title { /* Transparenter Schriftausschnitt */
+    font-family: var(--font-display); /* Super Frog Schriftart */
+    text-transform: lowercase; /* Kleinschreibung nach Vorlage */
+    text-align: center; /* Zentrierte Ausrichtung */
+    color: transparent; /* Transparente Textfarbe */
+    -webkit-text-fill-color: transparent; /* Transparente Füllung für WebKit */
+    -webkit-background-clip: text; /* Beschneidet den Bildhintergrund auf Buchstabenformen */
+    background-clip: text; /* Standardisierter Beschneidungspfad */
+    background-size: cover; /* Füllende Skalierung */
+    background-position: center; /* Zentrierte Positionierung */
+    background-repeat: no-repeat; /* Keine Bildwiederholung */
+    pointer-events: none; /* Ungehinderte Interaktion */
+} /* Cutout-Titel schließen */
+/* Leerzeile */
+.cutout-grafik .rot-cutout-title { /* Grafikdesign Bild im Schriftkörper */
+    background-image: url('GG/Zeichenfl%C3%A4che%201.png'), url('GG/Zeichenfläche 1.png'); /* Pfad zur Grafikdesign-Datei */
+} /* Grafik-Cutout schließen */
+/* Leerzeile */
+.cutout-web .rot-cutout-title { /* Websites & Apps Bild im Schriftkörper */
+    background-image: url('Frontend/Hausarbeit/dokumentation/vorschau.png'); /* Pfad zur Web-Datei */
+} /* Web-Cutout schließen */
+/* Leerzeile */
+.cutout-film .rot-cutout-title { /* Film & Audiovisuelles Bild im Schriftkörper */
+    background-image: url('DBB/Landschaft.png'); /* Pfad zur Film-Datei */
+} /* Film-Cutout schließen */
+/* Leerzeile */
+.cutout-3d .rot-cutout-title { /* 3D & Gamedesign Bild im Schriftkörper */
+    background-image: url('3DRendering/rendering01.png'); /* Pfad zur 3D-Datei */
+} /* 3D-Cutout schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* SEKTION 4: ÜBER MICH (UNTERER SCHWUNG DES HINTERGRUND-E) */
+/* ========================================================================== */
+.about-section { /* Über-Mich-Sektion formatieren */
+    position: relative; /* Über dem Hintergrund-E */
     z-index: 1; /* Sichtbare Ebene */
-    width: 100%; /* Volle Bildschirmbreite */
-    padding-top: clamp(2rem, 5vw, 4rem); /* Oberer Innenabstand */
-    padding-bottom: clamp(5rem, 9vw, 8rem); /* Großzügiger Abstand zum Footer */
-    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
-    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
-}
-
-/* Sektionstitel "Über Mich" in Acumin Variable Concept */
-.about-section .portfolio-header h2 {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-size: clamp(1.4rem, 2.3vw, 1.95rem); /* Sachliche Überschriftengröße */
-    font-weight: 500; /* Regular bis Medium */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
+    display: flex; /* Flexbox für Sektionsaufbau */
+    flex-direction: column; /* Vertikale Stapelung */
+    justify-content: center; /* Vertikal mittig platzieren */
+    padding-left: clamp(2rem, 6vw, 6rem); /* Großzügiger linker Randabstand */
+    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Randabstand */
+    padding-top: clamp(2rem, 4vh, 4rem); /* Oberer Innenabstand */
+    padding-bottom: clamp(2rem, 4vh, 4rem); /* Unterer Innenabstand */
+} /* Über-Mich-Sektion schließen */
+/* Leerzeile */
+.about-content-wrapper { /* Inhaltsbereich des Über-Mich-Textes */
+    max-width: 760px; /* Wohlproportionierte Zeilenlänge */
+    display: flex; /* Flexbox für Textabsätze */
+    flex-direction: column; /* Vertikale Ausrichtung */
+    gap: 1.5rem; /* Abstand zwischen Absätzen */
     text-align: left; /* Linksbündig nach Vorlage */
-}
-
-/* Fließtext linksbündig */
-.about-content {
-    display: flex; /* Flexbox */
-    flex-direction: column; /* Vertikal */
-    align-items: flex-start; /* Bündig links */
-    gap: 1.5rem; /* Absatz-Abstand */
-    max-width: 760px; /* Komfortable Leselänge */
-    margin-left: 0; /* Bündig links nach Vorlage */
-}
-
-/* Absätze in Acumin Variable Concept Regular/Thin */
-.about-content p {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-weight: 300; /* Thin Schnitt für elegante Leichtigkeit */
-    font-size: clamp(1.05rem, 1.5vw, 1.25rem); /* Lesegröße */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+} /* Über-Mich-Wrapper schließen */
+/* Leerzeile */
+.about-content-wrapper p { /* Fließtext-Absätze in Roboto Light */
+    font-family: var(--font-main); /* Roboto Schriftart */
+    font-weight: 300; /* Roboto Light nach Vorgabe */
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem); /* Angenehme Lesegröße */
     line-height: 1.75; /* Großzügiger Zeilenabstand */
-    text-align: left; /* Linksbündig nach Vorlage */
-}
-
-/* Werkzeuge- und Skills-Bereich ohne Boxen */
-.skills-container {
-    margin-top: 1.5rem; /* Abstand nach oben */
+    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
+} /* Fließtext-Regel schließen */
+/* Leerzeile */
+.skills-block { /* Block für Werkzeuge und Programme */
+    margin-top: 1rem; /* Abstand zum Absatz */
     display: flex; /* Flexbox */
-    flex-direction: column; /* Vertikal */
-    align-items: flex-start; /* Bündig links */
+    flex-direction: column; /* Vertikale Anordnung */
     gap: 0.5rem; /* Abstand */
-}
-
-/* Überschrift über den Werkzeugen in Moosgrün */
-.skills-title {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-size: 0.85rem; /* Klein */
+} /* Skills-Block schließen */
+/* Leerzeile */
+.skills-label { /* Bezeichnungs-Label in Moosgrün */
+    font-family: var(--font-main); /* Roboto Schriftart */
+    font-weight: 400; /* Mittlerer Schnitt */
+    font-size: 0.9rem; /* Kompakte Schriftgröße */
     text-transform: uppercase; /* Großbuchstaben */
-    letter-spacing: 0.1em; /* Gesperrt */
-    color: var(--color-olive); /* Moosgrün #555934 */
-    font-weight: 600; /* Halb-Fett */
-    text-align: left; /* Linksbündig */
-}
-
-/* Reiner Fließtext für Werkzeuge & Programme */
-.skills-text {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-weight: 300; /* Thin Schnitt */
-    font-size: 1.05rem; /* Angenehme Schriftgröße */
-    color: var(--text-secondary); /* Harmonisch abgetöntes Waldgrün */
-    line-height: 1.7; /* Gute Zeilenhöhe */
-    text-align: left; /* Linksbündig */
-    max-width: 760px; /* Lesbare Breite */
-}
-
-/* ==========================================================================
-   KONTAKT & FOOTER (Tiefes Mitternacht-Piniengrün)
-   ========================================================================== */
-/* Vollflächiger Footer */
-footer.site-footer, .site-footer {
+    letter-spacing: 0.08em; /* Gesperrter Schriftsatz */
+    color: var(--color-olive); /* Warmes Moos- und Olivgrün (#555934) */
+} /* Skills-Label schließen */
+/* Leerzeile */
+.skills-list { /* Liste der beherrschten Programme */
+    font-weight: 300; /* Roboto Light */
+    font-size: 1.05rem; /* Angenehme Lesegröße */
+    color: var(--color-olive); /* Moosgrün */
+    line-height: 1.7; /* Guter Zeilenabstand */
+} /* Skills-Liste schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* SEKTION 5: KONTAKT (EXAKT NACH ILLUSTRATOR-VORLAGE) */
+/* ========================================================================== */
+.contact-section { /* Kontakt-Sektion formatieren */
+    min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
     width: 100%; /* Volle Bildschirmbreite */
-    background-color: var(--bg-section-contact); /* Tiefes Mitternacht-Piniengrün */
-    border-radius: 0; /* Scharfe Kanten */
-    box-shadow: none; /* Kein Schatten */
-    margin: 0; /* Kein Außenabstand */
-    padding-top: clamp(5rem, 9vw, 8rem); /* Großzügiger oberer Freiraum */
-    padding-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Unterer Innenabstand */
-    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
-    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
-    color: #ffffff; /* Strahlend weiße Schrift */
-    display: flex; /* Flexbox */
-    flex-direction: column; /* Vertikal */
-    align-items: flex-start; /* Bündig links */
-}
-
-/* Kontakt-Bereich */
-.footer-cta {
-    margin-bottom: 2.5rem; /* Abstand zur Mail */
-    display: flex; /* Flexbox */
-    flex-direction: column; /* Vertikal */
-    align-items: flex-start; /* Bündig links */
-    text-align: left; /* Linksbündig */
-    width: 100%; /* Volle Breite */
-}
-
-/* Zartes Akzent-Label über dem Kontakt */
-.footer-cta .cta-label {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-size: 0.85rem; /* Klein */
-    text-transform: uppercase; /* Großbuchstaben */
-    letter-spacing: 0.12em; /* Gesperrt */
-    color: #a3c4b5; /* Sanftes Pastell-Salbeigrün */
-    display: block; /* Eigene Zeile */
-    margin-bottom: 0.75rem; /* Abstand */
-    font-weight: 600; /* Halb-Fett */
-    text-align: left; /* Linksbündig */
-}
-
-/* Große Einladung in Super Frog */
-.footer-cta h2 {
+    background-color: var(--bg-primary); /* Weißer Grundton nach Vorlage */
+    border-bottom: none; /* Keine untere Abschlusslinie */
+    display: flex; /* Flexbox für zentrierten Aufbau */
+    flex-direction: column; /* Vertikale Ausrichtung */
+    justify-content: space-between; /* Verteilung zwischen Mitte und unterer Zeile */
+    align-items: center; /* Horizontal zentrieren */
+    padding-top: clamp(3rem, 6vh, 6rem); /* Oberer Innenabstand */
+    padding-bottom: clamp(2rem, 4vh, 3.5rem); /* Unterer Innenabstand */
+    padding-left: clamp(2rem, 6vw, 6rem); /* Linker Seitenabstand */
+    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Seitenabstand */
+} /* Kontakt-Sektion schließen */
+/* Leerzeile */
+.contact-center-content { /* Mittlerer Inhaltsbereich des Kontakt-Bildschirms */
+    display: flex; /* Flexbox für Zentrierung */
+    flex-direction: column; /* Vertikale Stapelung */
+    align-items: center; /* Horizontal zentrieren */
+    justify-content: center; /* Vertikal in der Mitte zentrieren */
+    flex: 1; /* Füllt den vertikalen Raum aus */
+    gap: clamp(1.5rem, 3.5vh, 3rem); /* Abstand zwischen Headline und Mail-Link */
+    text-align: center; /* Zentrierter Textfluss */
+} /* Mittleren Kontaktbereich schließen */
+/* Leerzeile */
+.contact-headline { /* Große Überschrift schreib mir gerne in Super Frog */
     font-family: var(--font-display); /* Super Frog Schriftart */
-    font-size: clamp(2.4rem, 5.5vw, 4.2rem); /* Monumentale Display-Größe */
+    font-size: clamp(2rem, 5.5vw, 4.5rem); /* Monumentale Schriftgröße nach Vorlage */
     font-weight: 400; /* Normaler Schnitt */
-    letter-spacing: -0.02em; /* Feiner Schnitt */
-    color: #ffffff; /* Strahlendes Weiß */
-    line-height: 1.1; /* Kompakter Durchschuss */
-    text-align: left; /* Linksbündig */
-}
-
-/* Große klickbare E-Mail-Adresse */
-.email-link {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    display: inline-flex; /* Inline-Flex */
-    align-items: center; /* Mittig */
-    justify-content: flex-start; /* Bündig links */
-    font-size: clamp(1.6rem, 3.8vw, 2.8rem); /* Große Schriftgröße */
-    font-weight: 500; /* Mittlere Stärke */
-    color: #ffffff; /* Strahlendes Weiß */
-    border-bottom: 2px solid rgba(255, 255, 255, 0.4); /* Feine helle Unterstreichung */
-    padding-bottom: 0.4rem; /* Abstand */
-    margin-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger Abstand nach unten */
-    cursor: pointer; /* Zeiger */
-    width: auto; /* Passt sich der Textlänge an */
-    transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
-}
-
-/* Hover auf E-Mail */
-.email-link:hover {
-    color: #a3c4b5; /* Pastell-Salbeigrün */
-    border-color: #a3c4b5; /* Farblich abgestimmter Rand */
-}
-
-/* Untere Zeile des Footers */
-.footer-bottom-row {
+    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
+    text-align: center; /* Zentriert */
+    letter-spacing: clamp(0.2rem, 0.8vw, 0.6rem); /* Breite Spationierung nach Screenshot */
+    line-height: 1.15; /* Kompakter Durchschuss */
+    white-space: nowrap; /* Verhindert Umbruch des Ausrufezeichens auf Desktop */
+} /* Kontakt-Headline schließen */
+/* Leerzeile */
+.contact-email-link { /* Klickbare E-Mail-Adresse in Roboto Light */
+    font-family: var(--font-main); /* Roboto Schriftart */
+    font-weight: 300; /* Roboto Light nach Vorgabe */
+    font-size: clamp(1.2rem, 2.2vw, 1.85rem); /* Elegante Lesegröße */
+    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
+    text-decoration: none; /* Keine Unterstreichung */
+    border-bottom: 1.5px solid var(--text-primary); /* Feine dunkelgrüne Unterstreichung */
+    padding-bottom: 0.25rem; /* Abstand zur Unterstreichung */
+    transition: color 0.2s ease, border-color 0.2s ease; /* Farbübergang beim Überfahren */
+} /* E-Mail-Link schließen */
+/* Leerzeile */
+.contact-email-link:hover { /* Hover-Zustand für E-Mail-Link */
+    color: var(--color-accent); /* Smaragdgrün beim Überfahren */
+    border-color: var(--color-accent); /* Farblich angepasste Randlinie */
+} /* E-Mail-Hover schließen */
+/* Leerzeile */
+.contact-bottom-bar { /* Untere Abschlusszeile des Kontakt-Bildschirms */
+    width: 100%; /* Volle Breite */
     display: flex; /* Flexbox */
-    justify-content: space-between; /* Links und Rechts verteilt */
-    align-items: center; /* Mittig */
-    flex-wrap: wrap; /* Umbruch */
-    gap: 1.5rem; /* Abstand */
-    padding-top: 2.25rem; /* Abstand nach oben */
-    border-top: 1px solid rgba(255, 255, 255, 0.12); /* Feine Trennlinie */
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-size: 0.9rem; /* Kompakte Schrift */
-    color: rgba(255, 255, 255, 0.65); /* Sanft abgetöntes Weiß */
-    width: 100%; /* Volle Breite im Inneren */
-}
-
-/* Social Links */
-.social-links {
-    display: flex; /* Reihe */
-    gap: 1.5rem; /* Abstand */
-}
-
-/* Einzelner Social Link im Footer */
-.social-links a {
-    color: rgba(255, 255, 255, 0.65); /* Sanftes Weiß */
-    font-weight: 500; /* Mittlere Stärke */
-}
-
-/* Hover auf Social Links */
-.social-links a:hover {
-    color: #ffffff; /* Strahlend weiß */
-}
-
-/* ==========================================================================
-   DETAILSEITEN (Volle Bildschirmbreite, scharfe Kanten)
-   ========================================================================== */
-/* Vor-Tag über Kategorieseiten und Projektdetails */
-.hero-tag {
-    font-family: var(--font-main); /* Acumin Variable Concept */
-    font-size: 0.8rem; /* Kompakte Schrift */
-    font-weight: 500; /* Mittlerer Schnitt */
-    color: var(--color-olive); /* Moosgrün #555934 */
+    justify-content: space-between; /* Links-Rechts-Verteilung */
+    align-items: center; /* Vertikal mittig */
+    font-family: var(--font-main); /* Roboto Schriftart */
+    font-weight: 300; /* Roboto Light */
+    font-size: 0.9rem; /* Kompakte Schriftgröße */
+    color: var(--color-olive); /* Warmes Moosgrün (#555934) */
+    padding-top: 1.5rem; /* Abstand nach oben */
+    border-top: 1px solid rgba(12, 60, 48, 0.15); /* Zarte Trennlinie */
+} /* Untere Abschlusszeile schließen */
+/* Leerzeile */
+.footer-linkedin { /* LinkedIn-Link formatieren */
+    color: var(--color-olive); /* Moosgrün */
+    text-decoration: none; /* Keine Unterstreichung */
+    transition: color 0.2s ease; /* Farbübergang */
+} /* LinkedIn-Link schließen */
+/* Leerzeile */
+.footer-linkedin:hover { /* Hover auf LinkedIn-Link */
+    color: var(--color-accent); /* Smaragdgrüner Akzent */
+} /* LinkedIn-Hover schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* PROJEKT-DETAILSEITEN & KATEGORIENSEITEN */
+/* ========================================================================== */
+.hero-tag { /* Kategorie-Vortag über Projekttiteln */
+    font-family: var(--font-main); /* Roboto Schriftart */
+    font-weight: 400; /* Mittlerer Schnitt */
+    font-size: 0.85rem; /* Kompakte Schriftgröße */
+    color: var(--color-olive); /* Moosgrün (#555934) */
     text-transform: uppercase; /* Großbuchstaben */
     letter-spacing: 0.08em; /* Feine Spationierung */
-    margin-bottom: 0.75rem; /* Abstand zur großen Überschrift */
+    margin-bottom: 0.75rem; /* Abstand zum Titel */
     display: inline-block; /* Eigene Zeile */
-}
-
-/* Detailseiten-Hero linksbündig */
-.project-detail-hero {
-    margin-top: 1rem; /* Abstand */
-    margin-bottom: 2.5rem; /* Abstand */
-    text-align: left; /* Linksbündig */
-}
-
-/* Spezifische Überschrift auf Projekt- und Detailseiten in Super Frog */
-.project-detail-hero h1 {
+} /* Hero-Tag schließen */
+/* Leerzeile */
+.project-detail-hero { /* Kopfbereich auf Unterseiten */
+    padding-top: clamp(4rem, 8vh, 7rem); /* Oberer Innenabstand */
+    padding-bottom: clamp(2rem, 4vh, 3.5rem); /* Unterer Innenabstand */
+    padding-left: clamp(2rem, 6vw, 6rem); /* Linker Seitenabstand */
+    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Seitenabstand */
+    max-width: 1400px; /* Maximale Inhaltsbreite */
+    margin-left: auto; /* Zentriert */
+    margin-right: auto; /* Zentriert */
+} /* Detail-Hero schließen */
+/* Leerzeile */
+.project-detail-hero h1 { /* Haupttitel auf Unterseiten in Super Frog */
     font-family: var(--font-display); /* Super Frog Schriftart */
-    font-size: clamp(2.2rem, 5vw, 3.6rem); /* Angemessene Größe für Projekttitel */
+    font-size: clamp(2.2rem, 5vw, 3.6rem); /* Große Überschriftengröße */
     font-weight: 400; /* Normaler Schnitt */
-    line-height: 1.1; /* Harmonischer Zeilenabstand */
-    letter-spacing: -0.01em; /* Feine Spationierung */
-    margin-bottom: 1.5rem; /* Harmonischer Abstand zur Projektbeschreibung */
-    text-align: left; /* Linksbündig */
-    align-self: flex-start; /* Links ausgerichtet */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-}
-
-/* Projektbeschreibungen auf Detailseiten */
-.project-detail-hero .hero-bio {
-    max-width: 760px; /* Wohlproportionierte Leselänge */
-    margin-left: 0; /* Bündig links */
-    margin-right: auto; /* Freiraum nach rechts */
-}
-
-/* Detail-Galerie mit flexibler Mindestbreite */
-.detail-gallery {
+    line-height: 1.1; /* Kompakter Durchschuss */
+    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
+    margin-bottom: 1.5rem; /* Abstand zum Text */
+} /* Detail-Titel schließen */
+/* Leerzeile */
+.detail-gallery { /* Galerie-Raster auf Detailseiten */
     display: grid; /* Grid-Layout */
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); /* Verhindert horizontalen Überlauf mobil */
-    gap: clamp(2rem, 4vw, 3.5rem); /* Kachelabstand */
-    margin-bottom: clamp(4rem, 8vw, 6rem); /* Abstand nach unten */
-    width: 100%; /* Volle Breite */
-}
-
-/* Bilder in der Detail-Galerie: Scharfe Kanten, keine Rundungen */
-.detail-gallery img {
-    border-radius: 0; /* Scharfe Kanten */
-    border: none; /* Kein Rand */
-    box-shadow: none; /* Kein Schatten */
-    background-color: transparent; /* Transparenter Grund */
-}
-
-/* Eleganter Video-Rahmen */
-.video-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); /* Responsive Spaltenaufteilung */
+    gap: clamp(2rem, 4vw, 3.5rem); /* Abstand zwischen Bildern */
+    padding-left: clamp(2rem, 6vw, 6rem); /* Linker Seitenabstand */
+    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Seitenabstand */
+    max-width: 1400px; /* Maximale Breite */
+    margin-left: auto; /* Zentriert */
+    margin-right: auto; /* Zentriert */
+    margin-bottom: clamp(4rem, 8vh, 6rem); /* Abstand nach unten */
+} /* Detail-Galerie schließen */
+/* Leerzeile */
+.detail-gallery img { /* Bilder in der Detail-Galerie */
+    border-radius: 0; /* Scharfe Kanten nach Vorlage */
+    border: 1.5px solid var(--border-dark); /* Dunkelgrüner Rand */
+} /* Galerie-Bilder schließen */
+/* Leerzeile */
+.video-wrapper { /* Container für HTML5-Videoelemente */
     width: 100%; /* Volle Breite */
     margin-top: 1rem; /* Abstand nach oben */
-    margin-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Abstand nach unten */
-    background-color: #0c3c30; /* Dunkler Hintergrund */
-    border-radius: 0; /* Scharfe Ecken */
-    border: none; /* Kein Rand */
-    box-shadow: none; /* Kein Schatten */
-    overflow: hidden; /* Hält das Video bündig */
-}
-
-/* Echtes HTML5-Videoelement */
-video {
+    margin-bottom: clamp(3.5rem, 7vh, 5.5rem); /* Abstand nach unten */
+    background-color: var(--text-primary); /* Dunkelgrüner Hintergrund */
+    overflow: hidden; /* Bündige Medienhaltung */
+} /* Video-Wrapper schließen */
+/* Leerzeile */
+video { /* HTML5-Video formatieren */
     width: 100%; /* Volle Breite */
     height: auto; /* Automatische Höhe */
-    display: block; /* Block-Element */
-    border-radius: 0; /* Keine Eckenrundung */
-    outline: none; /* Kein Umriss */
-}
-
-/* ==========================================================================
-   RESPONSIVE ANPASSUNGEN (Mobilgeräte & Tablets)
-   ========================================================================== */
-@media (max-width: 860px) {
-    /* Header bricht mobil flexibel um */
-    .site-header {
-        position: relative; /* Normaler Dokumentenfluss auf Smartphones */
-        padding-top: 1.25rem; /* Kompakt */
-        padding-bottom: 1.25rem; /* Kompakt */
-        flex-wrap: wrap; /* Mehrzeilig */
-        gap: 0.75rem; /* Abstand */
-    }
-
-    /* Hero-Padding mobil anpassen */
-    .hero {
-        padding-top: 2rem; /* Angepasster Abstand */
-    }
-
-    /* Bento-Grid wird einspaltig auf kleineren Bildschirmen */
-    .portfolio-bento-grid {
-        grid-template-columns: 1fr; /* Eine einzige Spalte */
+    display: block; /* Blockelement */
+    border-radius: 0; /* Keine Rundungen */
+} /* Video-Regel schließen */
+/* Leerzeile */
+/* ========================================================================== */
+/* RESPONSIVE ANPASSUNGEN (SMARTPHONES & TABLETS) */
+/* ========================================================================== */
+@media (max-width: 860px) { /* Media-Query für Bildschirme bis 860px */
+    .bento-mosaic-container { /* Mobiles Bento-Raster */
+        grid-template-columns: 1fr; /* Eine einzige Spalte mobil */
         grid-template-rows: auto; /* Automatische Zeilenhöhen */
-        gap: 1.5rem; /* Ausgewogener Abstand */
-    }
-
-    /* Kacheln spannen jeweils über die volle Breite */
-    .bento-grafik, .bento-web, .bento-film, .bento-3d {
-        grid-column: 1 / 2; /* Spalte 1 */
+        gap: 1.5rem; /* Sauberer Kachelabstand */
+    } /* Mobiles Raster schließen */
+    .box-1, .box-2, .box-3, .box-4 { /* Alle 4 Bento-Kacheln mobil */
+        grid-column: 1 / 2; /* Spalte 1 ausfüllen */
         grid-row: auto; /* Automatische Zeile */
-        min-height: 220px; /* Einheitliche Mindesthöhe */
-    }
-
-    /* Hohe Kachel mobil etwas höher für gute Bildwirkung */
-    .bento-grafik {
-        min-height: 280px; /* Schöne Bildhöhe mobil */
-    }
-
-    /* Riesiges Hintergrund-e mobil anpassen */
-    .giant-e-bg {
-        width: 90vw; /* Passt sich dem schmaleren Bildschirm an */
-        left: -15px; /* Leicht links positioniert */
-        opacity: 0.28; /* Etwas dezentere Deckkraft für beste Lesbarkeit */
-    }
-
-    /* Hero-Name Wortabstand für Mobiltelefone */
-    .hero-name {
-        gap: 0.75rem; /* Kompakterer Wortabstand mobil */
-    }
-
-    /* Wort-Spationierung mobil */
-    .name-word {
-        font-size: clamp(2rem, 9.5vw, 3rem); /* Lesbare Display-Größe mobil */
-        letter-spacing: clamp(0.18rem, 1vw, 0.45rem); /* Kompaktere Spationierung mobil */
-    }
-
-    /* Projekttitel auf Detailseiten linksbündig */
-    .project-detail-hero h1 {
-        text-align: left; /* Linksbündig */
-        margin-bottom: 1.5rem; /* Ausgewogener Abstand mobil */
-        font-size: clamp(2rem, 9vw, 3rem); /* Angenehme Schriftgröße */
-    }
-
-    /* Footer-Abschlusszeile vertikal stapeln */
-    .footer-bottom-row {
-        flex-direction: column; /* Untereinander */
-        align-items: flex-start; /* Links */
+        min-height: 250px; /* Gleichmäßige mobile Mindesthöhe */
+    } /* Mobile Kacheln schließen */
+    .contact-headline { /* Kontakt-Überschrift mobil umbrechen */
+        white-space: normal; /* Erlaubt Umbruch auf Mobilgeräten */
+        font-size: clamp(1.8rem, 8vw, 2.8rem); /* Kompaktere mobile Schriftgröße */
+    } /* Mobile Überschrift schließen */
+    .hero-name { /* Hero-Name mobil anpassen */
+        gap: 0.75rem; /* Kompakter Wortabstand */
+        font-size: clamp(2rem, 9.5vw, 3.2rem); /* Angepasste Display-Größe mobil */
+    } /* Mobiler Hero-Name schließen */
+    .name-word { /* Wort-Spationierung mobil */
+        letter-spacing: clamp(0.18rem, 1vw, 0.45rem); /* Kompaktere Spationierung */
+    } /* Mobile Spationierung schließen */
+    .giant-e-bg { /* Hintergrund-E mobil */
+        width: 90vw; /* Breite an mobilen Bildschirm anpassen */
+        left: -10px; /* Leicht nach links rücken */
+        opacity: 0.28; /* Dezentere Deckkraft mobil */
+    } /* Mobiles E schließen */
+    .centered-nav ul { /* Navigationsleiste mobil */
+        gap: 1.25rem; /* Kompakterer Link-Abstand */
+        flex-wrap: wrap; /* Umbruch bei schmalen Screens */
+    } /* Mobile Navigation schließen */
+    .contact-bottom-bar { /* Abschlusszeile mobil */
+        flex-direction: column; /* Vertikal anordnen */
         gap: 0.75rem; /* Abstand */
-        text-align: left; /* Links */
-    }
-}
+        text-align: center; /* Zentriert */
+    } /* Mobile Fußzeile schließen */
+} /* Media-Query schließen */

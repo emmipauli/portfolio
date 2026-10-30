@@ -1,292 +1,482 @@
-<!-- Dokumententyp HTML5 für modernen Standard deklarieren -->
-<!DOCTYPE html>
+<!-- Dokumententyp HTML5 für modernen Webstandard deklarieren -->
+<!DOCTYPE html> <!-- Dokumententyp HTML5 für modernen Webstandard deklarieren -->
 <!-- HTML-Wurzelelement mit deutscher Sprachauszeichnung -->
-<html lang="de">
+<html lang="de"> <!-- HTML-Wurzelelement mit deutscher Sprachauszeichnung -->
 <!-- Kopfbereich mit Metadaten und Schriftverbindungen -->
-<head>
+<head> <!-- Kopfbereich mit Metadaten und Schriftverbindungen -->
     <!-- Zeichensatz UTF-8 für saubere Darstellung von Umlauten -->
-    <meta charset="UTF-8">
-    <!-- Viewport für optimale responsive Darstellung auf Desktop, Tablet und Smartphone -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!-- Zeichensatz UTF-8 für saubere Darstellung von Umlauten -->
+    <!-- Viewport für optimale responsive Darstellung auf allen Bildschirmgrößen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport für optimale responsive Darstellung auf allen Bildschirmgrößen -->
     <!-- Titel der Webseite im Browser-Tab -->
-    <title>Emma Rabe — Portfolio | Medieninformatik &amp; Film</title>
+    <title>Emma Rabe — Portfolio | Medieninformatik &amp; Film</title> <!-- Titel der Webseite im Browser-Tab -->
     <!-- Meta-Beschreibung für Suchmaschinen und Vorschauen -->
-    <meta name="description" content="Portfolio von Emma Rabe – Medieninformatik mit Schwerpunkt Film, Grafikdesign, Video und Web-Entwicklung.">
+    <meta name="description" content="Portfolio von Emma Rabe – Medieninformatik mit Schwerpunkt Film, Grafikdesign, Video und Web-Entwicklung."> <!-- Meta-Beschreibung für Suchmaschinen und Vorschauen -->
+    <!-- Google Font Roboto (Light 300) direkt importieren -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Google Font Roboto (Light 300) direkt importieren -->
+    <!-- Vorabverbindung zur Google Fonts Schrift-Domain -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Vorabverbindung zur Google Fonts Schrift-Domain -->
+    <!-- Roboto Schriftart mit allen Schnitten inklusive Light 300 laden -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> <!-- Roboto Schriftart mit allen Schnitten inklusive Light 300 laden -->
     <!-- Verknüpfung mit der externen CSS-Stildatei style.css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Verknüpfung mit der externen CSS-Stildatei style.css -->
 <!-- Ende des Kopfbereichs -->
-</head>
+</head> <!-- Ende des Kopfbereichs -->
 <!-- Beginn des sichtbaren Webseiten-Inhalts -->
-<body>
-
-    <!-- KOPFZEILE & NAVIGATION (Minimalistisch & durchsichtig nach Vorlage) -->
-    <header class="site-header">
-        <!-- Logo-Bereich mit Namen -->
-        <div class="logo">
-            <!-- Name als Hauptlink zur Startseite in Acumin Variable Concept -->
-            <a href="index.html" class="logo-title">Emma Rabe</a>
-        <!-- Ende des Logo-Bereichs -->
-        </div>
-
-        <!-- Aktionen im Header: Hauptnavigation -->
-        <div class="header-actions">
-            <!-- Hauptnavigationsmenü -->
-            <nav>
-                <!-- Ungeordnete Liste für Navigationslinks -->
-                <ul>
-                    <!-- Link zur Übersicht der Arbeiten -->
-                    <li><a href="#arbeiten">Arbeiten</a></li>
-                    <!-- Link zum Über-Mich-Bereich -->
-                    <li><a href="#about">Über Mich</a></li>
-                    <!-- Link zum Kontakt-Bereich -->
-                    <li><a href="#kontakt">Kontakt</a></li>
-                <!-- Ende der Navigationsliste -->
-                </ul>
-            <!-- Ende der Navigation -->
-            </nav>
-        <!-- Ende der Header-Aktionen -->
-        </div>
-    <!-- Ende der Kopfzeile -->
-    </header>
-
-    <!-- HAUPTBEREICH DER SEITE -->
-    <main>
-
-        <!-- HERO-SEKTION: Name in Super Frog Schriftart nach Vorlage -->
-        <section id="hero" class="hero">
-
-            <!-- Große Hauptüberschrift mit Namen in Super Frog mit breiter Spationierung -->
-            <h1 class="hero-name">
-                <!-- Vorname mit geschützter Spationierung -->
-                <span class="name-word">E m m a</span>
-                <!-- Nachname mit geschützter Spationierung -->
-                <span class="name-word">R a b e</span>
-            <!-- Ende der Hauptüberschrift -->
-            </h1>
-
-            <!-- Unterzeile rechtsbündig unter dem Namen in Acumin Variable Concept Thin -->
-            <div class="hero-subtitle">
-                <!-- Textbeschriftung exakt nach dem Entwurf -->
-                <span>Medieninformatik mit Film</span>
-            <!-- Ende der Unterzeile -->
-            </div>
-
-        <!-- Ende der Hero-Sektion -->
-        </section>
-
-        <!-- FLUSS-CONTAINER MIT DEM GROSSEN HINTERGRUND-E ÜBER INTRO, ARBEITEN & ÜBER MICH -->
-        <div class="main-flow-container">
-
-            <!-- RIESIGES HINTERGRUND-E AUS SUPER FROG (EXAKT NACH DEM ILLUSTRATOR-ENTWURF) -->
-            <div class="giant-e-bg" aria-hidden="true">
-                <!-- SVG-Vektorgrafik des Buchstabens e aus Super Frog -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="16 -703 608 734" width="100%" height="100%" fill="currentColor">
+<body> <!-- Beginn des sichtbaren Webseiten-Inhalts -->
+<!-- Leerzeile für saubere Struktur -->
+    <!-- HAUPTBEREICH DER SEITE MIT VOLLBILDSCHIRM-ABSCHNITTEN -->
+    <main> <!-- HAUPTBEREICH DER SEITE MIT VOLLBILDSCHIRM-ABSCHNITTEN -->
+<!-- Leerzeile für saubere Struktur -->
+        <!-- SEKTION 1: HERO / HOME (Volle Bildschirmgröße mit umlaufendem Rahmen nach Vorlage) -->
+        <section id="hero" class="full-screen-section hero-section"> <!-- SEKTION 1: HERO / HOME (Volle Bildschirmgröße mit umlaufendem Rahmen nach Vorlage) -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- Kopfzeile mit zentrierter Navigation nach Illustrator-Vorlage -->
+            <header class="hero-header-bar"> <!-- Kopfzeile mit zentrierter Navigation nach Illustrator-Vorlage -->
+                <!-- Hauptnavigationsmenü -->
+                <nav class="centered-nav"> <!-- Hauptnavigationsmenü -->
+                    <!-- Horizontale Liste der Navigationspunkte -->
+                    <ul> <!-- Horizontale Liste der Navigationspunkte -->
+                        <!-- Link zum Home-Bereich -->
+                        <li><a href="#hero">Home</a></li> <!-- Link zum Home-Bereich -->
+                        <!-- Link zur Übersicht der Arbeiten -->
+                        <li><a href="#arbeiten">Arbeiten</a></li> <!-- Link zur Übersicht der Arbeiten -->
+                        <!-- Link zum Über-Mich-Bereich -->
+                        <li><a href="#about">Über Mich</a></li> <!-- Link zum Über-Mich-Bereich -->
+                        <!-- Link zum Kontakt-Bereich -->
+                        <li><a href="#kontakt">Kontakt</a></li> <!-- Link zum Kontakt-Bereich -->
+                    <!-- Ende der Navigationsliste -->
+                    </ul> <!-- Ende der Navigationsliste -->
+                <!-- Ende der Navigation -->
+                </nav> <!-- Ende der Navigation -->
+            <!-- Ende der Kopfzeile -->
+            </header> <!-- Ende der Kopfzeile -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- Mittig platzierter Namenszug in Super Frog Schriftart -->
+            <div class="hero-center-content"> <!-- Mittig platzierter Namenszug in Super Frog Schriftart -->
+                <!-- Hauptüberschrift Emma Rabe mit weitem Zeichenabstand -->
+                <h1 class="hero-name"> <!-- Hauptüberschrift Emma Rabe mit weitem Zeichenabstand -->
+                    <!-- Vorname mit geschützter Spationierung -->
+                    <span class="name-word">E m m a</span> <!-- Vorname mit geschützter Spationierung -->
+                    <!-- Nachname mit geschützter Spationierung -->
+                    <span class="name-word">R a b e</span> <!-- Nachname mit geschützter Spationierung -->
+                <!-- Ende der Hauptüberschrift -->
+                </h1> <!-- Ende der Hauptüberschrift -->
+            <!-- Ende des mittleren Inhalts -->
+            </div> <!-- Ende des mittleren Inhalts -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- Unterzeile rechtsbündig am unteren Rand des ersten Bildschirms in Roboto Light -->
+            <div class="hero-bottom-bar"> <!-- Unterzeile rechtsbündig am unteren Rand des ersten Bildschirms in Roboto Light -->
+                <!-- Studiengangs-Beschriftung nach Illustrator-Vorlage -->
+                <span class="hero-subtitle">Medieninformatik mit Film</span> <!-- Studiengangs-Beschriftung nach Illustrator-Vorlage -->
+            <!-- Ende der unteren Zeile -->
+            </div> <!-- Ende der unteren Zeile -->
+<!-- Leerzeile für saubere Struktur -->
+        <!-- Ende von Sektion 1 -->
+        </section> <!-- Ende von Sektion 1 -->
+<!-- Leerzeile für saubere Struktur -->
+        <!-- FLUSS-CONTAINER MIT DEM GROSSEN HINTERGRUND-E ÜBER INTRO, ARBEITEN & ÜBER MICH (300vh) -->
+        <div class="main-flow-container"> <!-- FLUSS-CONTAINER MIT DEM GROSSEN HINTERGRUND-E ÜBER INTRO, ARBEITEN & ÜBER MICH (300vh) -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- RIESIGES HINTERGRUND-E AUS SUPER FROG (EXAKT GESTRECKT ÜBER DIE 3 ABSCHNITTE) -->
+            <div class="giant-e-bg" aria-hidden="true"> <!-- RIESIGES HINTERGRUND-E AUS SUPER FROG (EXAKT GESTRECKT ÜBER DIE 3 ABSCHNITTE) -->
+                <!-- SVG-Grafik ohne Seitenverhältnis-Beschränkung für exakte Sektions-Verteilung -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="16 -703 608 734" width="100%" height="100%" fill="currentColor" preserveAspectRatio="none"> <!-- SVG-Grafik ohne Seitenverhältnis-Beschränkung für exakte Sektions-Verteilung -->
                     <!-- Transformation der Glyphen-Koordinaten für das SVG-Koordinatensystem -->
-                    <g transform="scale(1, -1)">
+                    <g transform="scale(1, -1)"> <!-- Transformation der Glyphen-Koordinaten für das SVG-Koordinatensystem -->
                         <!-- Exakter Vektor-Pfad der Glyphe e aus Super Frog -->
-                        <path d="M266 505Q266 490 271.5 481.0Q277 472 284.0 466.5Q291 461 299.0 459.5Q307 458 311 458Q341 458 356.0 472.0Q371 486 371 507Q371 528 356.5 541.5Q342 555 318 555Q294 555 280.0 541.5Q266 528 266 505ZM373 314Q337 314 311.5 321.5Q286 329 272 329Q264 329 259.5 324.5Q255 320 255 308Q255 258 337 258Q372 258 402.0 266.0Q432 274 460.0 283.0Q488 292 515.0 300.0Q542 308 571 308Q587 308 597.5 298.0Q608 288 614.0 271.5Q620 255 622.0 234.5Q624 214 624 194Q624 152 603.5 111.5Q583 71 545.5 39.5Q508 8 455.5 -11.5Q403 -31 339 -31Q264 -31 204.5 -4.5Q145 22 103.0 71.5Q61 121 38.5 191.5Q16 262 16 350Q16 433 36.0 498.0Q56 563 93.0 609.0Q130 655 183.5 679.0Q237 703 304 703Q377 703 427.5 690.0Q478 677 510.0 648.5Q542 620 556.5 575.0Q571 530 571 465Q571 421 556.0 392.0Q541 363 514.5 345.5Q488 328 451.5 321.0Q415 314 373 314Z" />
+                        <path d="M266 505Q266 490 271.5 481.0Q277 472 284.0 466.5Q291 461 299.0 459.5Q307 458 311 458Q341 458 356.0 472.0Q371 486 371 507Q371 528 356.5 541.5Q342 555 318 555Q294 555 280.0 541.5Q266 528 266 505ZM373 314Q337 314 311.5 321.5Q286 329 272 329Q264 329 259.5 324.5Q255 320 255 308Q255 258 337 258Q372 258 402.0 266.0Q432 274 460.0 283.0Q488 292 515.0 300.0Q542 308 571 308Q587 308 597.5 298.0Q608 288 614.0 271.5Q620 255 622.0 234.5Q624 214 624 194Q624 152 603.5 111.5Q583 71 545.5 39.5Q508 8 455.5 -11.5Q403 -31 339 -31Q264 -31 204.5 -4.5Q145 22 103.0 71.5Q61 121 38.5 191.5Q16 262 16 350Q16 433 36.0 498.0Q56 563 93.0 609.0Q130 655 183.5 679.0Q237 703 304 703Q377 703 427.5 690.0Q478 677 510.0 648.5Q542 620 556.5 575.0Q571 530 571 465Q571 421 556.0 392.0Q541 363 514.5 345.5Q488 328 451.5 321.0Q415 314 373 314Z" /> <!-- Exakter Vektor-Pfad der Glyphe e aus Super Frog -->
                     <!-- Ende der Glyphen-Gruppe -->
-                    </g>
+                    </g> <!-- Ende der Glyphen-Gruppe -->
                 <!-- Ende der SVG-Grafik -->
-                </svg>
+                </svg> <!-- Ende der SVG-Grafik -->
             <!-- Ende des Hintergrund-Containers -->
-            </div>
-
-            <!-- INTRO-SEKTION: Persönliche Kurzbiografie linksbündig über dem oberen Bogen des e -->
-            <section class="intro-section" id="intro">
-                <!-- Einleitungstext in Acumin Variable Concept Regular/Thin -->
-                <p class="hero-bio">
-                    <!-- Textinhalt exakt wie in den Illustrator-Bildern -->
-                    Moin, ich bin Emma Rabe und studiere Medieninformatik mit dem Schwerpunkt Film. Hier zeige ich ausgewählte Arbeiten aus den Bereichen Videoschnitt, Grafikdesign, Webentwicklung und Interface-Gestaltung.
-                <!-- Ende des Einleitungstexts -->
-                </p>
-            <!-- Ende der Intro-Sektion -->
-            </section>
-
-            <!-- ARBEITEN-SEKTION: Bento-Raster der 4 Fachbereiche -->
-            <section class="portfolio-section" id="arbeiten">
-                <!-- Unsichtbarer Anker für Rückwärtskompatibilität zu bestehenden Links (#projekte) -->
-                <span id="projekte" class="anchor-target"></span>
-
-                <!-- Kopfzeile des Portfolios -->
-                <div class="portfolio-header">
-                    <!-- Sektionstitel "Ausgewählte Arbeiten" in Acumin Variable Concept -->
-                    <h2>Ausgewählte Arbeiten</h2>
-                <!-- Ende des Portfolio-Kopfs -->
-                </div>
-
-                <!-- BENTO-GRID DER ARBEITEN (Exakt wie im Illustrator-Entwurf) -->
-                <div class="portfolio-bento-grid" id="projectGrid">
-
-                    <!-- BENTO-KARTE 1: Grafikdesign (Hohe Kachel links über zwei Zeilen) -->
-                    <a href="grafikdesign.html" class="bento-card bento-grafik">
-                        <!-- Bildcontainer mit Vorschaubild -->
-                        <div class="bento-card-media">
-                            <!-- Vorschau-Bild aus den Grafikdesign-Projekten -->
-                            <img src="GG/Zeichenfläche 1.png" alt="Grafikdesign" loading="lazy">
-                            <!-- Transparente Filterschicht für Lesbarkeit -->
-                            <div class="bento-card-overlay"></div>
-                        <!-- Ende des Bildbereichs -->
-                        </div>
-                        <!-- Zentrierter Titel direkt auf dem Bild (ohne Text darunter) -->
-                        <div class="bento-card-content">
-                            <!-- Titel in Super Frog Schriftart -->
-                            <span class="bento-card-title">grafikdesign</span>
-                        <!-- Ende des Titelbereichs -->
-                        </div>
-                    <!-- Ende von Karte 1 -->
-                    </a>
-
-                    <!-- BENTO-KARTE 2: Websites & Apps (Breite Kachel oben rechts) -->
-                    <a href="web-app.html" class="bento-card bento-web">
-                        <!-- Bildcontainer -->
-                        <div class="bento-card-media">
-                            <!-- Vorschaubild der Web- und Interface-Projekte -->
-                            <img src="Frontend/Hausarbeit/dokumentation/vorschau.png" alt="Websites &amp; Apps" loading="lazy">
-                            <!-- Transparente Filterschicht -->
-                            <div class="bento-card-overlay"></div>
-                        <!-- Ende des Bildbereichs -->
-                        </div>
-                        <!-- Zentrierter Titel direkt auf dem Bild -->
-                        <div class="bento-card-content">
-                            <!-- Titel in Super Frog Schriftart -->
-                            <span class="bento-card-title">websites und apps</span>
-                        <!-- Ende des Titelbereichs -->
-                        </div>
-                    <!-- Ende von Karte 2 -->
-                    </a>
-
-                    <!-- BENTO-KARTE 3: Film & Audiovisuelle Medien (Kachel unten links im rechten Block) -->
-                    <a href="video.html" class="bento-card bento-film">
-                        <!-- Bildcontainer -->
-                        <div class="bento-card-media">
-                            <!-- Vorschaubild für Film und Video -->
-                            <img src="DBB/Landschaft.png" alt="Film &amp; Audiovisuelle Medien" loading="lazy">
-                            <!-- Transparente Filterschicht -->
-                            <div class="bento-card-overlay"></div>
-                        <!-- Ende des Bildbereichs -->
-                        </div>
-                        <!-- Zentrierter Titel direkt auf dem Bild -->
-                        <div class="bento-card-content">
-                            <!-- Titel in Super Frog Schriftart -->
-                            <span class="bento-card-title">film und audiovisuelle medien</span>
-                        <!-- Ende des Titelbereichs -->
-                        </div>
-                    <!-- Ende von Karte 3 -->
-                    </a>
-
-                    <!-- BENTO-KARTE 4: 3D & Game Design (Kachel unten rechts im rechten Block) -->
-                    <a href="3d-gamedesign.html" class="bento-card bento-3d">
-                        <!-- Bildcontainer -->
-                        <div class="bento-card-media">
-                            <!-- Echtes 3D-Rendering als Vorschaubild -->
-                            <img src="3DRendering/rendering01.png" alt="3D &amp; Game Design" loading="lazy">
-                            <!-- Transparente Filterschicht -->
-                            <div class="bento-card-overlay"></div>
-                        <!-- Ende des Bildbereichs -->
-                        </div>
-                        <!-- Zentrierter Titel direkt auf dem Bild -->
-                        <div class="bento-card-content">
-                            <!-- Titel in Super Frog Schriftart -->
-                            <span class="bento-card-title">3d und gamedesign</span>
-                        <!-- Ende des Titelbereichs -->
-                        </div>
-                    <!-- Ende von Karte 4 -->
-                    </a>
-
-                <!-- Ende des Bento-Grids -->
-                </div>
-            <!-- Ende der Arbeiten-Sektion -->
-            </section>
-
-            <!-- ÜBER-MICH SEKTION (Unten am Bogen des e) -->
-            <section class="about-section" id="about">
-                <!-- Kopfzeile über dem Über-Mich-Bereich -->
-                <div class="portfolio-header">
-                    <!-- Sektionstitel "Über Mich" in Acumin Variable Concept -->
-                    <h2>Über Mich</h2>
-                <!-- Ende der Kopfzeile -->
-                </div>
-
-                <!-- Fließtext und Fähigkeiten unter der Überschrift -->
-                <div class="about-content">
-                    <!-- Erster Biografie-Absatz -->
-                    <p>
-                        <!-- Textinhalt wie im Illustrator-Entwurf -->
-                        Moin! Ich bin Emma und studiere Medieninformatik mit dem Schwerpunkt Film. Mich begeistert die Verbindung aus visueller Gestaltung und technischer Umsetzung: Von der Kameraarbeit und dem Schnitt über Print-Layouts bis hin zu Frontend-Code für das Web.
-                    <!-- Ende des ersten Absatzes -->
-                    </p>
-
-                    <!-- Zweiter Absatz -->
-                    <p>
-                        <!-- Textinhalt wie im Illustrator-Entwurf -->
-                        Im Studium arbeite ich regelmäßig an praxisnahen Projekten, sowohl eigenständig als auch im Team.
-                    <!-- Ende des zweiten Absatzes -->
-                    </p>
-
-                    <!-- Container für Tools & Skills -->
-                    <div class="skills-container">
-                        <!-- Label über den Skills -->
-                        <span class="skills-title">Werkzeuge &amp; Software</span>
-                        <!-- Reiner Fließtext ohne Boxen -->
-                        <p class="skills-text">
-                            <!-- Aufzählung der Werkzeuge -->
-                            Adobe Premiere Pro, DaVinci Resolve, Photoshop, InDesign, Illustrator, Figma, Blender, Unity, HTML, CSS, Java, Kotlin.
-                        <!-- Ende des Fließtexts -->
-                        </p>
-                    <!-- Ende des Skill-Containers -->
-                    </div>
+            </div> <!-- Ende des Hintergrund-Containers -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- SEKTION 2: INTRO (Volle Bildschirmgröße mit oberem Bogen des E im Hintergrund) -->
+            <section id="intro" class="full-screen-section intro-section"> <!-- SEKTION 2: INTRO (Volle Bildschirmgröße mit oberem Bogen des E im Hintergrund) -->
+<!-- Leerzeile für saubere Struktur -->
+                <!-- Inhaltsbereich für den Introtext -->
+                <div class="intro-content-wrapper"> <!-- Inhaltsbereich für den Introtext -->
+                    <!-- Ausführlicher Einleitungstext in Roboto Light -->
+                    <p class="hero-bio"> <!-- Ausführlicher Einleitungstext in Roboto Light -->
+                        <!-- Textinhalt exakt nach dem Illustrator-Entwurf -->
+                        Moin, ich bin Emma Rabe und studiere Medieninformatik mit dem Schwerpunkt Film. Hier zeige ich ausgewählte Arbeiten aus den Bereichen Videoschnitt, Grafikdesign, Webentwicklung und Interface-Gestaltung. <!-- Textinhalt exakt nach dem Illustrator-Entwurf -->
+                    <!-- Ende des Einleitungstexts -->
+                    </p> <!-- Ende des Einleitungstexts -->
                 <!-- Ende des Inhaltsbereichs -->
-                </div>
-            <!-- Ende der Über-Mich-Sektion -->
-            </section>
-
-        <!-- Ende des Fluss-Containers mit dem Hintergrund-e -->
-        </div>
+                </div> <!-- Ende des Inhaltsbereichs -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- Ende von Sektion 2 -->
+            </section> <!-- Ende von Sektion 2 -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- SEKTION 3: ARBEITEN (Volle Bildschirmgröße mit mittlerem Steg & Loch des E) -->
+            <section id="arbeiten" class="full-screen-section portfolio-section"> <!-- SEKTION 3: ARBEITEN (Volle Bildschirmgröße mit mittlerem Steg & Loch des E) -->
+                <!-- Unsichtbarer Anker für Rückwärtskompatibilität (#projekte) -->
+                <span id="projekte" class="anchor-target"></span> <!-- Unsichtbarer Anker für Rückwärtskompatibilität (#projekte) -->
+<!-- Leerzeile für saubere Struktur -->
+                <!-- Kopfzeile mit Sektionstitel -->
+                <div class="section-title-bar"> <!-- Kopfzeile mit Sektionstitel -->
+                    <!-- Titel "Ausgewählte Arbeiten" in Roboto Light -->
+                    <h2>Ausgewählte Arbeiten</h2> <!-- Titel "Ausgewählte Arbeiten" in Roboto Light -->
+                <!-- Ende der Titelzeile -->
+                </div> <!-- Ende der Titelzeile -->
+<!-- Leerzeile für saubere Struktur -->
+                <!-- BENTO-RASTER DER 4 UNTERSCHIEDLICH GROSSEN RECHTECKE (INHALT ROTIERT AUTOMATISCH) -->
+                <div class="bento-mosaic-container" id="projectGrid"> <!-- BENTO-RASTER DER 4 UNTERSCHIEDLICH GROSSEN RECHTECKE (INHALT ROTIERT AUTOMATISCH) -->
+<!-- Leerzeile für saubere Struktur -->
+                    <!-- RECHTECK 1: Großes linkes Rechteck (volles Hochformat über die gesamte Höhe) -->
+                    <div class="bento-box box-1"> <!-- RECHTECK 1: Großes linkes Rechteck (volles Hochformat über die gesamte Höhe) -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 1: Grafikdesign (Start-Inhalt von Box 1) -->
+                        <a href="grafikdesign.html" class="rot-layer rot-layer-1"> <!-- ROTIERENDER INHALT 1: Grafikdesign (Start-Inhalt von Box 1) -->
+                            <!-- Echtes Bild vollflächig und ohne transparente weiße Schicht sichtbar -->
+                            <img src="GG/Zeichenfläche 1.png" alt="Grafikdesign" class="rot-img" loading="lazy"> <!-- Echtes Bild vollflächig und ohne transparente weiße Schicht sichtbar -->
+                            <!-- Normaler Kacheltitel in Super Frog direkt auf dem Bild -->
+                            <span class="rot-title-normal">grafikdesign</span> <!-- Normaler Kacheltitel in Super Frog direkt auf dem Bild -->
+                            <!-- Dunkelgrüne Cutout-Schicht beim Klick / Hover -->
+                            <div class="rot-cutout-layer cutout-grafik"> <!-- Dunkelgrüne Cutout-Schicht beim Klick / Hover -->
+                                <!-- Transparenter Schrift-Ausschnitt, der das Bild in den Buchstaben zeigt -->
+                                <span class="rot-cutout-title">grafikdesign</span> <!-- Transparenter Schrift-Ausschnitt, der das Bild in den Buchstaben zeigt -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 1 -->
+                        </a> <!-- Ende von Layer 1 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 2: Websites & Apps -->
+                        <a href="web-app.html" class="rot-layer rot-layer-2"> <!-- ROTIERENDER INHALT 2: Websites & Apps -->
+                            <!-- Echtes Bild ohne weiße Deckschicht -->
+                            <img src="Frontend/Hausarbeit/dokumentation/vorschau.png" alt="Websites &amp; Apps" class="rot-img" loading="lazy"> <!-- Echtes Bild ohne weiße Deckschicht -->
+                            <!-- Normaler Kacheltitel -->
+                            <span class="rot-title-normal">websites und apps</span> <!-- Normaler Kacheltitel -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-web"> <!-- Cutout-Schicht -->
+                                <!-- Schrift mit Bildtextur -->
+                                <span class="rot-cutout-title">websites und apps</span> <!-- Schrift mit Bildtextur -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 2 -->
+                        </a> <!-- Ende von Layer 2 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 3: Film und Audiovisuelles -->
+                        <a href="video.html" class="rot-layer rot-layer-3"> <!-- ROTIERENDER INHALT 3: Film und Audiovisuelles -->
+                            <!-- Echtes Bild ohne weiße Deckschicht -->
+                            <img src="DBB/Landschaft.png" alt="Film und Audiovisuelles" class="rot-img" loading="lazy"> <!-- Echtes Bild ohne weiße Deckschicht -->
+                            <!-- Normaler Kacheltitel -->
+                            <span class="rot-title-normal">film und audiovisuelles</span> <!-- Normaler Kacheltitel -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-film"> <!-- Cutout-Schicht -->
+                                <!-- Schrift mit Bildtextur -->
+                                <span class="rot-cutout-title">film und audiovisuelles</span> <!-- Schrift mit Bildtextur -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 3 -->
+                        </a> <!-- Ende von Layer 3 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 4: 3D und Gamedesign -->
+                        <a href="3d-gamedesign.html" class="rot-layer rot-layer-4"> <!-- ROTIERENDER INHALT 4: 3D und Gamedesign -->
+                            <!-- Echtes Bild ohne weiße Deckschicht -->
+                            <img src="3DRendering/rendering01.png" alt="3D und Gamedesign" class="rot-img" loading="lazy"> <!-- Echtes Bild ohne weiße Deckschicht -->
+                            <!-- Normaler Kacheltitel -->
+                            <span class="rot-title-normal">3d und gamedesign</span> <!-- Normaler Kacheltitel -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-3d"> <!-- Cutout-Schicht -->
+                                <!-- Schrift mit Bildtextur -->
+                                <span class="rot-cutout-title">3d und gamedesign</span> <!-- Schrift mit Bildtextur -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 4 -->
+                        </a> <!-- Ende von Layer 4 -->
+<!-- Leerzeile für saubere Struktur -->
+                    <!-- Ende von Rechteck 1 -->
+                    </div> <!-- Ende von Rechteck 1 -->
+<!-- Leerzeile für saubere Struktur -->
+                    <!-- RECHTECK 2: Breites Querformat oben rechts (unterschiedliche Größe) -->
+                    <div class="bento-box box-2"> <!-- RECHTECK 2: Breites Querformat oben rechts (unterschiedliche Größe) -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 2: Websites & Apps (Start-Inhalt von Box 2) -->
+                        <a href="web-app.html" class="rot-layer rot-layer-2"> <!-- ROTIERENDER INHALT 2: Websites & Apps (Start-Inhalt von Box 2) -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="Frontend/Hausarbeit/dokumentation/vorschau.png" alt="Websites &amp; Apps" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">websites und apps</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-web"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">websites und apps</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 2 -->
+                        </a> <!-- Ende von Layer 2 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 3: Film und Audiovisuelles -->
+                        <a href="video.html" class="rot-layer rot-layer-3"> <!-- ROTIERENDER INHALT 3: Film und Audiovisuelles -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="DBB/Landschaft.png" alt="Film und Audiovisuelles" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">film und audiovisuelles</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-film"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">film und audiovisuelles</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 3 -->
+                        </a> <!-- Ende von Layer 3 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 4: 3D und Gamedesign -->
+                        <a href="3d-gamedesign.html" class="rot-layer rot-layer-4"> <!-- ROTIERENDER INHALT 4: 3D und Gamedesign -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="3DRendering/rendering01.png" alt="3D und Gamedesign" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">3d und gamedesign</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-3d"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">3d und gamedesign</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 4 -->
+                        </a> <!-- Ende von Layer 4 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 1: Grafikdesign -->
+                        <a href="grafikdesign.html" class="rot-layer rot-layer-1"> <!-- ROTIERENDER INHALT 1: Grafikdesign -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="GG/Zeichenfläche 1.png" alt="Grafikdesign" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">grafikdesign</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-grafik"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">grafikdesign</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 1 -->
+                        </a> <!-- Ende von Layer 1 -->
+<!-- Leerzeile für saubere Struktur -->
+                    <!-- Ende von Rechteck 2 -->
+                    </div> <!-- Ende von Rechteck 2 -->
+<!-- Leerzeile für saubere Struktur -->
+                    <!-- RECHTECK 3: Mittleres Hochformat unten (unterschiedliche Größe zu allen anderen) -->
+                    <div class="bento-box box-3"> <!-- RECHTECK 3: Mittleres Hochformat unten (unterschiedliche Größe zu allen anderen) -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 3: Film und Audiovisuelles (Start-Inhalt von Box 3) -->
+                        <a href="video.html" class="rot-layer rot-layer-3"> <!-- ROTIERENDER INHALT 3: Film und Audiovisuelles (Start-Inhalt von Box 3) -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="DBB/Landschaft.png" alt="Film und Audiovisuelles" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">film und audiovisuelles</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-film"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">film und audiovisuelles</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 3 -->
+                        </a> <!-- Ende von Layer 3 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 4: 3D und Gamedesign -->
+                        <a href="3d-gamedesign.html" class="rot-layer rot-layer-4"> <!-- ROTIERENDER INHALT 4: 3D und Gamedesign -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="3DRendering/rendering01.png" alt="3D und Gamedesign" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">3d und gamedesign</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-3d"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">3d und gamedesign</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 4 -->
+                        </a> <!-- Ende von Layer 4 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 1: Grafikdesign -->
+                        <a href="grafikdesign.html" class="rot-layer rot-layer-1"> <!-- ROTIERENDER INHALT 1: Grafikdesign -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="GG/Zeichenfläche 1.png" alt="Grafikdesign" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">grafikdesign</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-grafik"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">grafikdesign</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 1 -->
+                        </a> <!-- Ende von Layer 1 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 2: Websites & Apps -->
+                        <a href="web-app.html" class="rot-layer rot-layer-2"> <!-- ROTIERENDER INHALT 2: Websites & Apps -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="Frontend/Hausarbeit/dokumentation/vorschau.png" alt="Websites &amp; Apps" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">websites und apps</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-web"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">websites und apps</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 2 -->
+                        </a> <!-- Ende von Layer 2 -->
+<!-- Leerzeile für saubere Struktur -->
+                    <!-- Ende von Rechteck 3 -->
+                    </div> <!-- Ende von Rechteck 3 -->
+<!-- Leerzeile für saubere Struktur -->
+                    <!-- RECHTECK 4: Schmales Hochformat unten rechts (unterschiedliche Größe zu allen anderen) -->
+                    <div class="bento-box box-4"> <!-- RECHTECK 4: Schmales Hochformat unten rechts (unterschiedliche Größe zu allen anderen) -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 4: 3D und Gamedesign (Start-Inhalt von Box 4) -->
+                        <a href="3d-gamedesign.html" class="rot-layer rot-layer-4"> <!-- ROTIERENDER INHALT 4: 3D und Gamedesign (Start-Inhalt von Box 4) -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="3DRendering/rendering01.png" alt="3D und Gamedesign" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">3d und gamedesign</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-3d"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">3d und gamedesign</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 4 -->
+                        </a> <!-- Ende von Layer 4 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 1: Grafikdesign -->
+                        <a href="grafikdesign.html" class="rot-layer rot-layer-1"> <!-- ROTIERENDER INHALT 1: Grafikdesign -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="GG/Zeichenfläche 1.png" alt="Grafikdesign" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">grafikdesign</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-grafik"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">grafikdesign</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 1 -->
+                        </a> <!-- Ende von Layer 1 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 2: Websites & Apps -->
+                        <a href="web-app.html" class="rot-layer rot-layer-2"> <!-- ROTIERENDER INHALT 2: Websites & Apps -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="Frontend/Hausarbeit/dokumentation/vorschau.png" alt="Websites &amp; Apps" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">websites und apps</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-web"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">websites und apps</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 2 -->
+                        </a> <!-- Ende von Layer 2 -->
+<!-- Leerzeile für saubere Struktur -->
+                        <!-- ROTIERENDER INHALT 3: Film und Audiovisuelles -->
+                        <a href="video.html" class="rot-layer rot-layer-3"> <!-- ROTIERENDER INHALT 3: Film und Audiovisuelles -->
+                            <!-- Bild komplett sichtbar -->
+                            <img src="DBB/Landschaft.png" alt="Film und Audiovisuelles" class="rot-img" loading="lazy"> <!-- Bild komplett sichtbar -->
+                            <!-- Titel normal -->
+                            <span class="rot-title-normal">film und audiovisuelles</span> <!-- Titel normal -->
+                            <!-- Cutout-Schicht -->
+                            <div class="rot-cutout-layer cutout-film"> <!-- Cutout-Schicht -->
+                                <!-- Bild in der Schrift sichtbar -->
+                                <span class="rot-cutout-title">film und audiovisuelles</span> <!-- Bild in der Schrift sichtbar -->
+                            <!-- Ende der Cutout-Schicht -->
+                            </div> <!-- Ende der Cutout-Schicht -->
+                        <!-- Ende von Layer 3 -->
+                        </a> <!-- Ende von Layer 3 -->
+<!-- Leerzeile für saubere Struktur -->
+                    <!-- Ende von Rechteck 4 -->
+                    </div> <!-- Ende von Rechteck 4 -->
+<!-- Leerzeile für saubere Struktur -->
+                <!-- Ende des Mosaik-Containers -->
+                </div> <!-- Ende des Mosaik-Containers -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- Ende von Sektion 3 -->
+            </section> <!-- Ende von Sektion 3 -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- SEKTION 4: ÜBER MICH (Volle Bildschirmgröße mit unterem Schwung des E) -->
+            <section id="about" class="full-screen-section about-section"> <!-- SEKTION 4: ÜBER MICH (Volle Bildschirmgröße mit unterem Schwung des E) -->
+<!-- Leerzeile für saubere Struktur -->
+                <!-- Kopfzeile mit Sektionstitel -->
+                <div class="section-title-bar"> <!-- Kopfzeile mit Sektionstitel -->
+                    <!-- Titel "Über Mich" in Roboto Light -->
+                    <h2>Über Mich</h2> <!-- Titel "Über Mich" in Roboto Light -->
+                <!-- Ende der Kopfzeile -->
+                </div> <!-- Ende der Kopfzeile -->
+<!-- Leerzeile für saubere Struktur -->
+                <!-- Text-Inhalt über Werdegang und Fähigkeiten -->
+                <div class="about-content-wrapper"> <!-- Text-Inhalt über Werdegang und Fähigkeiten -->
+                    <!-- Erster Absatz -->
+                    <p> <!-- Erster Absatz -->
+                        <!-- Biografie-Text exakt nach Vorlage -->
+                        Moin! Ich bin Emma und studiere Medieninformatik mit dem Schwerpunkt Film. Mich begeistert die Verbindung aus visueller Gestaltung und technischer Umsetzung: Von der Kameraarbeit und dem Schnitt über Print-Layouts bis hin zu Frontend-Code für das Web. <!-- Biografie-Text exakt nach Vorlage -->
+                    <!-- Ende des ersten Absatzes -->
+                    </p> <!-- Ende des ersten Absatzes -->
+<!-- Leerzeile für saubere Struktur -->
+                    <!-- Zweiter Absatz -->
+                    <p> <!-- Zweiter Absatz -->
+                        <!-- Zweiter Textteil nach Vorlage -->
+                        Im Studium arbeite ich regelmäßig an praxisnahen Projekten, sowohl eigenständig als auch im Team. <!-- Zweiter Textteil nach Vorlage -->
+                    <!-- Ende des zweiten Absatzes -->
+                    </p> <!-- Ende des zweiten Absatzes -->
+<!-- Leerzeile für saubere Struktur -->
+                    <!-- Werkzeuge und Software-Bereich -->
+                    <div class="skills-block"> <!-- Werkzeuge und Software-Bereich -->
+                        <!-- Beschriftung in Moosgrün -->
+                        <span class="skills-label">Werkzeuge &amp; Software</span> <!-- Beschriftung in Moosgrün -->
+                        <!-- Aufzählung der Programme -->
+                        <p class="skills-list"> <!-- Aufzählung der Programme -->
+                            Adobe Premiere Pro, DaVinci Resolve, Photoshop, InDesign, Illustrator, Figma, Blender, Unity, HTML, CSS, Java, Kotlin. <!-- Aufzählung der Programme -->
+                        <!-- Ende der Liste -->
+                        </p> <!-- Ende der Liste -->
+                    <!-- Ende des Werkzeuge-Blocks -->
+                    </div> <!-- Ende des Werkzeuge-Blocks -->
+                <!-- Ende des Textbereichs -->
+                </div> <!-- Ende des Textbereichs -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- Ende von Sektion 4 -->
+            </section> <!-- Ende von Sektion 4 -->
+<!-- Leerzeile für saubere Struktur -->
+        <!-- Ende des Fluss-Containers mit dem E im Hintergrund -->
+        </div> <!-- Ende des Fluss-Containers mit dem E im Hintergrund -->
+<!-- Leerzeile für saubere Struktur -->
+        <!-- SEKTION 5: KONTAKT (Volle Bildschirmgröße exakt nach Illustrator-Vorlage) -->
+        <footer id="kontakt" class="full-screen-section contact-section site-footer"> <!-- SEKTION 5: KONTAKT (Volle Bildschirmgröße exakt nach Illustrator-Vorlage) -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- Zentrierter Kontakt-Inhalt nach Screenshot 1 -->
+            <div class="contact-center-content"> <!-- Zentrierter Kontakt-Inhalt nach Screenshot 1 -->
+                <!-- Große Einladungs-Headline in Super Frog mit Spationierung und Ausrufezeichen -->
+                <h2 class="contact-headline"> <!-- Große Einladungs-Headline in Super Frog mit Spationierung und Ausrufezeichen -->
+                    <span>s c h r e i b &nbsp; m i r &nbsp; g e r n e !</span> <!-- Große Einladungs-Headline in Super Frog mit Spationierung und Ausrufezeichen -->
+                <!-- Ende der Überschrift -->
+                </h2> <!-- Ende der Überschrift -->
+<!-- Leerzeile für saubere Struktur -->
+                <!-- Klickbarer E-Mail-Link zentriert unter der Überschrift in Roboto Light -->
+                <a href="mailto:emmarabe@web.de" class="contact-email-link"> <!-- Klickbarer E-Mail-Link zentriert unter der Überschrift in Roboto Light -->
+                    <!-- E-Mail-Adresse -->
+                    <span>emmarabe@web.de</span> <!-- E-Mail-Adresse -->
+                <!-- Ende des Mail-Links -->
+                </a> <!-- Ende des Mail-Links -->
+            <!-- Ende des zentrierten Inhalts -->
+            </div> <!-- Ende des zentrierten Inhalts -->
+<!-- Leerzeile für saubere Struktur -->
+            <!-- Untere Abschlusszeile mit Copyright und LinkedIn-Link -->
+            <div class="contact-bottom-bar"> <!-- Untere Abschlusszeile mit Copyright und LinkedIn-Link -->
+                <!-- Copyright-Notiz -->
+                <span class="copyright-text">&copy; 2026 Emma Rabe.</span> <!-- Copyright-Notiz -->
+                <!-- LinkedIn-Link -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-linkedin">LinkedIn ↗</a> <!-- LinkedIn-Link -->
+            <!-- Ende der Abschlusszeile -->
+            </div> <!-- Ende der Abschlusszeile -->
+<!-- Leerzeile für saubere Struktur -->
+        <!-- Ende von Sektion 5 / Footer -->
+        </footer> <!-- Ende von Sektion 5 / Footer -->
+<!-- Leerzeile für saubere Struktur -->
     <!-- Ende des Hauptbereichs -->
-    </main>
-
-    <!-- FUßZEILE & KONTAKT -->
-    <footer id="kontakt" class="site-footer">
-
-        <!-- Call-to-Action Bereich -->
-        <div class="footer-cta">
-            <!-- Kleines Label über dem Kontakt -->
-            <span class="cta-label">Kontakt</span>
-            <!-- Klare Überschrift -->
-            <h2>Schreib mir gerne.</h2>
-        <!-- Ende der Call-to-Action -->
-        </div>
-
-        <!-- Großer klickbarer E-Mail-Link (ohne Pfeil) -->
-        <a href="mailto:emmarabe@web.de" class="email-link">
-            <!-- Die E-Mail-Adresse -->
-            <span>emmarabe@web.de</span>
-        <!-- Ende des E-Mail-Links -->
-        </a>
-
-        <!-- Untere Zeile mit Copyright und LinkedIn Link -->
-        <div class="footer-bottom-row">
-            <!-- Copyright-Hinweis -->
-            <div class="copyright">
-                <!-- Urheberrechtstext -->
-                <span>&copy; 2026 Emma Rabe.</span>
-            <!-- Ende des Copyrights -->
-            </div>
-
-            <!-- Social-Media-Links -->
-            <div class="social-links">
-                <!-- LinkedIn Link -->
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            <!-- Ende der Social Links -->
-            </div>
-        <!-- Ende der Abschlusszeile -->
-        </div>
-
-    <!-- Ende des Footers -->
-    </footer>
-
+    </main> <!-- Ende des Hauptbereichs -->
+<!-- Leerzeile für saubere Struktur -->
 <!-- Ende des HTML-Körpers -->
-</body>
+</body> <!-- Ende des HTML-Körpers -->
 <!-- Ende des HTML-Dokuments -->
-</html>
+</html> <!-- Ende des HTML-Dokuments -->
