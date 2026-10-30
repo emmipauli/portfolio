@@ -68,9 +68,14 @@ html {
     color-scheme: light; /* Teilt dem Browser mit, dass ein helles Design aktiv ist */
 }
 
-/* Body-Styling für das helle, minimalistische Portfolio */
+/* Body-Styling mit zartem, atmosphärischem Sprüh-Verlauf (angelehnt an das Emily-Draper-Referenzdesign) */
 body {
-    background-color: var(--bg-primary); /* Weißer Hintergrund */
+    background-color: var(--bg-primary); /* Weißer Grundton */
+    background-image: 
+        radial-gradient(ellipse 60% 40% at 0% 0%, rgba(85, 89, 52, 0.08) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 30% at 100% 4%, rgba(8, 74, 36, 0.05) 0%, transparent 60%); /* Dezent organischer Airbrush-Verlauf */
+    background-attachment: fixed; /* Bleibt beim Scrollen ruhig im Hintergrund */
+    background-repeat: no-repeat; /* Keine Bildwiederholung */
     color: var(--text-primary); /* Dunkle Schrift */
     font-family: var(--font-main); /* Schlichte Sans-Serif-Typografie */
     line-height: 1.6; /* Angenehmer Zeilenabstand für beste Lesbarkeit */
@@ -92,7 +97,7 @@ a {
 :focus-visible {
     outline: 2px solid var(--color-accent); /* Smaragdgrüner Tastatur-Fokusring */
     outline-offset: 3px; /* 3px Abstand für angenehmes Luftholen */
-    border-radius: 3px; /* Zarte Abrundung der Fokusecken */
+    border-radius: 4px; /* Zarte Abrundung der Fokusecken */
 }
 
 /* Schlanke, unaufdringliche Bildlaufleiste im Impeccable-System */
@@ -140,7 +145,7 @@ img {
    LAYOUT-CONTAINER
    ========================================================================== */
 /* Zentrierter Seitenrahmen mit gleichmäßigen Rändern */
-.container, header, main, footer, .site-header, .site-footer {
+.container, header, main, .site-header {
     max-width: var(--max-width); /* Maximale Breite auf 880px begrenzt für edlen Weißraum */
     margin-left: auto; /* Automatische Zentrierung links */
     margin-right: auto; /* Automatische Zentrierung rechts */
@@ -150,7 +155,7 @@ img {
 }
 
 /* ==========================================================================
-   HEADER & NAVIGATION (Clean, frosted glass im Mobbin-Stil)
+   HEADER & NAVIGATION (Clean, spacious, mit dezentem Frosted Glass)
    ========================================================================== */
 /* Klebrige Kopfzeile im veredelten Frosted-Glass-Stil */
 .site-header {
@@ -176,12 +181,12 @@ img {
     gap: 0.1rem; /* Sehr dezenter Zeilenabstand */
 }
 
-/* Name im Logo */
+/* Name im Logo mit charaktervollem Schnitt */
 .logo a, .logo-title {
     font-family: var(--font-display); /* Markante Syne-Schrift */
-    font-size: 1.15rem; /* Klare Schriftgröße */
-    font-weight: 700; /* Kräftige Schrift */
-    letter-spacing: -0.02em; /* Leicht engerer Buchstabenabstand */
+    font-size: 1.2rem; /* Ausdrucksstarke Schriftgröße */
+    font-weight: 700; /* Kräftige Schnittführung */
+    letter-spacing: -0.025em; /* Typografisch dicht gesperrt */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
     transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Weicher Farbübergang */
     display: inline-block; /* Für transform-Skalierung */
@@ -205,7 +210,7 @@ img {
 nav ul {
     display: flex; /* Horizontale Anordnung */
     list-style: none; /* Keine Aufzählungspunkte */
-    gap: 1.5rem; /* Abstand zwischen den Links */
+    gap: 1.75rem; /* Großzügiger Abstand zwischen den Links */
     align-items: center; /* Mittig */
 }
 
@@ -214,19 +219,36 @@ nav a {
     font-size: 0.875rem; /* Kompakte Lesegröße */
     font-weight: 500; /* Mittlere Schriftstärke */
     color: var(--text-secondary); /* Angenehmes Waldgrün */
+    letter-spacing: -0.01em; /* Feiner Schnitt */
     transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Schneller Übergang */
     display: inline-block; /* Für taktile Skalierung */
 }
 
-/* Schlichter Text-Link für Kontakt und Zurück-Links (OHNE Blasen-Rahmen / Pill) */
-.header-contact-link, .pill-btn, .back-link {
-    font-size: 0.875rem; /* Gleiche Schriftgröße */
+/* Echte Pill-Buttons für Zurück-Links & Aktions-Buttons (wie in Emily Drapers Portfolio) */
+.pill-btn {
+    font-size: 0.85rem; /* Kompakte Lesegröße */
     font-weight: 600; /* Halb-Fett */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
     display: inline-flex; /* Inline-Flex für Text und Pfeil */
     align-items: center; /* Vertikal mittig */
-    gap: 0.3rem; /* Abstand zum Pfeil */
-    background: none; /* Kein Hintergrund / Keine Blase */
+    gap: 0.45rem; /* Angenehmer Abstand zum Pfeil */
+    background-color: rgba(12, 60, 48, 0.03); /* Zarte Tönung */
+    border: 1px solid var(--border-subtle); /* Feine Kapsel-Konturlinie */
+    border-radius: 9999px; /* Volle Kapsel-Rundung nach Emily-Draper-Vorbild */
+    padding: 0.45rem 1.15rem; /* Angenehmer Kapsel-Innenabstand */
+    cursor: pointer; /* Zeiger */
+    transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease, color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
+}
+
+/* Schlichter Text-Link für Kontakt und allgemeine Zurück-Links */
+.header-contact-link, .back-link {
+    font-size: 0.875rem; /* Gleiche Schriftgröße */
+    font-weight: 600; /* Halb-Fett */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    display: inline-flex; /* Inline-Flex */
+    align-items: center; /* Vertikal mittig */
+    gap: 0.3rem; /* Abstand */
+    background: none; /* Kein Hintergrund */
     border: none; /* Kein Rand */
     cursor: pointer; /* Zeiger */
     transition: color var(--duration-fast) ease, opacity var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
@@ -259,11 +281,11 @@ nav a {
 }
 
 /* ==========================================================================
-   HERO-SEKTION (Großzügiger Weißraum, ruhige Eleganz)
+   HERO-SEKTION (Großzügiger Weißraum, markante Typografie wie im Referenzdesign)
    ========================================================================== */
 /* Container für das Intro */
 .hero {
-    padding-top: clamp(4rem, 8vw, 7rem); /* Viel edler Weißraum nach oben */
+    padding-top: clamp(4.5rem, 8.5vw, 7.5rem); /* Viel edler Weißraum nach oben */
     padding-bottom: clamp(3rem, 6vw, 5.5rem); /* Großzügiger Abstand nach unten */
     border-bottom: none; /* Keine Trennlinie zwischen Hero und Projekten */
     max-width: var(--max-width); /* Bündig mit dem zentrierten Raster */
@@ -272,22 +294,22 @@ nav a {
     width: 100%; /* Volle Breite */
 }
 
-/* Klare, schnörkellose Hauptüberschrift mit Syne */
+/* Große, selbstbewusste Hauptüberschrift nach Emily-Draper-Vorbild */
 .hero h1 {
     font-family: var(--font-display); /* Markante Syne-Schriftart */
-    font-size: clamp(2.3rem, 5.8vw, 4.2rem); /* Flüssig skalierende Überschrift */
-    font-weight: 700; /* Fetter Schnitt */
-    line-height: 1.12; /* Kompakter, schöner Durchschuss */
+    font-size: clamp(2.4rem, 6vw, 4.3rem); /* Großzügig skalierende Display-Schrift */
+    font-weight: 700; /* Fetter, satter Schnitt */
+    line-height: 1.1; /* Kompakter, eleganter Durchschuss */
     letter-spacing: -0.035em; /* Typografisch dicht gesperrt */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
     max-width: 920px; /* Begrenzte Zeilenbreite */
-    margin-bottom: 1.5rem; /* Abstand zum Fließtext */
+    margin-bottom: 1.6rem; /* Abstand zum Fließtext */
 }
 
 /* Subtiler zweiter Teil der Überschrift in lebendigem Waldgrün */
 .hero h1 span.highlight {
     color: var(--color-accent); /* Sattes Waldgrün #084A24 */
-    font-weight: 500; /* Schöner Schnitt */
+    font-weight: 500; /* Schöner Kontrastschnitt */
 }
 
 /* Natürlicher Einleitungstext */
@@ -295,11 +317,11 @@ nav a {
     font-size: clamp(1.05rem, 1.6vw, 1.25rem); /* Angenehme Lesegröße */
     color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
     max-width: 680px; /* Lesbare Zeilenlänge */
-    line-height: 1.6; /* Durchlüfteter Zeilenabstand */
+    line-height: 1.65; /* Durchlüfteter Zeilenabstand */
 }
 
 /* ==========================================================================
-   FILTER-LEISTE (Rein typografisch – OHNE Blasen, Kapseln oder Pill-Rahmen)
+   FILTER-LEISTE (Echte Pill-Buttons nach Emily-Draper-Vorbild)
    ========================================================================== */
 /* Kopfbereich der Projektsektion */
 .portfolio-header {
@@ -325,37 +347,38 @@ nav a {
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
 }
 
-/* Container für reine Text-Filter (jarcos.work Stil ohne Blasen) */
+/* Container für die Pill-Filter nach dem Vorbild aus dem Referenzbild */
 .filter-bar {
     display: flex; /* Horizontale Reihe */
     flex-wrap: wrap; /* Zeilenumbruch */
-    gap: 1.5rem; /* Großzügiger Textabstand */
+    gap: 0.6rem; /* Harmonischer Kapselabstand */
     align-items: center; /* Mittig */
 }
 
-/* Einzelner Filter-Knopf als reiner Text-Link (KEINE Blase) */
+/* Einzelner Filter-Knopf als echte, haptische Kapsel (Pill-Button) */
 .filter-btn {
-    background: none; /* Kein Hintergrund */
-    border: none; /* Kein Rand / Keine Blase */
-    color: var(--color-olive); /* Moosgrün #555934 im Ruhezustand */
-    padding: 0.25rem 0; /* Kleiner Innenabstand oben/unten */
+    background-color: transparent; /* Transparenter Grund */
+    border: 1px solid var(--border-subtle); /* Feine Kapsel-Linie */
+    border-radius: 9999px; /* Voll gerundete Pill-Form */
+    color: var(--color-olive); /* Moosgrün #555934 */
+    padding: 0.4rem 1.15rem; /* Ausgewogener Kapsel-Innenabstand */
     font-family: var(--font-main); /* Schriftart */
-    font-size: 0.875rem; /* Kompakte Schrift */
+    font-size: 0.85rem; /* Kompakte Schrift */
     font-weight: 500; /* Mittlere Stärke */
     cursor: pointer; /* Zeiger */
-    position: relative; /* Für die feine Unterstreichung */
-    transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
+    transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease, color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
 }
 
-/* Aktiver Filter-Text: Tiefes Waldgrün mit Smaragdgrün-Linie */
+/* Aktiver Filter-Button: Sattes Waldgrün mit weißer Schrift (wie im Referenzbild) */
 .filter-btn.active {
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    background-color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 als Füllung */
+    color: #ffffff; /* Strahlend weiße Schrift */
+    border-color: var(--text-primary); /* Gleiche Randfarbe */
     font-weight: 600; /* Etwas stärkere Schrift */
-    border-bottom: 2px solid var(--color-accent); /* Akzentlinie in #084A24 */
 }
 
 /* ==========================================================================
-   PROJEKT-RASTER / GRID (Weiß, puristisch, hohe Bildqualität im Mobbin-Stil)
+   PROJEKT-RASTER / GRID (Weiß, puristisch, 2-Spalten nach Emily-Draper-Vorbild)
    ========================================================================== */
 /* CSS-Grid für die Arbeiten (Kompakter für reichlich Weißraum im Editorial-Stil) */
 .portfolio-grid {
@@ -406,13 +429,13 @@ div.project-card {
     cursor: default; /* Normaler Pfeilzeiger, da nicht anklickbar */
 }
 
-/* Bild-Bereich im 16:10 Format mit Mobbin-Kantenkontur */
+/* Bild-Bereich im 16:10 Format mit sanft abgerundeten Ecken (12px wie im Referenzdesign) */
 .project-thumbnail {
     position: relative; /* Für Positionierungen */
     width: 100%; /* Volle Breite */
     aspect-ratio: 16 / 10; /* Klares Seitenverhältnis */
     background-color: #f6f6f7; /* Sehr heller, sauberer Ladehintergrund */
-    border-radius: 6px; /* Moderner, ruhiger Kantenradius */
+    border-radius: 12px; /* Freundliche, weiche Rundung wie in Emily Drapers Portfolio */
     overflow: hidden; /* Hält das Bild in den Ecken */
     border: var(--border-card); /* Zarte Kantenkontur im Mobbin-Stil */
     box-shadow: var(--shadow-card); /* Subtiler Tiefenschatten */
@@ -424,7 +447,7 @@ div.project-card {
     width: 100%; /* Volle Breite */
     height: 100%; /* Volle Höhe */
     object-fit: cover; /* Proportional füllend */
-    transition: transform var(--duration-normal) var(--ease-out); /* Flüssiger Zoom nach Emil Kowalski */
+    transition: transform 0.4s var(--ease-out); /* Flüssiger Zoom nach Emil Kowalski */
     will-change: transform; /* Hardwarebeschleunigung für ruckelfreie Animation */
 }
 
@@ -435,10 +458,10 @@ div.project-card {
 
 /* Textbereich bündig unter dem Bild (ohne Kasten-Innenabstand) */
 .project-info {
-    padding: 1rem 0 0 0; /* Bündig mit den Außenkanten des Bildes */
+    padding: 1.1rem 0 0 0; /* Bündig mit den Außenkanten des Bildes */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
-    gap: 0.3rem; /* Kleiner Zeilenabstand */
+    gap: 0.35rem; /* Kleiner Zeilenabstand */
 }
 
 /* Zeile für Kategorie und Semester */
@@ -455,7 +478,7 @@ div.project-card {
     font-weight: 600; /* Halb-Fett */
     color: var(--color-olive); /* Moosgrün #555934 */
     text-transform: uppercase; /* Großbuchstaben */
-    letter-spacing: 0.05em; /* Feine Spationierung */
+    letter-spacing: 0.06em; /* Feine Spationierung */
 }
 
 /* Semesterangabe rechts */
@@ -465,12 +488,12 @@ div.project-card {
     font-weight: 500; /* Mittlere Stärke */
 }
 
-/* Projekttitel */
+/* Projekttitel mit markanter Syne-Schrift */
 .project-info h3 {
     font-family: var(--font-display); /* Syne-Schriftart */
-    font-size: 1.2rem; /* Titelgröße */
+    font-size: 1.25rem; /* Titelgröße */
     font-weight: 700; /* Kräftig */
-    letter-spacing: -0.015em; /* Leicht eng */
+    letter-spacing: -0.02em; /* Leicht eng */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
     transition: color var(--duration-fast) ease; /* Weicher Farbübergang */
 }
@@ -479,11 +502,11 @@ div.project-card {
 .project-info p {
     font-size: 0.875rem; /* Lesegröße */
     color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
-    line-height: 1.5; /* Gute Zeilenhöhe */
+    line-height: 1.55; /* Gute Zeilenhöhe */
 }
 
 /* ==========================================================================
-   ÜBER-MICH & FÄHIGKEITEN (Reine Typografie – OHNE Skill-Blasen)
+   ÜBER-MICH & FÄHIGKEITEN (Klar, ruhig & strukturiert)
    ========================================================================== */
 /* Über-Mich Sektion mit Überschrift oben drüber */
 .about-section {
@@ -491,7 +514,7 @@ div.project-card {
     flex-direction: column; /* Vertikale Anordnung: Überschrift oben, Inhalt darunter */
     padding-top: clamp(4rem, 8vw, 7rem); /* Großzügiger oberer Abstand */
     border-top: none; /* Keine Trennlinie zwischen Projekten und Über-Mich */
-    margin-bottom: clamp(5rem, 10vw, 9rem); /* Großzügiger Weißraum nach unten */
+    margin-bottom: clamp(5rem, 10vw, 8.5rem); /* Großzügiger Weißraum nach unten */
     max-width: var(--max-width); /* Bündig mit dem zentrierten Layout */
     margin-left: auto; /* Exakt zentriert links */
     margin-right: auto; /* Exakt zentriert rechts */
@@ -518,21 +541,25 @@ div.project-card {
     line-height: 1.65; /* Durchlüftet */
 }
 
-/* Skills-Block */
+/* Werkzeuge- und Skills-Box im zarten, handgemachten Rahmen */
 .skills-container {
-    margin-top: 0.5rem; /* Abstand nach oben */
+    margin-top: 0.75rem; /* Abstand nach oben */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
-    gap: 0.4rem; /* Abstand */
+    gap: 0.5rem; /* Abstand */
+    padding: 1.5rem 1.75rem; /* Großzügiger Innenabstand */
+    background-color: rgba(12, 60, 48, 0.03); /* Sehr dezente, edle Papiertönung */
+    border: 1px solid rgba(12, 60, 48, 0.08); /* Zarte Rahmenlinie */
+    border-radius: 14px; /* Weich gerundete Kanten wie bei den Karten */
 }
 
 /* Überschrift über den Werkzeugen */
 .skills-title {
     font-size: 0.75rem; /* Klein */
     text-transform: uppercase; /* Großbuchstaben */
-    letter-spacing: 0.06em; /* Gesperrt */
+    letter-spacing: 0.08em; /* Gesperrt */
     color: var(--color-olive); /* Moosgrün #555934 */
-    font-weight: 600; /* Kräftig */
+    font-weight: 700; /* Kräftig */
 }
 
 /* Reiner Text für Werkzeuge & Programme (OHNE Blasen / Pills) */
@@ -543,54 +570,61 @@ div.project-card {
 }
 
 /* ==========================================================================
-   FOOTER (Klar, ruhig & minimalistisch)
+   FOOTER / KONTAKT (Inspiriert von der dunkelgrünen Kontakt-Karte im Referenzbild)
    ========================================================================== */
-/* Footer-Container */
-.site-footer {
-    border-top: none; /* Keine Trennlinie vor dem Footer */
-    padding-top: clamp(4rem, 8vw, 7rem); /* Großzügiger oberer Abstand */
-    padding-bottom: 4rem; /* Unterer Abstand */
-    max-width: var(--max-width); /* Bündig mit dem zentrierten Layout */
-    margin-left: auto; /* Exakt zentriert links */
-    margin-right: auto; /* Exakt zentriert rechts */
+/* Äußere Hülle des Footers zentriert im Layout */
+footer.site-footer, .site-footer {
+    max-width: var(--max-width); /* Bündig mit dem 880px Raster */
+    margin-left: auto; /* Zentriert links */
+    margin-right: auto; /* Zentriert rechts */
+    margin-bottom: 3rem; /* Abstand zum unteren Browser-Rand */
+    padding: clamp(3.5rem, 7vw, 5.5rem) clamp(1.75rem, 5vw, 3.5rem) clamp(2rem, 4vw, 3rem); /* Innenabstand */
+    background-color: #0c3c30; /* Tiefes, edles Waldgrün als Grundton */
+    background-image: radial-gradient(circle at 10% 15%, rgba(85, 89, 52, 0.28) 0%, transparent 55%); /* Zarte Licht-Aura in der Ecke */
+    border-radius: 24px; /* Großzügig gerundete Ecken wie in der Vorlage */
+    box-shadow: 0 16px 48px -8px rgba(12, 60, 48, 0.25); /* Tiefer, edler Schatten */
+    color: #ffffff; /* Weiße Schrift für perfekten Kontrast */
+    border-top: none; /* Kein Standard-Rand */
     width: 100%; /* Volle Breite */
 }
 
 /* Kontakt-Bereich */
 .footer-cta {
-    margin-bottom: 1.75rem; /* Abstand zur Mail */
+    margin-bottom: 2rem; /* Abstand zur Mail */
 }
 
-/* Moosgrünes Label über dem Kontakt */
+/* Zartes Akzent-Label über dem Kontakt */
 .footer-cta .cta-label {
     font-size: 0.75rem; /* Klein */
     text-transform: uppercase; /* Großbuchstaben */
-    letter-spacing: 0.08em; /* Gesperrt */
-    color: var(--color-olive); /* Moosgrün #555934 */
+    letter-spacing: 0.1em; /* Gesperrt */
+    color: #a3c4b5; /* Sanftes Pastell-Salbeigrün */
     display: block; /* Eigene Zeile */
-    margin-bottom: 0.4rem; /* Abstand */
+    margin-bottom: 0.6rem; /* Abstand */
+    font-weight: 600; /* Halb-Fett */
 }
 
-/* Große Einladung */
+/* Große Einladung in strahlendem Weiß */
 .footer-cta h2 {
     font-family: var(--font-display); /* Syne-Schriftart */
-    font-size: clamp(1.8rem, 4vw, 3rem); /* Skalierende Größe */
+    font-size: clamp(2rem, 4.5vw, 3.2rem); /* Skalierende Größe */
     font-weight: 700; /* Kräftig */
-    letter-spacing: -0.025em; /* Eng */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    letter-spacing: -0.03em; /* Eng */
+    color: #ffffff; /* Strahlendes Weiß auf dunklem Waldgrün */
+    line-height: 1.15; /* Kompakter Durchschuss */
 }
 
-/* Große klickbare E-Mail-Adresse */
+/* Große klickbare E-Mail-Adresse im Emily-Draper-Stil */
 .email-link {
     font-family: var(--font-display); /* Syne-Schriftart */
     display: inline-flex; /* Inline-Flex */
     align-items: center; /* Mittig */
     gap: 0.5rem; /* Abstand */
-    font-size: clamp(1.3rem, 3vw, 2.2rem); /* Große Schriftgröße */
+    font-size: clamp(1.35rem, 3.2vw, 2.3rem); /* Große Schriftgröße */
     font-weight: 700; /* Kräftig */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    border-bottom: 2px solid var(--border-subtle); /* Feine Unterstreichung */
-    padding-bottom: 0.25rem; /* Abstand */
+    color: #ffffff; /* Strahlendes Weiß */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.35); /* Feine helle Unterstreichung */
+    padding-bottom: 0.35rem; /* Abstand */
     margin-bottom: clamp(2.5rem, 5vw, 4rem); /* Abstand nach unten */
     cursor: pointer; /* Zeiger */
     transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
@@ -601,24 +635,22 @@ div.project-card {
     transform: scale(0.98); /* Subtile Stauchung beim Anklicken */
 }
 
-/* Untere Zeile (Zeit, Copyright, Social) */
+/* Untere Zeile (Copyright und Social Links) */
 .footer-bottom-row {
     display: flex; /* Flexbox */
-    justify-content: space-between; /* Links, Mitte, Rechts verteilt */
+    justify-content: space-between; /* Links und Rechts verteilt */
     align-items: center; /* Mittig */
     flex-wrap: wrap; /* Umbruch */
     gap: 1.25rem; /* Abstand */
-    padding-top: 1.5rem; /* Abstand nach oben */
-    border-top: none; /* Keine Trennlinie vor der Copyright-Zeile */
-    font-size: 0.8rem; /* Kompakte Schrift */
-    color: var(--text-muted); /* Moosgrün #555934 */
+    padding-top: 1.75rem; /* Abstand nach oben */
+    border-top: 1px solid rgba(255, 255, 255, 0.12); /* Feine helle Trennlinie */
+    font-size: 0.85rem; /* Kompakte Schrift */
+    color: rgba(255, 255, 255, 0.65); /* Sanft abgetöntes Weiß */
 }
 
-/* Lokale Uhrzeit */
-.live-clock {
-    display: flex; /* Flexbox */
-    align-items: center; /* Mittig */
-    gap: 0.4rem; /* Abstand */
+/* Copyright-Text */
+.copyright span {
+    color: rgba(255, 255, 255, 0.65); /* Sanft abgetöntes Weiß */
 }
 
 /* Social Links */
@@ -627,9 +659,11 @@ div.project-card {
     gap: 1.25rem; /* Abstand */
 }
 
-/* Einzelner Social Link */
+/* Einzelner Social Link im Footer */
 .social-links a {
     display: inline-block; /* Für taktile Skalierung */
+    color: rgba(255, 255, 255, 0.8); /* Helles Weiß */
+    font-weight: 500; /* Mittlere Stärke */
     transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Übergang */
 }
 
@@ -658,11 +692,11 @@ div.project-card {
     margin-bottom: 2.5rem; /* Abstand */
 }
 
-/* Detail-Galerie */
+/* Detail-Galerie mit flexibler Mindestbreite gegen mobilen Überlauf */
 .detail-gallery {
-    display: grid; /* Grid */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Spalten */
-    gap: clamp(2rem, 4vw, 3rem); /* Mehr Abstand */
+    display: grid; /* Grid-Layout */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); /* Verhindert horizontalen Überlauf mobil */
+    gap: clamp(1.75rem, 4vw, 3rem); /* Großzügiger Kachelabstand */
     margin-bottom: clamp(4rem, 8vw, 6rem); /* Mehr Abstand nach unten */
     max-width: var(--max-width); /* Bündig und kompakt für viel Weißraum */
     margin-left: auto; /* Exakt zentriert links */
@@ -670,9 +704,9 @@ div.project-card {
     width: 100%; /* Volle Breite */
 }
 
-/* Bilder in der Detail-Galerie mit Mobbin-Kantenkontur */
+/* Bilder in der Detail-Galerie mit abgerundeten Ecken und zarter Kantenkontur */
 .detail-gallery img {
-    border-radius: 6px; /* Hochwertiger Radius */
+    border-radius: 12px; /* Abgerundete Ecken wie bei den Hauptkarten */
     border: var(--border-card); /* Zarter Rand verhindert Ausfransen auf weißem Grund */
     box-shadow: var(--shadow-card); /* Subtile Dreidimensionalität */
     background-color: #f7f7f8; /* Heller Grund */
@@ -689,7 +723,7 @@ div.project-card {
     margin-top: 1rem; /* Abstand nach oben */
     margin-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger Abstand nach unten vor dem Footer */
     background-color: #0c3c30; /* Dunkler Hintergrund im Piniengrün */
-    border-radius: 6px; /* Zarte Abrundung */
+    border-radius: 12px; /* Schöne Rundung */
     border: var(--border-card); /* Zarte Außenkante */
     box-shadow: var(--shadow-card); /* Subtiler Tiefenschatten */
     overflow: hidden; /* Ecken sauber abschneiden */
@@ -700,7 +734,7 @@ div.project-card {
     width: 100%; /* Volle Breite */
     height: auto; /* Erhält das Seitenverhältnis */
     display: block; /* Verhindert Leerzeilen darunter */
-    border-radius: 6px; /* Bündige Ecken */
+    border-radius: 12px; /* Bündige Ecken */
 }
 
 /* ==========================================================================
@@ -717,8 +751,15 @@ div.project-card {
         color: var(--color-accent); /* Wird Waldgrün #084A24 */
     }
 
-    /* Hover auf den Buttons */
-    .header-contact-link:hover, .pill-btn:hover, .back-link:hover {
+    /* Hover auf Pill-Buttons */
+    .pill-btn:hover {
+        background-color: rgba(12, 60, 48, 0.08); /* Sanfte Tönung */
+        border-color: var(--color-accent); /* Smaragdgrüner Rand */
+        color: var(--color-accent); /* Smaragdgrüne Schrift */
+    }
+
+    /* Hover auf schlichten Links */
+    .header-contact-link:hover, .back-link:hover {
         color: var(--color-accent); /* Wechselt zu Waldgrün #084A24 */
         opacity: 0.85; /* Leichtes Abblenden */
     }
@@ -729,14 +770,16 @@ div.project-card {
         border-bottom-color: var(--text-primary); /* Unterstreichung verdunkelt sich */
     }
 
-    /* Hover auf Filter-Text */
-    .filter-btn:hover {
-        color: var(--color-accent); /* Text wird Waldgrün #084A24 */
+    /* Hover auf inaktiven Filter-Pills */
+    .filter-btn:not(.active):hover {
+        border-color: var(--color-accent); /* Smaragdgrüner Rand */
+        color: var(--text-primary); /* Dunkle Schrift */
+        background-color: rgba(12, 60, 48, 0.04); /* Sanfte Füllung */
     }
 
     /* Sanfte Bewegung beim Überfahren nur für anklickbare Links */
     a.project-card:hover {
-        transform: translateY(-6px); /* Bewegt sich flüssig um 6px nach oben */
+        transform: translateY(-5px); /* Bewegt sich flüssig um 5px nach oben */
     }
 
     /* Schwebeschatten und Rahmenakzent auf dem Thumbnail */
@@ -747,23 +790,23 @@ div.project-card {
 
     /* Subtiler Bildzoom bei Mausberührung nur bei anklickbaren Links */
     a.project-card:hover .project-thumbnail img {
-        transform: scale(1.02); /* Ruhiger 2% Zoom nach Emil Kowalski */
+        transform: scale(1.025); /* Weicher 2.5% Zoom nach Emil Kowalski */
     }
 
-    /* Hover auf Kachel: Projekttitel leuchtet nur bei anklickbaren Links auf */
+    /* Hover auf Kachel: Projekttitel leuchtet auf */
     a.project-card:hover .project-info h3 {
         color: var(--color-accent); /* Sattes Waldgrün #084A24 */
     }
 
-    /* Hover auf der E-Mail */
+    /* Hover auf der E-Mail im dunklen Footer */
     .email-link:hover {
-        color: var(--color-accent); /* Wechselt zu Waldgrün #084A24 */
-        border-bottom-color: var(--color-accent); /* Linie wird Waldgrün #084A24 */
+        color: #e2f4ea; /* Helles, frisches Mint-Weiß */
+        border-bottom-color: #ffffff; /* Weiße Unterstreichung */
     }
 
-    /* Hover auf Social Links */
+    /* Hover auf Social Links im Footer */
     .social-links a:hover {
-        color: var(--color-accent); /* Waldgrün #084A24 */
+        color: #ffffff; /* Strahlendes Weiß */
     }
 }
 
@@ -796,7 +839,7 @@ div.project-card {
     
     /* Navigationslinks mit kleinerem Abstand */
     nav ul {
-        gap: 1rem; /* Kompakt */
+        gap: 1.15rem; /* Kompakt */
     }
     
     /* Projekt-Grid wird mobil einspaltig und sauber zentriert */
@@ -808,6 +851,12 @@ div.project-card {
         margin-right: auto; /* Zentriert */
     }
     
+    /* Footer mobil etwas kompakter */
+    footer.site-footer, .site-footer {
+        border-radius: 18px; /* Zartere Rundung auf kleinen Bildschirmen */
+        padding: 3rem 1.5rem 2rem; /* Kompakterer Innenabstand */
+    }
+
     /* Footer-Abschlusszeile vertikal stapeln */
     .footer-bottom-row {
         flex-direction: column; /* Untereinander */
