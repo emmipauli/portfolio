@@ -1,752 +1,712 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); /* Google Font Roboto mit Schnitt Light 300 importieren */
-/* Leerzeile */
-/* ========================================================================== */
-/* LOKALE SCHRIFTARTEN: SUPER FROG & ACUMIN */
-/* ========================================================================== */
-@font-face { /* Schriftart-Definition für Super Frog */
-    font-family: 'Super Frog'; /* Name der Display-Schriftart */
-    src: url('fonts/SuperFrog.ttf') format('truetype'); /* Lokaler Dateipfad zur TTF-Schriftdatei */
-    font-weight: 400; /* Standard-Schriftschnitt */
-    font-style: normal; /* Aufrechte Schriftlage */
-    font-display: swap; /* Schnelle Textdarstellung */
-} /* Super Frog Definition schließen */
-/* Leerzeile */
-@font-face { /* Schriftart-Definition für Acumin */
-    font-family: 'Acumin Variable Concept'; /* Name der variablen Schriftart */
-    src: url('fonts/AcuminVariableConcept.otf') format('opentype'); /* Lokaler Pfad zur OpenType-Datei */
-    font-weight: 100 900; /* Alle variablen Schnitte */
-    font-style: normal; /* Aufrechte Schriftlage */
-    font-display: swap; /* Schnelle Anzeige */
-} /* Acumin Definition schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* CSS-VARIABLEN (KOMPLETTER HINTERGRUND IN #EDE7BF NACH NUTZERWUNSCH) */
-/* ========================================================================== */
-:root { /* Pseudoklasse root für globale Variablen */
-    --bg-primary: #EDE7BF; /* Vollständiger warmer Cremeton als Haupthintergrund nach Nutzerwunsch */
-    --bg-surface: #e5dfb5; /* Sanfte Nuance für akzentuierte Flächen */
-    --text-primary: #0c3c30; /* Dunkelgrüner Farbton für Schriften und Rahmen */
-    --text-secondary: rgba(12, 60, 48, 0.85); /* Leicht abgetöntes Waldgrün für Fließtexte */
-    --color-olive: #555934; /* Moos- und Olivgrün nach Illustrator-Vorgabe */
-    --color-accent: #084A24; /* Kräftiges Smaragdgrün für aktive Zustände */
-    --color-giant-e: #6a826c; /* Sanftes Salbeigrün für das große Hintergrund-E */
-    --color-cream: #EDE7BF; /* Hellbeiger Cremeton nach Nutzerwunsch */
-    --border-dark: #0c3c30; /* Dunkelgrüner Rand für Bento-Karten */
-    --font-display: 'Super Frog', cursive, sans-serif; /* Display-Schriftart Super Frog */
-    --font-main: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; /* Hauptschriftart Roboto nach Nutzerwunsch */
-    --ease-out: cubic-bezier(0.23, 1, 0.32, 1); /* Geschmeidige Ausfederung für UI-Elemente */
-    --duration-fast: 160ms; /* Kurze Übergangsdauer für spürbares Feedback */
-} /* Root-Regel schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* GRUNDFORMATIERUNG & RESET */
-/* ========================================================================== */
-*, *::before, *::after { /* Universeller Selektor */
-    margin: 0; /* Standard-Außenabstände entfernen */
-    padding: 0; /* Standard-Innenabstände entfernen */
-    box-sizing: border-box; /* Rahmen und Polsterung in Gesamtbreite einrechnen */
-} /* Universellen Selektor schließen */
-/* Leerzeile */
-html { /* HTML-Wurzelelement formatieren */
-    scroll-behavior: smooth; /* Weiches Scrollen für interne Ankerlinks */
-    color-scheme: light; /* Helles Farbschema deklarieren */
-    background-color: var(--bg-primary); /* Cremeton #EDE7BF als Basis-Hintergrund */
-} /* HTML-Regel schließen */
-/* Leerzeile */
-body { /* Body-Element formatieren */
-    margin: 0; /* Standard-Margin des Browsers auf 0 setzen */
-    padding: 0; /* Standard-Padding des Browsers auf 0 setzen */
-    background-color: var(--bg-primary); /* Vollständiger Hintergrund in #EDE7BF */
-    color: var(--text-primary); /* Dunkles Piniengrün für Standardtext */
-    font-family: var(--font-main); /* Roboto als Standardschriftart setzen */
-    font-weight: 300; /* Roboto Light als Standard-Schriftschnitt nach Nutzerwunsch */
-    line-height: 1.6; /* Harmonischer und gut lesbarer Zeilenabstand */
-    -webkit-font-smoothing: antialiased; /* Optimierte Schriftglättung für WebKit-Browser */
-    -moz-osx-font-smoothing: grayscale; /* Optimierte Schriftglättung für Firefox auf macOS */
-    text-rendering: optimizeLegibility; /* Optimiertes Rendering für hochwertige Typografie */
-    overflow-x: hidden; /* Horizontales Scrollen auf Seitenebene zuverlässig verhindern */
-    min-height: 100vh; /* Mindestens volle Fensterhöhe ausfüllen */
-    width: 100%; /* Volle Bildschirmbreite nutzen */
-} /* Body-Regel schließen */
-/* Leerzeile */
-main { /* Hauptinhaltsbereich formatieren */
-    width: 100%; /* Volle Breite für den Hauptbereich */
-    margin: 0; /* Kein Außenabstand */
-    padding: 0; /* Kein Innenabstand */
-} /* Main-Regel schließen */
-/* Leerzeile */
-a { /* Hyperlinks formatieren */
-    color: inherit; /* Schriftfarbe vom Elternelement erben */
-    text-decoration: none; /* Keine standardmäßige Textunterstreichung */
-    transition: color var(--duration-fast) ease; /* Sanfter Farbübergang beim Überfahren */
-} /* Link-Regel schließen */
-/* Leerzeile */
-img { /* Bilder formatieren */
-    max-width: 100%; /* Bildbreite an Elterncontainer anpassen */
-    height: auto; /* Natürliches Seitenverhältnis erhalten */
-    display: block; /* Blockdarstellung zur Vermeidung von Leerraum */
-    border-radius: 0; /* Scharfe Kanten ohne Eckenrundung nach Vorlage */
-} /* Bilder-Regel schließen */
-/* Leerzeile */
-:focus-visible { /* Tastaturfokus hervorheben */
-    outline: 2px solid var(--color-accent); /* Smaragdgrüner Fokusrahmen für Barrierefreiheit */
-    outline-offset: 3px; /* Deutlicher Abstand zum fokussierten Element */
-} /* Fokus-Regel schließen */
-/* Leerzeile */
-.anchor-target { /* Sprungmarken-Element formatieren */
-    display: block; /* Als Blockelement darstellen */
-    position: relative; /* Relative Positionierung für Versatz */
-    top: -40px; /* Leichter oberer Versatz für Ankerziele */
-    visibility: hidden; /* Unsichtbar im visuellen Fluss halten */
-} /* Anker-Regel schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* VOLLBILDSCHIRM-SEKTIONEN (OHNE TRENNSTRICHE IN #EDE7BF) */
-/* ========================================================================== */
-.full-screen-section { /* Vollbildschirm-Sektionen definieren */
-    min-height: 100vh; /* Exakt volle Bildschirmhöhe als Mindesthöhe */
-    width: 100%; /* Volle Bildschirmbreite */
-    box-sizing: border-box; /* Rahmen und Innenabstände vollständig einrechnen */
-    position: relative; /* Relativer Bezugspunkt für innere Elemente */
-    border-bottom: none; /* Keine Trennstriche zwischen Abschnitten nach Nutzerwunsch */
-    background-color: transparent; /* Transparenter Sektions-Hintergrund damit das Hintergrund-E im Fluss sichtbar bleibt */
-    display: flex; /* Flexbox-Layout */
-    flex-direction: column; /* Vertikale Stapelung */
-    justify-content: space-between; /* Gleichmäßige Verteilung von Kopf, Mitte und Fuß */
-} /* Vollbild-Sektions-Regel schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* SEKTION 1: HERO / HOME (HEADER, GROSSER NAME & STUDIENGANG) */
-/* ========================================================================== */
-.hero-section { /* Hero-Sektion formatieren */
-    background-color: transparent; /* Transparenter Hero-Hintergrund für nahtloses Reingreifen des E */
-    padding-top: clamp(1.5rem, 3.5vh, 2.75rem); /* Oberer Abstand für zentrierten Header */
-    padding-bottom: clamp(1.5rem, 3.5vh, 2.75rem); /* Unterer Abstand zur nächsten Sektion */
-    padding-left: clamp(2rem, 6vw, 6rem); /* Flexibler linker Randabstand */
-    padding-right: clamp(2rem, 6vw, 6rem); /* Flexibler rechter Randabstand */
-} /* Hero-Sektions-Regel schließen */
-/* Leerzeile */
-.hero-header-bar { /* Header-Balken der ersten Sektion formatieren */
-    width: 100%; /* Volle Breite für die Kopfzeile */
-    display: flex; /* Flexbox für zentrierte Positionierung */
-    justify-content: center; /* Navigation horizontal exakt in der Mitte ausrichten */
-    align-items: center; /* Vertikal mittig anordnen */
-} /* Header-Balken-Regel schließen */
-/* Leerzeile */
-.centered-nav { /* Zentrierte Navigation formatieren */
-    display: flex; /* Flexbox für Navigationscontainer */
-    justify-content: center; /* Mittige Ausrichtung */
-} /* Navigations-Regel schließen */
-/* Leerzeile */
-.centered-nav ul { /* Horizontale Liste der Navigationspunkte */
-    display: flex; /* Horizontale Leiste aus Menüpunkten */
-    list-style: none; /* Keine Aufzählungspunkte */
-    gap: clamp(1.5rem, 3.5vw, 3.5rem); /* Großzügiger Abstand zwischen Menüpunkten */
-    align-items: center; /* Vertikal zentrieren */
-} /* Navigations-Listen-Regel schließen */
-/* Leerzeile */
-.centered-nav a { /* Navigationslinks formatieren */
-    font-family: var(--font-main); /* Roboto Schriftart nach Vorgabe */
-    font-weight: 300; /* Roboto Light für zarte Eleganz */
-    font-size: clamp(0.95rem, 1.25vw, 1.15rem); /* Ausgewogene Schriftgröße nach Vorlage */
-    color: var(--text-primary); /* Dunkles Waldgrün als Textfarbe */
-    letter-spacing: 0.02em; /* Feine und edle Spationierung */
-    transition: color var(--duration-fast) ease; /* Farbübergang beim Hovern */
-} /* Navigationslink-Regel schließen */
-/* Leerzeile */
-.centered-nav a:hover { /* Hover-Zustand für Navigationslinks */
-    color: var(--color-accent); /* Smaragdgrüner Akzent beim Überfahren */
-} /* Hover-Regel schließen */
-/* Leerzeile */
-.hero-center-content { /* Mittlerer Inhaltsbereich des Hero-Bildschirms */
-    display: flex; /* Flexbox für vollständige Zentrierung */
-    justify-content: center; /* Horizontal zentrieren */
-    align-items: center; /* Vertikal exakt in der Mitte ausrichten */
-    flex: 1; /* Füllt den verfügbaren vertikalen Raum aus */
-    width: 100%; /* Volle Bildschirmbreite */
-    padding: 1rem 0; /* Leichter Innenabstand */
-} /* Mittlerer Inhaltsbereich schließen */
-/* Leerzeile */
-.hero-name { /* Monumentaler Namenszug in Super Frog */
-    font-family: var(--font-display); /* Super Frog Schriftart nach Vorlage */
-    font-size: clamp(2.8rem, 7.5vw, 6.2rem); /* Monumentale Display-Schriftgröße nach Vorlage */
-    font-weight: 400; /* Normaler Schnitt */
-    line-height: 1.1; /* Kompakter Durchschuss */
-    color: var(--text-primary); /* Dunkelgrüner Farbton */
-    display: flex; /* Flexbox für Vor- und Nachname */
-    justify-content: center; /* Horizontal zentrieren */
-    align-items: center; /* Vertikal zentrieren */
-    flex-wrap: wrap; /* Sauberer Umbruch auf schmalen Displays */
-    gap: clamp(1.2rem, 3.5vw, 3.5rem); /* Abstand zwischen Vor- und Nachname */
-    text-align: center; /* Zentrierter Textfluss */
-} /* Hero-Name-Regel schließen */
-/* Leerzeile */
-.name-word { /* Einzelnes Wort des Namenszuges formatieren */
-    display: inline-block; /* Als Inline-Block darstellen */
-    white-space: nowrap; /* Verhindert Zeilenumbruch im Wort */
-    letter-spacing: clamp(0.35rem, 1.2vw, 1.1rem); /* Weite Spationierung der Buchstaben nach Vorlage */
-} /* Wort-Regel schließen */
-/* Leerzeile */
-.hero-bottom-bar { /* Untere Abschlusszeile des ersten Bildschirms */
-    width: 100%; /* Volle Breite */
-    text-align: right; /* Rechtsbündig nach Illustrator-Vorlage */
-    padding-top: 0.5rem; /* Leichter Abstand nach oben */
-} /* Untere Abschlusszeile schließen */
-/* Leerzeile */
-.hero-subtitle { /* Studiengangs-Beschriftung optisch vergrößert passend zur H1 */
-    font-family: var(--font-main); /* Roboto Schriftart */
-    font-weight: 300; /* Roboto Light nach Vorgabe */
-    font-size: clamp(1.4rem, 2.4vw, 2.2rem); /* Größere Schriftgröße passend zur H1 nach Nutzerwunsch */
-    color: var(--color-olive); /* Warmes Moos- und Olivgrün (#555934) */
-    letter-spacing: 0.02em; /* Feine und ausgewogene Spationierung */
-} /* Untertitel-Regel schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* FLUSS-CONTAINER MIT E (OBEN NICHT ABGESCHNITTEN, REICHT IN HERO REIN) */
-/* ========================================================================== */
-.main-flow-container { /* Umschließender Container für Intro, Arbeiten und Über Mich */
-    position: relative; /* Bezugspunkt für das absolut positionierte Hintergrund-E */
-    width: 100%; /* Volle Bildschirmbreite */
-    min-height: 300vh; /* Exakt 3 Bildschirmhöhen für die 3 Sektionen */
-    overflow: visible; /* Erlaubt dem E ungehindert oben in die Hero-Sektion hineinzugreifen */
-} /* Fluss-Container schließen */
-/* Leerzeile */
-.giant-e-bg { /* Container für die riesige E-Glyphe im Hintergrund */
-    position: absolute; /* Absolut über die Sektionen hinweg positioniert */
-    top: -12vh; /* Erneut minimal nach unten versetzt nach Nutzerwunsch, reicht sanft in die Hero-Sektion hinein */
-    left: clamp(10px, 4vw, 80px); /* Leicht links positioniert nach Vorlage */
-    width: clamp(700px, 72vw, 1200px); /* Gewaltige Breite der Glyphe */
-    height: 326vh; /* Vollständige Höhe damit das E oben vollkommen intakt und ungekürzt bleibt */
-    pointer-events: none; /* Mausklicks gehen ungehindert durch */
-    z-index: 0; /* Liegt hinter allen Texten und Karten */
-    color: var(--color-giant-e); /* Sanftes Salbeigrün (#6a826c) */
-    opacity: 0.38; /* Dezente Deckkraft für harmonische Lesbarkeit auf #EDE7BF */
-} /* Hintergrund-E-Container schließen */
-/* Leerzeile */
-.giant-e-bg svg { /* SVG-Grafik der Glyphe formatieren */
-    width: 100%; /* Volle Containerbreite nutzen */
-    height: 100%; /* Volle Containerhöhe ausfüllen */
-    display: block; /* Als Blockelement darstellen */
-} /* SVG-Regel schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* SEKTION 2: INTRO (MINIMAL NACH UNTEN VERSETZT NACH NUTZERWUNSCH) */
-/* ========================================================================== */
-.intro-section { /* Intro-Sektion formatieren */
-    position: relative; /* Relative Ebene über dem Hintergrund-E */
-    z-index: 1; /* Sichtbare Ebene */
-    min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
-    display: flex; /* Flexbox für Ausrichtung */
-    flex-direction: column; /* Vertikale Ausrichtung */
-    justify-content: flex-start; /* Oben ausgerichtet */
-    padding-left: clamp(2rem, 8vw, 8rem); /* Großzügiger linker Seitenabstand */
-    padding-right: clamp(2rem, 8vw, 8rem); /* Rechter Seitenabstand */
-    padding-top: clamp(6.5rem, 15vh, 11rem); /* Minimal nach unten versetzt nach Nutzerwunsch */
-    padding-bottom: clamp(2rem, 4vh, 4rem); /* Unterer Innenabstand */
-} /* Intro-Sektions-Regel schließen */
-/* Leerzeile */
-.intro-content-wrapper { /* Inhaltsbereich des Intro-Textes */
-    max-width: 720px; /* Wohlproportionierte Zeilenbreite für Lesbarkeit */
-    text-align: left; /* Linksbündige Textausrichtung nach Vorlage */
-} /* Intro-Wrapper schließen */
-/* Leerzeile */
-.hero-bio { /* Einleitungstext in Roboto Light formatieren */
-    font-family: var(--font-main); /* Roboto Schriftart */
-    font-weight: 300; /* Roboto Light nach Vorgabe */
-    font-size: clamp(1.2rem, 1.85vw, 1.6rem); /* Große und gut lesbare Schriftgröße */
-    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
-    line-height: 1.8; /* Luftiger Zeilenabstand für angenehmen Lesekomfort */
-    letter-spacing: -0.01em; /* Feiner Schriftschnitt */
-} /* Einleitungstext-Regel schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* SEKTION 3: ARBEITEN (VOLLFLÄCHIGE RECHTECKE OHNE LÜCKE) */
-/* ========================================================================== */
-.portfolio-section { /* Arbeiten-Sektion formatieren */
-    position: relative; /* Über dem Hintergrund-E */
-    z-index: 1; /* Sichtbare Ebene */
-    min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
-    display: flex; /* Flexbox für Sektionsaufbau */
-    flex-direction: column; /* Vertikale Stapelung */
-    justify-content: flex-start; /* Oben ausgerichtet */
-    padding-left: 0; /* Kein seitlicher Außenabstand damit Rechtecke über den ganzen Bildschirm gehen */
-    padding-right: 0; /* Volle Bildschirmbreite von Rand zu Rand nach Nutzerwunsch */
-    padding-top: clamp(1.5rem, 3vh, 2.5rem); /* Kompakter oberer Innenabstand */
-    padding-bottom: 0; /* Bündiger unterer Abschluss */
-} /* Portfolio-Sektions-Regel schließen */
-/* Leerzeile */
-.section-title-bar { /* Kopfzeile für Sektionstitel */
-    width: 100%; /* Volle Breite */
-    margin-bottom: clamp(0.75rem, 1.5vh, 1.25rem); /* Kompakter Abstand zum Bento-Raster */
-    padding-left: clamp(2rem, 6vw, 6rem); /* Seitenabstand für saubere Textausrichtung */
-    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Seitenabstand */
-    text-align: left; /* Linksbündig nach Vorlage */
-} /* Titelzeilen-Regel schließen */
-/* Leerzeile */
-.section-title-bar h2 { /* Sektionstitel in Roboto Light */
-    font-family: var(--font-main); /* Roboto Schriftart */
-    font-weight: 300; /* Roboto Light nach Vorgabe */
-    font-size: clamp(1.4rem, 2.2vw, 1.95rem); /* Souveräne Überschriftengröße */
-    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
-    letter-spacing: -0.01em; /* Feiner Schnitt */
-} /* Titel-Regel schließen */
-/* Leerzeile */
-.bento-mosaic-container { /* Raster-Container für die vollflächigen Bento-Karten */
-    display: grid; /* CSS Grid Layout für nahtloses Kachelmosaik */
-    grid-template-columns: 1.15fr 0.62fr 0.38fr; /* 3 ungleich breite Spalten */
-    grid-template-rows: 42fr 58fr; /* 2 unterschiedlich hohe Zeilen für Unikat-Größen */
-    gap: 0; /* Keine Lücke zwischen den Rechtecken nach Nutzerwunsch */
-    width: 100%; /* Volle Bildschirmbreite über die gesamte Ansicht */
-    max-width: 100%; /* Keine Breitenbeschränkung für maximale Bildschirmgröße */
-    flex: 1; /* Füllt den gesamten verbleibenden vertikalen Bildschirmraum aus */
-    min-height: calc(100vh - 85px); /* Großzügige Mindesthöhe für volle Bildschirmpräsenz */
-    margin: 0; /* Kein Außenabstand */
-} /* Bento-Raster-Container schließen */
-/* Leerzeile */
-.bento-box { /* Grundformatierung für jedes der 4 nahtlos anliegenden Rechtecke */
-    position: relative; /* Bezugspunkt für rotierende Inhaltsebenen */
-    overflow: hidden; /* Schneidet überstehende Medien bündig ab */
-    border-top: 1.5px solid var(--border-dark); /* Dunkelgrüne obere Begrenzungslinie */
-    border-bottom: 1.5px solid var(--border-dark); /* Dunkelgrüne untere Begrenzungslinie */
-    border-radius: 0; /* Keine Rundungen nach Nutzerwunsch */
-    background-color: var(--bg-primary); /* Cremeton als Kachel-Grund */
-    box-sizing: border-box; /* Rahmen vollständig einrechnen */
-    width: 100%; /* Volle Breite der Rasterzelle */
-    height: 100%; /* Volle Höhe der Rasterzelle */
-} /* Bento-Box schließen */
-/* Leerzeile */
-.box-1 { /* Erstes Rechteck: linke Spalte über beide Zeilen */
-    grid-column: 1 / 2; /* Erste Spalte belegen */
-    grid-row: 1 / 3; /* Erstreckt sich über beide Zeilen */
-    border-left: none; /* Bündig am linken Bildschirmrand */
-    border-right: 1.5px solid var(--border-dark); /* Exakte 1.5px Trennlinie zu den rechten Kacheln */
-} /* Box 1 schließen */
-/* Leerzeile */
-.box-2 { /* Zweites Rechteck: oberes Querformat */
-    grid-column: 2 / 4; /* Erstreckt sich über Spalte 2 und 3 */
-    grid-row: 1 / 2; /* Erste Zeile belegen */
-    border-left: none; /* Schließt nahtlos an Box 1 an */
-    border-right: none; /* Bündig am rechten Bildschirmrand */
-    border-bottom: 1.5px solid var(--border-dark); /* Exakte 1.5px Trennlinie zu Box 3 und 4 */
-} /* Box 2 schließen */
-/* Leerzeile */
-.box-3 { /* Drittes Rechteck: untere mittlere Kachel */
-    grid-column: 2 / 3; /* Mittlere Spalte belegen */
-    grid-row: 2 / 3; /* Zweite Zeile belegen */
-    border-left: none; /* Schließt nahtlos an Box 1 an */
-    border-right: 1.5px solid var(--border-dark); /* Exakte 1.5px Trennlinie zu Box 4 */
-    border-bottom: 1.5px solid var(--border-dark); /* Abschluss nach unten */
-} /* Box 3 schließen */
-/* Leerzeile */
-.box-4 { /* Viertes Rechteck: untere rechte schmale Kachel */
-    grid-column: 3 / 4; /* Rechte Spalte belegen */
-    grid-row: 2 / 3; /* Zweite Zeile belegen */
-    border-left: none; /* Schließt nahtlos an Box 3 an */
-    border-right: none; /* Bündig am rechten Bildschirmrand */
-    border-bottom: 1.5px solid var(--border-dark); /* Abschluss nach unten */
-} /* Box 4 schließen */
-/* Leerzeile */
-/* SYNCHRONE ROTATION (LANGSAMER, GLEICHZEITIG, KEIN THEMA DOPPELT) */
-.rot-layer { /* Einzelne rotierende Inhaltsebene formatieren */
-    position: absolute; /* Vollflächig absolut im Kachelrahmen aufgespannt */
-    inset: 0; /* Vollständige Überdeckung von allen Seiten */
-    width: 100%; /* Volle Breite */
-    height: 100%; /* Volle Höhe */
-    display: flex; /* Flexbox für zentrierten Kacheltitel */
-    align-items: center; /* Vertikal mittig */
-    justify-content: center; /* Horizontal mittig */
-    text-decoration: none; /* Keine Unterstreichung */
-    opacity: 0; /* Standardmäßig unsichtbar */
-    visibility: hidden; /* Unsichtbar im Browser-Baum */
-    pointer-events: none; /* Standardmäßig nicht klickbar */
-    animation: bentoRotate 28s infinite step-end; /* 28 Sekunden Gesamtzyklus mit synchronem Wechsel alle 7 Sekunden */
-} /* Rotations-Ebene schließen */
-/* Leerzeile */
-.bento-box:hover .rot-layer { /* Pausieren der Animation beim Überfahren einer Kachel */
-    animation-play-state: paused; /* Hält die aktuelle Folie an */
-} /* Pausen-Regel schließen */
-/* Leerzeile */
-.bento-box .rot-layer:nth-child(1) { /* Erste Inhaltsebene jeder Kachel */
-    animation-delay: 0s; /* Startet sofort in Phase 1 */
-} /* Child 1 schließen */
-/* Leerzeile */
-.bento-box .rot-layer:nth-child(2) { /* Zweite Inhaltsebene jeder Kachel */
-    animation-delay: -7s; /* Startet synchron in Phase 2 nach 7 Sekunden */
-} /* Child 2 schließen */
-/* Leerzeile */
-.bento-box .rot-layer:nth-child(3) { /* Dritte Inhaltsebene jeder Kachel */
-    animation-delay: -14s; /* Startet synchron in Phase 3 nach 14 Sekunden */
-} /* Child 3 schließen */
-/* Leerzeile */
-.bento-box .rot-layer:nth-child(4) { /* Vierte Inhaltsebene jeder Kachel */
-    animation-delay: -21s; /* Startet synchron in Phase 4 nach 21 Sekunden */
-} /* Child 4 schließen */
-/* Leerzeile */
-@keyframes bentoRotate { /* Keyframes für exakt gleichzeitigen Wechsel ohne Doppelung */
-    0% { /* Beginn der Phase */
-        opacity: 1; /* Vollständig sichtbar */
-        visibility: visible; /* Sichtbar geschaltet */
-        pointer-events: auto; /* Klickbar und interaktiv */
-        z-index: 2; /* Im Vordergrund */
-    } /* 0% schließen */
-    24.99% { /* Bis kurz vor Phasenwechsel voll sichtbar */
-        opacity: 1; /* Bleibt voll sichtbar */
-        visibility: visible; /* Bleibt sichtbar */
-        pointer-events: auto; /* Bleibt klickbar */
-        z-index: 2; /* Im Vordergrund */
-    } /* 24.99% schließen */
-    25% { /* Exakter synchroner Schnitt zur nächsten Folie */
-        opacity: 0; /* Sofort unsichtbar */
-        visibility: hidden; /* Sofort ausgeblendet damit kein Thema doppelt erscheint */
-        pointer-events: none; /* Nicht klickbar */
-        z-index: 1; /* Hintergrund */
-    } /* 25% schließen */
-    99.99% { /* Warten im Hintergrund während andere Folien aktiv sind */
-        opacity: 0; /* Unsichtbar */
-        visibility: hidden; /* Ausgeblendet */
-        pointer-events: none; /* Nicht klickbar */
-        z-index: 1; /* Hintergrund */
-    } /* 99.99% schließen */
-    100% { /* Rückkehr zur aktiven Phase */
-        opacity: 1; /* Wieder vollständig sichtbar */
-        visibility: visible; /* Sichtbar */
-        pointer-events: auto; /* Wieder klickbar */
-        z-index: 2; /* Im Vordergrund */
-    } /* 100% schließen */
-} /* Keyframes schließen */
-/* Leerzeile */
-.rot-img { /* Vorschaubild in der rotierenden Kachel formatieren */
-    position: absolute; /* Absolut über den Kachelraum aufspannen */
-    inset: 0; /* Vollständige Randausrichtung */
-    width: 100%; /* Volle Kachelbreite */
-    height: 100%; /* Volle Kachelhöhe */
-    object-fit: cover; /* Proportionale Füllung der Kachel */
-    display: block; /* Als Blockelement darstellen */
-    z-index: 1; /* Hinter dem Titel */
-    border-radius: 0; /* Scharfe Ecken ohne Rundung */
-} /* Vorschaubild schließen */
-/* Leerzeile */
-.rot-title-normal { /* Normaler Kacheltitel direkt auf dem Bild */
-    position: relative; /* Über dem Bild liegend */
-    z-index: 2; /* Sichtbare Ebene über dem Bild */
-    font-family: var(--font-display); /* Super Frog Schriftart */
-    color: var(--color-cream); /* Heller Cremeton (#EDE7BF) für Lesbarkeit */
-    text-transform: lowercase; /* Kleinschreibung exakt nach Illustrator-Vorlage */
-    text-align: center; /* Zentrierte Ausrichtung */
-    padding: 1rem; /* Innenabstand zum Kachelrand */
-    pointer-events: none; /* Klicks gehen ungehindert an Link weiter */
-    text-shadow: 0 2px 10px rgba(12, 60, 48, 0.95), 0 1px 3px rgba(0, 0, 0, 0.9); /* Kräftiger Kontrastschatten gegen helle Bildbereiche */
-} /* Normaler Kacheltitel schließen */
-/* Leerzeile */
-.box-1 .rot-title-normal, .box-1 .rot-cutout-title { /* Große Schrift für linkes Rechteck */
-    font-size: clamp(2rem, 3.6vw, 3.2rem); /* Große Schriftgröße für die bildschirmfüllende Kachel */
-} /* Box 1 Schriftgröße schließen */
-/* Leerzeile */
-.box-2 .rot-title-normal, .box-2 .rot-cutout-title { /* Schriftgröße für oberes Rechteck */
-    font-size: clamp(1.6rem, 2.6vw, 2.5rem); /* Ausgewogene Schriftgröße */
-} /* Box 2 Schriftgröße schließen */
-/* Leerzeile */
-.box-3 .rot-title-normal, .box-3 .rot-cutout-title { /* Schriftgröße für unteres mittleres Rechteck */
-    font-size: clamp(1.3rem, 2vw, 1.95rem); /* Gute Lesegröße */
-} /* Box 3 Schriftgröße schließen */
-/* Leerzeile */
-.box-4 .rot-title-normal, .box-4 .rot-cutout-title { /* Schriftgröße für schmales rechtes Rechteck */
-    font-size: clamp(1.05rem, 1.5vw, 1.55rem); /* Kompakte Schriftgröße */
-} /* Box 4 Schriftgröße schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* HOVER-EFFEKT: DUNKELGRÜNER HINTERGRUND MIT BILD-SCHRIFT */
-/* ========================================================================== */
-.rot-cutout-layer { /* Dunkelgrüne Cutout-Schicht beim Klick oder Hover */
-    position: absolute; /* Vollflächig absolut über der Kachel */
-    inset: 0; /* Vollständige Randüberdeckung */
-    width: 100%; /* Volle Breite */
-    height: 100%; /* Volle Höhe */
-    background-color: var(--text-primary); /* Dunkles Piniengrün (#0c3c30) als Vollfläche */
-    z-index: 5; /* Liegt über dem Bild */
-    opacity: 0; /* Im Ruhezustand unsichtbar */
-    display: flex; /* Flexbox für Zentrierung */
-    align-items: center; /* Vertikal zentrieren */
-    justify-content: center; /* Horizontal zentrieren */
-    padding: 1rem; /* Innenabstand */
-    pointer-events: none; /* Klicks gehen an Link */
-    transition: opacity 0.22s ease; /* Schnelles Einblenden */
-} /* Cutout-Schicht schließen */
-/* Leerzeile */
-.rot-layer:hover .rot-cutout-layer, /* Selektor für Hover-Zustand */
-.rot-layer:active .rot-cutout-layer, /* Selektor für aktiven Klickzustand */
-.rot-layer:focus .rot-cutout-layer { /* Selektor für Fokus-Zustand */
-    opacity: 1; /* Vollständige Deckkraft der dunkelgrünen Schicht */
-} /* Hover-Selektor schließen */
-/* Leerzeile */
-.rot-cutout-title { /* Transparenter Schriftausschnitt */
-    font-family: var(--font-display); /* Super Frog Schriftart */
-    text-transform: lowercase; /* Kleinschreibung nach Vorlage */
-    text-align: center; /* Zentrierte Ausrichtung */
-    color: transparent; /* Transparente Textfarbe */
-    -webkit-text-fill-color: transparent; /* Transparente Füllung für WebKit */
-    -webkit-background-clip: text; /* Beschneidet den Bildhintergrund auf Buchstabenformen */
-    background-clip: text; /* Standardisierter Beschneidungspfad */
-    background-size: cover; /* Füllende Skalierung */
-    background-position: center; /* Zentrierte Positionierung */
-    background-repeat: no-repeat; /* Keine Bildwiederholung */
-    pointer-events: none; /* Ungehinderte Interaktion */
-} /* Cutout-Titel schließen */
-/* Leerzeile */
-.cutout-grafik .rot-cutout-title { /* Grafikdesign Bild im Schriftkörper */
-    background-image: url('GG/Zeichenfl%C3%A4che%201.png'), url('GG/Zeichenfläche 1.png'); /* Pfad zur Grafikdesign-Datei */
-} /* Grafik-Cutout schließen */
-/* Leerzeile */
-.cutout-web .rot-cutout-title { /* Websites & Apps Bild im Schriftkörper */
-    background-image: url('Frontend/Hausarbeit/dokumentation/vorschau.png'); /* Pfad zur Web-Datei */
-} /* Web-Cutout schließen */
-/* Leerzeile */
-.cutout-film .rot-cutout-title { /* Film & Audiovisuelles Bild im Schriftkörper */
-    background-image: url('DBB/Landschaft.png'); /* Pfad zur Film-Datei */
-} /* Film-Cutout schließen */
-/* Leerzeile */
-.cutout-3d .rot-cutout-title { /* 3D & Gamedesign Bild im Schriftkörper */
-    background-image: url('3DRendering/rendering01.png'); /* Pfad zur 3D-Datei */
-} /* 3D-Cutout schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* SEKTION 4: ÜBER MICH (UNTERER STRICH DES GROSSEN HINTERGRUND-E) */
-/* ========================================================================== */
-.about-section { /* Über-Mich-Sektion formatieren */
-    position: relative; /* Über dem Hintergrund-E */
-    z-index: 1; /* Sichtbare Ebene */
-    min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
-    display: flex; /* Flexbox für Sektionsaufbau */
-    flex-direction: column; /* Vertikale Stapelung */
-    justify-content: flex-start; /* Leicht nach oben orientiert im Einklang mit dem Intro */
-    padding-left: clamp(2rem, 6vw, 6rem); /* Großzügiger linker Randabstand */
-    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Randabstand */
-    padding-top: clamp(4rem, 9vh, 7rem); /* Oberer Innenabstand */
-    padding-bottom: clamp(2rem, 4vh, 4rem); /* Unterer Innenabstand */
-} /* Über-Mich-Sektion schließen */
-/* Leerzeile */
-.about-content-wrapper { /* Inhaltsbereich des Über-Mich-Textes */
-    max-width: 760px; /* Wohlproportionierte Zeilenlänge */
-    display: flex; /* Flexbox für Textabsätze */
-    flex-direction: column; /* Vertikale Ausrichtung */
-    gap: 1.5rem; /* Abstand zwischen Absätzen */
-    text-align: left; /* Linksbündig nach Vorlage */
-} /* Über-Mich-Wrapper schließen */
-/* Leerzeile */
-.about-content-wrapper p { /* Fließtext-Absätze in Roboto Light */
-    font-family: var(--font-main); /* Roboto Schriftart */
-    font-weight: 300; /* Roboto Light nach Vorgabe */
-    font-size: clamp(1.05rem, 1.5vw, 1.25rem); /* Angenehme Lesegröße */
-    line-height: 1.75; /* Großzügiger Zeilenabstand */
-    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
-} /* Fließtext-Regel schließen */
-/* Leerzeile */
-.skills-block { /* Block für Werkzeuge und Programme */
-    margin-top: 1rem; /* Abstand zum Absatz */
-    display: flex; /* Flexbox */
-    flex-direction: column; /* Vertikale Anordnung */
-    gap: 0.5rem; /* Abstand */
-} /* Skills-Block schließen */
-/* Leerzeile */
-.skills-label { /* Bezeichnungs-Label in Moosgrün */
-    font-family: var(--font-main); /* Roboto Schriftart */
-    font-weight: 400; /* Mittlerer Schnitt */
-    font-size: 0.9rem; /* Kompakte Schriftgröße */
-    text-transform: uppercase; /* Großbuchstaben */
-    letter-spacing: 0.08em; /* Gesperrter Schriftsatz */
-    color: var(--color-olive); /* Warmes Moos- und Olivgrün (#555934) */
-} /* Skills-Label schließen */
-/* Leerzeile */
-.skills-list { /* Liste der beherrschten Programme */
-    font-weight: 300; /* Roboto Light */
-    font-size: 1.05rem; /* Angenehme Lesegröße */
-    color: var(--color-olive); /* Moosgrün */
-    line-height: 1.7; /* Guter Zeilenabstand */
-} /* Skills-Liste schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* SEKTION 5: KONTAKT (EXAKT NACH ILLUSTRATOR-VORLAGE) */
-/* ========================================================================== */
-.contact-section { /* Kontakt-Sektion formatieren */
-    min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
-    width: 100%; /* Volle Bildschirmbreite */
-    background-color: var(--bg-primary); /* Cremeton #EDE7BF als Hintergrund */
-    border-bottom: none; /* Keine untere Abschlusslinie */
-    display: flex; /* Flexbox für zentrierten Aufbau */
-    flex-direction: column; /* Vertikale Ausrichtung */
-    justify-content: space-between; /* Verteilung zwischen Mitte und unterer Zeile */
-    align-items: center; /* Horizontal zentrieren */
-    padding-top: clamp(3.5rem, 7vh, 6rem); /* Oberer Innenabstand */
-    padding-bottom: clamp(2rem, 4vh, 3.5rem); /* Unterer Innenabstand */
-    padding-left: clamp(2rem, 6vw, 6rem); /* Linker Seitenabstand */
-    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Seitenabstand */
-} /* Kontakt-Sektion schließen */
-/* Leerzeile */
-.contact-center-content { /* Mittlerer Inhaltsbereich des Kontakt-Bildschirms */
-    display: flex; /* Flexbox für Zentrierung */
-    flex-direction: column; /* Vertikale Stapelung */
-    align-items: center; /* Horizontal zentrieren */
-    justify-content: center; /* Vertikal in der Mitte zentrieren */
-    flex: 1; /* Füllt den vertikalen Raum aus */
-    gap: clamp(1.5rem, 3.5vh, 3rem); /* Abstand zwischen Headline und Mail-Link */
-    text-align: center; /* Zentrierter Textfluss */
-} /* Mittleren Kontaktbereich schließen */
-/* Leerzeile */
-.contact-headline { /* Große Überschrift schreib mir gerne in Super Frog */
-    font-family: var(--font-display); /* Super Frog Schriftart */
-    font-size: clamp(2rem, 5.5vw, 4.5rem); /* Monumentale Schriftgröße nach Vorlage */
-    font-weight: 400; /* Normaler Schnitt */
-    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
-    text-align: center; /* Zentriert */
-    letter-spacing: clamp(0.2rem, 0.8vw, 0.6rem); /* Breite Spationierung nach Screenshot */
-    line-height: 1.15; /* Kompakter Durchschuss */
-    white-space: nowrap; /* Verhindert Umbruch des Ausrufezeichens auf Desktop */
-} /* Kontakt-Headline schließen */
-/* Leerzeile */
-.contact-email-link { /* Klickbare E-Mail-Adresse in Roboto Light */
-    font-family: var(--font-main); /* Roboto Schriftart */
-    font-weight: 300; /* Roboto Light nach Vorgabe */
-    font-size: clamp(1.2rem, 2.2vw, 1.85rem); /* Elegante Lesegröße */
-    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
-    text-decoration: none; /* Keine Unterstreichung */
-    border-bottom: 1.5px solid var(--text-primary); /* Feine dunkelgrüne Unterstreichung */
-    padding-bottom: 0.25rem; /* Abstand zur Unterstreichung */
-    transition: color 0.2s ease, border-color 0.2s ease; /* Farbübergang beim Überfahren */
-} /* E-Mail-Link schließen */
-/* Leerzeile */
-.contact-email-link:hover { /* Hover-Zustand für E-Mail-Link */
-    color: var(--color-accent); /* Smaragdgrün beim Überfahren */
-    border-color: var(--color-accent); /* Farblich angepasste Randlinie */
-} /* E-Mail-Hover schließen */
-/* Leerzeile */
-.contact-bottom-bar { /* Untere Abschlusszeile des Kontakt-Bildschirms */
-    width: 100%; /* Volle Breite */
-    display: flex; /* Flexbox */
-    justify-content: space-between; /* Links-Rechts-Verteilung */
-    align-items: center; /* Vertikal mittig */
-    font-family: var(--font-main); /* Roboto Schriftart */
-    font-weight: 300; /* Roboto Light */
-    font-size: 0.9rem; /* Kompakte Schriftgröße */
-    color: var(--color-olive); /* Warmes Moosgrün (#555934) */
-    padding-top: 1.5rem; /* Abstand nach oben */
-    border-top: 1px solid rgba(12, 60, 48, 0.15); /* Zarte Trennlinie */
-} /* Untere Abschlusszeile schließen */
-/* Leerzeile */
-.footer-linkedin { /* LinkedIn-Link formatieren */
-    color: var(--color-olive); /* Moosgrün */
-    text-decoration: none; /* Keine Unterstreichung */
-    transition: color 0.2s ease; /* Farbübergang */
-} /* LinkedIn-Link schließen */
-/* Leerzeile */
-.footer-linkedin:hover { /* Hover auf LinkedIn-Link */
-    color: var(--color-accent); /* Smaragdgrüner Akzent */
-} /* LinkedIn-Hover schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* PROJEKT-DETAILSEITEN & KATEGORIENSEITEN */
-/* ========================================================================== */
-.hero-tag { /* Kategorie-Vortag über Projekttiteln */
-    font-family: var(--font-main); /* Roboto Schriftart */
-    font-weight: 400; /* Mittlerer Schnitt */
-    font-size: 0.85rem; /* Kompakte Schriftgröße */
-    color: var(--color-olive); /* Moosgrün (#555934) */
-    text-transform: uppercase; /* Großbuchstaben */
-    letter-spacing: 0.08em; /* Feine Spationierung */
-    margin-bottom: 0.75rem; /* Abstand zum Titel */
-    display: inline-block; /* Eigene Zeile */
-} /* Hero-Tag schließen */
-/* Leerzeile */
-.project-detail-hero { /* Kopfbereich auf Unterseiten */
-    padding-top: clamp(4rem, 8vh, 7rem); /* Oberer Innenabstand */
-    padding-bottom: clamp(2rem, 4vh, 3.5rem); /* Unterer Innenabstand */
-    padding-left: clamp(2rem, 6vw, 6rem); /* Linker Seitenabstand */
-    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Seitenabstand */
-    max-width: 1400px; /* Maximale Inhaltsbreite */
-    margin-left: auto; /* Zentriert */
-    margin-right: auto; /* Zentriert */
-} /* Detail-Hero schließen */
-/* Leerzeile */
-.project-detail-hero h1 { /* Haupttitel auf Unterseiten in Super Frog */
-    font-family: var(--font-display); /* Super Frog Schriftart */
-    font-size: clamp(2.2rem, 5vw, 3.6rem); /* Große Überschriftengröße */
-    font-weight: 400; /* Normaler Schnitt */
-    line-height: 1.1; /* Kompakter Durchschuss */
-    color: var(--text-primary); /* Dunkles Waldgrün (#0c3c30) */
-    margin-bottom: 1.5rem; /* Abstand zum Text */
-} /* Detail-Titel schließen */
-/* Leerzeile */
-.detail-gallery { /* Galerie-Raster auf Detailseiten */
-    display: grid; /* Grid-Layout */
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); /* Responsive Spaltenaufteilung */
-    gap: clamp(2rem, 4vw, 3.5rem); /* Abstand zwischen Bildern */
-    padding-left: clamp(2rem, 6vw, 6rem); /* Linker Seitenabstand */
-    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Seitenabstand */
-    max-width: 1400px; /* Maximale Breite */
-    margin-left: auto; /* Zentriert */
-    margin-right: auto; /* Zentriert */
-    margin-bottom: clamp(4rem, 8vh, 6rem); /* Abstand nach unten */
-} /* Detail-Galerie schließen */
-/* Leerzeile */
-.detail-gallery img { /* Bilder in der Detail-Galerie */
-    border-radius: 0; /* Scharfe Kanten nach Vorlage */
-    border: 1.5px solid var(--border-dark); /* Dunkelgrüner Rand */
-} /* Galerie-Bilder schließen */
-/* Leerzeile */
-.video-wrapper { /* Container für HTML5-Videoelemente */
-    width: 100%; /* Volle Breite */
-    margin-top: 1rem; /* Abstand nach oben */
-    margin-bottom: clamp(3.5rem, 7vh, 5.5rem); /* Abstand nach unten */
-    background-color: var(--text-primary); /* Dunkelgrüner Hintergrund */
-    overflow: hidden; /* Bündige Medienhaltung */
-} /* Video-Wrapper schließen */
-/* Leerzeile */
-video { /* HTML5-Video formatieren */
-    width: 100%; /* Volle Breite */
-    height: auto; /* Automatische Höhe */
-    display: block; /* Blockelement */
-    border-radius: 0; /* Keine Rundungen */
-} /* Video-Regel schließen */
-/* Leerzeile */
-/* ========================================================================== */
-/* RESPONSIVE ANPASSUNGEN (SMARTPHONES & TABLETS) */
-/* ========================================================================== */
-@media (max-width: 860px) { /* Media-Query für Bildschirme bis 860px */
-    .bento-mosaic-container { /* Mobiles Bento-Raster */
-        grid-template-columns: 1fr; /* Eine einzige Spalte mobil */
-        grid-template-rows: auto; /* Automatische Zeilenhöhen */
-        gap: 0; /* Keine Lücke auch auf Mobilgeräten */
-    } /* Mobiles Raster schließen */
-    .box-1, .box-2, .box-3, .box-4 { /* Alle 4 Bento-Kacheln mobil */
-        grid-column: 1 / 2; /* Spalte 1 ausfüllen */
-        grid-row: auto; /* Automatische Zeile */
-        min-height: 250px; /* Gleichmäßige mobile Mindesthöhe */
-        border-left: none; /* Bündig links */
-        border-right: none; /* Bündig rechts */
-        border-bottom: 1.5px solid var(--border-dark); /* Trennlinie zwischen den Kacheln */
-    } /* Mobile Kacheln schließen */
-    .contact-headline { /* Kontakt-Überschrift mobil umbrechen */
-        white-space: normal; /* Erlaubt Umbruch auf Mobilgeräten */
-        font-size: clamp(1.8rem, 8vw, 2.8rem); /* Kompaktere mobile Schriftgröße */
-    } /* Mobile Überschrift schließen */
-    .hero-name { /* Hero-Name mobil anpassen */
-        gap: 0.75rem; /* Kompakter Wortabstand */
-        font-size: clamp(2rem, 9.5vw, 3.2rem); /* Angepasste Display-Größe mobil */
-    } /* Mobiler Hero-Name schließen */
-    .name-word { /* Wort-Spationierung mobil */
-        letter-spacing: clamp(0.18rem, 1vw, 0.45rem); /* Kompaktere Spationierung */
-    } /* Mobile Spationierung schließen */
-    .giant-e-bg { /* Hintergrund-E mobil */
-        width: 90vw; /* Breite an mobilen Bildschirm anpassen */
-        left: -10px; /* Leicht nach links rücken */
-        opacity: 0.28; /* Dezentere Deckkraft mobil */
-    } /* Mobiles E schließen */
-    .centered-nav ul { /* Navigationsleiste mobil */
-        gap: 1.25rem; /* Kompakterer Link-Abstand */
-        flex-wrap: wrap; /* Umbruch bei schmalen Screens */
-    } /* Mobile Navigation schließen */
-    .contact-bottom-bar { /* Abschlusszeile mobil */
-        flex-direction: column; /* Vertikal anordnen */
-        gap: 0.75rem; /* Abstand */
-        text-align: center; /* Zentriert */
-    } /* Mobile Fußzeile schließen */
-} /* Media-Query schließen */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Super Frog';
+    src: url('fonts/SuperFrog.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Variable Concept';
+    src: url('fonts/AcuminVariableConcept.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --bg-primary: #EDE7BF;
+    --bg-surface: #e5dfb5;
+    --text-primary: #0c3c30;
+    --text-secondary: rgba(12, 60, 48, 0.85);
+    --color-olive: #555934;
+    --color-accent: #084A24;
+    --color-giant-e: #6a826c;
+    --color-cream: #EDE7BF;
+    --border-dark: #0c3c30;
+    --font-display: 'Super Frog', cursive, sans-serif;
+    --font-main: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --duration-fast: 160ms;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+    background-color: var(--bg-primary);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    min-height: 100vh;
+    width: 100%;
+}
+
+main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--duration-fast) ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.anchor-target {
+    display: block;
+    position: relative;
+    top: -40px;
+    visibility: hidden;
+}
+
+.full-screen-section {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    border-bottom: none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-section {
+    background-color: transparent;
+    padding-top: clamp(1.5rem, 3.5vh, 2.75rem);
+    padding-bottom: clamp(1.5rem, 3.5vh, 2.75rem);
+    padding-left: clamp(2rem, 6vw, 6rem);
+    padding-right: clamp(2rem, 6vw, 6rem);
+}
+
+.hero-header-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.centered-nav ul {
+    display: flex;
+    list-style: none;
+    gap: clamp(1.5rem, 3.5vw, 3.5rem);
+    align-items: center;
+}
+
+.centered-nav a {
+    font-family: var(--font-main);
+    font-weight: 300;
+    font-size: clamp(0.95rem, 1.25vw, 1.15rem);
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+    transition: color var(--duration-fast) ease;
+}
+
+.centered-nav a:hover {
+    color: var(--color-accent);
+}
+
+.hero-center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 7.5vw, 6.2rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(1.2rem, 3.5vw, 3.5rem);
+    text-align: center;
+}
+
+.name-word {
+    display: inline-block;
+    white-space: nowrap;
+    letter-spacing: clamp(0.35rem, 1.2vw, 1.1rem);
+}
+
+.hero-bottom-bar {
+    width: 100%;
+    text-align: right;
+    padding-top: 0.5rem;
+}
+
+.hero-subtitle {
+    font-family: var(--font-main);
+    font-weight: 300;
+    font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+    color: var(--color-olive);
+    letter-spacing: 0.02em;
+}
+
+.main-flow-container {
+    position: relative;
+    width: 100%;
+    min-height: 300vh;
+    overflow: visible;
+}
+
+.giant-e-bg {
+    position: absolute;
+    top: -12vh;
+    left: clamp(10px, 4vw, 80px);
+    width: clamp(700px, 72vw, 1200px);
+    height: 326vh;
+    pointer-events: none;
+    z-index: 0;
+    color: var(--color-giant-e);
+    opacity: 0.38;
+}
+
+.giant-e-bg svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.intro-section {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: clamp(2rem, 8vw, 8rem);
+    padding-right: clamp(2rem, 8vw, 8rem);
+    padding-top: clamp(6.5rem, 15vh, 11rem);
+    padding-bottom: clamp(2rem, 4vh, 4rem);
+}
+
+.intro-content-wrapper {
+    max-width: 720px;
+    text-align: left;
+}
+
+.hero-bio {
+    font-family: var(--font-main);
+    font-weight: 300;
+    font-size: clamp(1.2rem, 1.85vw, 1.6rem);
+    color: var(--text-primary);
+    line-height: 1.8;
+    letter-spacing: -0.01em;
+}
+
+.portfolio-section {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: clamp(1.5rem, 3vh, 2.5rem);
+    padding-bottom: 0;
+}
+
+.section-title-bar {
+    width: 100%;
+    margin-bottom: clamp(0.75rem, 1.5vh, 1.25rem);
+    padding-left: clamp(2rem, 6vw, 6rem);
+    padding-right: clamp(2rem, 6vw, 6rem);
+    text-align: left;
+}
+
+.section-title-bar h2 {
+    font-family: var(--font-main);
+    font-weight: 300;
+    font-size: clamp(1.4rem, 2.2vw, 1.95rem);
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.bento-mosaic-container {
+    display: grid;
+    grid-template-columns: 1.15fr 0.62fr 0.38fr;
+    grid-template-rows: 42fr 58fr;
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+    flex: 1;
+    min-height: calc(100vh - 85px);
+    margin: 0;
+}
+
+.bento-box {
+    position: relative;
+    overflow: hidden;
+    border-top: 1.5px solid var(--border-dark);
+    border-bottom: 1.5px solid var(--border-dark);
+    border-radius: 0;
+    background-color: var(--bg-primary);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.box-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    border-left: none;
+    border-right: 1.5px solid var(--border-dark);
+}
+
+.box-2 {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1.5px solid var(--border-dark);
+}
+
+.box-3 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    border-left: none;
+    border-right: 1.5px solid var(--border-dark);
+    border-bottom: 1.5px solid var(--border-dark);
+}
+
+.box-4 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1.5px solid var(--border-dark);
+}
+
+.rot-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    animation: bentoRotate 28s infinite step-end;
+}
+
+.bento-box:hover .rot-layer {
+    animation-play-state: paused;
+}
+
+.bento-box .rot-layer:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.bento-box .rot-layer:nth-child(2) {
+    animation-delay: -7s;
+}
+
+.bento-box .rot-layer:nth-child(3) {
+    animation-delay: -14s;
+}
+
+.bento-box .rot-layer:nth-child(4) {
+    animation-delay: -21s;
+}
+
+@keyframes bentoRotate {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        z-index: 2;
+    }
+    24.99% {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        z-index: 2;
+    }
+    25% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 1;
+    }
+    99.99% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 1;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        z-index: 2;
+    }
+}
+
+.rot-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+    border-radius: 0;
+}
+
+.rot-title-normal {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-display);
+    color: var(--color-cream);
+    text-transform: lowercase;
+    text-align: center;
+    padding: 1rem;
+    pointer-events: none;
+    text-shadow: 0 2px 10px rgba(12, 60, 48, 0.95), 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.box-1 .rot-title-normal, .box-1 .rot-cutout-title {
+    font-size: clamp(2rem, 3.6vw, 3.2rem);
+}
+
+.box-2 .rot-title-normal, .box-2 .rot-cutout-title {
+    font-size: clamp(1.6rem, 2.6vw, 2.5rem);
+}
+
+.box-3 .rot-title-normal, .box-3 .rot-cutout-title {
+    font-size: clamp(1.3rem, 2vw, 1.95rem);
+}
+
+.box-4 .rot-title-normal, .box-4 .rot-cutout-title {
+    font-size: clamp(1.05rem, 1.5vw, 1.55rem);
+}
+
+.rot-cutout-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--text-primary);
+    z-index: 5;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    pointer-events: none;
+    transition: opacity 0.22s ease;
+}
+
+.rot-layer:hover .rot-cutout-layer,
+.rot-layer:active .rot-cutout-layer,
+.rot-layer:focus .rot-cutout-layer {
+    opacity: 1;
+}
+
+.rot-cutout-title {
+    font-family: var(--font-display);
+    text-transform: lowercase;
+    text-align: center;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.cutout-grafik .rot-cutout-title {
+    background-image: url('GG/Zeichenfl%C3%A4che%201.png'), url('GG/Zeichenfläche 1.png');
+}
+
+.cutout-web .rot-cutout-title {
+    background-image: url('Frontend/Hausarbeit/dokumentation/vorschau.png');
+}
+
+.cutout-film .rot-cutout-title {
+    background-image: url('DBB/Landschaft.png');
+}
+
+.cutout-3d .rot-cutout-title {
+    background-image: url('3DRendering/rendering01.png');
+}
+
+.about-section {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: clamp(2rem, 6vw, 6rem);
+    padding-right: clamp(2rem, 6vw, 6rem);
+    padding-top: clamp(4rem, 9vh, 7rem);
+    padding-bottom: clamp(2rem, 4vh, 4rem);
+}
+
+.about-content-wrapper {
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.about-content-wrapper p {
+    font-family: var(--font-main);
+    font-weight: 300;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.75;
+    color: var(--text-primary);
+}
+
+.skills-block {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skills-label {
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-olive);
+}
+
+.skills-list {
+    font-weight: 300;
+    font-size: 1.05rem;
+    color: var(--color-olive);
+    line-height: 1.7;
+}
+
+.contact-section {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--bg-primary);
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: clamp(3.5rem, 7vh, 6rem);
+    padding-bottom: clamp(2rem, 4vh, 3.5rem);
+    padding-left: clamp(2rem, 6vw, 6rem);
+    padding-right: clamp(2rem, 6vw, 6rem);
+}
+
+.contact-center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: clamp(1.5rem, 3.5vh, 3rem);
+    text-align: center;
+}
+
+.contact-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5.5vw, 4.5rem);
+    font-weight: 400;
+    color: var(--text-primary);
+    text-align: center;
+    letter-spacing: clamp(0.2rem, 0.8vw, 0.6rem);
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+.contact-email-link {
+    font-family: var(--font-main);
+    font-weight: 300;
+    font-size: clamp(1.2rem, 2.2vw, 1.85rem);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--text-primary);
+    padding-bottom: 0.25rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-email-link:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.contact-bottom-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-main);
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--color-olive);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(12, 60, 48, 0.15);
+}
+
+.footer-linkedin {
+    color: var(--color-olive);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-linkedin:hover {
+    color: var(--color-accent);
+}
+
+.hero-tag {
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--color-olive);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    display: inline-block;
+}
+
+.project-detail-hero {
+    padding-top: clamp(4rem, 8vh, 7rem);
+    padding-bottom: clamp(2rem, 4vh, 3.5rem);
+    padding-left: clamp(2rem, 6vw, 6rem);
+    padding-right: clamp(2rem, 6vw, 6rem);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-detail-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.detail-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(2rem, 4vw, 3.5rem);
+    padding-left: clamp(2rem, 6vw, 6rem);
+    padding-right: clamp(2rem, 6vw, 6rem);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: clamp(4rem, 8vh, 6rem);
+}
+
+.detail-gallery img {
+    border-radius: 0;
+    border: 1.5px solid var(--border-dark);
+}
+
+.video-wrapper {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: clamp(3.5rem, 7vh, 5.5rem);
+    background-color: var(--text-primary);
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+}
+
+@media (max-width: 860px) {
+    .bento-mosaic-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 0;
+    }
+    .box-1, .box-2, .box-3, .box-4 {
+        grid-column: 1 / 2;
+        grid-row: auto;
+        min-height: 250px;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1.5px solid var(--border-dark);
+    }
+    .contact-headline {
+        white-space: normal;
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
+    }
+    .hero-name {
+        gap: 0.75rem;
+        font-size: clamp(2rem, 9.5vw, 3.2rem);
+    }
+    .name-word {
+        letter-spacing: clamp(0.18rem, 1vw, 0.45rem);
+    }
+    .giant-e-bg {
+        width: 90vw;
+        left: -10px;
+        opacity: 0.28;
+    }
+    .centered-nav ul {
+        gap: 1.25rem;
+        flex-wrap: wrap;
+    }
+    .contact-bottom-bar {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+}
