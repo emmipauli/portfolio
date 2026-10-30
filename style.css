@@ -20,11 +20,11 @@
 } /* Acumin Definition schließen */
 /* Leerzeile */
 /* ========================================================================== */
-/* CSS-VARIABLEN (FARBEN & TYPOGRAFIE) */
+/* CSS-VARIABLEN (KOMPLETTER HINTERGRUND IN #EDE7BF NACH NUTZERWUNSCH) */
 /* ========================================================================== */
 :root { /* Pseudoklasse root für globale Variablen */
-    --bg-primary: #ffffff; /* Primärer Hintergrundton in reinem Weiß */
-    --bg-surface: #f7f9f6; /* Sanfte Salbeitönung für sekundäre Flächen */
+    --bg-primary: #EDE7BF; /* Vollständiger warmer Cremeton als Haupthintergrund nach Nutzerwunsch */
+    --bg-surface: #e5dfb5; /* Sanfte Nuance für akzentuierte Flächen */
     --text-primary: #0c3c30; /* Dunkelgrüner Farbton für Schriften und Rahmen */
     --text-secondary: rgba(12, 60, 48, 0.85); /* Leicht abgetöntes Waldgrün für Fließtexte */
     --color-olive: #555934; /* Moos- und Olivgrün nach Illustrator-Vorgabe */
@@ -50,12 +50,13 @@
 html { /* HTML-Wurzelelement formatieren */
     scroll-behavior: smooth; /* Weiches Scrollen für interne Ankerlinks */
     color-scheme: light; /* Helles Farbschema deklarieren */
+    background-color: var(--bg-primary); /* Cremeton #EDE7BF als Basis-Hintergrund */
 } /* HTML-Regel schließen */
 /* Leerzeile */
 body { /* Body-Element formatieren */
     margin: 0; /* Standard-Margin des Browsers auf 0 setzen */
     padding: 0; /* Standard-Padding des Browsers auf 0 setzen */
-    background-color: var(--bg-primary); /* Weißer Grundton als Standard-Hintergrund */
+    background-color: var(--bg-primary); /* Vollständiger Hintergrund in #EDE7BF */
     color: var(--text-primary); /* Dunkles Piniengrün für Standardtext */
     font-family: var(--font-main); /* Roboto als Standardschriftart setzen */
     font-weight: 300; /* Roboto Light als Standard-Schriftschnitt nach Nutzerwunsch */
@@ -100,7 +101,7 @@ img { /* Bilder formatieren */
 } /* Anker-Regel schließen */
 /* Leerzeile */
 /* ========================================================================== */
-/* VOLLBILDSCHIRM-SEKTIONEN (OHNE TRENNSTRICHE NACH NUTZERWUNSCH) */
+/* VOLLBILDSCHIRM-SEKTIONEN (OHNE TRENNSTRICHE IN #EDE7BF) */
 /* ========================================================================== */
 .full-screen-section { /* Vollbildschirm-Sektionen definieren */
     min-height: 100vh; /* Exakt volle Bildschirmhöhe als Mindesthöhe */
@@ -108,6 +109,7 @@ img { /* Bilder formatieren */
     box-sizing: border-box; /* Rahmen und Innenabstände vollständig einrechnen */
     position: relative; /* Relativer Bezugspunkt für innere Elemente */
     border-bottom: none; /* Keine Trennstriche zwischen Abschnitten nach Nutzerwunsch */
+    background-color: transparent; /* Transparenter Sektions-Hintergrund damit das Hintergrund-E im Fluss sichtbar bleibt */
     display: flex; /* Flexbox-Layout */
     flex-direction: column; /* Vertikale Stapelung */
     justify-content: space-between; /* Gleichmäßige Verteilung von Kopf, Mitte und Fuß */
@@ -117,7 +119,7 @@ img { /* Bilder formatieren */
 /* SEKTION 1: HERO / HOME (HEADER, GROSSER NAME & STUDIENGANG) */
 /* ========================================================================== */
 .hero-section { /* Hero-Sektion formatieren */
-    background-color: var(--bg-primary); /* Weißer Hintergrund nach Illustrator-Vorlage */
+    background-color: transparent; /* Transparenter Hero-Hintergrund für nahtloses Reingreifen des E */
     padding-top: clamp(1.5rem, 3.5vh, 2.75rem); /* Oberer Abstand für zentrierten Header */
     padding-bottom: clamp(1.5rem, 3.5vh, 2.75rem); /* Unterer Abstand zur nächsten Sektion */
     padding-left: clamp(2rem, 6vw, 6rem); /* Flexibler linker Randabstand */
@@ -200,35 +202,35 @@ img { /* Bilder formatieren */
 } /* Untertitel-Regel schließen */
 /* Leerzeile */
 /* ========================================================================== */
-/* FLUSS-CONTAINER MIT GROSSEM HINTERGRUND-E ALS GROSSBUCHSTABE (300vh) */
+/* FLUSS-CONTAINER MIT E (OBEN NICHT ABGESCHNITTEN, REICHT IN HERO REIN) */
 /* ========================================================================== */
 .main-flow-container { /* Umschließender Container für Intro, Arbeiten und Über Mich */
     position: relative; /* Bezugspunkt für das absolut positionierte Hintergrund-E */
     width: 100%; /* Volle Bildschirmbreite */
     min-height: 300vh; /* Exakt 3 Bildschirmhöhen für die 3 Sektionen */
-    overflow: hidden; /* Verhindert Ausbrechen der Glyphe */
+    overflow: visible; /* Erlaubt dem E ungehindert oben in die Hero-Sektion hineinzugreifen */
 } /* Fluss-Container schließen */
 /* Leerzeile */
 .giant-e-bg { /* Container für die riesige E-Glyphe im Hintergrund */
-    position: absolute; /* Absolut über die 300vh Höhe positioniert */
-    top: -2vh; /* Leicht nach oben versetzt für perfekten Fluss mit dem Intro */
+    position: absolute; /* Absolut über die Sektionen hinweg positioniert */
+    top: -24vh; /* Reicht weit nach oben in die Hero-Sektion ohne oben abgeschnitten zu werden */
     left: clamp(10px, 4vw, 80px); /* Leicht links positioniert nach Vorlage */
     width: clamp(700px, 72vw, 1200px); /* Gewaltige Breite der Glyphe */
-    height: 304vh; /* Erstreckt sich präzise über die 3 Bildschirmabschnitte */
+    height: 326vh; /* Vollständige Höhe damit das E oben vollkommen intakt und ungekürzt bleibt */
     pointer-events: none; /* Mausklicks gehen ungehindert durch */
     z-index: 0; /* Liegt hinter allen Texten und Karten */
     color: var(--color-giant-e); /* Sanftes Salbeigrün (#6a826c) */
-    opacity: 0.38; /* Dezente Deckkraft für harmonische Lesbarkeit */
+    opacity: 0.38; /* Dezente Deckkraft für harmonische Lesbarkeit auf #EDE7BF */
 } /* Hintergrund-E-Container schließen */
 /* Leerzeile */
 .giant-e-bg svg { /* SVG-Grafik der Glyphe formatieren */
     width: 100%; /* Volle Containerbreite nutzen */
-    height: 100%; /* Volle Containerhöhe von 300vh ausfüllen */
+    height: 100%; /* Volle Containerhöhe ausfüllen */
     display: block; /* Als Blockelement darstellen */
 } /* SVG-Regel schließen */
 /* Leerzeile */
 /* ========================================================================== */
-/* SEKTION 2: INTRO (MINIMAL NACH OBEN VERSETZT NACH NUTZERWUNSCH) */
+/* SEKTION 2: INTRO (MINIMAL NACH UNTEN VERSETZT NACH NUTZERWUNSCH) */
 /* ========================================================================== */
 .intro-section { /* Intro-Sektion formatieren */
     position: relative; /* Relative Ebene über dem Hintergrund-E */
@@ -236,10 +238,10 @@ img { /* Bilder formatieren */
     min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
     display: flex; /* Flexbox für Ausrichtung */
     flex-direction: column; /* Vertikale Ausrichtung */
-    justify-content: flex-start; /* Minimal nach oben versetzt nach Nutzerwunsch */
+    justify-content: flex-start; /* Oben ausgerichtet */
     padding-left: clamp(2rem, 8vw, 8rem); /* Großzügiger linker Seitenabstand */
     padding-right: clamp(2rem, 8vw, 8rem); /* Rechter Seitenabstand */
-    padding-top: clamp(4.5rem, 11vh, 8.5rem); /* Leicht höherer oberer Innenabstand für obere Platzierung */
+    padding-top: clamp(6.5rem, 15vh, 11rem); /* Minimal nach unten versetzt nach Nutzerwunsch */
     padding-bottom: clamp(2rem, 4vh, 4rem); /* Unterer Innenabstand */
 } /* Intro-Sektions-Regel schließen */
 /* Leerzeile */
@@ -307,7 +309,7 @@ img { /* Bilder formatieren */
     border-top: 1.5px solid var(--border-dark); /* Dunkelgrüne obere Begrenzungslinie */
     border-bottom: 1.5px solid var(--border-dark); /* Dunkelgrüne untere Begrenzungslinie */
     border-radius: 0; /* Keine Rundungen nach Nutzerwunsch */
-    background-color: #ffffff; /* Weißer Grundton */
+    background-color: var(--bg-primary); /* Cremeton als Kachel-Grund */
     box-sizing: border-box; /* Rahmen vollständig einrechnen */
     width: 100%; /* Volle Breite der Rasterzelle */
     height: 100%; /* Volle Höhe der Rasterzelle */
@@ -568,7 +570,7 @@ img { /* Bilder formatieren */
 .contact-section { /* Kontakt-Sektion formatieren */
     min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
     width: 100%; /* Volle Bildschirmbreite */
-    background-color: var(--bg-primary); /* Weißer Grundton nach Vorlage */
+    background-color: var(--bg-primary); /* Cremeton #EDE7BF als Hintergrund */
     border-bottom: none; /* Keine untere Abschlusslinie */
     display: flex; /* Flexbox für zentrierten Aufbau */
     flex-direction: column; /* Vertikale Ausrichtung */
