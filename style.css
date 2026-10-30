@@ -213,7 +213,7 @@ img { /* Bilder formatieren */
 /* Leerzeile */
 .giant-e-bg { /* Container für die riesige E-Glyphe im Hintergrund */
     position: absolute; /* Absolut über die Sektionen hinweg positioniert */
-    top: -24vh; /* Reicht weit nach oben in die Hero-Sektion ohne oben abgeschnitten zu werden */
+    top: -18vh; /* Minimal nach unten versetzt nach Nutzerwunsch, reicht sanft in die Hero-Sektion hinein */
     left: clamp(10px, 4vw, 80px); /* Leicht links positioniert nach Vorlage */
     width: clamp(700px, 72vw, 1200px); /* Gewaltige Breite der Glyphe */
     height: 326vh; /* Vollständige Höhe damit das E oben vollkommen intakt und ungekürzt bleibt */
