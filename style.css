@@ -191,12 +191,12 @@ img { /* Bilder formatieren */
     padding-top: 0.5rem; /* Leichter Abstand nach oben */
 } /* Untere Abschlusszeile schließen */
 /* Leerzeile */
-.hero-subtitle { /* Studiengangs-Beschriftung in Roboto Light */
+.hero-subtitle { /* Studiengangs-Beschriftung optisch vergrößert passend zur H1 */
     font-family: var(--font-main); /* Roboto Schriftart */
     font-weight: 300; /* Roboto Light nach Vorgabe */
-    font-size: clamp(1rem, 1.5vw, 1.35rem); /* Elegante Lesegröße */
+    font-size: clamp(1.4rem, 2.4vw, 2.2rem); /* Größere Schriftgröße passend zur H1 nach Nutzerwunsch */
     color: var(--color-olive); /* Warmes Moos- und Olivgrün (#555934) */
-    letter-spacing: 0.01em; /* Feine Spationierung */
+    letter-spacing: 0.02em; /* Feine und ausgewogene Spationierung */
 } /* Untertitel-Regel schließen */
 /* Leerzeile */
 /* ========================================================================== */
@@ -211,10 +211,10 @@ img { /* Bilder formatieren */
 /* Leerzeile */
 .giant-e-bg { /* Container für die riesige E-Glyphe im Hintergrund */
     position: absolute; /* Absolut über die 300vh Höhe positioniert */
-    top: 0; /* Beginnt oben bei Sektion 2 */
+    top: -2vh; /* Leicht nach oben versetzt für perfekten Fluss mit dem Intro */
     left: clamp(10px, 4vw, 80px); /* Leicht links positioniert nach Vorlage */
     width: clamp(700px, 72vw, 1200px); /* Gewaltige Breite der Glyphe */
-    height: 300vh; /* Erstreckt sich präzise über die 3 Bildschirmabschnitte */
+    height: 304vh; /* Erstreckt sich präzise über die 3 Bildschirmabschnitte */
     pointer-events: none; /* Mausklicks gehen ungehindert durch */
     z-index: 0; /* Liegt hinter allen Texten und Karten */
     color: var(--color-giant-e); /* Sanftes Salbeigrün (#6a826c) */
@@ -228,7 +228,7 @@ img { /* Bilder formatieren */
 } /* SVG-Regel schließen */
 /* Leerzeile */
 /* ========================================================================== */
-/* SEKTION 2: INTRO (OBERER STRICH DES GROSSEN HINTERGRUND-E) */
+/* SEKTION 2: INTRO (MINIMAL NACH OBEN VERSETZT NACH NUTZERWUNSCH) */
 /* ========================================================================== */
 .intro-section { /* Intro-Sektion formatieren */
     position: relative; /* Relative Ebene über dem Hintergrund-E */
@@ -236,11 +236,11 @@ img { /* Bilder formatieren */
     min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
     display: flex; /* Flexbox für Ausrichtung */
     flex-direction: column; /* Vertikale Ausrichtung */
-    justify-content: center; /* Vertikal in der Mitte zentrieren */
+    justify-content: flex-start; /* Minimal nach oben versetzt nach Nutzerwunsch */
     padding-left: clamp(2rem, 8vw, 8rem); /* Großzügiger linker Seitenabstand */
     padding-right: clamp(2rem, 8vw, 8rem); /* Rechter Seitenabstand */
-    padding-top: clamp(3rem, 6vh, 6rem); /* Oberer Innenabstand */
-    padding-bottom: clamp(3rem, 6vh, 6rem); /* Unterer Innenabstand */
+    padding-top: clamp(4.5rem, 11vh, 8.5rem); /* Leicht höherer oberer Innenabstand für obere Platzierung */
+    padding-bottom: clamp(2rem, 4vh, 4rem); /* Unterer Innenabstand */
 } /* Intro-Sektions-Regel schließen */
 /* Leerzeile */
 .intro-content-wrapper { /* Inhaltsbereich des Intro-Textes */
@@ -258,7 +258,7 @@ img { /* Bilder formatieren */
 } /* Einleitungstext-Regel schließen */
 /* Leerzeile */
 /* ========================================================================== */
-/* SEKTION 3: ARBEITEN (MITTLERER STRICH DES E & SYNCHRONE ROTATION) */
+/* SEKTION 3: ARBEITEN (VOLLFLÄCHIGE RECHTECKE OHNE LÜCKE) */
 /* ========================================================================== */
 .portfolio-section { /* Arbeiten-Sektion formatieren */
     position: relative; /* Über dem Hintergrund-E */
@@ -266,16 +266,18 @@ img { /* Bilder formatieren */
     min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
     display: flex; /* Flexbox für Sektionsaufbau */
     flex-direction: column; /* Vertikale Stapelung */
-    justify-content: center; /* Vertikal mittig im Bildschirm platzieren */
-    padding-left: clamp(2rem, 6vw, 6rem); /* Großzügiger linker Randabstand */
-    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Randabstand */
-    padding-top: clamp(2rem, 4vh, 4rem); /* Oberer Innenabstand */
-    padding-bottom: clamp(2rem, 4vh, 4rem); /* Unterer Innenabstand */
+    justify-content: flex-start; /* Oben ausgerichtet */
+    padding-left: 0; /* Kein seitlicher Außenabstand damit Rechtecke über den ganzen Bildschirm gehen */
+    padding-right: 0; /* Volle Bildschirmbreite von Rand zu Rand nach Nutzerwunsch */
+    padding-top: clamp(1.5rem, 3vh, 2.5rem); /* Kompakter oberer Innenabstand */
+    padding-bottom: 0; /* Bündiger unterer Abschluss */
 } /* Portfolio-Sektions-Regel schließen */
 /* Leerzeile */
 .section-title-bar { /* Kopfzeile für Sektionstitel */
     width: 100%; /* Volle Breite */
-    margin-bottom: clamp(1.2rem, 2.5vh, 2rem); /* Abstand zum Bento-Raster */
+    margin-bottom: clamp(0.75rem, 1.5vh, 1.25rem); /* Kompakter Abstand zum Bento-Raster */
+    padding-left: clamp(2rem, 6vw, 6rem); /* Seitenabstand für saubere Textausrichtung */
+    padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Seitenabstand */
     text-align: left; /* Linksbündig nach Vorlage */
 } /* Titelzeilen-Regel schließen */
 /* Leerzeile */
@@ -287,21 +289,23 @@ img { /* Bilder formatieren */
     letter-spacing: -0.01em; /* Feiner Schnitt */
 } /* Titel-Regel schließen */
 /* Leerzeile */
-.bento-mosaic-container { /* Raster-Container für die 4 Bento-Karten */
-    display: grid; /* CSS Grid Layout für präzise Kachelanordnung */
+.bento-mosaic-container { /* Raster-Container für die vollflächigen Bento-Karten */
+    display: grid; /* CSS Grid Layout für nahtloses Kachelmosaik */
     grid-template-columns: 1.15fr 0.62fr 0.38fr; /* 3 ungleich breite Spalten */
-    grid-template-rows: minmax(190px, 1fr) minmax(260px, 1.3fr); /* 2 unterschiedlich hohe Zeilen */
-    gap: clamp(1rem, 1.8vw, 1.75rem); /* Gleichmäßiger Abstand zwischen Karten */
-    width: 100%; /* Volle Breite des Inhaltsbereichs */
-    max-width: 1400px; /* Maximale Arbeitsbreite */
-    margin-left: auto; /* Horizontal zentrieren */
-    margin-right: auto; /* Horizontal zentrieren */
+    grid-template-rows: 42fr 58fr; /* 2 unterschiedlich hohe Zeilen für Unikat-Größen */
+    gap: 0; /* Keine Lücke zwischen den Rechtecken nach Nutzerwunsch */
+    width: 100%; /* Volle Bildschirmbreite über die gesamte Ansicht */
+    max-width: 100%; /* Keine Breitenbeschränkung für maximale Bildschirmgröße */
+    flex: 1; /* Füllt den gesamten verbleibenden vertikalen Bildschirmraum aus */
+    min-height: calc(100vh - 85px); /* Großzügige Mindesthöhe für volle Bildschirmpräsenz */
+    margin: 0; /* Kein Außenabstand */
 } /* Bento-Raster-Container schließen */
 /* Leerzeile */
-.bento-box { /* Grundformatierung für jedes der 4 Rechtecke */
+.bento-box { /* Grundformatierung für jedes der 4 nahtlos anliegenden Rechtecke */
     position: relative; /* Bezugspunkt für rotierende Inhaltsebenen */
     overflow: hidden; /* Schneidet überstehende Medien bündig ab */
-    border: 1.5px solid var(--border-dark); /* Scharfer dunkelgrüner Rand nach Vorlage */
+    border-top: 1.5px solid var(--border-dark); /* Dunkelgrüne obere Begrenzungslinie */
+    border-bottom: 1.5px solid var(--border-dark); /* Dunkelgrüne untere Begrenzungslinie */
     border-radius: 0; /* Keine Rundungen nach Nutzerwunsch */
     background-color: #ffffff; /* Weißer Grundton */
     box-sizing: border-box; /* Rahmen vollständig einrechnen */
@@ -309,28 +313,35 @@ img { /* Bilder formatieren */
     height: 100%; /* Volle Höhe der Rasterzelle */
 } /* Bento-Box schließen */
 /* Leerzeile */
-.box-1 { /* Erstes Rechteck positionieren */
+.box-1 { /* Erstes Rechteck: linke Spalte über beide Zeilen */
     grid-column: 1 / 2; /* Erste Spalte belegen */
     grid-row: 1 / 3; /* Erstreckt sich über beide Zeilen */
-    min-height: 460px; /* Große vertikale Mindesthöhe */
+    border-left: none; /* Bündig am linken Bildschirmrand */
+    border-right: 1.5px solid var(--border-dark); /* Exakte 1.5px Trennlinie zu den rechten Kacheln */
 } /* Box 1 schließen */
 /* Leerzeile */
-.box-2 { /* Zweites Rechteck positionieren */
+.box-2 { /* Zweites Rechteck: oberes Querformat */
     grid-column: 2 / 4; /* Erstreckt sich über Spalte 2 und 3 */
     grid-row: 1 / 2; /* Erste Zeile belegen */
-    min-height: 190px; /* Kompakte Zeilenhöhe */
+    border-left: none; /* Schließt nahtlos an Box 1 an */
+    border-right: none; /* Bündig am rechten Bildschirmrand */
+    border-bottom: 1.5px solid var(--border-dark); /* Exakte 1.5px Trennlinie zu Box 3 und 4 */
 } /* Box 2 schließen */
 /* Leerzeile */
-.box-3 { /* Drittes Rechteck positionieren */
+.box-3 { /* Drittes Rechteck: untere mittlere Kachel */
     grid-column: 2 / 3; /* Mittlere Spalte belegen */
     grid-row: 2 / 3; /* Zweite Zeile belegen */
-    min-height: 260px; /* Mittlere Kachelhöhe */
+    border-left: none; /* Schließt nahtlos an Box 1 an */
+    border-right: 1.5px solid var(--border-dark); /* Exakte 1.5px Trennlinie zu Box 4 */
+    border-bottom: 1.5px solid var(--border-dark); /* Abschluss nach unten */
 } /* Box 3 schließen */
 /* Leerzeile */
-.box-4 { /* Viertes Rechteck positionieren */
+.box-4 { /* Viertes Rechteck: untere rechte schmale Kachel */
     grid-column: 3 / 4; /* Rechte Spalte belegen */
     grid-row: 2 / 3; /* Zweite Zeile belegen */
-    min-height: 260px; /* Schmale vertikale Kachel */
+    border-left: none; /* Schließt nahtlos an Box 3 an */
+    border-right: none; /* Bündig am rechten Bildschirmrand */
+    border-bottom: 1.5px solid var(--border-dark); /* Abschluss nach unten */
 } /* Box 4 schließen */
 /* Leerzeile */
 /* SYNCHRONE ROTATION (LANGSAMER, GLEICHZEITIG, KEIN THEMA DOPPELT) */
@@ -426,19 +437,19 @@ img { /* Bilder formatieren */
 } /* Normaler Kacheltitel schließen */
 /* Leerzeile */
 .box-1 .rot-title-normal, .box-1 .rot-cutout-title { /* Große Schrift für linkes Rechteck */
-    font-size: clamp(1.8rem, 3.2vw, 2.8rem); /* Große Schriftgröße */
+    font-size: clamp(2rem, 3.6vw, 3.2rem); /* Große Schriftgröße für die bildschirmfüllende Kachel */
 } /* Box 1 Schriftgröße schließen */
 /* Leerzeile */
 .box-2 .rot-title-normal, .box-2 .rot-cutout-title { /* Schriftgröße für oberes Rechteck */
-    font-size: clamp(1.4rem, 2.2vw, 2.2rem); /* Ausgewogene Schriftgröße */
+    font-size: clamp(1.6rem, 2.6vw, 2.5rem); /* Ausgewogene Schriftgröße */
 } /* Box 2 Schriftgröße schließen */
 /* Leerzeile */
 .box-3 .rot-title-normal, .box-3 .rot-cutout-title { /* Schriftgröße für unteres mittleres Rechteck */
-    font-size: clamp(1.15rem, 1.8vw, 1.7rem); /* Gute Lesegröße */
+    font-size: clamp(1.3rem, 2vw, 1.95rem); /* Gute Lesegröße */
 } /* Box 3 Schriftgröße schließen */
 /* Leerzeile */
 .box-4 .rot-title-normal, .box-4 .rot-cutout-title { /* Schriftgröße für schmales rechtes Rechteck */
-    font-size: clamp(0.95rem, 1.35vw, 1.35rem); /* Kompakte Schriftgröße */
+    font-size: clamp(1.05rem, 1.5vw, 1.55rem); /* Kompakte Schriftgröße */
 } /* Box 4 Schriftgröße schließen */
 /* Leerzeile */
 /* ========================================================================== */
@@ -505,10 +516,10 @@ img { /* Bilder formatieren */
     min-height: 100vh; /* Volle Bildschirmhöhe nach Vorgabe */
     display: flex; /* Flexbox für Sektionsaufbau */
     flex-direction: column; /* Vertikale Stapelung */
-    justify-content: center; /* Vertikal mittig platzieren */
+    justify-content: flex-start; /* Leicht nach oben orientiert im Einklang mit dem Intro */
     padding-left: clamp(2rem, 6vw, 6rem); /* Großzügiger linker Randabstand */
     padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Randabstand */
-    padding-top: clamp(2rem, 4vh, 4rem); /* Oberer Innenabstand */
+    padding-top: clamp(4rem, 9vh, 7rem); /* Oberer Innenabstand */
     padding-bottom: clamp(2rem, 4vh, 4rem); /* Unterer Innenabstand */
 } /* Über-Mich-Sektion schließen */
 /* Leerzeile */
@@ -563,7 +574,7 @@ img { /* Bilder formatieren */
     flex-direction: column; /* Vertikale Ausrichtung */
     justify-content: space-between; /* Verteilung zwischen Mitte und unterer Zeile */
     align-items: center; /* Horizontal zentrieren */
-    padding-top: clamp(3rem, 6vh, 6rem); /* Oberer Innenabstand */
+    padding-top: clamp(3.5rem, 7vh, 6rem); /* Oberer Innenabstand */
     padding-bottom: clamp(2rem, 4vh, 3.5rem); /* Unterer Innenabstand */
     padding-left: clamp(2rem, 6vw, 6rem); /* Linker Seitenabstand */
     padding-right: clamp(2rem, 6vw, 6rem); /* Rechter Seitenabstand */
@@ -701,12 +712,15 @@ video { /* HTML5-Video formatieren */
     .bento-mosaic-container { /* Mobiles Bento-Raster */
         grid-template-columns: 1fr; /* Eine einzige Spalte mobil */
         grid-template-rows: auto; /* Automatische Zeilenhöhen */
-        gap: 1.5rem; /* Sauberer Kachelabstand */
+        gap: 0; /* Keine Lücke auch auf Mobilgeräten */
     } /* Mobiles Raster schließen */
     .box-1, .box-2, .box-3, .box-4 { /* Alle 4 Bento-Kacheln mobil */
         grid-column: 1 / 2; /* Spalte 1 ausfüllen */
         grid-row: auto; /* Automatische Zeile */
         min-height: 250px; /* Gleichmäßige mobile Mindesthöhe */
+        border-left: none; /* Bündig links */
+        border-right: none; /* Bündig rechts */
+        border-bottom: 1.5px solid var(--border-dark); /* Trennlinie zwischen den Kacheln */
     } /* Mobile Kacheln schließen */
     .contact-headline { /* Kontakt-Überschrift mobil umbrechen */
         white-space: normal; /* Erlaubt Umbruch auf Mobilgeräten */
