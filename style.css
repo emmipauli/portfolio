@@ -5,11 +5,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
 
 /* ==========================================================================
-   CSS-VARIABLEN (Minimalistisches Farbsystem im Emily-Draper-Stil: keine Boxen, scharfe Kanten)
+   CSS-VARIABLEN (Farbsystem im Emily-Draper-Stil: 4 harmonische Sektions-Hintergründe)
    ========================================================================== */
 :root {
     /* Strahlend weißer Haupthintergrund */
     --bg-primary: #ffffff;
+    /* Zartes, natürliches Salbei-Papiergrün für die Arbeiten-Sektion */
+    --bg-section-works: #f2f5f1;
+    /* Tiefes, sattes Waldmoosgrün für die Über-Mich-Sektion */
+    --bg-section-about: #17382d;
+    /* Tiefes Mitternacht-Piniengrün für den Kontaktbereich */
+    --bg-section-contact: #0c2a22;
     /* Weißer Hintergrund für Karten */
     --bg-card: #ffffff;
     /* Tiefes Wald- und Piniengrün für Überschriften und Haupttexte (#0c3c30) */
@@ -48,8 +54,8 @@
     --shadow-hover: none;
     /* Kein Rand für Karten nach Vorbild des Screenshots */
     --border-card: none;
-    /* Maximale Seitenbreite für perfekten Weißraum und exakte Zentrierung auf allen Bildschirmen */
-    --max-width: 880px;
+    /* Großzügige, bildschirmfüllende Maximalbreite für volle Bildschirm-Nutzung auf jedem Gerät */
+    --max-width: 1400px;
 }
 
 /* ==========================================================================
@@ -68,14 +74,9 @@ html {
     color-scheme: light; /* Teilt dem Browser mit, dass ein helles Design aktiv ist */
 }
 
-/* Body-Styling mit zartem, atmosphärischem Sprüh-Verlauf (exakt wie auf dem Screenshot oben links) */
+/* Body-Styling: Sauberer Grundton ohne Beschränkung */
 body {
     background-color: var(--bg-primary); /* Weißer Grundton */
-    background-image: 
-        radial-gradient(ellipse 65% 42% at 5% 0%, rgba(85, 89, 52, 0.09) 0%, transparent 68%),
-        radial-gradient(ellipse 45% 30% at 95% 5%, rgba(8, 74, 36, 0.06) 0%, transparent 60%); /* Organischer Airbrush-Verlauf wie im Screenshot */
-    background-attachment: fixed; /* Bleibt beim Scrollen ruhig im Hintergrund */
-    background-repeat: no-repeat; /* Keine Bildwiederholung */
     color: var(--text-primary); /* Dunkle Schrift */
     font-family: var(--font-main); /* Schlichte Sans-Serif-Typografie */
     line-height: 1.6; /* Angenehmer Zeilenabstand für beste Lesbarkeit */
@@ -84,6 +85,7 @@ body {
     text-rendering: optimizeLegibility; /* Hochwertiges Schrift-Rendering für exaktes Kerning */
     overflow-x: hidden; /* Verhindert horizontales Ausbrechen */
     min-height: 100vh; /* Mindestens volle Bildschirmhöhe */
+    width: 100%; /* Volle Breite */
 }
 
 /* Grundlegendes Link-Verhalten */
@@ -142,36 +144,46 @@ img {
 }
 
 /* ==========================================================================
-   LAYOUT-CONTAINER
+   LAYOUT-CONTAINER (Volle Bildschirmbreite für maximale Screen-Nutzung)
    ========================================================================== */
-/* Zentrierter Seitenrahmen mit gleichmäßigen Rändern */
-.container, header, main, .site-header {
-    max-width: var(--max-width); /* Maximale Breite auf 880px begrenzt für edlen Weißraum */
-    margin-left: auto; /* Automatische Zentrierung links */
-    margin-right: auto; /* Automatische Zentrierung rechts */
-    padding-left: clamp(1.25rem, 4vw, 2.5rem); /* Flexibler linker Innenabstand */
-    padding-right: clamp(1.25rem, 4vw, 2.5rem); /* Flexibler rechter Innenabstand */
+/* Hauptbereich der Seite spannt über 100% der Bildschirmbreite */
+main {
+    width: 100%; /* Volle Bildschirmbreite */
+    max-width: 100%; /* Keine künstliche Begrenzung */
+    padding: 0; /* Kein pauschaler Außeninnenabstand */
+    margin: 0; /* Kein Außenabstand */
+}
+
+/* Gemeinsame innere Ausrichtung für zentrierte Inhalte in jeder Sektion */
+.hero > *, .portfolio-header, .portfolio-grid, .about-content, .footer-cta, .email-link, .footer-bottom-row, .project-detail-hero, .detail-gallery, .video-wrapper {
+    max-width: var(--max-width); /* Nutzt bis zu 1400px auf großen Monitoren */
+    margin-left: auto; /* Zentriert im Band */
+    margin-right: auto; /* Zentriert im Band */
     width: 100%; /* Volle Breite */
 }
 
 /* ==========================================================================
-   HEADER & NAVIGATION (Clean, weit, wie im Referenzdesign)
+   HEADER & NAVIGATION (Vollständig durchsichtig nach Nutzerwunsch)
    ========================================================================== */
-/* Klebrige Kopfzeile im veredelten Frosted-Glass-Stil */
+/* Transparente, schwebende Kopfzeile ohne Balken-Hintergrund */
 .site-header {
-    position: sticky; /* Bleibt beim Scrollen oben sichtbar */
-    top: 0; /* Direkt an der oberen Kante */
+    position: absolute; /* Sitzt transparent direkt über der ersten Sektion */
+    top: 0; /* Ganz oben */
+    left: 0; /* Ganz links */
+    width: 100%; /* Volle Bildschirmbreite */
     z-index: 100; /* Liegt über dem Inhalt */
     display: flex; /* Flexbox für links-rechts Aufteilung */
     justify-content: space-between; /* Logo links, Navigation rechts */
     align-items: center; /* Vertikal zentrieren */
-    padding-top: 1.5rem; /* Oberer Innenabstand */
-    padding-bottom: 1.5rem; /* Unterer Innenabstand */
-    background-color: rgba(255, 255, 255, 0.88); /* Hochwertige semi-transparente Oberfläche */
-    backdrop-filter: saturate(180%) blur(16px); /* Kristallklarer Unschärfe-Effekt */
-    -webkit-backdrop-filter: saturate(180%) blur(16px); /* Optimale Safari Unterstützung */
-    border-bottom: 1px solid rgba(12, 60, 48, 0.06); /* Haardünne, edle Kante */
-    transition: border-color var(--duration-fast) ease; /* Flüssiger Randwechsel */
+    padding-top: clamp(1.5rem, 3vw, 2.5rem); /* Großzügiger oberer Innenabstand */
+    padding-bottom: clamp(1.5rem, 3vw, 2.5rem); /* Unterer Innenabstand */
+    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
+    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
+    background: transparent; /* VOLLSTÄNDIG DURCHSICHTIG nach Nutzerwunsch */
+    background-color: transparent; /* Keine Hintergrundfarbe */
+    backdrop-filter: none; /* Kein Unschärfe-Balken */
+    -webkit-backdrop-filter: none; /* Kein Safari-Filter */
+    border-bottom: none; /* Keine Randlinie */
 }
 
 /* Logo-Block */
@@ -184,7 +196,7 @@ img {
 /* Name im Logo mit charaktervollem Schnitt */
 .logo a, .logo-title {
     font-family: var(--font-display); /* Markante Syne-Schrift */
-    font-size: 1.15rem; /* Klare Schriftgröße */
+    font-size: 1.25rem; /* Ausdrucksstarke Schriftgröße */
     font-weight: 700; /* Kräftige Schnittführung */
     letter-spacing: -0.02em; /* Typografisch dicht gesperrt */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
@@ -203,22 +215,22 @@ img {
 .header-actions {
     display: flex; /* Horizontale Leiste */
     align-items: center; /* Vertikal mittig */
-    gap: 2rem; /* Großzügiger Abstand zwischen Menü und Kontakt */
+    gap: 2.5rem; /* Großzügiger Abstand zwischen Menü und Kontakt */
 }
 
 /* Liste der Navigationspunkte */
 nav ul {
     display: flex; /* Horizontale Anordnung */
     list-style: none; /* Keine Aufzählungspunkte */
-    gap: 1.75rem; /* Großzügiger Abstand zwischen den Links */
+    gap: 2rem; /* Großzügiger Abstand zwischen den Links */
     align-items: center; /* Mittig */
 }
 
 /* Einzelne Navigations-Links */
 nav a {
-    font-size: 0.875rem; /* Kompakte Lesegröße */
+    font-size: 0.95rem; /* Etwas größere, souveräne Lesegröße */
     font-weight: 500; /* Mittlere Schriftstärke */
-    color: var(--text-secondary); /* Angenehmes Waldgrün */
+    color: var(--text-primary); /* Klares Waldgrün */
     letter-spacing: -0.01em; /* Feiner Schnitt */
     transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Schneller Übergang */
     display: inline-block; /* Für taktile Skalierung */
@@ -226,7 +238,7 @@ nav a {
 
 /* Zurück-Links und Header-Aktionen (puristisch und ohne Boxen) */
 .pill-btn, .header-contact-link, .back-link {
-    font-size: 0.875rem; /* Kompakte Lesegröße */
+    font-size: 0.9rem; /* Lesegröße */
     font-weight: 600; /* Halb-Fett */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
     display: inline-flex; /* Inline-Flex für Text und Pfeil */
@@ -267,34 +279,36 @@ nav a {
 }
 
 /* ==========================================================================
-   HERO-SEKTION (h1 rechtsbündig als markanter Eyecatcher, Fließtext linksbündig)
+   SEKTION 1: HERO / HOME (Weißer Hintergrund mit sanftem Airbrush-Verlauf oben links)
    ========================================================================== */
-/* Container für das Intro mit linksbündigem Grundlayout */
+/* Hero-Bereich nutzt die volle Bildschirmbreite */
 .hero {
-    padding-top: clamp(4.5rem, 9vw, 8rem); /* Viel edler Weißraum nach oben */
-    padding-bottom: clamp(3rem, 6vw, 5.5rem); /* Großzügiger Abstand nach unten */
-    border-bottom: none; /* Keine Trennlinie zwischen Hero und Projekten */
-    max-width: var(--max-width); /* Bündig mit dem zentrierten Raster */
-    margin-left: auto; /* Exakt zentriert links */
-    margin-right: auto; /* Exakt zentriert rechts */
-    width: 100%; /* Volle Breite */
+    width: 100%; /* Volle Breite von Rand zu Rand */
+    background-color: var(--bg-primary); /* Strahlend weißer Grundton für Sektion 1 */
+    background-image: 
+        radial-gradient(ellipse 65% 45% at 5% 0%, rgba(85, 89, 52, 0.12) 0%, transparent 68%),
+        radial-gradient(ellipse 45% 30% at 95% 5%, rgba(8, 74, 36, 0.07) 0%, transparent 60%); /* Organischer Airbrush-Verlauf */
+    background-repeat: no-repeat; /* Keine Wiederholung */
+    padding-top: clamp(7.5rem, 14vw, 12rem); /* Großzügiger Platz nach oben für den transparenten Header */
+    padding-bottom: clamp(5rem, 10vw, 8.5rem); /* Großzügiger Abstand nach unten */
+    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
+    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikale Anordnung */
-    align-items: flex-start; /* Grundausrichtung linksbündig */
-    text-align: left; /* Fließtext standardmäßig linksbündig */
+    align-items: flex-start; /* Grundausrichtung links */
 }
 
-/* Große, markante Hauptüberschrift RECHTSBÜNDIG (als spannungsvoller Kontrast) */
+/* Monumentale Hauptüberschrift: DEUTLICH GRÖSSER & RECHTSBÜNDIG nach Nutzerwunsch */
 .hero h1 {
     font-family: var(--font-display); /* Markante Syne-Schriftart */
-    font-size: clamp(3rem, 7.5vw, 5.4rem); /* Monumentale Namens-Headline wie im Screenshot */
+    font-size: clamp(3.8rem, 10.5vw, 7.8rem); /* Riesige, bildschirmfüllende Display-Größe nach Nutzerwunsch */
     font-weight: 700; /* Fetter, satter Schnitt */
-    line-height: 1.05; /* Kompakter, eleganter Durchschuss */
-    letter-spacing: -0.035em; /* Typografisch dicht gesperrt */
+    line-height: 0.98; /* Extrem kompakter, atemberaubender Durchschuss */
+    letter-spacing: -0.04em; /* Typografisch eng gesperrt */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
     width: 100%; /* Volle Breite für sauberen Rechtsanschlag */
-    margin-bottom: 2.25rem; /* Abstand zum Fließtext */
-    text-align: right; /* RECHTSBÜNDIGE Hauptüberschrift nach Nutzerwunsch */
+    margin-bottom: clamp(4.5rem, 9vw, 8rem); /* GROSSER ABSTAND zwischen Überschrift und Intro nach Nutzerwunsch */
+    text-align: right; /* RECHTSBÜNDIGE Hauptüberschrift */
     align-self: flex-end; /* Schiebt die Headline ganz nach rechts */
 }
 
@@ -302,55 +316,56 @@ nav a {
 .hero-subtitle {
     display: block; /* Eigene Zeile unter dem Namen */
     font-family: var(--font-main); /* Ruhige, lesbare Sans-Serif-Schrift */
-    font-size: clamp(1rem, 1.8vw, 1.3rem); /* Deutlich kleinere, feine Schriftgröße */
-    font-weight: 500; /* Angenehm leichter Schnitt */
+    font-size: clamp(1.1rem, 2vw, 1.5rem); /* Proportionierte, feine Schriftgröße */
+    font-weight: 500; /* Angenehmer Schnitt */
     letter-spacing: -0.01em; /* Feine Spationierung */
     color: var(--color-accent); /* Lebendiges Waldgrün #084A24 */
-    margin-top: 0.6rem; /* Abstand zum Namen */
+    margin-top: 0.8rem; /* Abstand zum Namen */
+    text-align: right; /* Bündig rechts mit dem Namen */
 }
 
-/* Subtiler zweiter Teil der Überschrift in lebendigem Waldgrün */
-.hero h1 span.highlight {
-    color: var(--color-accent); /* Sattes Waldgrün #084A24 */
-    font-weight: 500; /* Schöner Kontrastschnitt */
-}
-
-/* Natürlicher Einleitungstext wieder sauber LINKSBÜNDIG */
+/* Einleitungstext: WEITER NACH LINKS GESETZT nach Nutzerwunsch */
 .hero-bio {
-    font-size: clamp(1.05rem, 1.6vw, 1.25rem); /* Angenehme Lesegröße */
+    font-size: clamp(1.1rem, 1.7vw, 1.35rem); /* Angenehm große Lesegröße */
     color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
-    max-width: 680px; /* Lesbare Zeilenlänge */
-    line-height: 1.65; /* Durchlüfteter Zeilenabstand */
-    text-align: left; /* LINKSBÜNDIG nach Nutzerwunsch */
-    margin-left: 0; /* Bündig links */
-    margin-right: auto; /* Freiraum rechts */
+    max-width: 640px; /* Wohlproportionierte Zeilenlänge */
+    line-height: 1.7; /* Großzügiger Zeilenabstand */
+    text-align: left; /* LINKSBÜNDIG */
+    margin-left: 0; /* GANZ NACH LINKS GESETZT nach Nutzerwunsch */
+    margin-right: auto; /* Freiraum nach rechts */
 }
 
 /* ==========================================================================
-   FILTER-LEISTE (Linksbündig über dem Raster)
+   SEKTION 2: ARBEITEN / PORTFOLIO (Zarter Salbei-Papiergrün Hintergrund #f2f5f1)
    ========================================================================== */
+/* Portfolio-Bereich mit eigenem, harmonischem Salbei-Hintergrund */
+.portfolio-section {
+    width: 100%; /* Volle Bildschirmbreite */
+    background-color: var(--bg-section-works); /* Zartes Salbei-Papiergrün für Sektion 2 */
+    background-image: radial-gradient(ellipse 55% 40% at 100% 0%, rgba(8, 74, 36, 0.05) 0%, transparent 65%); /* Dezent harmonischer Farbverlauf */
+    padding-top: clamp(5.5rem, 10vw, 9rem); /* Großzügiger Abstand nach oben */
+    padding-bottom: clamp(6rem, 11vw, 9.5rem); /* Großzügiger Abstand nach unten */
+    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
+    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
+}
+
 /* Kopfbereich der Projektsektion linksbündig */
 .portfolio-header {
     display: flex; /* Flexbox */
     justify-content: space-between; /* Titel links, Filter rechts */
     align-items: center; /* Vertikal zentriert */
     flex-wrap: wrap; /* Bricht bei Bedarf um */
-    gap: 1.25rem; /* Abstand */
-    margin-top: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger Weißraum nach oben */
-    margin-bottom: 2.5rem; /* Abstand zum Raster */
-    max-width: var(--max-width); /* Bündig mit dem zentrierten Raster */
-    margin-left: auto; /* Exakt zentriert links */
-    margin-right: auto; /* Exakt zentriert rechts */
-    width: 100%; /* Volle Breite */
+    gap: 1.5rem; /* Abstand */
+    margin-bottom: clamp(3rem, 6vw, 4.5rem); /* Großzügiger Abstand zum Raster */
     text-align: left; /* Linksbündig */
 }
 
 /* Sektionstitel "Ausgewählte Arbeiten" linksbündig */
 .portfolio-header h2 {
     font-family: var(--font-display); /* Syne-Schrift */
-    font-size: clamp(1.5rem, 2.5vw, 2.1rem); /* Typo-Größe */
+    font-size: clamp(1.8rem, 3.2vw, 2.7rem); /* Kraftvolle Überschriftengröße */
     font-weight: 700; /* Kräftig */
-    letter-spacing: -0.02em; /* Leicht eng */
+    letter-spacing: -0.025em; /* Leicht eng */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
     text-align: left; /* Bündig links */
 }
@@ -364,13 +379,13 @@ nav a {
     align-items: center; /* Mittig */
 }
 
-/* Einzelner Filter-Knopf als Kapsel (wie commercial/narrative/all im Screenshot) */
+/* Einzelner Filter-Knopf als Kapsel */
 .filter-btn {
     background-color: transparent; /* Transparenter Grund */
     border: 1.5px solid var(--border-subtle); /* Feine Kapsel-Linie */
-    border-radius: 9999px; /* Kapsel-Form exakt wie im Screenshot */
+    border-radius: 9999px; /* Kapsel-Form */
     color: var(--color-olive); /* Moosgrün #555934 */
-    padding: 0.45rem 1.35rem; /* Ausgewogener Kapsel-Innenabstand */
+    padding: 0.5rem 1.4rem; /* Ausgewogener Kapsel-Innenabstand */
     font-family: var(--font-main); /* Schriftart */
     font-size: 0.85rem; /* Kompakte Schrift */
     font-weight: 500; /* Mittlere Stärke */
@@ -378,7 +393,7 @@ nav a {
     transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease, color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
 }
 
-/* Aktiver Filter-Button: Sattes Waldgrün mit weißer Schrift (wie im Screenshot) */
+/* Aktiver Filter-Button: Sattes Waldgrün mit weißer Schrift */
 .filter-btn.active {
     background-color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 als Füllung */
     color: #ffffff; /* Strahlend weiße Schrift */
@@ -386,28 +401,18 @@ nav a {
     font-weight: 600; /* Etwas stärkere Schrift */
 }
 
-/* ==========================================================================
-   PROJEKT-RASTER / GRID (Linksbündige Texte, scharfe Bilder ohne Boxen)
-   ========================================================================== */
-/* CSS-Grid für die Arbeiten: 2 Spalten, freistehend auf dem Hintergrund */
+/* CSS-Grid für die Arbeiten: 2 Spalten, bildschirmfüllend proportioniert */
 .portfolio-grid {
     display: grid; /* Grid-System */
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive Spalten */
-    gap: clamp(2.5rem, 5vw, 4.5rem); /* Viel freier Weißraum zwischen den Arbeiten */
-    margin-bottom: clamp(5rem, 9vw, 8.5rem); /* Großzügiger Freiraum nach unten */
-    max-width: var(--max-width); /* Begrenzte Gesamtbreite für viel eleganten Weißraum an den Seiten */
-    margin-left: auto; /* Exakt zentriert links */
-    margin-right: auto; /* Exakt zentriert rechts */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Große, bildschirmfüllende Kacheln */
+    gap: clamp(2.5rem, 5vw, 5rem); /* Viel freier Raum zwischen den Arbeiten */
     width: 100%; /* Volle Breite */
 }
 
-/* Speziell für die Startseite: Harmonisches, kompaktes 2-Spalten-Raster */
+/* Speziell für die Startseite: 2 wohlproportionierte Spalten */
 #projectGrid {
-    max-width: var(--max-width); /* Kompakt für maximalen Weißraum */
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 wohlproportionierte Spalten */
-    gap: clamp(2.5rem, 5.5vw, 4.5rem); /* Großzügiger Zwischenraum */
-    margin-left: auto; /* Exakt zentriert links */
-    margin-right: auto; /* Exakt zentriert rechts */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 Spalten */
+    gap: clamp(3rem, 6vw, 5.5rem); /* Großzügiger Zwischenraum */
     width: 100%; /* Volle Breite */
 }
 
@@ -415,13 +420,13 @@ nav a {
 .project-card {
     display: flex; /* Flexbox */
     flex-direction: column; /* Bild oben, Beschriftung unten */
-    background: transparent; /* Kein Kasten-Hintergrund, liegt frei auf Weiß */
+    background: transparent; /* Kein Kasten-Hintergrund */
     border: none; /* Absolut kein Rand */
     border-radius: 0; /* Keine Rundung */
     box-shadow: none; /* Kein Schatten */
     text-decoration: none; /* Keine Unterstreichung */
     color: inherit; /* Farbe erben */
-    align-items: flex-start; /* Wieder sauber linksbündig */
+    align-items: flex-start; /* Bündig links */
     text-align: left; /* Linksbündiger Text */
 }
 
@@ -470,12 +475,12 @@ div.project-card {
 
 /* Textbereich direkt und linksbündig unter dem Bild */
 .project-info {
-    padding: 1.1rem 0 0 0; /* Abstand nach oben */
+    padding: 1.25rem 0 0 0; /* Abstand nach oben */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
     align-items: flex-start; /* Bündig links */
     text-align: left; /* Linksbündiger Text */
-    gap: 0.35rem; /* Kleiner Zeilenabstand */
+    gap: 0.4rem; /* Kleiner Zeilenabstand */
     width: 100%; /* Volle Breite */
 }
 
@@ -490,7 +495,7 @@ div.project-card {
 
 /* Schlichte Text-Kategorie (Modul/Fach in Moosgrün) */
 .category-tag {
-    font-size: 0.75rem; /* Kompakte Schrift */
+    font-size: 0.8rem; /* Kompakte Schrift */
     font-weight: 600; /* Halb-Fett */
     color: var(--color-olive); /* Moosgrün #555934 */
     text-transform: uppercase; /* Großbuchstaben */
@@ -499,7 +504,7 @@ div.project-card {
 
 /* Semesterangabe rechts */
 .project-year {
-    font-size: 0.75rem; /* Gleiche Textgröße */
+    font-size: 0.8rem; /* Gleiche Textgröße */
     color: var(--color-olive); /* Moosgrün #555934 */
     font-weight: 500; /* Mittlere Stärke */
 }
@@ -507,7 +512,7 @@ div.project-card {
 /* Projekttitel linksbündig unter dem Bild */
 .project-info h3 {
     font-family: var(--font-display); /* Syne-Schriftart */
-    font-size: 1.35rem; /* Ausprägte Titelgröße */
+    font-size: clamp(1.3rem, 2.2vw, 1.65rem); /* Ausgeprägte Titelgröße */
     font-weight: 700; /* Kräftig */
     letter-spacing: -0.02em; /* Leicht eng */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
@@ -517,36 +522,43 @@ div.project-card {
 
 /* Kurze Projektbeschreibung linksbündig */
 .project-info p {
-    font-size: 0.875rem; /* Lesegröße */
+    font-size: 0.95rem; /* Lesegröße */
     color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
-    line-height: 1.55; /* Gute Zeilenhöhe */
+    line-height: 1.6; /* Gute Zeilenhöhe */
     text-align: left; /* Linksbündig */
     max-width: 100%; /* Bündig mit dem Bild */
 }
 
 /* ==========================================================================
-   ÜBER-MICH & FÄHIGKEITEN (Wieder sauber linksbündig – OHNE Boxen)
+   SEKTION 3: ÜBER MICH (Tiefes, sattes Waldmoosgrün #17382d mit weißer Schrift)
    ========================================================================== */
-/* Über-Mich Sektion mit Überschrift oben drüber */
+/* Über-Mich Sektion mit eigenem dunkelgrünem Vollflächen-Hintergrund */
 .about-section {
+    width: 100%; /* Volle Bildschirmbreite */
+    background-color: var(--bg-section-about); /* Tiefes Waldmoosgrün für Sektion 3 */
+    background-image: radial-gradient(ellipse 60% 45% at 5% 15%, rgba(85, 89, 52, 0.28) 0%, transparent 65%); /* Zarter Glow */
+    padding-top: clamp(6rem, 11vw, 9.5rem); /* Großzügiger oberer Abstand */
+    padding-bottom: clamp(6rem, 11vw, 9.5rem); /* Großzügiger Abstand nach unten */
+    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
+    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
+    color: #ffffff; /* Weiße Schrift für optimalen Kontrast */
     display: flex; /* Flexbox */
-    flex-direction: column; /* Vertikale Anordnung: Überschrift oben, Inhalt darunter */
-    padding-top: clamp(4rem, 8vw, 7rem); /* Großzügiger oberer Abstand */
-    border-top: none; /* Keine Trennlinie zwischen Projekten und Über-Mich */
-    margin-bottom: clamp(5rem, 10vw, 8.5rem); /* Großzügiger Weißraum nach unten */
-    max-width: var(--max-width); /* Bündig mit dem zentrierten Layout */
-    margin-left: auto; /* Exakt zentriert links */
-    margin-right: auto; /* Exakt zentriert rechts */
-    width: 100%; /* Volle Breite */
-    text-align: left; /* Linksbündig */
+    flex-direction: column; /* Vertikale Anordnung */
     align-items: flex-start; /* Bündig links */
+    text-align: left; /* Linksbündig */
 }
 
-/* Header im Über-Mich Bereich */
+/* Header im Über-Mich Bereich linksbündig */
 .about-section .portfolio-header {
     margin-top: 0; /* Verhindert doppelten oberen Abstand */
-    margin-bottom: 2rem; /* Sauberer Abstand zum Fließtext darunter */
+    margin-bottom: 2.5rem; /* Sauberer Abstand zum Fließtext */
     justify-content: flex-start; /* Linksbündig */
+}
+
+/* Sektionstitel "Über mich" in strahlendem Weiß */
+.about-section .portfolio-header h2 {
+    color: #ffffff; /* Strahlendes Weiß */
+    font-size: clamp(1.8rem, 3.2vw, 2.7rem); /* Kraftvoll groß */
 }
 
 /* Fließtext linksbündig */
@@ -554,26 +566,26 @@ div.project-card {
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
     align-items: flex-start; /* Bündig links */
-    gap: 1.25rem; /* Absatz-Abstand */
-    max-width: 680px; /* Lesbare Zeilenlänge */
+    gap: 1.5rem; /* Absatz-Abstand */
+    max-width: 760px; /* Großzügige, komfortable Leselänge */
     margin-left: 0; /* Bündig links */
 }
 
-/* Absätze */
+/* Absätze in gut lesbarem, sanftem Weiß */
 .about-content p {
-    font-size: clamp(1rem, 1.2vw, 1.1rem); /* Lesegröße */
-    color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
-    line-height: 1.65; /* Durchlüftet */
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem); /* Lesegröße */
+    color: rgba(255, 255, 255, 0.88); /* Hochlesbares, edles Weiß */
+    line-height: 1.7; /* Großzügiger Zeilenabstand */
     text-align: left; /* Linksbündig */
 }
 
 /* Werkzeuge- und Skills-Bereich: Absolut KEINE Box, KEIN Rand, linksbündig */
 .skills-container {
-    margin-top: 1.5rem; /* Abstand nach oben */
+    margin-top: 2rem; /* Abstand nach oben */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
     align-items: flex-start; /* Bündig links */
-    gap: 0.5rem; /* Abstand */
+    gap: 0.6rem; /* Abstand */
     padding: 0; /* Absolut KEIN Box-Innenabstand */
     background: transparent; /* KEINE Box */
     border: none; /* KEIN Rand */
@@ -581,61 +593,60 @@ div.project-card {
     box-shadow: none; /* KEIN Schatten */
 }
 
-/* Überschrift über den Werkzeugen */
+/* Überschrift über den Werkzeugen in hellem Salbeigrün */
 .skills-title {
-    font-size: 0.75rem; /* Klein */
+    font-size: 0.8rem; /* Klein */
     text-transform: uppercase; /* Großbuchstaben */
-    letter-spacing: 0.08em; /* Gesperrt */
-    color: var(--color-olive); /* Moosgrün #555934 */
+    letter-spacing: 0.1em; /* Gesperrt */
+    color: #a3c4b5; /* Helles Salbeigrün */
     font-weight: 700; /* Kräftig */
     text-align: left; /* Linksbündig */
 }
 
 /* Reiner Fließtext für Werkzeuge & Programme (OHNE Blasen, OHNE Box) */
 .skills-text {
-    font-size: 0.95rem; /* Angenehme Schriftgröße */
-    color: var(--text-secondary); /* Harmonische Fließtextfarbe */
-    line-height: 1.7; /* Gute Zeilenhöhe */
+    font-size: 1.05rem; /* Angenehme Schriftgröße */
+    color: rgba(255, 255, 255, 0.82); /* Helles, klares Weiß */
+    line-height: 1.75; /* Gute Zeilenhöhe */
     text-align: left; /* Linksbündig */
-    max-width: 680px; /* Lesbare Breite */
+    max-width: 760px; /* Lesbare Breite */
 }
 
 /* ==========================================================================
-   FOOTER / KONTAKT (Vollflächig dunkelgrün, scharfe Kanten, linksbündig ausgerichtet)
+   SEKTION 4: KONTAKT (Tiefes Mitternacht-Piniengrün #0c2a22, scharfe Kanten)
    ========================================================================== */
-/* Vollflächiger dunkelgrüner Kontakt-Bereich von Bildschirmrand zu Bildschirmrand OHNE Box-Rundungen */
+/* Vollflächiger Mitternacht-Piniengrün Kontakt-Bereich von Rand zu Rand */
 footer.site-footer, .site-footer {
-    width: 100%; /* Volle Breite */
-    background-color: #0c3c30; /* Tiefes, edles Waldgrün als Vollfläche wie im Screenshot */
-    background-image: radial-gradient(ellipse 70% 50% at 5% 0%, rgba(85, 89, 52, 0.3) 0%, transparent 65%); /* Zarter Airbrush-Glow oben links */
+    width: 100%; /* Volle Bildschirmbreite */
+    background-color: var(--bg-section-contact); /* Tiefes Mitternacht-Piniengrün für Sektion 4 */
+    background-image: radial-gradient(ellipse 70% 50% at 5% 0%, rgba(8, 74, 36, 0.35) 0%, transparent 65%); /* Zarter Airbrush-Glow */
     border-radius: 0; /* SCHARFE KANTEN - ABSOLUT KEINE RUNDUNG */
     box-shadow: none; /* KEIN KASTEN-SCHATTEN */
     border-top: none; /* Kein Standard-Rand */
     margin: 0; /* Kein Außenabstand */
-    padding-top: clamp(5rem, 10vw, 8rem); /* Großzügiger oberer Freiraum wie im Screenshot */
-    padding-bottom: clamp(3rem, 6vw, 5rem); /* Großzügiger unterer Abstand */
-    padding-left: clamp(1.25rem, 4vw, 2.5rem); /* Innenabstand links */
-    padding-right: clamp(1.25rem, 4vw, 2.5rem); /* Innenabstand rechts */
+    padding-top: clamp(6rem, 11vw, 9.5rem); /* Großzügiger oberer Freiraum */
+    padding-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger unterer Abstand */
+    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
+    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
     color: #ffffff; /* Strahlend weiße Schrift */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
-    align-items: center; /* Zentriert die Inhaltsbox im Fullwidth-Footer */
+    align-items: flex-start; /* Bündig links */
 }
 
 /* Kontakt-Bereich linksbündig */
 .footer-cta {
-    margin-bottom: 2rem; /* Abstand zur Mail */
+    margin-bottom: 2.5rem; /* Abstand zur Mail */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
     align-items: flex-start; /* Bündig links */
     text-align: left; /* Linksbündig */
     width: 100%; /* Volle Breite */
-    max-width: var(--max-width); /* Bündig mit dem zentrierten Raster */
 }
 
 /* Zartes Akzent-Label über dem Kontakt */
 .footer-cta .cta-label {
-    font-size: 0.8rem; /* Klein */
+    font-size: 0.85rem; /* Klein */
     text-transform: uppercase; /* Großbuchstaben */
     letter-spacing: 0.12em; /* Gesperrt */
     color: #a3c4b5; /* Sanftes Pastell-Salbeigrün */
@@ -648,11 +659,11 @@ footer.site-footer, .site-footer {
 /* Große Einladung in strahlendem Weiß */
 .footer-cta h2 {
     font-family: var(--font-display); /* Syne-Schriftart */
-    font-size: clamp(2.4rem, 5.5vw, 4.2rem); /* Monumentale Display-Größe wie im Screenshot */
+    font-size: clamp(2.6rem, 6vw, 4.6rem); /* Monumentale Display-Größe */
     font-weight: 700; /* Kräftig */
     letter-spacing: -0.03em; /* Eng */
-    color: #ffffff; /* Strahlendes Weiß auf dunklem Waldgrün */
-    line-height: 1.1; /* Kompakter Durchschuss */
+    color: #ffffff; /* Strahlendes Weiß */
+    line-height: 1.05; /* Kompakter Durchschuss */
     text-align: left; /* Linksbündig */
 }
 
@@ -662,15 +673,14 @@ footer.site-footer, .site-footer {
     display: inline-flex; /* Inline-Flex */
     align-items: center; /* Mittig */
     justify-content: flex-start; /* Bündig links */
-    font-size: clamp(1.5rem, 3.8vw, 2.7rem); /* Große Schriftgröße */
+    font-size: clamp(1.6rem, 4vw, 3rem); /* Große Schriftgröße */
     font-weight: 700; /* Kräftig */
     color: #ffffff; /* Strahlendes Weiß */
     border-bottom: 2px solid rgba(255, 255, 255, 0.4); /* Feine helle Unterstreichung */
-    padding-bottom: 0.35rem; /* Abstand */
-    margin-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Abstand nach unten */
+    padding-bottom: 0.4rem; /* Abstand */
+    margin-bottom: clamp(4rem, 8vw, 6rem); /* Großzügiger Abstand nach unten */
     cursor: pointer; /* Zeiger */
-    width: 100%; /* Volle Breite */
-    max-width: var(--max-width); /* Bündig mit dem Layout */
+    width: auto; /* Passt sich der Textlänge an */
     transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
 }
 
@@ -685,12 +695,11 @@ footer.site-footer, .site-footer {
     justify-content: space-between; /* Links und Rechts verteilt */
     align-items: center; /* Mittig */
     flex-wrap: wrap; /* Umbruch */
-    gap: 1.25rem; /* Abstand */
-    padding-top: 2rem; /* Abstand nach oben */
+    gap: 1.5rem; /* Abstand */
+    padding-top: 2.25rem; /* Abstand nach oben */
     border-top: 1px solid rgba(255, 255, 255, 0.12); /* Feine helle Trennlinie */
-    font-size: 0.85rem; /* Kompakte Schrift */
+    font-size: 0.9rem; /* Kompakte Schrift */
     color: rgba(255, 255, 255, 0.65); /* Sanft abgetöntes Weiß */
-    max-width: var(--max-width); /* Auf Layout-Breite begrenzt */
     width: 100%; /* Volle Breite im Inneren */
 }
 
@@ -702,7 +711,7 @@ footer.site-footer, .site-footer {
 /* Social Links */
 .social-links {
     display: flex; /* Reihe */
-    gap: 1.25rem; /* Abstand */
+    gap: 1.5rem; /* Abstand */
 }
 
 /* Einzelner Social Link im Footer */
@@ -719,11 +728,11 @@ footer.site-footer, .site-footer {
 }
 
 /* ==========================================================================
-   DETAILSEITEN (Ohne Rundungen, ohne Boxen)
+   DETAILSEITEN (Volle Bildschirmbreite, scharfe Kanten)
    ========================================================================== */
 /* Vor-Tag über Kategorieseiten und Projektdetails */
 .hero-tag {
-    font-size: 0.75rem; /* Kompakte Schrift */
+    font-size: 0.8rem; /* Kompakte Schrift */
     font-weight: 600; /* Halb-Fett */
     color: var(--color-olive); /* Moosgrün #555934 */
     text-transform: uppercase; /* Großbuchstaben */
@@ -739,15 +748,29 @@ footer.site-footer, .site-footer {
     text-align: left; /* Linksbündig */
 }
 
+/* Spezifische Überschrift auf Projekt- und Detailseiten (linksbündig und harmonisch dimensioniert) */
+.project-detail-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem); /* Angemessene Größe für Projekttitel */
+    line-height: 1.1; /* Harmonischer Zeilenabstand */
+    letter-spacing: -0.025em; /* Feine Spationierung */
+    margin-bottom: 1.5rem; /* Harmonischer Abstand zur Projektbeschreibung */
+    text-align: left; /* Linksbündig für saubere Leseführung */
+    align-self: flex-start; /* Links ausgerichtet */
+}
+
+/* Projektbeschreibungen auf Detailseiten */
+.project-detail-hero .hero-bio {
+    max-width: 760px; /* Wohlproportionierte Leselänge */
+    margin-left: 0; /* Bündig links */
+    margin-right: auto; /* Freiraum nach rechts */
+}
+
 /* Detail-Galerie mit flexibler Mindestbreite gegen mobilen Überlauf */
 .detail-gallery {
     display: grid; /* Grid-Layout */
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); /* Verhindert horizontalen Überlauf mobil */
-    gap: clamp(1.75rem, 4vw, 3rem); /* Großzügiger Kachelabstand */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); /* Verhindert horizontalen Überlauf mobil */
+    gap: clamp(2rem, 4vw, 3.5rem); /* Großzügiger Kachelabstand */
     margin-bottom: clamp(4rem, 8vw, 6rem); /* Mehr Abstand nach unten */
-    max-width: var(--max-width); /* Bündig und kompakt für viel Weißraum */
-    margin-left: auto; /* Exakt zentriert links */
-    margin-right: auto; /* Exakt zentriert rechts */
     width: 100%; /* Volle Breite */
 }
 
@@ -763,12 +786,11 @@ footer.site-footer, .site-footer {
 /* ==========================================================================
    VIDEO-CONTAINER & STYLES (Scharfe Kanten, keine Rundungen)
    ========================================================================== */
-/* Eleganter Video-Rahmen auf dem zentrierten Weißraum */
+/* Eleganter Video-Rahmen */
 .video-wrapper {
     width: 100%; /* Volle Breite */
-    max-width: var(--max-width); /* Auf Zentrier-Breite begrenzt */
     margin-top: 1rem; /* Abstand nach oben */
-    margin-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger Abstand nach unten vor dem Footer */
+    margin-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger Abstand nach unten */
     background-color: #0c3c30; /* Dunkler Hintergrund im Piniengrün */
     border-radius: 0; /* Scharfe Ecken ohne Rundung */
     border: none; /* Kein Rand */
@@ -851,10 +873,18 @@ footer.site-footer, .site-footer {
 @media (max-width: 768px) {
     /* Header bricht um */
     .site-header {
+        position: relative; /* Auf kleinen Bildschirmen normal im Dokumentenfluss */
+        padding-top: 1.25rem; /* Kompakter */
+        padding-bottom: 1.25rem; /* Kompakter */
         flex-wrap: wrap; /* Mehrzeilig */
         gap: 0.75rem; /* Abstand */
     }
     
+    /* Hero-Padding mobil anpassen */
+    .hero {
+        padding-top: 2rem; /* Da Header mobil relativ ist */
+    }
+
     /* Navigation und Kontakt verteilen */
     .header-actions {
         width: 100%; /* Volle Breite */
@@ -867,18 +897,25 @@ footer.site-footer, .site-footer {
         gap: 1.15rem; /* Kompakt */
     }
     
-    /* Headline mobil: rechtsbündig oder natürlich ausgerichtet */
+    /* Headline mobil */
     .hero h1 {
         text-align: right; /* Bleibt markant rechtsbündig */
+        font-size: clamp(2.8rem, 13vw, 4.5rem); /* Mobil optimal lesbar */
+        margin-bottom: 3rem; /* Ausgewogener Abstand mobil */
+    }
+
+    /* Projekttitel auf Detailseiten bleiben mobil linksbündig */
+    .project-detail-hero h1 {
+        text-align: left; /* Linksbündig für optimale Lesbarkeit */
+        margin-bottom: 1.5rem; /* Harmonischer Abstand mobil */
+        font-size: clamp(2rem, 9vw, 3rem); /* Angenehm lesbar auf Smartphones */
     }
     
-    /* Projekt-Grid wird mobil einspaltig und sauber zentriert */
+    /* Projekt-Grid wird mobil einspaltig */
     .portfolio-grid, #projectGrid {
         grid-template-columns: 1fr; /* Eine Spalte */
         gap: 2.5rem; /* Ausgewogener Abstand */
         width: 100%; /* Volle Breite */
-        margin-left: auto; /* Zentriert */
-        margin-right: auto; /* Zentriert */
     }
     
     /* Footer-Abschlusszeile vertikal stapeln */
