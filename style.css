@@ -1,60 +1,65 @@
 /* ==========================================================================
-   SCHRIFTARTEN (Google Fonts: 'Syne' für markante Headlines & 'Plus Jakarta Sans' für Mengentext)
+   LOKALE SCHRIFTARTEN (Super Frog & Acumin Variable Concept)
    ========================================================================== */
-/* Wir laden beide Schriften direkt und kostenlos über das Google Fonts CDN ein */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+/* Super Frog: Expressive, verspielte Display-Schrift aus den Illustrator-Entwürfen */
+@font-face {
+    font-family: 'Super Frog'; /* Name der Display-Schriftart */
+    src: url('fonts/SuperFrog.ttf') format('truetype'); /* Lokaler Pfad zur TTF-Schriftdatei */
+    font-weight: 400; /* Normaler Schriftschnitt */
+    font-style: normal; /* Normale Schriftlage */
+    font-display: swap; /* Verhindert unsichtbaren Text beim Laden */
+}
+
+/* Acumin Variable Concept: Zeitlose, elegante Sans-Serif-Schrift für Mengentexte */
+@font-face {
+    font-family: 'Acumin Variable Concept'; /* Name der Hauptschriftart */
+    src: url('fonts/AcuminVariableConcept.otf') format('opentype'); /* Lokaler Pfad zur variablen OpenType-Datei */
+    font-weight: 100 900; /* Variable Schriftstärke von Thin (100) bis Heavy (900) */
+    font-style: normal; /* Normale Schriftlage */
+    font-display: swap; /* Schnelle und zuverlässige Textdarstellung */
+}
 
 /* ==========================================================================
-   CSS-VARIABLEN (Farbsystem im Emily-Draper-Stil: 4 harmonische Sektions-Hintergründe)
+   CSS-VARIABLEN (Farbsystem im Einklang mit Emma Rabes Farbpalette)
    ========================================================================== */
 :root {
     /* Strahlend weißer Haupthintergrund */
     --bg-primary: #ffffff;
-    /* Zartes, natürliches Salbei-Papiergrün für die Arbeiten-Sektion */
-    --bg-section-works: #f2f5f1;
-    /* Tiefes, sattes Waldmoosgrün für die Über-Mich-Sektion */
-    --bg-section-about: #17382d;
-    /* Tiefes Mitternacht-Piniengrün für den Kontaktbereich */
+    /* Sanfter mineralischer Salbeiton */
+    --bg-surface: #f7f9f6;
+    /* Tiefes Mitternacht-Piniengrün für den Footer */
     --bg-section-contact: #0c2a22;
-    /* Weißer Hintergrund für Karten */
-    --bg-card: #ffffff;
-    /* Tiefes Wald- und Piniengrün für Überschriften und Haupttexte (#0c3c30) */
+    /* Tiefes Wald- und Piniengrün für Überschriften und Fließtexte (#0c3c30) */
     --text-primary: #0c3c30;
-    /* Harmonisches, hochlesbares Waldgrün für Fließtexte */
+    /* Hochlesbares Waldgrün für Mengentext */
     --text-secondary: rgba(12, 60, 48, 0.85);
-    /* Warmes Moos- / Olivgrün für Tags, Labels und Semester (#555934) */
+    /* Warmes Moos- und Olivgrün für Tags und Semester (#555934) */
     --text-muted: #555934;
-    /* Kräftiges Smaragd- / Waldgrün als lebendige Akzentfarbe (#084A24) */
+    /* Kräftiges Smaragdgrün als lebendige Akzentfarbe (#084A24) */
     --color-accent: #084A24;
-    /* Warmes Moos- / Olivgrün (#555934) */
+    /* Warmes Moos- und Olivgrün (#555934) */
     --color-olive: #555934;
-    /* Sehr zarte Rasterlinie aus feinem Piniengrün */
-    --border-subtle: rgba(12, 60, 48, 0.12);
-    /* Akzentlinie in Waldgrün (#084A24) */
-    --border-dark: #084A24;
-    /* Markante, geometrische Studio-Schrift für Überschriften (Syne) */
-    --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
-    /* Lesefreundliche Sans-Serif-Schrift für Mengentext (Plus Jakarta Sans) */
-    --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Sanfte Salbei-/Moosgrün-Farbe für das riesige Hintergrund-e (#6a826c) */
+    --color-giant-e: #6a826c;
+    /* Feine Begrenzungslinie in Waldgrün */
+    --border-subtle: rgba(12, 60, 48, 0.2);
+    /* Solide Begrenzungslinie für die Bento-Karten */
+    --border-dark: #0c3c30;
+    /* Super Frog Display-Schriftart für markante Headlines und Kacheltitel */
+    --font-display: 'Super Frog', cursive, sans-serif;
+    /* Acumin Variable Concept für hochlesbare Fließtexte und Navigation */
+    --font-main: 'Acumin Variable Concept', -apple-system, BlinkMacSystemFont, sans-serif;
     /* Emil Kowalskis primäre Ausfederung für UI-Interaktionen */
     --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-    /* Natürliche Bewegungskurve für Ein- und Ausblendungen */
-    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
-    /* Taktile Federungskurve für interaktive Klicks */
-    --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
     /* Schnelle Reaktionszeit für unmittelbares Feedback unter 200ms */
     --duration-fast: 160ms;
-    /* Ausgewogene Dauer für Bildzooms und Kartenanhebungen */
+    /* Ausgewogene Dauer für Bildzooms und Kartenübergänge */
     --duration-normal: 240ms;
     /* Standard-Übergang mit explizit definierten Eigenschaften */
     --transition-smooth: color var(--duration-fast) ease, opacity var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out);
-    /* Keine Kartenschatten nach Vorbild des Screenshots */
-    --shadow-card: none;
-    /* Kein Schwebeschatten nach Vorbild des Screenshots */
-    --shadow-hover: none;
-    /* Kein Rand für Karten nach Vorbild des Screenshots */
-    --border-card: none;
-    /* Großzügige, bildschirmfüllende Maximalbreite für volle Bildschirm-Nutzung auf jedem Gerät */
+    /* Keine Rundungen */
+    --border-radius: 0;
+    /* Großzügige bildschirmfüllende Maximalbreite für volle Bildschirm-Nutzung */
     --max-width: 1400px;
 }
 
@@ -77,12 +82,12 @@ html {
 /* Body-Styling: Sauberer Grundton ohne Beschränkung */
 body {
     background-color: var(--bg-primary); /* Weißer Grundton */
-    color: var(--text-primary); /* Dunkle Schrift */
-    font-family: var(--font-main); /* Schlichte Sans-Serif-Typografie */
-    line-height: 1.6; /* Angenehmer Zeilenabstand für beste Lesbarkeit */
+    color: var(--text-primary); /* Dunkles Waldgrün als Textfarbe */
+    font-family: var(--font-main); /* Acumin Variable Concept */
+    line-height: 1.6; /* Angenehmer Zeilenabstand */
     -webkit-font-smoothing: antialiased; /* Optimierte Schriftglättung für Webkit */
     -moz-osx-font-smoothing: grayscale; /* Schriftglättung für Firefox auf macOS */
-    text-rendering: optimizeLegibility; /* Hochwertiges Schrift-Rendering für exaktes Kerning */
+    text-rendering: optimizeLegibility; /* Hochwertiges Schrift-Rendering */
     overflow-x: hidden; /* Verhindert horizontales Ausbrechen */
     min-height: 100vh; /* Mindestens volle Bildschirmhöhe */
     width: 100%; /* Volle Breite */
@@ -95,44 +100,31 @@ a {
     transition: var(--transition-smooth); /* Flüssiger Übergang */
 }
 
-/* Barrierefreier, edler Tastatur-Fokusring im Impeccable-Standard */
+/* Barrierefreier, edler Tastatur-Fokusring */
 :focus-visible {
     outline: 2px solid var(--color-accent); /* Smaragdgrüner Tastatur-Fokusring */
-    outline-offset: 3px; /* 3px Abstand für angenehmes Luftholen */
+    outline-offset: 3px; /* 3px Abstand */
 }
 
-/* Schlanke, unaufdringliche Bildlaufleiste im Impeccable-System */
-::-webkit-scrollbar {
-    width: 8px; /* Schlanke Breite */
-    height: 8px; /* Schlanke Höhe */
+/* Unsichtbares Anker-Ziel für Sprungmarken */
+.anchor-target {
+    display: block; /* Block-Element */
+    position: relative; /* Relative Position */
+    top: -80px; /* Offset für den Header */
+    visibility: hidden; /* Unsichtbar */
 }
 
-/* Transparenter Hintergrund der Bildlaufleiste */
-::-webkit-scrollbar-track {
-    background: transparent; /* Versteckt die Spur */
-}
-
-/* Subtil abgetönter Piniengrün-Schieberegler */
-::-webkit-scrollbar-thumb {
-    background-color: rgba(12, 60, 48, 0.18); /* Zarter Grünton */
-    border-radius: 9999px; /* Sanft abgerundete Ecken */
-}
-
-/* Lebendiger Schieberegler beim Überfahren mit der Maus */
-::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(12, 60, 48, 0.35); /* Kräftigerer Ton */
-}
-
-/* Globale Typografie-Regel für alle Überschriften im tiefen Waldgrün (#0c3c30) */
+/* Globale Typografie-Regel für alle Überschriften */
 h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    font-family: var(--font-display); /* Markante Syne-Schriftart */
+    font-family: var(--font-main); /* Standardmäßig Acumin Variable Concept */
+    font-weight: 500; /* Ausgewogener Schnitt */
 }
 
-/* Edle Textauswahl in Smaragdgrün (#084A24) mit weißer Schrift */
+/* Edle Textauswahl in Smaragdgrün mit weißer Schrift */
 *::selection {
-    background-color: var(--color-accent); /* Smaragdgrüner Auswahl-Hintergrund #084A24 */
-    color: #ffffff; /* Strahlend weiße Schrift bei Markierung */
+    background-color: var(--color-accent); /* Smaragdgrüner Auswahl-Hintergrund */
+    color: #ffffff; /* Strahlend weiße Schrift */
 }
 
 /* Bilder standardmäßig bündig und ohne Rundungen einbinden */
@@ -154,8 +146,8 @@ main {
     margin: 0; /* Kein Außenabstand */
 }
 
-/* Gemeinsame innere Ausrichtung für zentrierte Inhalte in jeder Sektion */
-.hero > *, .portfolio-header, .portfolio-grid, .about-content, .footer-cta, .email-link, .footer-bottom-row, .project-detail-hero, .detail-gallery, .video-wrapper {
+/* Gemeinsame innere Ausrichtung für zentrierte Inhalte */
+.hero > *, .intro-section > *, .portfolio-header, .portfolio-bento-grid, .about-content, .footer-cta, .email-link, .footer-bottom-row, .project-detail-hero, .detail-gallery, .video-wrapper {
     max-width: var(--max-width); /* Nutzt bis zu 1400px auf großen Monitoren */
     margin-left: auto; /* Zentriert im Band */
     margin-right: auto; /* Zentriert im Band */
@@ -179,7 +171,7 @@ main {
     padding-bottom: clamp(1.5rem, 3vw, 2.5rem); /* Unterer Innenabstand */
     padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
     padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
-    background: transparent; /* VOLLSTÄNDIG DURCHSICHTIG nach Nutzerwunsch */
+    background: transparent; /* Vollständig durchsichtig */
     background-color: transparent; /* Keine Hintergrundfarbe */
     backdrop-filter: none; /* Kein Unschärfe-Balken */
     -webkit-backdrop-filter: none; /* Kein Safari-Filter */
@@ -189,62 +181,56 @@ main {
 /* Logo-Block */
 .logo {
     display: flex; /* Flexbox */
-    flex-direction: column; /* Name oben, Studiengang darunter */
-    gap: 0.1rem; /* Sehr dezenter Zeilenabstand */
+    align-items: center; /* Mittig */
 }
 
-/* Name im Logo mit charaktervollem Schnitt */
+/* Name im Logo in Acumin Variable Concept */
 .logo a, .logo-title {
-    font-family: var(--font-display); /* Markante Syne-Schrift */
-    font-size: 1.25rem; /* Ausdrucksstarke Schriftgröße */
-    font-weight: 700; /* Kräftige Schnittführung */
-    letter-spacing: -0.02em; /* Typografisch dicht gesperrt */
+    font-family: var(--font-main); /* Acumin Variable Concept */
+    font-size: 1.15rem; /* Ausdrucksstarke Schriftgröße */
+    font-weight: 500; /* Ausgewogener Schnitt */
+    letter-spacing: -0.01em; /* Feiner Schnitt */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
     transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Weicher Farbübergang */
     display: inline-block; /* Für transform-Skalierung */
-}
-
-/* Unterzeile des Logos */
-.logo-subtitle {
-    font-size: 0.75rem; /* Zierliche Textgröße */
-    color: var(--color-olive); /* Moosgrün #555934 */
-    letter-spacing: 0.02em; /* Leicht geöffnet */
 }
 
 /* Navigations- und Kontaktbereich im Header */
 .header-actions {
     display: flex; /* Horizontale Leiste */
     align-items: center; /* Vertikal mittig */
-    gap: 2.5rem; /* Großzügiger Abstand zwischen Menü und Kontakt */
+    gap: 2.5rem; /* Großzügiger Abstand */
 }
 
 /* Liste der Navigationspunkte */
 nav ul {
     display: flex; /* Horizontale Anordnung */
     list-style: none; /* Keine Aufzählungspunkte */
-    gap: 2rem; /* Großzügiger Abstand zwischen den Links */
+    gap: clamp(1.5rem, 3vw, 2.5rem); /* Abstand zwischen den Links */
     align-items: center; /* Mittig */
 }
 
-/* Einzelne Navigations-Links */
+/* Einzelne Navigations-Links in Acumin Variable Concept */
 nav a {
-    font-size: 0.95rem; /* Etwas größere, souveräne Lesegröße */
-    font-weight: 500; /* Mittlere Schriftstärke */
+    font-family: var(--font-main); /* Acumin Variable Concept */
+    font-size: 0.95rem; /* Souveräne Lesegröße */
+    font-weight: 400; /* Regular Schnitt */
     color: var(--text-primary); /* Klares Waldgrün */
     letter-spacing: -0.01em; /* Feiner Schnitt */
     transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Schneller Übergang */
     display: inline-block; /* Für taktile Skalierung */
 }
 
-/* Zurück-Links und Header-Aktionen (puristisch und ohne Boxen) */
+/* Zurück-Links und Header-Aktionen */
 .pill-btn, .header-contact-link, .back-link {
+    font-family: var(--font-main); /* Acumin Variable Concept */
     font-size: 0.9rem; /* Lesegröße */
-    font-weight: 600; /* Halb-Fett */
+    font-weight: 500; /* Halb-Fett */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
     display: inline-flex; /* Inline-Flex für Text und Pfeil */
     align-items: center; /* Vertikal mittig */
     gap: 0.45rem; /* Angenehmer Abstand zum Pfeil */
-    background: transparent; /* Kein Hintergrund, keine Box */
+    background: transparent; /* Kein Hintergrund */
     border: none; /* Kein Rand */
     border-radius: 0; /* Keine Rundung */
     padding: 0; /* Kein Box-Padding */
@@ -252,313 +238,292 @@ nav a {
     transition: color var(--duration-fast) ease, opacity var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
 }
 
-/* Container für den Live-Projekt-Button */
-.live-link-container {
-    margin-top: 1.5rem; /* Abstand nach oben */
-    margin-bottom: 1rem; /* Abstand nach unten */
-}
-
-/* Eleganter Live-Website-Link (ohne Pfeil, puristisch unterstrichen) */
-.live-btn {
-    display: inline-flex; /* Inline-Flex */
-    align-items: center; /* Mittig */
-    font-size: 0.95rem; /* Klare Schriftgröße */
-    font-weight: 700; /* Kräftige Schrift */
-    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    border-bottom: 2px solid var(--color-accent); /* Akzent-Unterstreichung in Smaragdgrün */
-    padding-bottom: 0.25rem; /* Innenabstand unten */
-    cursor: pointer; /* Zeiger */
-    transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
-}
-
 /* Taktiles Klick-Feedback nach Emil Kowalski für interaktive Links & Buttons */
 .logo a:active, .logo-title:active,
 .header-contact-link:active, .pill-btn:active, .back-link:active,
-.live-btn:active, .filter-btn:active, nav a:active {
-    transform: scale(0.97); /* Gibt sofortiges spürbares Feedback beim Klick */
+.live-btn:active, .filter-btn:active, nav a:active, .bento-card:active {
+    transform: scale(0.98); /* Gibt sofortiges spürbares Feedback beim Klick */
 }
 
 /* ==========================================================================
-   SEKTION 1: HERO / HOME (Weißer Hintergrund mit sanftem Airbrush-Verlauf oben links)
+   SEKTION 1: HERO (Emma Rabe in Super Frog Schriftart)
    ========================================================================== */
 /* Hero-Bereich nutzt die volle Bildschirmbreite */
 .hero {
     width: 100%; /* Volle Breite von Rand zu Rand */
-    background-color: var(--bg-primary); /* Strahlend weißer Grundton für Sektion 1 */
-    background-image: 
-        radial-gradient(ellipse 65% 45% at 5% 0%, rgba(85, 89, 52, 0.12) 0%, transparent 68%),
-        radial-gradient(ellipse 45% 30% at 95% 5%, rgba(8, 74, 36, 0.07) 0%, transparent 60%); /* Organischer Airbrush-Verlauf */
-    background-repeat: no-repeat; /* Keine Wiederholung */
-    padding-top: clamp(7.5rem, 14vw, 12rem); /* Großzügiger Platz nach oben für den transparenten Header */
-    padding-bottom: clamp(5rem, 10vw, 8.5rem); /* Großzügiger Abstand nach unten */
+    background-color: var(--bg-primary); /* Weißer Grundton */
+    padding-top: clamp(6.5rem, 11vw, 9.5rem); /* Großzügiger Platz nach oben für den transparenten Header */
+    padding-bottom: clamp(2rem, 4vw, 3.5rem); /* Ausgewogener Abstand zum Intro */
     padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
     padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikale Anordnung */
-    align-items: flex-start; /* Grundausrichtung links */
+    align-items: center; /* Mittig ausgerichtet */
 }
 
-/* Monumentale Hauptüberschrift: DEUTLICH GRÖSSER & RECHTSBÜNDIG nach Nutzerwunsch */
-.hero h1 {
-    font-family: var(--font-display); /* Markante Syne-Schriftart */
-    font-size: clamp(3.8rem, 10.5vw, 7.8rem); /* Riesige, bildschirmfüllende Display-Größe nach Nutzerwunsch */
-    font-weight: 700; /* Fetter, satter Schnitt */
-    line-height: 0.98; /* Extrem kompakter, atemberaubender Durchschuss */
-    letter-spacing: -0.04em; /* Typografisch eng gesperrt */
+/* Monumentale Hauptüberschrift: Emma Rabe in Super Frog nach Vorlage */
+.hero-name {
+    font-family: var(--font-display); /* Super Frog Schriftart */
+    font-size: clamp(2.4rem, 6.2vw, 5.2rem); /* Monumentale Display-Größe nach Vorlage */
+    font-weight: 400; /* Reiner Schriftschnitt */
+    line-height: 1.1; /* Kompakter, ausdrucksstarker Durchschuss */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    width: 100%; /* Volle Breite für sauberen Rechtsanschlag */
-    margin-bottom: clamp(4.5rem, 9vw, 8rem); /* GROSSER ABSTAND zwischen Überschrift und Intro nach Nutzerwunsch */
-    text-align: right; /* RECHTSBÜNDIGE Hauptüberschrift */
-    align-self: flex-end; /* Schiebt die Headline ganz nach rechts */
+    width: 100%; /* Volle Breite */
+    display: flex; /* Flexbox */
+    justify-content: center; /* Mittig verteilt */
+    flex-wrap: wrap; /* Bricht sauber um auf mobilen Geräten */
+    gap: clamp(1rem, 3.5vw, 3.5rem); /* Abstand zwischen Vor- und Nachname */
+    margin-bottom: 0.5rem; /* Abstand zur Unterzeile */
 }
 
-/* Kleine Unterzeile direkt unter dem Namen nach Nutzerwunsch */
+/* Einzelnes Wort im Namen mit geschützter Spationierung */
+.name-word {
+    display: inline-block; /* Inline-Block */
+    white-space: nowrap; /* Verhindert unschönen Umbruch einzelner Buchstaben */
+    letter-spacing: clamp(0.35rem, 1.4vw, 1.1rem); /* Breite Spationierung nach Vorlage */
+}
+
+/* Unterzeile rechtsbündig unter dem Namen in Acumin Variable Concept Thin */
 .hero-subtitle {
-    display: block; /* Eigene Zeile unter dem Namen */
-    font-family: var(--font-main); /* Ruhige, lesbare Sans-Serif-Schrift */
-    font-size: clamp(1.1rem, 2vw, 1.5rem); /* Proportionierte, feine Schriftgröße */
-    font-weight: 500; /* Angenehmer Schnitt */
+    font-family: var(--font-main); /* Acumin Variable Concept */
+    font-weight: 300; /* Thin Schnitt nach Vorlage */
+    font-size: clamp(0.95rem, 1.4vw, 1.2rem); /* Feine Lesegröße */
     letter-spacing: -0.01em; /* Feine Spationierung */
-    color: var(--color-accent); /* Lebendiges Waldgrün #084A24 */
-    margin-top: 0.8rem; /* Abstand zum Namen */
-    text-align: right; /* Bündig rechts mit dem Namen */
+    color: var(--color-olive); /* Moosgrün #555934 */
+    width: 100%; /* Volle Breite für sauberen Rechtsanschlag */
+    text-align: right; /* Rechtsbündig unter der Überschrift nach Vorlage */
 }
 
-/* Einleitungstext: WEITER NACH LINKS GESETZT nach Nutzerwunsch */
+/* ==========================================================================
+   FLUSS-CONTAINER MIT DEM GROSSEN HINTERGRUND-E
+   ========================================================================== */
+/* Umschließender Container für Intro, Arbeiten und Über Mich */
+.main-flow-container {
+    position: relative; /* Bezugspunkt für das absolut positionierte Hintergrund-e */
+    width: 100%; /* Volle Bildschirmbreite */
+    overflow: hidden; /* Verhindert horizontales Ausbrechen des riesigen e */
+}
+
+/* Riesiges Hintergrund-e aus Super Frog nach Illustrator-Vorlage */
+.giant-e-bg {
+    position: absolute; /* Absolut im Hintergrund platziert */
+    top: 0; /* Beginnt direkt oben beim Intro */
+    left: clamp(-40px, 2vw, 30px); /* Leicht links versetzt wie im Screenshot */
+    width: clamp(620px, 72vw, 1080px); /* Gewaltige Dimension nach Vorlage */
+    height: auto; /* Erhält das natürliche Vektor-Seitenverhältnis */
+    pointer-events: none; /* Klicks gehen ungehindert durch zu den Karten */
+    z-index: 0; /* Hinter allen Texten und Karten */
+    color: var(--color-giant-e); /* Sanfter Salbei-/Waldmooston #6a826c */
+    opacity: 0.42; /* Exakt ausbalancierte Transparenz nach Illustrator-Vorlage */
+}
+
+/* SVG im Hintergrund-Container */
+.giant-e-bg svg {
+    width: 100%; /* Volle Breite */
+    height: auto; /* Automatische proportionale Höhe */
+    display: block; /* Block-Element */
+}
+
+/* ==========================================================================
+   INTRO-SEKTION (Auf dem oberen Bogen des Hintergrund-e)
+   ========================================================================== */
+/* Intro-Bereich linksbündig */
+.intro-section {
+    position: relative; /* Über dem Hintergrund-e */
+    z-index: 1; /* Sichtbare Ebene */
+    width: 100%; /* Volle Bildschirmbreite */
+    padding-top: clamp(2rem, 4vw, 3.5rem); /* Oberer Innenabstand */
+    padding-bottom: clamp(3rem, 6vw, 5rem); /* Abstand zum Arbeiten-Raster */
+    padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
+    padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
+}
+
+/* Einleitungstext in Acumin Variable Concept Regular/Thin */
 .hero-bio {
-    font-size: clamp(1.1rem, 1.7vw, 1.35rem); /* Angenehm große Lesegröße */
-    color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
-    max-width: 640px; /* Wohlproportionierte Zeilenlänge */
-    line-height: 1.7; /* Großzügiger Zeilenabstand */
-    text-align: left; /* LINKSBÜNDIG */
-    margin-left: 0; /* GANZ NACH LINKS GESETZT nach Nutzerwunsch */
+    font-family: var(--font-main); /* Acumin Variable Concept */
+    font-weight: 300; /* Thin Schnitt für elegante Leichtigkeit */
+    font-size: clamp(1.1rem, 1.65vw, 1.35rem); /* Angenehm große Lesegröße */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    max-width: 660px; /* Wohlproportionierte Zeilenlänge */
+    line-height: 1.75; /* Großzügiger Zeilenabstand */
+    text-align: left; /* Linksbündig nach Vorlage */
+    margin-left: 0; /* Links verankert */
     margin-right: auto; /* Freiraum nach rechts */
 }
 
 /* ==========================================================================
-   SEKTION 2: ARBEITEN / PORTFOLIO (Zarter Salbei-Papiergrün Hintergrund #f2f5f1)
+   ARBEITEN-SEKTION (Bento-Grid mit Titel auf dem Bild & kein Text darunter)
    ========================================================================== */
-/* Portfolio-Bereich mit eigenem, harmonischem Salbei-Hintergrund */
+/* Portfolio-Bereich */
 .portfolio-section {
+    position: relative; /* Über dem Hintergrund-e */
+    z-index: 1; /* Sichtbare Ebene */
     width: 100%; /* Volle Bildschirmbreite */
-    background-color: var(--bg-section-works); /* Zartes Salbei-Papiergrün für Sektion 2 */
-    background-image: radial-gradient(ellipse 55% 40% at 100% 0%, rgba(8, 74, 36, 0.05) 0%, transparent 65%); /* Dezent harmonischer Farbverlauf */
-    padding-top: clamp(5.5rem, 10vw, 9rem); /* Großzügiger Abstand nach oben */
-    padding-bottom: clamp(6rem, 11vw, 9.5rem); /* Großzügiger Abstand nach unten */
+    padding-top: clamp(2rem, 5vw, 4rem); /* Oberer Innenabstand */
+    padding-bottom: clamp(4rem, 8vw, 7rem); /* Abstand zu Über Mich */
     padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
     padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
 }
 
-/* Kopfbereich der Projektsektion linksbündig */
+/* Kopfbereich der Projektsektion */
 .portfolio-header {
-    display: flex; /* Flexbox */
-    justify-content: space-between; /* Titel links, Filter rechts */
-    align-items: center; /* Vertikal zentriert */
-    flex-wrap: wrap; /* Bricht bei Bedarf um */
-    gap: 1.5rem; /* Abstand */
-    margin-bottom: clamp(3rem, 6vw, 4.5rem); /* Großzügiger Abstand zum Raster */
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem); /* Abstand zum Raster */
     text-align: left; /* Linksbündig */
 }
 
-/* Sektionstitel "Ausgewählte Arbeiten" linksbündig */
+/* Sektionstitel "Ausgewählte Arbeiten" in Acumin Variable Concept */
 .portfolio-header h2 {
-    font-family: var(--font-display); /* Syne-Schrift */
-    font-size: clamp(1.8rem, 3.2vw, 2.7rem); /* Kraftvolle Überschriftengröße */
-    font-weight: 700; /* Kräftig */
-    letter-spacing: -0.025em; /* Leicht eng */
+    font-family: var(--font-main); /* Acumin Variable Concept */
+    font-size: clamp(1.4rem, 2.3vw, 1.95rem); /* Kraftvolle, sachliche Größe */
+    font-weight: 500; /* Regular bis Medium */
+    letter-spacing: -0.02em; /* Feiner Schnitt */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    text-align: left; /* Bündig links */
+    text-align: left; /* Linksbündig nach Vorlage */
 }
 
-/* Container für die Pill-Filter linksbündig */
-.filter-bar {
-    display: flex; /* Horizontale Reihe */
-    flex-wrap: wrap; /* Zeilenumbruch */
-    gap: 0.75rem; /* Harmonischer Kapselabstand */
-    justify-content: flex-start; /* Linksbündig */
-    align-items: center; /* Mittig */
-}
-
-/* Einzelner Filter-Knopf als Kapsel */
-.filter-btn {
-    background-color: transparent; /* Transparenter Grund */
-    border: 1.5px solid var(--border-subtle); /* Feine Kapsel-Linie */
-    border-radius: 9999px; /* Kapsel-Form */
-    color: var(--color-olive); /* Moosgrün #555934 */
-    padding: 0.5rem 1.4rem; /* Ausgewogener Kapsel-Innenabstand */
-    font-family: var(--font-main); /* Schriftart */
-    font-size: 0.85rem; /* Kompakte Schrift */
-    font-weight: 500; /* Mittlere Stärke */
-    cursor: pointer; /* Zeiger */
-    transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease, color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
-}
-
-/* Aktiver Filter-Button: Sattes Waldgrün mit weißer Schrift */
-.filter-btn.active {
-    background-color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 als Füllung */
-    color: #ffffff; /* Strahlend weiße Schrift */
-    border-color: var(--text-primary); /* Gleiche Randfarbe */
-    font-weight: 600; /* Etwas stärkere Schrift */
-}
-
-/* CSS-Grid für die Arbeiten: 2 Spalten, bildschirmfüllend proportioniert */
-.portfolio-grid {
-    display: grid; /* Grid-System */
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Große, bildschirmfüllende Kacheln */
-    gap: clamp(2.5rem, 5vw, 5rem); /* Viel freier Raum zwischen den Arbeiten */
+/* Bento-Grid der Arbeiten nach Vorlage (Linke Spalte hoch, rechte Spalte 1 oben + 2 unten) */
+.portfolio-bento-grid {
+    display: grid; /* CSS Grid Layout */
+    grid-template-columns: 1.15fr 1fr 1fr; /* 3-Spalten-Raster für die bento-förmige Anordnung */
+    grid-template-rows: minmax(190px, 1fr) minmax(190px, 1fr); /* 2 gleichmäßige Zeilen */
+    gap: clamp(1rem, 1.8vw, 1.75rem); /* Sauberer Kachelabstand */
     width: 100%; /* Volle Breite */
 }
 
-/* Speziell für die Startseite: 2 wohlproportionierte Spalten */
-#projectGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 Spalten */
-    gap: clamp(3rem, 6vw, 5.5rem); /* Großzügiger Zwischenraum */
-    width: 100%; /* Volle Breite */
-}
-
-/* Projekt-Element: Absolut KEINE Box, KEIN Rand, KEIN Schatten, KEINE Rundung */
-.project-card {
+/* Einzelne Bento-Kachel: Scharfe Kanten, 1.5px Waldgrün-Rand nach Vorlage */
+.bento-card {
+    position: relative; /* Für absolute Medien und Overlays */
     display: flex; /* Flexbox */
-    flex-direction: column; /* Bild oben, Beschriftung unten */
-    background: transparent; /* Kein Kasten-Hintergrund */
-    border: none; /* Absolut kein Rand */
-    border-radius: 0; /* Keine Rundung */
+    align-items: center; /* Vertikal mittig */
+    justify-content: center; /* Horizontal mittig */
+    overflow: hidden; /* Schneidet überstehende Bildränder bündig ab */
+    border: 1.5px solid var(--border-dark); /* Solider Rand nach Vorlage */
+    border-radius: 0; /* Keine Rundung nach Vorlage */
     box-shadow: none; /* Kein Schatten */
+    background-color: #ffffff; /* Weißer Grund */
     text-decoration: none; /* Keine Unterstreichung */
-    color: inherit; /* Farbe erben */
-    align-items: flex-start; /* Bündig links */
-    text-align: left; /* Linksbündiger Text */
+    cursor: pointer; /* Zeiger für Klickbarkeit */
+    transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) ease; /* Flüssiger Übergang */
 }
 
-/* Nur anklickbare Projektkarten (a-Tags) erhalten Zeiger und flüssige Bewegung */
-a.project-card {
-    transition: transform var(--duration-normal) var(--ease-out); /* Weiche Bewegung */
-    cursor: pointer; /* Zeiger nur bei echten Links */
+/* Taktiler Schwebezustand für Bento-Karten */
+.bento-card:hover {
+    transform: translateY(-2px); /* Zarte Anhebung */
+    border-color: var(--color-accent); /* Smaragdgrüner Akzentrand */
 }
 
-/* Taktiler Druckzustand für Projektkarten */
-a.project-card:active {
-    transform: scale(0.985); /* Unmittelbare physische Rückmeldung */
-}
-
-/* Nicht anklickbare Kacheln bleiben ruhig auf Position */
-div.project-card {
-    cursor: default; /* Normaler Pfeilzeiger, da nicht anklickbar */
-}
-
-/* Bild-Bereich im 16:10 Format: Scharfe 90-Grad-Ecken, KEINE Rundungen, KEINE Box-Ränder */
-.project-thumbnail {
-    position: relative; /* Für Positionierungen */
+/* Bildcontainer füllt die gesamte Karte aus */
+.bento-card-media {
+    position: absolute; /* Absolut über die ganze Karte gespannt */
+    top: 0; /* Oben */
+    left: 0; /* Links */
     width: 100%; /* Volle Breite */
-    aspect-ratio: 16 / 10; /* Klares Seitenverhältnis */
-    background-color: transparent; /* Transparenter Grund */
-    border-radius: 0; /* SCHARFE KANTEN - KEINE RUNDUNG */
-    overflow: hidden; /* Hält das Bild bündig */
-    border: none; /* KEIN RAND - KEINE BOX */
-    box-shadow: none; /* KEIN SCHATTEN */
+    height: 100%; /* Volle Höhe */
+    z-index: 1; /* Unter dem Titel */
 }
 
-/* Das eigentliche Projektbild mit scharfen Kanten */
-.project-thumbnail img {
+/* Vorschaubild in der Karte */
+.bento-card-media img {
     width: 100%; /* Volle Breite */
     height: 100%; /* Volle Höhe */
     object-fit: cover; /* Proportional füllend */
-    border-radius: 0; /* Scharfe Kanten ohne jede Rundung */
-    transition: transform 0.4s var(--ease-out); /* Flüssiger Zoom nach Emil Kowalski */
-    will-change: transform; /* Hardwarebeschleunigung für ruckelfreie Animation */
+    border-radius: 0; /* Scharfe Kanten */
+    transition: transform 0.4s var(--ease-out); /* Flüssiger Zoom */
 }
 
-/* Pfeil oben in der Ecke komplett ausblenden */
-.card-arrow {
-    display: none !important; /* Kein Pfeil mehr */
+/* Zoom beim Überfahren der Karte */
+.bento-card:hover .bento-card-media img {
+    transform: scale(1.04); /* Subtiler Bildzoom */
 }
 
-/* Textbereich direkt und linksbündig unter dem Bild */
-.project-info {
-    padding: 1.25rem 0 0 0; /* Abstand nach oben */
-    display: flex; /* Flexbox */
-    flex-direction: column; /* Vertikal */
-    align-items: flex-start; /* Bündig links */
-    text-align: left; /* Linksbündiger Text */
-    gap: 0.4rem; /* Kleiner Zeilenabstand */
+/* Transparente Filterschicht für perfekte Lesbarkeit des Titels auf jedem Bild */
+.bento-card-overlay {
+    position: absolute; /* Absolut über dem Bild */
+    top: 0; /* Oben */
+    left: 0; /* Links */
     width: 100%; /* Volle Breite */
+    height: 100%; /* Volle Höhe */
+    background: rgba(255, 255, 255, 0.62); /* Heller, schützender Schleier */
+    backdrop-filter: blur(2.5px); /* Zarter Weichzeichner */
+    -webkit-backdrop-filter: blur(2.5px); /* Safari-Unterstützung */
+    transition: background 0.3s ease; /* Weicher Übergang */
 }
 
-/* Zeile für Kategorie und Semester links und rechts aufgeteilt */
-.project-meta-row {
-    display: flex; /* Flexbox */
-    justify-content: space-between; /* Links Kategorie, rechts Semester */
-    align-items: center; /* Mittig */
-    width: 100%; /* Volle Breite */
-    margin-bottom: 0.2rem; /* Kleiner Abstand zum Titel */
+/* Beim Hovern wird das Bild noch klarer sichtbar */
+.bento-card:hover .bento-card-overlay {
+    background: rgba(255, 255, 255, 0.35); /* Höhere Bildtransparenz */
 }
 
-/* Schlichte Text-Kategorie (Modul/Fach in Moosgrün) */
-.category-tag {
-    font-size: 0.8rem; /* Kompakte Schrift */
-    font-weight: 600; /* Halb-Fett */
-    color: var(--color-olive); /* Moosgrün #555934 */
-    text-transform: uppercase; /* Großbuchstaben */
-    letter-spacing: 0.06em; /* Feine Spationierung */
+/* Inhaltsbereich zentriert direkt auf dem Bild (kein Text darunter) */
+.bento-card-content {
+    position: relative; /* Über dem Bild und Filter */
+    z-index: 2; /* Oberste Ebene */
+    padding: clamp(1rem, 2vw, 2rem); /* Innenabstand */
+    text-align: center; /* Zentriert nach Vorlage */
 }
 
-/* Semesterangabe rechts */
-.project-year {
-    font-size: 0.8rem; /* Gleiche Textgröße */
-    color: var(--color-olive); /* Moosgrün #555934 */
-    font-weight: 500; /* Mittlere Stärke */
-}
-
-/* Projekttitel linksbündig unter dem Bild */
-.project-info h3 {
-    font-family: var(--font-display); /* Syne-Schriftart */
-    font-size: clamp(1.3rem, 2.2vw, 1.65rem); /* Ausgeprägte Titelgröße */
-    font-weight: 700; /* Kräftig */
-    letter-spacing: -0.02em; /* Leicht eng */
+/* Kacheltitel in Super Frog Schriftart direkt auf dem Bild */
+.bento-card-title {
+    font-family: var(--font-display); /* Super Frog Schriftart */
+    font-size: clamp(1.35rem, 2.3vw, 2.2rem); /* Ausdrucksstarke Kachelgröße */
+    font-weight: 400; /* Normaler Schnitt */
     color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
-    text-align: left; /* Linksbündig */
-    transition: color var(--duration-fast) ease; /* Weicher Farbübergang */
+    text-transform: lowercase; /* Kleinschreibung exakt wie in den Illustrator-Bildern */
+    line-height: 1.15; /* Kompakter Durchschuss */
+    letter-spacing: -0.01em; /* Feine Spationierung */
+    display: inline-block; /* Inline-Block */
+    transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
 }
 
-/* Kurze Projektbeschreibung linksbündig */
-.project-info p {
-    font-size: 0.95rem; /* Lesegröße */
-    color: var(--text-secondary); /* Harmonischer Waldgrün-Fließtext */
-    line-height: 1.6; /* Gute Zeilenhöhe */
-    text-align: left; /* Linksbündig */
-    max-width: 100%; /* Bündig mit dem Bild */
+/* Bento-Positionierung: Karte 1 (Grafikdesign) links hoch über 2 Zeilen */
+.bento-grafik {
+    grid-column: 1 / 2; /* Spalte 1 */
+    grid-row: 1 / 3; /* Zeile 1 bis 3 */
+    min-height: 420px; /* Hohe Kachelhöhe */
+}
+
+/* Bento-Positionierung: Karte 2 (Websites & Apps) oben rechts breit über Spalte 2 und 3 */
+.bento-web {
+    grid-column: 2 / 4; /* Spalte 2 bis 4 */
+    grid-row: 1 / 2; /* Zeile 1 */
+    min-height: 200px; /* Ausgewogene Höhe */
+}
+
+/* Bento-Positionierung: Karte 3 (Film & Audiovisuelle Medien) unten Mitte */
+.bento-film {
+    grid-column: 2 / 3; /* Spalte 2 */
+    grid-row: 2 / 3; /* Zeile 2 */
+    min-height: 200px; /* Ausgewogene Höhe */
+}
+
+/* Bento-Positionierung: Karte 4 (3D & Game Design) unten rechts */
+.bento-3d {
+    grid-column: 3 / 4; /* Spalte 3 */
+    grid-row: 2 / 3; /* Zeile 2 */
+    min-height: 200px; /* Ausgewogene Höhe */
 }
 
 /* ==========================================================================
-   SEKTION 3: ÜBER MICH (Tiefes, sattes Waldmoosgrün #17382d mit weißer Schrift)
+   ÜBER-MICH SEKTION (Unten am Bogen des Hintergrund-e)
    ========================================================================== */
-/* Über-Mich Sektion mit eigenem dunkelgrünem Vollflächen-Hintergrund */
+/* Über-Mich Bereich */
 .about-section {
+    position: relative; /* Über dem Hintergrund-e */
+    z-index: 1; /* Sichtbare Ebene */
     width: 100%; /* Volle Bildschirmbreite */
-    background-color: var(--bg-section-about); /* Tiefes Waldmoosgrün für Sektion 3 */
-    background-image: radial-gradient(ellipse 60% 45% at 5% 15%, rgba(85, 89, 52, 0.28) 0%, transparent 65%); /* Zarter Glow */
-    padding-top: clamp(6rem, 11vw, 9.5rem); /* Großzügiger oberer Abstand */
-    padding-bottom: clamp(6rem, 11vw, 9.5rem); /* Großzügiger Abstand nach unten */
+    padding-top: clamp(2rem, 5vw, 4rem); /* Oberer Innenabstand */
+    padding-bottom: clamp(5rem, 9vw, 8rem); /* Großzügiger Abstand zum Footer */
     padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
     padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
-    color: #ffffff; /* Weiße Schrift für optimalen Kontrast */
-    display: flex; /* Flexbox */
-    flex-direction: column; /* Vertikale Anordnung */
-    align-items: flex-start; /* Bündig links */
-    text-align: left; /* Linksbündig */
 }
 
-/* Header im Über-Mich Bereich linksbündig */
-.about-section .portfolio-header {
-    margin-top: 0; /* Verhindert doppelten oberen Abstand */
-    margin-bottom: 2.5rem; /* Sauberer Abstand zum Fließtext */
-    justify-content: flex-start; /* Linksbündig */
-}
-
-/* Sektionstitel "Über mich" in strahlendem Weiß */
+/* Sektionstitel "Über Mich" in Acumin Variable Concept */
 .about-section .portfolio-header h2 {
-    color: #ffffff; /* Strahlendes Weiß */
-    font-size: clamp(1.8rem, 3.2vw, 2.7rem); /* Kraftvoll groß */
+    font-family: var(--font-main); /* Acumin Variable Concept */
+    font-size: clamp(1.4rem, 2.3vw, 1.95rem); /* Sachliche Überschriftengröße */
+    font-weight: 500; /* Regular bis Medium */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    text-align: left; /* Linksbündig nach Vorlage */
 }
 
 /* Fließtext linksbündig */
@@ -567,65 +532,63 @@ div.project-card {
     flex-direction: column; /* Vertikal */
     align-items: flex-start; /* Bündig links */
     gap: 1.5rem; /* Absatz-Abstand */
-    max-width: 760px; /* Großzügige, komfortable Leselänge */
-    margin-left: 0; /* Bündig links */
+    max-width: 760px; /* Komfortable Leselänge */
+    margin-left: 0; /* Bündig links nach Vorlage */
 }
 
-/* Absätze in gut lesbarem, sanftem Weiß */
+/* Absätze in Acumin Variable Concept Regular/Thin */
 .about-content p {
-    font-size: clamp(1.05rem, 1.4vw, 1.25rem); /* Lesegröße */
-    color: rgba(255, 255, 255, 0.88); /* Hochlesbares, edles Weiß */
-    line-height: 1.7; /* Großzügiger Zeilenabstand */
-    text-align: left; /* Linksbündig */
+    font-family: var(--font-main); /* Acumin Variable Concept */
+    font-weight: 300; /* Thin Schnitt für elegante Leichtigkeit */
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem); /* Lesegröße */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
+    line-height: 1.75; /* Großzügiger Zeilenabstand */
+    text-align: left; /* Linksbündig nach Vorlage */
 }
 
-/* Werkzeuge- und Skills-Bereich: Absolut KEINE Box, KEIN Rand, linksbündig */
+/* Werkzeuge- und Skills-Bereich ohne Boxen */
 .skills-container {
-    margin-top: 2rem; /* Abstand nach oben */
+    margin-top: 1.5rem; /* Abstand nach oben */
     display: flex; /* Flexbox */
     flex-direction: column; /* Vertikal */
     align-items: flex-start; /* Bündig links */
-    gap: 0.6rem; /* Abstand */
-    padding: 0; /* Absolut KEIN Box-Innenabstand */
-    background: transparent; /* KEINE Box */
-    border: none; /* KEIN Rand */
-    border-radius: 0; /* KEINE Rundung */
-    box-shadow: none; /* KEIN Schatten */
+    gap: 0.5rem; /* Abstand */
 }
 
-/* Überschrift über den Werkzeugen in hellem Salbeigrün */
+/* Überschrift über den Werkzeugen in Moosgrün */
 .skills-title {
-    font-size: 0.8rem; /* Klein */
+    font-family: var(--font-main); /* Acumin Variable Concept */
+    font-size: 0.85rem; /* Klein */
     text-transform: uppercase; /* Großbuchstaben */
     letter-spacing: 0.1em; /* Gesperrt */
-    color: #a3c4b5; /* Helles Salbeigrün */
-    font-weight: 700; /* Kräftig */
+    color: var(--color-olive); /* Moosgrün #555934 */
+    font-weight: 600; /* Halb-Fett */
     text-align: left; /* Linksbündig */
 }
 
-/* Reiner Fließtext für Werkzeuge & Programme (OHNE Blasen, OHNE Box) */
+/* Reiner Fließtext für Werkzeuge & Programme */
 .skills-text {
+    font-family: var(--font-main); /* Acumin Variable Concept */
+    font-weight: 300; /* Thin Schnitt */
     font-size: 1.05rem; /* Angenehme Schriftgröße */
-    color: rgba(255, 255, 255, 0.82); /* Helles, klares Weiß */
-    line-height: 1.75; /* Gute Zeilenhöhe */
+    color: var(--text-secondary); /* Harmonisch abgetöntes Waldgrün */
+    line-height: 1.7; /* Gute Zeilenhöhe */
     text-align: left; /* Linksbündig */
     max-width: 760px; /* Lesbare Breite */
 }
 
 /* ==========================================================================
-   SEKTION 4: KONTAKT (Tiefes Mitternacht-Piniengrün #0c2a22, scharfe Kanten)
+   KONTAKT & FOOTER (Tiefes Mitternacht-Piniengrün)
    ========================================================================== */
-/* Vollflächiger Mitternacht-Piniengrün Kontakt-Bereich von Rand zu Rand */
+/* Vollflächiger Footer */
 footer.site-footer, .site-footer {
     width: 100%; /* Volle Bildschirmbreite */
-    background-color: var(--bg-section-contact); /* Tiefes Mitternacht-Piniengrün für Sektion 4 */
-    background-image: radial-gradient(ellipse 70% 50% at 5% 0%, rgba(8, 74, 36, 0.35) 0%, transparent 65%); /* Zarter Airbrush-Glow */
-    border-radius: 0; /* SCHARFE KANTEN - ABSOLUT KEINE RUNDUNG */
-    box-shadow: none; /* KEIN KASTEN-SCHATTEN */
-    border-top: none; /* Kein Standard-Rand */
+    background-color: var(--bg-section-contact); /* Tiefes Mitternacht-Piniengrün */
+    border-radius: 0; /* Scharfe Kanten */
+    box-shadow: none; /* Kein Schatten */
     margin: 0; /* Kein Außenabstand */
-    padding-top: clamp(6rem, 11vw, 9.5rem); /* Großzügiger oberer Freiraum */
-    padding-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger unterer Abstand */
+    padding-top: clamp(5rem, 9vw, 8rem); /* Großzügiger oberer Freiraum */
+    padding-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Unterer Innenabstand */
     padding-left: clamp(1.5rem, 5vw, 6rem); /* Flexibler linker Seitenabstand */
     padding-right: clamp(1.5rem, 5vw, 6rem); /* Flexibler rechter Seitenabstand */
     color: #ffffff; /* Strahlend weiße Schrift */
@@ -634,7 +597,7 @@ footer.site-footer, .site-footer {
     align-items: flex-start; /* Bündig links */
 }
 
-/* Kontakt-Bereich linksbündig */
+/* Kontakt-Bereich */
 .footer-cta {
     margin-bottom: 2.5rem; /* Abstand zur Mail */
     display: flex; /* Flexbox */
@@ -646,6 +609,7 @@ footer.site-footer, .site-footer {
 
 /* Zartes Akzent-Label über dem Kontakt */
 .footer-cta .cta-label {
+    font-family: var(--font-main); /* Acumin Variable Concept */
     font-size: 0.85rem; /* Klein */
     text-transform: uppercase; /* Großbuchstaben */
     letter-spacing: 0.12em; /* Gesperrt */
@@ -656,40 +620,41 @@ footer.site-footer, .site-footer {
     text-align: left; /* Linksbündig */
 }
 
-/* Große Einladung in strahlendem Weiß */
+/* Große Einladung in Super Frog */
 .footer-cta h2 {
-    font-family: var(--font-display); /* Syne-Schriftart */
-    font-size: clamp(2.6rem, 6vw, 4.6rem); /* Monumentale Display-Größe */
-    font-weight: 700; /* Kräftig */
-    letter-spacing: -0.03em; /* Eng */
+    font-family: var(--font-display); /* Super Frog Schriftart */
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem); /* Monumentale Display-Größe */
+    font-weight: 400; /* Normaler Schnitt */
+    letter-spacing: -0.02em; /* Feiner Schnitt */
     color: #ffffff; /* Strahlendes Weiß */
-    line-height: 1.05; /* Kompakter Durchschuss */
+    line-height: 1.1; /* Kompakter Durchschuss */
     text-align: left; /* Linksbündig */
 }
 
-/* Große klickbare E-Mail-Adresse linksbündig */
+/* Große klickbare E-Mail-Adresse */
 .email-link {
-    font-family: var(--font-display); /* Syne-Schriftart */
+    font-family: var(--font-main); /* Acumin Variable Concept */
     display: inline-flex; /* Inline-Flex */
     align-items: center; /* Mittig */
     justify-content: flex-start; /* Bündig links */
-    font-size: clamp(1.6rem, 4vw, 3rem); /* Große Schriftgröße */
-    font-weight: 700; /* Kräftig */
+    font-size: clamp(1.6rem, 3.8vw, 2.8rem); /* Große Schriftgröße */
+    font-weight: 500; /* Mittlere Stärke */
     color: #ffffff; /* Strahlendes Weiß */
     border-bottom: 2px solid rgba(255, 255, 255, 0.4); /* Feine helle Unterstreichung */
     padding-bottom: 0.4rem; /* Abstand */
-    margin-bottom: clamp(4rem, 8vw, 6rem); /* Großzügiger Abstand nach unten */
+    margin-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger Abstand nach unten */
     cursor: pointer; /* Zeiger */
     width: auto; /* Passt sich der Textlänge an */
     transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Flüssiger Übergang */
 }
 
-/* Taktiler Klick auf die E-Mail-Adresse */
-.email-link:active {
-    transform: scale(0.98); /* Subtile Stauchung beim Anklicken */
+/* Hover auf E-Mail */
+.email-link:hover {
+    color: #a3c4b5; /* Pastell-Salbeigrün */
+    border-color: #a3c4b5; /* Farblich abgestimmter Rand */
 }
 
-/* Untere Zeile (Copyright und Social Links) */
+/* Untere Zeile des Footers */
 .footer-bottom-row {
     display: flex; /* Flexbox */
     justify-content: space-between; /* Links und Rechts verteilt */
@@ -697,15 +662,11 @@ footer.site-footer, .site-footer {
     flex-wrap: wrap; /* Umbruch */
     gap: 1.5rem; /* Abstand */
     padding-top: 2.25rem; /* Abstand nach oben */
-    border-top: 1px solid rgba(255, 255, 255, 0.12); /* Feine helle Trennlinie */
+    border-top: 1px solid rgba(255, 255, 255, 0.12); /* Feine Trennlinie */
+    font-family: var(--font-main); /* Acumin Variable Concept */
     font-size: 0.9rem; /* Kompakte Schrift */
     color: rgba(255, 255, 255, 0.65); /* Sanft abgetöntes Weiß */
     width: 100%; /* Volle Breite im Inneren */
-}
-
-/* Copyright-Text */
-.copyright span {
-    color: rgba(255, 255, 255, 0.65); /* Sanft abgetöntes Weiß */
 }
 
 /* Social Links */
@@ -716,15 +677,13 @@ footer.site-footer, .site-footer {
 
 /* Einzelner Social Link im Footer */
 .social-links a {
-    display: inline-block; /* Für taktile Skalierung */
-    color: rgba(255, 255, 255, 0.8); /* Helles Weiß */
+    color: rgba(255, 255, 255, 0.65); /* Sanftes Weiß */
     font-weight: 500; /* Mittlere Stärke */
-    transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out); /* Übergang */
 }
 
-/* Taktiler Klick auf Social Links */
-.social-links a:active {
-    transform: scale(0.95); /* Schnelle Klick-Stauchung */
+/* Hover auf Social Links */
+.social-links a:hover {
+    color: #ffffff; /* Strahlend weiß */
 }
 
 /* ==========================================================================
@@ -732,8 +691,9 @@ footer.site-footer, .site-footer {
    ========================================================================== */
 /* Vor-Tag über Kategorieseiten und Projektdetails */
 .hero-tag {
+    font-family: var(--font-main); /* Acumin Variable Concept */
     font-size: 0.8rem; /* Kompakte Schrift */
-    font-weight: 600; /* Halb-Fett */
+    font-weight: 500; /* Mittlerer Schnitt */
     color: var(--color-olive); /* Moosgrün #555934 */
     text-transform: uppercase; /* Großbuchstaben */
     letter-spacing: 0.08em; /* Feine Spationierung */
@@ -748,14 +708,17 @@ footer.site-footer, .site-footer {
     text-align: left; /* Linksbündig */
 }
 
-/* Spezifische Überschrift auf Projekt- und Detailseiten (linksbündig und harmonisch dimensioniert) */
+/* Spezifische Überschrift auf Projekt- und Detailseiten in Super Frog */
 .project-detail-hero h1 {
+    font-family: var(--font-display); /* Super Frog Schriftart */
     font-size: clamp(2.2rem, 5vw, 3.6rem); /* Angemessene Größe für Projekttitel */
+    font-weight: 400; /* Normaler Schnitt */
     line-height: 1.1; /* Harmonischer Zeilenabstand */
-    letter-spacing: -0.025em; /* Feine Spationierung */
+    letter-spacing: -0.01em; /* Feine Spationierung */
     margin-bottom: 1.5rem; /* Harmonischer Abstand zur Projektbeschreibung */
-    text-align: left; /* Linksbündig für saubere Leseführung */
+    text-align: left; /* Linksbündig */
     align-self: flex-start; /* Links ausgerichtet */
+    color: var(--text-primary); /* Tiefes Waldgrün #0c3c30 */
 }
 
 /* Projektbeschreibungen auf Detailseiten */
@@ -765,159 +728,106 @@ footer.site-footer, .site-footer {
     margin-right: auto; /* Freiraum nach rechts */
 }
 
-/* Detail-Galerie mit flexibler Mindestbreite gegen mobilen Überlauf */
+/* Detail-Galerie mit flexibler Mindestbreite */
 .detail-gallery {
     display: grid; /* Grid-Layout */
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); /* Verhindert horizontalen Überlauf mobil */
-    gap: clamp(2rem, 4vw, 3.5rem); /* Großzügiger Kachelabstand */
-    margin-bottom: clamp(4rem, 8vw, 6rem); /* Mehr Abstand nach unten */
+    gap: clamp(2rem, 4vw, 3.5rem); /* Kachelabstand */
+    margin-bottom: clamp(4rem, 8vw, 6rem); /* Abstand nach unten */
     width: 100%; /* Volle Breite */
 }
 
-/* Bilder in der Detail-Galerie: Scharfe Kanten, KEINE Rundungen, KEINE Boxen */
+/* Bilder in der Detail-Galerie: Scharfe Kanten, keine Rundungen */
 .detail-gallery img {
-    border-radius: 0; /* Scharfe Kanten ohne Rundung */
+    border-radius: 0; /* Scharfe Kanten */
     border: none; /* Kein Rand */
     box-shadow: none; /* Kein Schatten */
-    background-color: transparent; /* Heller Grund */
-    cursor: default; /* Normaler Mauszeiger */
+    background-color: transparent; /* Transparenter Grund */
 }
 
-/* ==========================================================================
-   VIDEO-CONTAINER & STYLES (Scharfe Kanten, keine Rundungen)
-   ========================================================================== */
 /* Eleganter Video-Rahmen */
 .video-wrapper {
     width: 100%; /* Volle Breite */
     margin-top: 1rem; /* Abstand nach oben */
-    margin-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Großzügiger Abstand nach unten */
-    background-color: #0c3c30; /* Dunkler Hintergrund im Piniengrün */
-    border-radius: 0; /* Scharfe Ecken ohne Rundung */
+    margin-bottom: clamp(3.5rem, 7vw, 5.5rem); /* Abstand nach unten */
+    background-color: #0c3c30; /* Dunkler Hintergrund */
+    border-radius: 0; /* Scharfe Ecken */
     border: none; /* Kein Rand */
     box-shadow: none; /* Kein Schatten */
-    overflow: hidden; /* Ecken bündig */
+    overflow: hidden; /* Hält das Video bündig */
 }
 
-/* Video-Element selbst */
-.video-wrapper video {
+/* Echtes HTML5-Videoelement */
+video {
     width: 100%; /* Volle Breite */
-    height: auto; /* Erhält das Seitenverhältnis */
-    display: block; /* Verhindert Leerzeilen darunter */
-    border-radius: 0; /* Scharfe Kanten */
+    height: auto; /* Automatische Höhe */
+    display: block; /* Block-Element */
+    border-radius: 0; /* Keine Eckenrundung */
+    outline: none; /* Kein Umriss */
 }
 
 /* ==========================================================================
-   HOVER-INTERAKTIONEN (Geschützt für echte Zeigergeräte nach Emil Kowalski)
+   RESPONSIVE ANPASSUNGEN (Mobilgeräte & Tablets)
    ========================================================================== */
-@media (hover: hover) and (pointer: fine) {
-    /* Hover auf dem Logo */
-    .logo a:hover, .logo-title:hover {
-        color: var(--color-accent); /* Wechselt zu Waldgrün #084A24 */
-    }
-
-    /* Hover auf Navigations-Links */
-    nav a:hover {
-        color: var(--color-accent); /* Wird Waldgrün #084A24 */
-    }
-
-    /* Hover auf Pill-Buttons */
-    .pill-btn:hover {
-        color: var(--color-accent); /* Smaragdgrüne Schrift */
-        opacity: 0.8; /* Leichtes Abblenden */
-    }
-
-    /* Hover auf schlichten Links */
-    .header-contact-link:hover, .back-link:hover {
-        color: var(--color-accent); /* Wechselt zu Waldgrün #084A24 */
-        opacity: 0.85; /* Leichtes Abblenden */
-    }
-
-    /* Hover auf dem Live-Link */
-    .live-btn:hover {
-        color: var(--color-accent); /* Wechselt zu Smaragdgrün #084A24 */
-        border-bottom-color: var(--text-primary); /* Unterstreichung verdunkelt sich */
-    }
-
-    /* Hover auf inaktiven Filter-Pills */
-    .filter-btn:not(.active):hover {
-        border-color: var(--color-accent); /* Smaragdgrüner Rand */
-        color: var(--text-primary); /* Dunkle Schrift */
-    }
-
-    /* Subtiler Bildzoom bei Mausberührung nur bei anklickbaren Links */
-    a.project-card:hover .project-thumbnail img {
-        transform: scale(1.025); /* Weicher 2.5% Zoom nach Emil Kowalski */
-    }
-
-    /* Hover auf Kachel: Projekttitel leuchtet auf */
-    a.project-card:hover .project-info h3 {
-        color: var(--color-accent); /* Sattes Waldgrün #084A24 */
-    }
-
-    /* Hover auf der E-Mail im dunklen Footer */
-    .email-link:hover {
-        color: #e2f4ea; /* Helles, frisches Mint-Weiß */
-        border-bottom-color: #ffffff; /* Weiße Unterstreichung */
-    }
-
-    /* Hover auf Social Links im Footer */
-    .social-links a:hover {
-        color: #ffffff; /* Strahlendes Weiß */
-    }
-}
-
-/* ==========================================================================
-   RESPONSIVE DESIGN (Mobile & Tablets)
-   ========================================================================== */
-/* Bildschirme unter 768px (Smartphones) */
-@media (max-width: 768px) {
-    /* Header bricht um */
+@media (max-width: 860px) {
+    /* Header bricht mobil flexibel um */
     .site-header {
-        position: relative; /* Auf kleinen Bildschirmen normal im Dokumentenfluss */
-        padding-top: 1.25rem; /* Kompakter */
-        padding-bottom: 1.25rem; /* Kompakter */
+        position: relative; /* Normaler Dokumentenfluss auf Smartphones */
+        padding-top: 1.25rem; /* Kompakt */
+        padding-bottom: 1.25rem; /* Kompakt */
         flex-wrap: wrap; /* Mehrzeilig */
         gap: 0.75rem; /* Abstand */
     }
-    
+
     /* Hero-Padding mobil anpassen */
     .hero {
-        padding-top: 2rem; /* Da Header mobil relativ ist */
+        padding-top: 2rem; /* Angepasster Abstand */
     }
 
-    /* Navigation und Kontakt verteilen */
-    .header-actions {
-        width: 100%; /* Volle Breite */
-        justify-content: space-between; /* Links/Rechts */
-        gap: 1rem; /* Abstand */
-    }
-    
-    /* Navigationslinks mit kleinerem Abstand */
-    nav ul {
-        gap: 1.15rem; /* Kompakt */
-    }
-    
-    /* Headline mobil */
-    .hero h1 {
-        text-align: right; /* Bleibt markant rechtsbündig */
-        font-size: clamp(2.8rem, 13vw, 4.5rem); /* Mobil optimal lesbar */
-        margin-bottom: 3rem; /* Ausgewogener Abstand mobil */
+    /* Bento-Grid wird einspaltig auf kleineren Bildschirmen */
+    .portfolio-bento-grid {
+        grid-template-columns: 1fr; /* Eine einzige Spalte */
+        grid-template-rows: auto; /* Automatische Zeilenhöhen */
+        gap: 1.5rem; /* Ausgewogener Abstand */
     }
 
-    /* Projekttitel auf Detailseiten bleiben mobil linksbündig */
+    /* Kacheln spannen jeweils über die volle Breite */
+    .bento-grafik, .bento-web, .bento-film, .bento-3d {
+        grid-column: 1 / 2; /* Spalte 1 */
+        grid-row: auto; /* Automatische Zeile */
+        min-height: 220px; /* Einheitliche Mindesthöhe */
+    }
+
+    /* Hohe Kachel mobil etwas höher für gute Bildwirkung */
+    .bento-grafik {
+        min-height: 280px; /* Schöne Bildhöhe mobil */
+    }
+
+    /* Riesiges Hintergrund-e mobil anpassen */
+    .giant-e-bg {
+        width: 90vw; /* Passt sich dem schmaleren Bildschirm an */
+        left: -15px; /* Leicht links positioniert */
+        opacity: 0.28; /* Etwas dezentere Deckkraft für beste Lesbarkeit */
+    }
+
+    /* Hero-Name Wortabstand für Mobiltelefone */
+    .hero-name {
+        gap: 0.75rem; /* Kompakterer Wortabstand mobil */
+    }
+
+    /* Wort-Spationierung mobil */
+    .name-word {
+        font-size: clamp(2rem, 9.5vw, 3rem); /* Lesbare Display-Größe mobil */
+        letter-spacing: clamp(0.18rem, 1vw, 0.45rem); /* Kompaktere Spationierung mobil */
+    }
+
+    /* Projekttitel auf Detailseiten linksbündig */
     .project-detail-hero h1 {
-        text-align: left; /* Linksbündig für optimale Lesbarkeit */
-        margin-bottom: 1.5rem; /* Harmonischer Abstand mobil */
-        font-size: clamp(2rem, 9vw, 3rem); /* Angenehm lesbar auf Smartphones */
+        text-align: left; /* Linksbündig */
+        margin-bottom: 1.5rem; /* Ausgewogener Abstand mobil */
+        font-size: clamp(2rem, 9vw, 3rem); /* Angenehme Schriftgröße */
     }
-    
-    /* Projekt-Grid wird mobil einspaltig */
-    .portfolio-grid, #projectGrid {
-        grid-template-columns: 1fr; /* Eine Spalte */
-        gap: 2.5rem; /* Ausgewogener Abstand */
-        width: 100%; /* Volle Breite */
-    }
-    
+
     /* Footer-Abschlusszeile vertikal stapeln */
     .footer-bottom-row {
         flex-direction: column; /* Untereinander */
