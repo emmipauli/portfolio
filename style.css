@@ -31,7 +31,7 @@
     --color-accent: #084A24; /* Kräftiges Smaragdgrün für aktive Zustände */
     --color-giant-e: #6a826c; /* Sanftes Salbeigrün für das große Hintergrund-E */
     --color-cream: #EDE7BF; /* Hellbeiger Cremeton nach Nutzerwunsch */
-    --border-dark: #0c3c30; /* Dunkelgrüner Rand für Sektionen und Bento-Karten */
+    --border-dark: #0c3c30; /* Dunkelgrüner Rand für Bento-Karten */
     --font-display: 'Super Frog', cursive, sans-serif; /* Display-Schriftart Super Frog */
     --font-main: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; /* Hauptschriftart Roboto nach Nutzerwunsch */
     --ease-out: cubic-bezier(0.23, 1, 0.32, 1); /* Geschmeidige Ausfederung für UI-Elemente */
@@ -100,14 +100,14 @@ img { /* Bilder formatieren */
 } /* Anker-Regel schließen */
 /* Leerzeile */
 /* ========================================================================== */
-/* VOLLBILDSCHIRM-SEKTIONEN (JEDES RECHTECK = 100vh) */
+/* VOLLBILDSCHIRM-SEKTIONEN (OHNE TRENNSTRICHE NACH NUTZERWUNSCH) */
 /* ========================================================================== */
 .full-screen-section { /* Vollbildschirm-Sektionen definieren */
     min-height: 100vh; /* Exakt volle Bildschirmhöhe als Mindesthöhe */
     width: 100%; /* Volle Bildschirmbreite */
     box-sizing: border-box; /* Rahmen und Innenabstände vollständig einrechnen */
     position: relative; /* Relativer Bezugspunkt für innere Elemente */
-    border-bottom: 1.5px solid var(--border-dark); /* Dunkelgrüne Begrenzungslinie nach Vorlage */
+    border-bottom: none; /* Keine Trennstriche zwischen Abschnitten nach Nutzerwunsch */
     display: flex; /* Flexbox-Layout */
     flex-direction: column; /* Vertikale Stapelung */
     justify-content: space-between; /* Gleichmäßige Verteilung von Kopf, Mitte und Fuß */
@@ -119,7 +119,7 @@ img { /* Bilder formatieren */
 .hero-section { /* Hero-Sektion formatieren */
     background-color: var(--bg-primary); /* Weißer Hintergrund nach Illustrator-Vorlage */
     padding-top: clamp(1.5rem, 3.5vh, 2.75rem); /* Oberer Abstand für zentrierten Header */
-    padding-bottom: clamp(1.5rem, 3.5vh, 2.75rem); /* Unterer Abstand zur Begrenzungslinie */
+    padding-bottom: clamp(1.5rem, 3.5vh, 2.75rem); /* Unterer Abstand zur nächsten Sektion */
     padding-left: clamp(2rem, 6vw, 6rem); /* Flexibler linker Randabstand */
     padding-right: clamp(2rem, 6vw, 6rem); /* Flexibler rechter Randabstand */
 } /* Hero-Sektions-Regel schließen */
@@ -200,7 +200,7 @@ img { /* Bilder formatieren */
 } /* Untertitel-Regel schließen */
 /* Leerzeile */
 /* ========================================================================== */
-/* FLUSS-CONTAINER MIT DEM GROSSEN HINTERGRUND-E ÜBER 3 SEKTIONEN (300vh) */
+/* FLUSS-CONTAINER MIT GROSSEM HINTERGRUND-E ALS GROSSBUCHSTABE (300vh) */
 /* ========================================================================== */
 .main-flow-container { /* Umschließender Container für Intro, Arbeiten und Über Mich */
     position: relative; /* Bezugspunkt für das absolut positionierte Hintergrund-E */
@@ -228,7 +228,7 @@ img { /* Bilder formatieren */
 } /* SVG-Regel schließen */
 /* Leerzeile */
 /* ========================================================================== */
-/* SEKTION 2: INTRO (OBERER BOGEN DES HINTERGRUND-E) */
+/* SEKTION 2: INTRO (OBERER STRICH DES GROSSEN HINTERGRUND-E) */
 /* ========================================================================== */
 .intro-section { /* Intro-Sektion formatieren */
     position: relative; /* Relative Ebene über dem Hintergrund-E */
@@ -258,7 +258,7 @@ img { /* Bilder formatieren */
 } /* Einleitungstext-Regel schließen */
 /* Leerzeile */
 /* ========================================================================== */
-/* SEKTION 3: ARBEITEN (BENTO-GRID MIT 4 UNIKAT-RECHTECKEN & ROTATION) */
+/* SEKTION 3: ARBEITEN (MITTLERER STRICH DES E & SYNCHRONE ROTATION) */
 /* ========================================================================== */
 .portfolio-section { /* Arbeiten-Sektion formatieren */
     position: relative; /* Über dem Hintergrund-E */
@@ -333,6 +333,7 @@ img { /* Bilder formatieren */
     min-height: 260px; /* Schmale vertikale Kachel */
 } /* Box 4 schließen */
 /* Leerzeile */
+/* SYNCHRONE ROTATION (LANGSAMER, GLEICHZEITIG, KEIN THEMA DOPPELT) */
 .rot-layer { /* Einzelne rotierende Inhaltsebene formatieren */
     position: absolute; /* Vollflächig absolut im Kachelrahmen aufgespannt */
     inset: 0; /* Vollständige Überdeckung von allen Seiten */
@@ -343,8 +344,9 @@ img { /* Bilder formatieren */
     justify-content: center; /* Horizontal mittig */
     text-decoration: none; /* Keine Unterstreichung */
     opacity: 0; /* Standardmäßig unsichtbar */
+    visibility: hidden; /* Unsichtbar im Browser-Baum */
     pointer-events: none; /* Standardmäßig nicht klickbar */
-    animation: bentoRotate 16s infinite ease-in-out; /* 16 Sekunden Rotationszyklus für 4 Phasen */
+    animation: bentoRotate 28s infinite step-end; /* 28 Sekunden Gesamtzyklus mit synchronem Wechsel alle 7 Sekunden */
 } /* Rotations-Ebene schließen */
 /* Leerzeile */
 .bento-box:hover .rot-layer { /* Pausieren der Animation beim Überfahren einer Kachel */
@@ -356,40 +358,45 @@ img { /* Bilder formatieren */
 } /* Child 1 schließen */
 /* Leerzeile */
 .bento-box .rot-layer:nth-child(2) { /* Zweite Inhaltsebene jeder Kachel */
-    animation-delay: -4s; /* Startet phasenverschoben um 4 Sekunden */
+    animation-delay: -7s; /* Startet synchron in Phase 2 nach 7 Sekunden */
 } /* Child 2 schließen */
 /* Leerzeile */
 .bento-box .rot-layer:nth-child(3) { /* Dritte Inhaltsebene jeder Kachel */
-    animation-delay: -8s; /* Startet phasenverschoben um 8 Sekunden */
+    animation-delay: -14s; /* Startet synchron in Phase 3 nach 14 Sekunden */
 } /* Child 3 schließen */
 /* Leerzeile */
 .bento-box .rot-layer:nth-child(4) { /* Vierte Inhaltsebene jeder Kachel */
-    animation-delay: -12s; /* Startet phasenverschoben um 12 Sekunden */
+    animation-delay: -21s; /* Startet synchron in Phase 4 nach 21 Sekunden */
 } /* Child 4 schließen */
 /* Leerzeile */
-@keyframes bentoRotate { /* Keyframes für den Rotationsablauf definieren */
-    0% { /* Beginn der aktiven Phase */
+@keyframes bentoRotate { /* Keyframes für exakt gleichzeitigen Wechsel ohne Doppelung */
+    0% { /* Beginn der Phase */
         opacity: 1; /* Vollständig sichtbar */
+        visibility: visible; /* Sichtbar geschaltet */
         pointer-events: auto; /* Klickbar und interaktiv */
         z-index: 2; /* Im Vordergrund */
     } /* 0% schließen */
-    21% { /* Ende der stabilen Anzeigephase */
+    24.99% { /* Bis kurz vor Phasenwechsel voll sichtbar */
         opacity: 1; /* Bleibt voll sichtbar */
+        visibility: visible; /* Bleibt sichtbar */
         pointer-events: auto; /* Bleibt klickbar */
         z-index: 2; /* Im Vordergrund */
-    } /* 21% schließen */
-    25% { /* Abschluss des Ausblendens */
-        opacity: 0; /* Unsichtbar */
+    } /* 24.99% schließen */
+    25% { /* Exakter synchroner Schnitt zur nächsten Folie */
+        opacity: 0; /* Sofort unsichtbar */
+        visibility: hidden; /* Sofort ausgeblendet damit kein Thema doppelt erscheint */
         pointer-events: none; /* Nicht klickbar */
         z-index: 1; /* Hintergrund */
     } /* 25% schließen */
-    96% { /* Warten im Hintergrund */
+    99.99% { /* Warten im Hintergrund während andere Folien aktiv sind */
         opacity: 0; /* Unsichtbar */
+        visibility: hidden; /* Ausgeblendet */
         pointer-events: none; /* Nicht klickbar */
         z-index: 1; /* Hintergrund */
-    } /* 96% schließen */
+    } /* 99.99% schließen */
     100% { /* Rückkehr zur aktiven Phase */
         opacity: 1; /* Wieder vollständig sichtbar */
+        visibility: visible; /* Sichtbar */
         pointer-events: auto; /* Wieder klickbar */
         z-index: 2; /* Im Vordergrund */
     } /* 100% schließen */
@@ -490,7 +497,7 @@ img { /* Bilder formatieren */
 } /* 3D-Cutout schließen */
 /* Leerzeile */
 /* ========================================================================== */
-/* SEKTION 4: ÜBER MICH (UNTERER SCHWUNG DES HINTERGRUND-E) */
+/* SEKTION 4: ÜBER MICH (UNTERER STRICH DES GROSSEN HINTERGRUND-E) */
 /* ========================================================================== */
 .about-section { /* Über-Mich-Sektion formatieren */
     position: relative; /* Über dem Hintergrund-E */
