@@ -190,7 +190,6 @@ img {
 .main-flow-container {
     position: relative;
     width: 100%;
-    min-height: 300vh;
     overflow: visible;
     background-color: var(--color-olive);
 }
@@ -200,7 +199,7 @@ img {
     top: -12vh;
     left: clamp(10px, 4vw, 80px);
     width: clamp(700px, 72vw, 1200px);
-    height: 326vh;
+    height: calc(100% + 12vh);
     pointer-events: none;
     z-index: 1;
     color: var(--text-primary);
@@ -217,14 +216,14 @@ img {
     color: var(--color-cream);
     position: relative;
     z-index: 2;
-    min-height: 100vh;
+    min-height: 92vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-left: clamp(2rem, 8vw, 8rem);
     padding-right: clamp(2rem, 8vw, 8rem);
-    padding-top: clamp(6.5rem, 15vh, 11rem);
-    padding-bottom: clamp(2rem, 4vh, 4rem);
+    padding-top: clamp(6rem, 14vh, 10rem);
+    padding-bottom: clamp(1.5rem, 3vh, 2.5rem);
 }
 
 .intro-content-wrapper {
@@ -247,14 +246,14 @@ img {
     background-color: var(--bg-primary);
     position: relative;
     z-index: 3;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-left: 0;
     padding-right: 0;
-    padding-top: clamp(1.5rem, 3vh, 2.5rem);
+    padding-top: clamp(0.75rem, 1.5vh, 1.25rem);
     padding-bottom: 0;
+    margin-top: -3.5vh;
 }
 
 .section-title-bar {
@@ -287,21 +286,18 @@ img {
 .bento-mosaic-container {
     display: grid;
     grid-template-columns: 1.15fr 0.62fr 0.38fr;
-    grid-template-rows: 42fr 58fr;
+    grid-template-rows: minmax(38vh, 42vh) minmax(38vh, 42vh) minmax(38vh, 42vh) minmax(38vh, 42vh) minmax(38vh, 44vh);
     gap: 0;
     width: 100%;
     max-width: 100%;
-    flex: 1;
-    min-height: calc(100vh - 85px);
     margin: 0;
+    border-top: 1.5px solid var(--border-dark);
+    border-bottom: 1.5px solid var(--border-dark);
 }
 
 .bento-box {
     position: relative;
     overflow: hidden;
-    border-top: 1.5px solid var(--border-dark);
-    border-bottom: 1.5px solid var(--border-dark);
-    border-radius: 0;
     background-color: var(--bg-primary);
     box-sizing: border-box;
     width: 100%;
@@ -311,75 +307,73 @@ img {
 .box-1 {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    border-left: none;
     border-right: 1.5px solid var(--border-dark);
+    border-bottom: 1.5px solid var(--border-dark);
 }
 
 .box-2 {
     grid-column: 2 / 4;
     grid-row: 1 / 2;
-    border-left: none;
-    border-right: none;
+    border-bottom: 1.5px solid var(--border-dark);
 }
 
 .box-3 {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    border-left: none;
     border-right: 1.5px solid var(--border-dark);
+    border-bottom: 1.5px solid var(--border-dark);
 }
 
 .box-4 {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    border-left: none;
-    border-right: none;
+    border-bottom: 1.5px solid var(--border-dark);
 }
 
-.rot-layer {
-    position: absolute;
-    inset: 0;
+.box-5 {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    border-right: 1.5px solid var(--border-dark);
+    border-bottom: 1.5px solid var(--border-dark);
+}
+
+.box-6 {
+    grid-column: 3 / 4;
+    grid-row: 3 / 5;
+    border-bottom: 1.5px solid var(--border-dark);
+}
+
+.box-7 {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    border-right: 1.5px solid var(--border-dark);
+    border-bottom: 1.5px solid var(--border-dark);
+}
+
+.box-8 {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    border-right: 1.5px solid var(--border-dark);
+    border-bottom: 1.5px solid var(--border-dark);
+}
+
+.box-9 {
+    grid-column: 1 / 4;
+    grid-row: 5 / 6;
+}
+
+.bento-card-link {
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    visibility: hidden;
+    text-decoration: none;
     overflow: hidden;
-    animation: rotateQuadSynchronized 28s step-end infinite;
 }
 
-.rot-layer-1 {
-    animation-delay: 0s;
-}
-
-.rot-layer-2 {
-    animation-delay: 7s;
-}
-
-.rot-layer-3 {
-    animation-delay: 14s;
-}
-
-.rot-layer-4 {
-    animation-delay: 21s;
-}
-
-@keyframes rotateQuadSynchronized {
-    0%, 24.99% {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
-    25%, 100% {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-}
-
-.rot-img {
+.card-img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -391,18 +385,18 @@ img {
     transition: transform 0.5s ease;
 }
 
-.bento-box:hover .rot-img {
+.bento-box:hover .card-img {
     transform: scale(1.03);
 }
 
-.rot-title-normal {
+.card-title-normal {
     position: relative;
     z-index: 2;
     font-family: var(--font-display);
     font-size: clamp(1.4rem, 2.8vw, 3rem);
     font-weight: 400;
     color: var(--text-primary);
-    text-shadow: 0 0 16px rgba(237, 231, 191, 0.95), 0 0 30px rgba(237, 231, 191, 0.8);
+    text-shadow: none;
     text-align: center;
     padding: 1rem;
     pointer-events: none;
@@ -411,7 +405,7 @@ img {
     transition: opacity 0.3s ease;
 }
 
-.rot-cutout-layer {
+.card-cutout-layer {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -427,12 +421,12 @@ img {
     pointer-events: none;
 }
 
-.rot-layer:hover .rot-cutout-layer {
+.bento-card-link:hover .card-cutout-layer {
     opacity: 1;
     visibility: visible;
 }
 
-.rot-cutout-title {
+.card-cutout-title {
     font-family: var(--font-display);
     font-size: clamp(1.4rem, 2.8vw, 3rem);
     font-weight: 400;
@@ -449,20 +443,40 @@ img {
     background-repeat: no-repeat;
 }
 
-.cutout-grafik .rot-cutout-title {
+.cutout-1 .card-cutout-title {
     background-image: url('GG/Zeichenfl%C3%A4che%201.png'), url('GG/Zeichenfläche 1.png');
 }
 
-.cutout-web .rot-cutout-title {
+.cutout-2 .card-cutout-title {
     background-image: url('Frontend/Hausarbeit/dokumentation/vorschau.png');
 }
 
-.cutout-film .rot-cutout-title {
+.cutout-3 .card-cutout-title {
     background-image: url('DBB/Landschaft.png');
 }
 
-.cutout-3d .rot-cutout-title {
+.cutout-4 .card-cutout-title {
     background-image: url('3DRendering/rendering01.png');
+}
+
+.cutout-5 .card-cutout-title {
+    background-image: url('Frontend/Hausarbeit/dokumentation/banner.png');
+}
+
+.cutout-6 .card-cutout-title {
+    background-image: url('GG/Plakat-WS2425-HA-1.png');
+}
+
+.cutout-7 .card-cutout-title {
+    background-image: url('3DRendering/rendering02.png');
+}
+
+.cutout-8 .card-cutout-title {
+    background-image: url('DBB/DBB01.png');
+}
+
+.cutout-9 .card-cutout-title {
+    background-image: url('3DRendering/LegoMan-Render.jpg');
 }
 
 .about-section {
@@ -761,7 +775,7 @@ img {
         grid-template-rows: auto;
         gap: 0;
     }
-    .box-1, .box-2, .box-3, .box-4 {
+    .box-1, .box-2, .box-3, .box-4, .box-5, .box-6, .box-7, .box-8, .box-9 {
         grid-column: 1 / 2;
         grid-row: auto;
         min-height: 250px;
