@@ -3,164 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ausgewählte Arbeiten — Alle Projekte | Emma Rabe</title>
-    <meta name="description" content="Vollständige Übersicht aller Arbeiten und Projekte von Emma Rabe – Medieninformatik, Film, Grafikdesign, Web und 3D.">
+    <title>Projekte — Emma Rabe</title>
+    <meta name="description" content="Alle Projekte von Emma Rabe – Medieninformatik, Film, Grafikdesign, Web und 3D.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="projects-overview-body">
-    <header class="site-header-nav">
-        <div class="header-nav-inner">
-            <a href="index.html#hero" class="back-home-link">&larr; Zurück zur Startseite</a>
-            <nav class="centered-nav">
-                <ul>
-                    <li><a href="index.html#hero">Home</a></li>
-                    <li><a href="projekte.html" class="active-nav">Arbeiten</a></li>
-                    <li><a href="index.html#about">Über Mich</a></li>
-                    <li><a href="index.html#kontakt">Kontakt</a></li>
-                </ul>
-            </nav>
+<body>
+    <main>
+        <div class="project-page-top projects-page-top">
+            <header class="hero-header-bar">
+                <nav class="centered-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projekte.html" class="active-nav" aria-current="page">Arbeiten</a></li>
+                        <li><a href="index.html#about">Über Mich</a></li>
+                        <li><a href="index.html#kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="project-hero-center">
+                <h1 class="project-hero-title">projekte</h1>
+            </div>
         </div>
-    </header>
 
-    <main class="projects-overview-main">
-        <section class="projects-header-section">
-            <h1 class="projects-main-title">Ausgewählte Arbeiten</h1>
-            <p class="projects-main-subtitle">
-                Alle Projekte aus den Bereichen Videoschnitt, Grafikdesign, Webentwicklung und 3D-Gestaltung im Studium der Medieninformatik.
-            </p>
-        </section>
+        <section class="project-showcase-section">
+            <div class="projects-mosaic">
+                <a href="lego-rendering.html" class="projects-tile tile-a">
+                    <img src="3DRendering/rendering01.png" alt="" loading="lazy">
+                    <span class="projects-tile-title">Lego Rendering</span>
+                </a>
 
-        <section class="projects-grid-section">
-            <div class="projects-catalog-grid">
-                <article class="project-card">
-                    <a href="corporate-design.html" class="project-card-link">
-                        <div class="project-card-thumb">
-                            <img src="GG/Zeichenfläche 1.png" alt="Corporate Design – Malzan MediaWorks" loading="lazy">
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-tag">Grafikdesign &bull; KDM (4. Sem.)</span>
-                            <h2 class="project-card-title">Corporate Design</h2>
-                            <p class="project-card-desc">Ganzheitlicher Markenauftritt, Logo-System, Farbklima, Printmedien und interaktiver Web-Prototyp.</p>
-                        </div>
-                    </a>
-                </article>
+                <a href="projekt-plakate.html" class="projects-tile tile-b">
+                    <img src="GG/Plakat-WS2425-HA-1.png" alt="" loading="lazy">
+                    <span class="projects-tile-title">Plakate</span>
+                </a>
 
-                <article class="project-card">
-                    <a href="emmaschatroom.html" class="project-card-link">
-                        <div class="project-card-thumb">
-                            <img src="Frontend/Hausarbeit/dokumentation/vorschau.png" alt="Emmas Chatroom – Web-App" loading="lazy">
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-tag">Web-App &bull; Mobile Computing (3. Sem.)</span>
-                            <h2 class="project-card-title">Emmas Chatroom</h2>
-                            <p class="project-card-desc">Echtzeit-Chatplattform mit WebSocket-Kommunikation, Räumen und reaktivem Interface.</p>
-                        </div>
-                    </a>
-                </article>
+                <a href="dbb.html" class="projects-tile tile-c">
+                    <img src="DBB/Landschaft.png" alt="" loading="lazy">
+                    <span class="projects-tile-title">Die Blaue Blume</span>
+                </a>
 
-                <article class="project-card">
-                    <a href="dbb.html" class="project-card-link">
-                        <div class="project-card-thumb">
-                            <img src="DBB/Landschaft.png" alt="Die Blaue Blume – Kurzfilm" loading="lazy">
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-tag">Film &bull; Digitale Bildbearbeitung (2. Sem.)</span>
-                            <h2 class="project-card-title">Die Blaue Blume</h2>
-                            <p class="project-card-desc">Photoshop-Composings, Grading und filmische Postproduktion mit atmosphärischer Bildsprache.</p>
-                        </div>
-                    </a>
-                </article>
+                <a href="corporate-design.html" class="projects-tile tile-d">
+                    <img src="KDM/styleguide-page-03.png" alt="" loading="lazy">
+                    <span class="projects-tile-title">Corporate Design</span>
+                </a>
 
-                <article class="project-card">
-                    <a href="lego-rendering.html" class="project-card-link">
-                        <div class="project-card-thumb">
-                            <img src="3DRendering/rendering01.png" alt="Lego 3D-Rendering" loading="lazy">
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-tag">3D-Visualisierung &bull; Blender</span>
-                            <h2 class="project-card-title">3D Lego-Rendering</h2>
-                            <p class="project-card-desc">Photorealistische Shader, Lichtinszenierung und detaillierte Kameraführung in Blender.</p>
-                        </div>
-                    </a>
-                </article>
+                <a href="emmaschatroom.html" class="projects-tile tile-e">
+                    <img src="mobileComputing/chat-login-screen.jpg" alt="" loading="lazy">
+                    <span class="projects-tile-title">Emmas Chatroom</span>
+                </a>
 
-                <article class="project-card">
-                    <a href="website.html" class="project-card-link">
-                        <div class="project-card-thumb">
-                            <img src="Frontend/Hausarbeit/dokumentation/vorschau.png" alt="Website Rabe – Frontend" loading="lazy">
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-tag">Webentwicklung &bull; Frontend</span>
-                            <h2 class="project-card-title">Website Rabe</h2>
-                            <p class="project-card-desc">Rezept-Plattform mit responsivem Design, Filterfunktionen und moderner CSS-Architektur.</p>
-                        </div>
-                    </a>
-                </article>
+                <a href="website.html" class="projects-tile tile-f">
+                    <img src="Frontend/Hausarbeit/dokumentation/banner.png" alt="" loading="lazy">
+                    <span class="projects-tile-title">Website Rabe</span>
+                </a>
 
-                <article class="project-card">
-                    <a href="projekt-plakate.html" class="project-card-link">
-                        <div class="project-card-thumb">
-                            <img src="GG/Zeichenfläche 1.png" alt="Projekt-Plakate &amp; Typografie" loading="lazy">
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-tag">Print &bull; Typografie</span>
-                            <h2 class="project-card-title">Projekt-Plakate</h2>
-                            <p class="project-card-desc">Plakatkonzepte mit ausdrucksstarker Schriftgestaltung, Rastersystemen und Farbkonzepten.</p>
-                        </div>
-                    </a>
-                </article>
+                <a href="video.html" class="projects-tile tile-g">
+                    <img src="DBB/DBB01.png" alt="" loading="lazy">
+                    <span class="projects-tile-title">Film und Video</span>
+                </a>
 
-                <article class="project-card">
-                    <a href="hand-modellierung.html" class="project-card-link">
-                        <div class="project-card-thumb">
-                            <img src="3DRendering/rendering01.png" alt="3D Hand-Modellierung" loading="lazy">
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-tag">3D-Modellierung &bull; Geometrie</span>
-                            <h2 class="project-card-title">Hand-Modellierung</h2>
-                            <p class="project-card-desc">Anatomische Handmodellierung mit sauberer Topologie, Kantenfluss und Materialisierung.</p>
-                        </div>
-                    </a>
-                </article>
+                <a href="spieleprogrammierung.html" class="projects-tile tile-h">
+                    <img src="SP/spieleprogrammierung-poster.jpg" alt="" loading="lazy">
+                    <span class="projects-tile-title">Spiele&shy;programmierung</span>
+                </a>
 
-                <article class="project-card">
-                    <a href="video.html" class="project-card-link">
-                        <div class="project-card-thumb">
-                            <img src="DBB/Landschaft.png" alt="Film &amp; Audiovisuelles" loading="lazy">
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-tag">Film &bull; Kamera &amp; Schnitt</span>
-                            <h2 class="project-card-title">Film &amp; Audiovisuelles</h2>
-                            <p class="project-card-desc">Kamerarbeit, Beleuchtung und Videoschnitt mit Premiere Pro und DaVinci Resolve.</p>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <a href="spieleprogrammierung.html" class="project-card-link">
-                        <div class="project-card-thumb">
-                            <img src="3DRendering/rendering01.png" alt="Spieleprogrammierung" loading="lazy">
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-tag">Interaktion &bull; Game Design</span>
-                            <h2 class="project-card-title">Spieleprogrammierung</h2>
-                            <p class="project-card-desc">2D Jump &amp; Run Spielprototyp mit Physiklogik, Leveldesign und Kollisionserkennung.</p>
-                        </div>
-                    </a>
-                </article>
+                <a href="hand-modellierung.html" class="projects-tile tile-i">
+                    <img src="3dModellierung/hand-modellierung-poster.jpg" alt="" loading="lazy">
+                    <span class="projects-tile-title">Hand-Modellierung</span>
+                </a>
             </div>
         </section>
 
-        <footer id="kontakt" class="full-screen-section contact-section site-footer">
-            <div class="contact-center-content">
-                <h2 class="contact-display-title"><span>schreib</span> <span>mir</span> <span>gerne!</span></h2>
-                <a href="mailto:emmarabe@web.de" class="contact-email-link">emmarabe@web.de</a>
-            </div>
-            <div class="contact-bottom-bar">
-                <span class="contact-copy">&copy; 2026 Emma Rabe.</span>
+        <footer class="project-footer">
+            <div class="project-footer-inner">
+                <span>&copy; 2026 Emma Rabe.</span>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">LinkedIn &nearr;</a>
             </div>
         </footer>
