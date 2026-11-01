@@ -1,111 +1,81 @@
-<!-- Dokumententyp HTML5 deklarieren -->
 <!DOCTYPE html>
-<!-- HTML-Wurzelelement mit Sprache Deutsch -->
 <html lang="de">
-<!-- Kopfbereich für Seiteneinstellungen und Metadaten -->
 <head>
-    <!-- UTF-8 Kodierung für Sonderzeichen und Umlaute -->
     <meta charset="UTF-8">
-    <!-- Viewport für alle Display-Größen -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Titel der Detailseite im Browser-Tab -->
-    <title>Lego Minifigur 3D-Rendering — Emma Rabe</title>
-    <!-- Einbindung des gemeinsamen CSS-Stylesheets style.css -->
+    <title>Lego Rendering — Emma Rabe</title>
+    <meta name="description" content="Fotorealistisches 3D-Rendering einer Lego-Minifigur in Blender von Emma Rabe.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-<!-- Ende des Kopfbereichs -->
 </head>
-<!-- Beginn des sichtbaren Seiteninhalts -->
 <body>
-
-    <!-- KOPFZEILE MIT NAVIGATION -->
-    <header class="site-header">
-        <!-- Logo mit Namenszug -->
-        <div class="logo">
-            <!-- Link zurück zur Startseite -->
-            <a href="index.html" class="logo-title">Emma Rabe</a>
-        <!-- Ende des Logos -->
-        </div>
-
-        <!-- Navigation Buttons -->
-        <div class="header-actions">
-            <!-- Pill-Button zurück zur Übersicht 3D & Game Design -->
-            <a href="3d-gamedesign.html" class="pill-btn">
-                <!-- Pfeil nach links -->
-                <span>←</span>
-                <!-- Textbeschriftung -->
-                <span>Zurück zu 3D &amp; Game Design</span>
-            <!-- Ende des Buttons -->
-            </a>
-        <!-- Ende der Aktionen -->
-        </div>
-    <!-- Ende des Headers -->
-    </header>
-
-    <!-- HAUPTBEREICH DER DETAILSEITE -->
     <main>
+        <div class="project-page-top">
+            <header class="project-header-nav">
+                <a href="index.html" class="nav-brand">Emma Rabe</a>
+                <nav class="project-nav-menu">
+                    <a href="index.html#arbeiten">Arbeiten</a>
+                    <a href="index.html#about">Über Mich</a>
+                    <a href="index.html#kontakt">Kontakt</a>
+                </nav>
+            </header>
 
-        <!-- PROJEKT-INTRO -->
-        <section class="hero project-detail-hero">
-            <!-- Vor-Tag mit Semester und Modul -->
-            <div class="hero-tag">Projekt • 3D-Rendering (4. Semester)</div>
-            <!-- Haupttitel des Projekts -->
-            <h1>Lego Minifigur — Shading &amp; Lighting</h1>
-            <!-- Ausführliche Projektbeschreibung -->
-            <p class="hero-bio">
-                Im vierten Semester haben wir im Modul 3D-Rendering in Blender an einer fotorealistischen Darstellung einer Lego-Minifigur gearbeitet. Die Aufgabe bestand darin, dem 3D-Modell authentische Materialeigenschaften mit Glanz und Oberflächenbeschaffenheit zuzuweisen und es durch ein abgestimmtes Licht- und Schattenspiel realistisch in eine fotografierte Straßenumgebung einzubetten.
-            <!-- Ende der Beschreibung -->
-            </p>
-        <!-- Ende der Hero-Sektion -->
-        </section>
-
-        <!-- PROJEKT-INHALT MIT RENDER-ERGEBNIS & BLENDER-AUFBAU -->
-        <section class="portfolio-section">
-            <!-- Überschrift der Bildergalerie -->
-            <div class="portfolio-header" style="margin-top: 0; margin-bottom: 2rem;">
-                <!-- Titel -->
-                <h2>Render-Ergebnis &amp; 3D-Setup</h2>
-            <!-- Ende des Headers -->
+            <div class="project-hero-center">
+                <h1 class="project-hero-title">Lego Rendering</h1>
             </div>
 
-            <!-- Raster für die beiden 3D-Visualisierungen -->
-            <div class="detail-gallery">
-                <!-- Bild 1: Finales Render-Compositing -->
-                <div>
-                    <!-- Bilddatei in Full HD -->
-                    <img src="3DRendering/rendering01.png" alt="Finales 3D Rendering der Lego-Minifigur in Straßenumgebung" loading="lazy">
-                    <!-- Bildunterschrift -->
-                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Finales Rendering — Realistische Licht- und Schattenintegration der Lego-Figur in eine reale Umgebung</p>
-                <!-- Ende Kachel 1 -->
-                </div>
-
-                <!-- Bild 2: Blender Viewport Setup -->
-                <div>
-                    <!-- Bilddatei des Blender Arbeitsbereichs -->
-                    <img src="3DRendering/rendering02.png" alt="Blender Viewport und 3D-Setup der Szene" loading="lazy">
-                    <!-- Bildunterschrift -->
-                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Blender Viewport — 3D-Geometrie, Ausrichtung auf der Grundebene und Szenenaufbau im Raum</p>
-                <!-- Ende Kachel 2 -->
-                </div>
-            <!-- Ende der Galerie -->
+            <div class="project-meta-row">
+                <span class="project-meta-semester">4. Semester</span>
             </div>
-        <!-- Ende der Sektion -->
-        </section>
 
-    <!-- Ende des Hauptbereichs -->
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <!-- Abschlusszeile -->
-        <div class="footer-bottom-row">
-            <!-- Copyright-Angabe -->
-            <span>&copy; 2026 Emma Rabe.</span>
-        <!-- Ende der Abschlusszeile -->
+            <div class="project-intro-row">
+                <p class="project-intro-paragraph">
+                    Im vierten Semester haben wir im Modul 3D-Rendering in Blender an einer fotorealistischen Darstellung einer Lego-Minifigur gearbeitet. Die Aufgabe bestand darin, dem 3D-Modell authentische Materialeigenschaften mit Glanz und Oberflächenbeschaffenheit zuzuweisen und es durch ein abgestimmtes Licht- und Schattenspiel realistisch in eine fotografierte Straßenumgebung einzubetten.
+                </p>
+            </div>
         </div>
-    <!-- Ende des Footers -->
-    </footer>
 
-<!-- Ende des sichtbaren Körpers -->
+        <section class="project-showcase-section">
+            <div class="project-collage">
+                <figure class="project-shot span-1-8">
+                    <div class="project-shot-frame">
+                        <img src="3DRendering/rendering01.png" alt="Finales 3D-Rendering der Lego-Minifigur" loading="lazy">
+                    </div>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Finales Rendering</span> Realistische Licht- und Schattenintegration in eine reale Umgebung</figcaption>
+                </figure>
+
+                <figure class="project-shot span-9-13">
+                    <div class="project-shot-frame">
+                        <img src="3DRendering/rendering02.png" alt="Blender Viewport und 3D-Setup" loading="lazy">
+                    </div>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Blender Viewport</span> 3D-Geometrie, Grundebene und Szenenaufbau im Raum</figcaption>
+                </figure>
+
+                <figure class="project-shot project-shot--beside span-2-12">
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Detailansicht</span> Beleuchtung, Shader und Oberflächentextur der Minifigur</figcaption>
+                    <div class="project-shot-frame">
+                        <img src="3DRendering/LegoMan-Render.jpg" alt="Detailansicht der Lego-Figur" loading="lazy">
+                    </div>
+                </figure>
+            </div>
+
+            <nav class="project-next" aria-label="Weitere Projekte">
+                <a href="index.html#arbeiten" class="project-next-back">&larr; Alle Arbeiten</a>
+                <a href="website.html" class="project-next-link">
+                    <span class="project-next-label">Nächstes Projekt</span>
+                    <span class="project-next-title">Website Rabe</span>
+                </a>
+            </nav>
+        </section>
+
+        <footer class="project-footer">
+            <div class="project-footer-inner">
+                <span>&copy; 2026 Emma Rabe.</span>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">LinkedIn &nearr;</a>
+            </div>
+        </footer>
+    </main>
 </body>
-<!-- Ende des HTML-Dokuments -->
 </html>

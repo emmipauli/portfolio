@@ -1,102 +1,77 @@
-<!-- Dokumententyp HTML5 deklarieren -->
 <!DOCTYPE html>
-<!-- HTML-Wurzelelement mit Sprache Deutsch -->
 <html lang="de">
-<!-- Kopfbereich für Seiteneinstellungen und Metadaten -->
 <head>
-    <!-- UTF-8 Kodierung für Sonderzeichen und Umlaute -->
     <meta charset="UTF-8">
-    <!-- Viewport-Einstellung für alle Bildschirmgrößen -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Titel der Detailseite im Browser-Tab -->
-    <title>Spieleprogrammierung (3D-Spiel) — Emma Rabe</title>
-    <!-- Einbindung des gemeinsamen CSS-Stylesheets style.css -->
+    <title>Spieleprogrammierung — Emma Rabe</title>
+    <meta name="description" content="3D-Spielentwicklung mit Unity und Blender von Emma Rabe.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-<!-- Ende des Kopfbereichs -->
 </head>
-<!-- Beginn des sichtbaren Webseiteninhalts -->
 <body>
-
-    <!-- KOPFZEILE MIT NAVIGATION -->
-    <header class="site-header">
-        <!-- Logo mit Namenszug -->
-        <div class="logo">
-            <!-- Link zurück zur Startseite -->
-            <a href="index.html" class="logo-title">Emma Rabe</a>
-        <!-- Ende des Logos -->
-        </div>
-
-        <!-- Navigation Buttons -->
-        <div class="header-actions">
-            <!-- Pill-Button zurück zur Übersicht 3D & Game Design -->
-            <a href="3d-gamedesign.html" class="pill-btn">
-                <!-- Pfeil nach links -->
-                <span>←</span>
-                <!-- Textbeschriftung -->
-                <span>Zurück zu 3D &amp; Game Design</span>
-            <!-- Ende des Buttons -->
-            </a>
-        <!-- Ende der Aktionen -->
-        </div>
-    <!-- Ende des Headers -->
-    </header>
-
-    <!-- HAUPTBEREICH DER DETAILSEITE -->
     <main>
+        <div class="project-page-top">
+            <header class="project-header-nav">
+                <a href="index.html" class="nav-brand">Emma Rabe</a>
+                <nav class="project-nav-menu">
+                    <a href="index.html#arbeiten">Arbeiten</a>
+                    <a href="index.html#about">Über Mich</a>
+                    <a href="index.html#kontakt">Kontakt</a>
+                </nav>
+            </header>
 
-        <!-- PROJEKT-INTRO -->
-        <section class="hero project-detail-hero">
-            <!-- Vor-Tag mit Semester und Fachbereich -->
-            <div class="hero-tag">Projekt • Spieleprogrammierung (4. Semester)</div>
-            <!-- Hauptüberschrift des Projekts -->
-            <h1>3D-Spiel mit Unity &amp; Blender</h1>
-            <!-- Ausführliche Projektbeschreibung -->
-            <p class="hero-bio">
-                Im vierten Semester haben wir im Modul Spieleprogrammierung im Zweier-Team ein eigenständiges dreidimensionales Spiel entwickelt. Die 3D-Modelle, Assets und visuellen Elemente wurden in Blender modelliert und texturiert, während die Spiellogik, Steuerung, Kollisionsabfragen und das Level-Design in der Unity Engine umgesetzt wurden.
-            <!-- Ende der Beschreibung -->
-            </p>
-        <!-- Ende der Hero-Sektion -->
-        </section>
-
-        <!-- VIDEO-BEREICH MIT GAMEPLAY-WALKTHROUGH -->
-        <section class="portfolio-section">
-            <!-- Überschrift für den Videobereich -->
-            <div class="portfolio-header" style="margin-top: 0; margin-bottom: 1.25rem;">
-                <!-- Titel -->
-                <h2>Gameplay-Walkthrough</h2>
-            <!-- Ende des Headers -->
+            <div class="project-hero-center">
+                <h1 class="project-hero-title">Spiele&shy;programmierung</h1>
             </div>
 
-            <!-- Video-Container -->
-            <div class="video-wrapper">
-                <!-- Video-Player mit Steuerelementen -->
-                <video id="gameplayVideo" controls playsinline preload="metadata">
-                    <!-- Videodatei aus dem Projektordner SP -->
-                    <source src="SP/Spieleprogrammierung.mp4" type="video/mp4">
-                    <!-- Hinweistext falls der Browser kein HTML5 Video unterstützt -->
-                    Dein Browser unterstützt das Videoformat leider nicht.
-                <!-- Ende des Videos -->
-                </video>
-            <!-- Ende des Video-Containers -->
+            <div class="project-meta-row">
+                <span class="project-meta-semester">4. Semester</span>
             </div>
-        <!-- Ende der Portfolio-Sektion -->
-        </section>
 
-    <!-- Ende des Hauptbereichs -->
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <!-- Abschlusszeile -->
-        <div class="footer-bottom-row">
-            <!-- Copyright-Angabe -->
-            <span>&copy; 2026 Emma Rabe.</span>
-        <!-- Ende der Abschlusszeile -->
+            <div class="project-intro-row">
+                <p class="project-intro-paragraph">
+                    Im vierten Semester haben wir im Modul Spieleprogrammierung im Zweier-Team ein eigenständiges dreidimensionales Spiel entwickelt. Die 3D-Modelle, Assets und visuellen Elemente wurden in Blender modelliert und texturiert, während die Spiellogik, Steuerung, Kollisionsabfragen und das Level-Design in der Unity Engine umgesetzt wurden.
+                </p>
+            </div>
         </div>
-    <!-- Ende des Footers -->
-    </footer>
 
-<!-- Ende des sichtbaren Körpers -->
+        <section class="project-showcase-section">
+            <div class="project-collage">
+                <figure class="project-shot span-1-8">
+                    <div class="project-shot-frame">
+                        <video controls playsinline preload="metadata">
+                            <source src="SP/Spieleprogrammierung.mp4" type="video/mp4">
+                            Dein Browser unterstützt das Videoformat leider nicht.
+                        </video>
+                    </div>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Gameplay</span> Aufzeichnung der Spiellogik, Steuerung und 3D-Levelumgebung</figcaption>
+                </figure>
+
+                <figure class="project-shot project-shot--end span-9-13">
+                    <div class="project-shot-frame">
+                        <img src="3DRendering/LegoMan-Render.jpg" alt="3D-Charaktermodell" loading="lazy">
+                    </div>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">3D-Assets</span> Charaktermodelle in Blender für die Unity Engine</figcaption>
+                </figure>
+            </div>
+
+            <nav class="project-next" aria-label="Weitere Projekte">
+                <a href="index.html#arbeiten" class="project-next-back">&larr; Alle Arbeiten</a>
+                <a href="corporate-design.html" class="project-next-link">
+                    <span class="project-next-label">Nächstes Projekt</span>
+                    <span class="project-next-title">Corporate Design</span>
+                </a>
+            </nav>
+        </section>
+
+        <footer class="project-footer">
+            <div class="project-footer-inner">
+                <span>&copy; 2026 Emma Rabe.</span>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">LinkedIn &nearr;</a>
+            </div>
+        </footer>
+    </main>
 </body>
-<!-- Ende des HTML-Dokuments -->
 </html>

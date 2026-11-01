@@ -1,149 +1,88 @@
-<!-- Dokumententyp HTML5 festlegen -->
 <!DOCTYPE html>
-<!-- HTML-Wurzelelement mit Sprache Deutsch -->
 <html lang="de">
-<!-- Kopfbereich für Einstellungen und Metadaten -->
 <head>
-    <!-- UTF-8 Zeichensatz für alle Umlaute -->
     <meta charset="UTF-8">
-    <!-- Viewport für alle Endgeräte -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Titel der Detailseite im Browser-Tab -->
-    <title>Emma's Chatroom (Android App) — Emma Rabe</title>
-    <!-- Gemeinsames Stylesheet einbinden -->
+    <title>Emma's Chatroom — Emma Rabe</title>
+    <meta name="description" content="Native Android-Chat-Applikation entwickelt im Modul Mobile Computing von Emma Rabe.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-<!-- Ende des Kopfbereichs -->
 </head>
-<!-- Beginn des sichtbaren Seiteninhalts -->
 <body>
-
-    <!-- KOPFZEILE MIT NAVIGATION -->
-    <header class="site-header">
-        <!-- Logo mit Namenszug -->
-        <div class="logo">
-            <!-- Link zur Startseite -->
-            <a href="index.html" class="logo-title">Emma Rabe</a>
-        <!-- Ende des Logos -->
-        </div>
-
-        <!-- Navigation Buttons -->
-        <div class="header-actions">
-            <!-- Pill-Button zurück zur Übersicht Web & App -->
-            <a href="web-app.html" class="pill-btn">
-                <!-- Pfeil nach links -->
-                <span>←</span>
-                <!-- Textbeschriftung -->
-                <span>Zurück zu Web &amp; App</span>
-            <!-- Ende des Buttons -->
-            </a>
-        <!-- Ende der Aktionen -->
-        </div>
-    <!-- Ende des Headers -->
-    </header>
-
-    <!-- HAUPTBEREICH DER DETAILSEITE -->
     <main>
+        <div class="project-page-top">
+            <header class="project-header-nav">
+                <a href="index.html" class="nav-brand">Emma Rabe</a>
+                <nav class="project-nav-menu">
+                    <a href="index.html#arbeiten">Arbeiten</a>
+                    <a href="index.html#about">Über Mich</a>
+                    <a href="index.html#kontakt">Kontakt</a>
+                </nav>
+            </header>
 
-        <!-- PROJEKT-INTRO -->
-        <section class="hero project-detail-hero">
-            <!-- Vor-Tag mit Semester und Fachbereich -->
-            <div class="hero-tag">Partnerarbeit • Mobile Computing (3. Semester)</div>
-            <!-- Hauptüberschrift des Projekts -->
-            <h1>Emma's Chatroom (Android App)</h1>
-            <!-- Ausführliche Projektbeschreibung -->
-            <p class="hero-bio">
-                Im dritten Semester haben wir im Modul Mobile Computing als Partnerarbeit zu zweit eine native Android-Chat-Applikation („EmMasChatroom“) entwickelt. Die App kommuniziert in Echtzeit mit einem zentralen Server und bietet neben Raumverwaltung auch Bildübertragung, Hintergrund-Services und GPS-Standortfreigabe mit Kartenintegration.
-            <!-- Ende der Beschreibung -->
-            </p>
-        <!-- Ende der Hero-Sektion -->
-        </section>
-
-        <!-- PROJEKT-INHALT & SCREENS AUS DEM DEMO-VIDEO -->
-        <section class="portfolio-section">
-            <!-- Zwischenüberschrift -->
-            <div class="portfolio-header" style="margin-top: 0; margin-bottom: 2rem;">
-                <!-- Titel -->
-                <h2>App-Screenshots &amp; Funktionen</h2>
-            <!-- Ende des Headers -->
+            <div class="project-hero-center">
+                <h1 class="project-hero-title">Emmas Chatroom</h1>
             </div>
 
-            <!-- Raster für Screen-Vorschau -->
-            <div class="detail-gallery">
-
-                <!-- Kachel 1: Start & Login -->
-                <div>
-                    <!-- Bilddatei aus dem Demo-Video -->
-                    <img src="mobileComputing/chat-login-screen.jpg" alt="Start- und Anmeldebildschirm von Emma's Chatroom" loading="lazy">
-                    <!-- Bildunterschrift -->
-                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Startbildschirm &amp; Anmeldung — Individuelle Namenseingabe und parallele Initialisierung beider Geräte</p>
-                <!-- Ende Kachel 1 -->
-                </div>
-
-                <!-- Kachel 2: Raumverwaltung & Beitreten -->
-                <div>
-                    <!-- Bilddatei aus dem Demo-Video -->
-                    <img src="mobileComputing/chat-raeume-beitreten.jpg" alt="Raumverwaltung und Raumbeitritt in der Chat-App" loading="lazy">
-                    <!-- Bildunterschrift -->
-                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Raumübersicht &amp; Beitritt — Liste aller aktiven Chaträume mit Anzeige der Benutzerzahl in Echtzeit</p>
-                <!-- Ende Kachel 2 -->
-                </div>
-
-                <!-- Kachel 3: Chatverlauf & Nachrichten -->
-                <div>
-                    <!-- Bilddatei aus dem Demo-Video -->
-                    <img src="mobileComputing/chat-nachrichtenverlauf.jpg" alt="Echtzeit-Nachrichtenverlauf mit Chat-Bubbles" loading="lazy">
-                    <!-- Bildunterschrift -->
-                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Echtzeit-Chatverlauf — Farbcodierte Chatblasen, Zeitstempel, Benutzer-Avatare und Antwortfunktion</p>
-                <!-- Ende Kachel 3 -->
-                </div>
-
-                <!-- Kachel 4: Funktionsmenü -->
-                <div>
-                    <!-- Bilddatei aus dem Demo-Video -->
-                    <img src="mobileComputing/chat-funktions-menu.jpg" alt="Aktionsmenü für Services, Fotos und Standort" loading="lazy">
-                    <!-- Bildunterschrift -->
-                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Erweitertes Aktionsmenü — Native Android-Schnittstellen für Hintergrund-Services, Kamera und Standort</p>
-                <!-- Ende Kachel 4 -->
-                </div>
-
-                <!-- Kachel 5: Multimedia & Foto-Austausch -->
-                <div>
-                    <!-- Bilddatei aus dem Demo-Video -->
-                    <img src="mobileComputing/chat-foto-standort.jpg" alt="Fotoübertragung und GPS-Standort im Chat" loading="lazy">
-                    <!-- Bildunterschrift -->
-                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Multimedia &amp; Standort — Bildübertragung im Chatverlauf sowie GPS-Standortfreigabe per Klick</p>
-                <!-- Ende Kachel 5 -->
-                </div>
-
-                <!-- Kachel 6: Kartenintegration -->
-                <div>
-                    <!-- Bilddatei aus dem Demo-Video -->
-                    <img src="mobileComputing/chat-maps-standort.jpg" alt="Interaktive Kartenanbindung in Google Maps" loading="lazy">
-                    <!-- Bildunterschrift -->
-                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Kartenintegration — Direkte Anzeige des geteilten Standorts des Chatpartners in Google Maps</p>
-                <!-- Ende Kachel 6 -->
-                </div>
-
-            <!-- Ende der Galerie -->
+            <div class="project-meta-row">
+                <span class="project-meta-semester">3. Semester</span>
             </div>
-        <!-- Ende der Sektion -->
-        </section>
 
-    <!-- Ende des Hauptbereichs -->
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <!-- Abschlusszeile -->
-        <div class="footer-bottom-row">
-            <!-- Copyright-Angabe -->
-            <span>&copy; 2026 Emma Rabe.</span>
-        <!-- Ende der Abschlusszeile -->
+            <div class="project-intro-row">
+                <p class="project-intro-paragraph">
+                    Im dritten Semester haben wir im Modul Mobile Computing als Partnerarbeit zu zweit eine native Android-Chat-Applikation („EmMasChatroom“) entwickelt. Die App kommuniziert in Echtzeit mit einem zentralen Server und bietet neben Raumverwaltung auch Bildübertragung, Hintergrund-Services und GPS-Standortfreigabe mit Kartenintegration.
+                </p>
+            </div>
         </div>
-    <!-- Ende des Footers -->
-    </footer>
 
-<!-- Ende des sichtbaren Körpers -->
+        <section class="project-showcase-section">
+            <div class="project-collage">
+                <figure class="project-shot span-1-7">
+                    <div class="project-shot-frame">
+                        <img src="Frontend/Hausarbeit/dokumentation/vorschau.png" alt="Übersicht Emma's Chatroom" loading="lazy">
+                    </div>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Übersicht</span> Benutzeroberfläche und modulare Funktionsbereiche</figcaption>
+                </figure>
+
+                <figure class="project-shot span-8-13">
+                    <div class="project-shot-frame">
+                        <img src="mobileComputing/chat-login-screen.jpg" alt="Start- und Anmeldebildschirm von Emma's Chatroom" loading="lazy">
+                    </div>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Startbildschirm &amp; Anmeldung</span> Individuelle Namenseingabe und Initialisierung</figcaption>
+                </figure>
+
+                <figure class="project-shot project-shot--beside span-6-13">
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Raumübersicht &amp; Beitritt</span> Liste aller aktiven Chaträume mit Teilnehmerzahl</figcaption>
+                    <div class="project-shot-frame">
+                        <img src="mobileComputing/chat-raeume-beitreten.jpg" alt="Raumverwaltung und Raumbeitritt in der Chat-App" loading="lazy">
+                    </div>
+                </figure>
+
+                <figure class="project-shot project-shot--drop span-1-6">
+                    <div class="project-shot-frame">
+                        <img src="mobileComputing/chat-nachrichtenverlauf.jpg" alt="Echtzeit-Nachrichtenverlauf mit Chat-Bubbles" loading="lazy">
+                    </div>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Echtzeit-Chatverlauf</span> Farbcodierte Chatblasen, Zeitstempel und Antwortfunktion</figcaption>
+                </figure>
+            </div>
+
+            <nav class="project-next" aria-label="Weitere Projekte">
+                <a href="index.html#arbeiten" class="project-next-back">&larr; Alle Arbeiten</a>
+                <a href="dbb.html" class="project-next-link">
+                    <span class="project-next-label">Nächstes Projekt</span>
+                    <span class="project-next-title">Die Blaue Blume</span>
+                </a>
+            </nav>
+        </section>
+
+        <footer class="project-footer">
+            <div class="project-footer-inner">
+                <span>&copy; 2026 Emma Rabe.</span>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">LinkedIn &nearr;</a>
+            </div>
+        </footer>
+    </main>
 </body>
-<!-- Ende des HTML-Dokuments -->
 </html>

@@ -1,142 +1,81 @@
-<!-- Dokumententyp HTML5 deklarieren -->
 <!DOCTYPE html>
-<!-- HTML-Wurzelelement mit Sprache Deutsch -->
 <html lang="de">
-<!-- Kopfbereich -->
 <head>
-    <!-- UTF-8 Zeichensatz -->
     <meta charset="UTF-8">
-    <!-- Viewport für Mobilgeräte -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Titel -->
-    <title>Video &amp; Motion Design — Emma Rabe</title>
-    <!-- CSS-Styles einbinden -->
+    <title>Film und Video — Emma Rabe</title>
+    <meta name="description" content="Film und Videoprojekte, Schnitt und Cinematography von Emma Rabe.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-<!-- Ende des Kopfbereichs -->
 </head>
-<!-- Beginn des Bodys -->
 <body>
-
-    <!-- KOPFZEILE -->
-    <header class="site-header">
-        <!-- Logo -->
-        <div class="logo">
-            <!-- Link zur Startseite -->
-            <a href="index.html" class="logo-title">Emma Rabe</a>
-        <!-- Ende des Logos -->
-        </div>
-
-        <!-- Navigation Buttons -->
-        <div class="header-actions">
-            <!-- Zurück-Button -->
-            <a href="index.html#projekte" class="pill-btn">
-                <!-- Pfeil links -->
-                <span>←</span>
-                <!-- Text -->
-                <span>Zurück zur Übersicht</span>
-            <!-- Ende des Buttons -->
-            </a>
-        <!-- Ende der Aktionen -->
-        </div>
-    <!-- Ende des Headers -->
-    </header>
-
-    <!-- HAUPTBEREICH -->
     <main>
+        <div class="project-page-top">
+            <header class="project-header-nav">
+                <a href="index.html" class="nav-brand">Emma Rabe</a>
+                <nav class="project-nav-menu">
+                    <a href="index.html#arbeiten">Arbeiten</a>
+                    <a href="index.html#about">Über Mich</a>
+                    <a href="index.html#kontakt">Kontakt</a>
+                </nav>
+            </header>
 
-        <!-- HERO-BEREICH -->
-        <section class="hero project-detail-hero">
-            <!-- Vor-Tag -->
-            <div class="hero-tag">Studienschwerpunkt • Film &amp; Schnitt</div>
-            <!-- Titel -->
-            <h1>Film & Audiovisuelle Medien</h1>
-            <!-- Einleitung -->
-            <p class="hero-bio">
-                Hier präsentiere ich Arbeiten aus den Bereichen Videoschnitt, Kameraführung, Color Grading und animierte Grafiken für Film und Musik.
-            <!-- Ende des Textes -->
-            </p>
-        <!-- Ende der Hero-Sektion -->
-        </section>
-
-        <!-- PROJEKT-GRID DER VIDEOARBEITEN -->
-        <section class="portfolio-section">
-            <!-- Grid-Raster -->
-            <div class="portfolio-grid">
-
-                <!-- PROJEKT 1: Musikvideo -->
-                <div class="project-card">
-                    <!-- Bildvorschau -->
-                    <div class="project-thumbnail">
-                        <!-- Bilddatei -->
-                        <img src="GG/Zeichenfläche 1.png" alt="Musikvideo Produktion" loading="lazy">
-                    <!-- Ende des Thumbnails -->
-                    </div>
-                    <!-- Informationsblock -->
-                    <div class="project-info">
-                        <!-- Metadaten -->
-                        <div class="project-meta-row">
-                            <!-- Modul/Fach in klein -->
-                            <span class="category-tag">Film &amp; Schnitt</span>
-                            <!-- Semesterangabe rechts -->
-                            <span class="project-year">2. Semester</span>
-                        <!-- Ende der Meta-Zeile -->
-                        </div>
-                        <!-- Name des Projekts groß -->
-                        <h3>Musikvideo Projekt</h3>
-                        <!-- Text -->
-                        <p>Kamerabegleitung, dynamischer Schnittrhythmus und atmosphärisches Color Grading.</p>
-                    <!-- Ende des Info-Blocks -->
-                    </div>
-                <!-- Ende von Karte 1 -->
-                </div>
-
-                <!-- PROJEKT 2: Imagefilm -->
-                <div class="project-card">
-                    <!-- Bildvorschau -->
-                    <div class="project-thumbnail">
-                        <!-- Bilddatei -->
-                        <img src="DBB/Landschaft.png" alt="Imagefilm & Cinematography" loading="lazy">
-                    <!-- Ende des Thumbnails -->
-                    </div>
-                    <!-- Informationsblock -->
-                    <div class="project-info">
-                        <!-- Metadaten -->
-                        <div class="project-meta-row">
-                            <!-- Modul/Fach in klein -->
-                            <span class="category-tag">Cinematography &amp; Licht</span>
-                            <!-- Semesterangabe rechts -->
-                            <span class="project-year">3. Semester</span>
-                        <!-- Ende der Meta-Zeile -->
-                        </div>
-                        <!-- Name des Projekts groß -->
-                        <h3>Cinematic Mood &amp; Reel</h3>
-                        <!-- Text -->
-                        <p>Visuelle Stimmungsbilder, kontrollierte Lichtgestaltung und Sounddesign.</p>
-                    <!-- Ende des Info-Blocks -->
-                    </div>
-                <!-- Ende von Karte 2 -->
-                </div>
-
-            <!-- Ende des Grids -->
+            <div class="project-hero-center">
+                <h1 class="project-hero-title">Film und Video</h1>
             </div>
-        <!-- Ende der Sektion -->
+
+            <div class="project-meta-row">
+                <span class="project-meta-semester">2. Semester</span>
+            </div>
+
+            <div class="project-intro-row">
+                <p class="project-intro-paragraph">
+                    Hier präsentiere ich Arbeiten aus den Bereichen Videoschnitt, Kameraführung, Color Grading und animierte Grafiken für Film und Musik im Studienschwerpunkt Film.
+                </p>
+            </div>
+        </div>
+
+        <section class="project-showcase-section">
+            <div class="project-collage">
+                <figure class="project-shot span-1-7">
+                    <div class="project-shot-frame">
+                        <img src="GG/Zeichenfläche 1.png" alt="Storyboard und Konzept" loading="lazy">
+                    </div>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Storyboard &amp; Konzept</span> Visuelles Konzept für Film- und Videoproduktionen</figcaption>
+                </figure>
+
+                <figure class="project-shot span-9-13">
+                    <div class="project-shot-frame">
+                        <img src="DBB/DBB01.png" alt="Film und Videoschnitt" loading="lazy">
+                    </div>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Schnitt &amp; Grading</span> Dynamischer Schnittrhythmus und atmosphärisches Color Grading</figcaption>
+                </figure>
+
+                <figure class="project-shot project-shot--beside span-2-9">
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Cinematography</span> Landschaftsaufnahmen und Stimmungsbilder für einen Imagefilm</figcaption>
+                    <div class="project-shot-frame">
+                        <img src="DBB/Landschaft.png" alt="Imagefilm Landschaft" loading="lazy">
+                    </div>
+                </figure>
+            </div>
+
+            <nav class="project-next" aria-label="Weitere Projekte">
+                <a href="index.html#arbeiten" class="project-next-back">&larr; Alle Arbeiten</a>
+                <a href="spieleprogrammierung.html" class="project-next-link">
+                    <span class="project-next-label">Nächstes Projekt</span>
+                    <span class="project-next-title">Spiele&shy;programmierung</span>
+                </a>
+            </nav>
         </section>
 
-    <!-- Ende des Hauptbereichs -->
+        <footer class="project-footer">
+            <div class="project-footer-inner">
+                <span>&copy; 2026 Emma Rabe.</span>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">LinkedIn &nearr;</a>
+            </div>
+        </footer>
     </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <!-- Zeile mit Copyright -->
-        <div class="footer-bottom-row">
-            <!-- Copyright -->
-            <span>&copy; 2026 Emma Rabe.</span>
-        <!-- Ende der Zeile -->
-        </div>
-    <!-- Ende des Footers -->
-    </footer>
-
-<!-- Ende des Bodys -->
 </body>
-<!-- Ende des HTML-Dokuments -->
 </html>
