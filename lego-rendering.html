@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lego Rendering — Emma Rabe</title>
+    <title>3D Rendering — Emma Rabe</title>
     <meta name="description" content="Fotorealistisches 3D-Rendering einer Lego-Minifigur in Blender von Emma Rabe.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- JavaScript: lädt die fertige Komponente <model-viewer> von Google (feste Version 3.5.0). -->
+    <!-- type="module" sorgt dafür, dass das Script erst nach dem HTML ausgeführt wird und die Seite nicht blockiert. -->
+    <!-- Danach versteht der Browser das neue HTML-Element <model-viewer> und kann damit 3D-Modelle (.glb) per WebGL anzeigen. -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 </head>
 <body>
     <main>
@@ -25,7 +29,7 @@
             </header>
 
             <div class="project-hero-center">
-                <h1 class="project-hero-title">Lego Rendering</h1>
+                <h1 class="project-hero-title">3D Rendering</h1>
             </div>
 
             <div class="project-meta-row">
@@ -41,25 +45,48 @@
 
         <section class="project-showcase-section">
             <div class="project-collage">
-                <figure class="project-shot span-1-8">
-                    <div class="project-shot-frame">
-                        <img src="3DRendering/rendering01.png" alt="Finales 3D-Rendering der Lego-Minifigur" loading="lazy">
+                <figure class="project-shot span-1-6">
+                    <div class="project-shot-frame project-shot-frame--tall">
+                        <!-- Dieses Element funktioniert nur durch das model-viewer-Script im <head>. -->
+                        <!-- src: die aus Blender exportierte Lego-Figur im glTF-Binärformat (.glb), ohne Bodenfläche. -->
+                        <!-- alt: Beschreibung für Screenreader, wie bei einem Bild. -->
+                        <!-- camera-controls: Figur mit Maus oder Finger drehen. -->
+                        <!-- disable-zoom: kein Zoomen per Mausrad, sonst bleibt die Seite beim Scrollen über der Figur hängen. -->
+                        <!-- auto-rotate: Figur dreht sich langsam von selbst, bis man sie anfasst. -->
+                        <!-- touch-action="pan-y": auf dem Handy kann man trotzdem senkrecht weiterscrollen. -->
+                        <!-- shadow-intensity: weicher Schatten unter der Figur (0 = kein Schatten, 1 = voll). -->
+                        <model-viewer
+                            src="3DRendering/lego.glb"
+                            alt="3D-Modell der Lego-Figur, mit der Maus drehbar"
+                            camera-controls
+                            disable-zoom
+                            auto-rotate
+                            touch-action="pan-y"
+                            shadow-intensity="1">
+                        </model-viewer>
                     </div>
-                    <figcaption class="project-shot-caption"><span class="project-shot-title">Finales Rendering</span> Realistische Licht- und Schattenintegration in eine reale Umgebung</figcaption>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">3D-Modell</span> Mit der Maus drehen, auf dem Handy mit einem Finger</figcaption>
                 </figure>
 
-                <figure class="project-shot span-9-13">
+                <figure class="project-shot span-7-13">
                     <div class="project-shot-frame">
-                        <img src="3DRendering/rendering02.png" alt="Blender Viewport und 3D-Setup" loading="lazy">
+                        <img src="3DRendering/rendering01.png" alt="Finales 3D-Rendering der Lego-Minifigur im Parkhaus" loading="lazy">
                     </div>
-                    <figcaption class="project-shot-caption"><span class="project-shot-title">Blender Viewport</span> 3D-Geometrie, Grundebene und Szenenaufbau im Raum</figcaption>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Finales Rendering</span> Realistische Licht- und Schattenintegration in ein Foto aus dem Parkhaus</figcaption>
                 </figure>
 
-                <figure class="project-shot project-shot--beside span-2-12">
+                <figure class="project-shot project-shot--beside span-7-13">
                     <figcaption class="project-shot-caption"><span class="project-shot-title">Detailansicht</span> Beleuchtung, Shader und Oberflächentextur der Minifigur</figcaption>
                     <div class="project-shot-frame">
                         <img src="3DRendering/LegoMan-Render.jpg" alt="Detailansicht der Lego-Figur" loading="lazy">
                     </div>
+                </figure>
+
+                <figure class="project-shot project-shot--drop span-1-6">
+                    <div class="project-shot-frame">
+                        <img src="3DRendering/rendering02.png" alt="Blender Viewport und 3D-Setup" loading="lazy">
+                    </div>
+                    <figcaption class="project-shot-caption"><span class="project-shot-title">Blender Viewport</span> 3D-Geometrie, Grundebene und Szenenaufbau im Raum</figcaption>
                 </figure>
             </div>
         </section>
